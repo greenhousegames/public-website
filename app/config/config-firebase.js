@@ -1,6 +1,7 @@
 module.exports = {
-  apiKey: 'AIzaSyBkB1IvviOcPq4z8Rs7nijEdIa9n1IvRlU',
-  authDomain: 'angular-firebase-template.firebaseapp.com',
-  databaseURL: 'https://angular-firebase-template.firebaseio.com',
-  storageBucket: ''
+  apiKey: 'AIzaSyDPGXl6Bc8jf_IPlkcVJe6jNlrNz72zaCo',
+  authDomain: 'greenhouse-games.firebaseapp.com',
+  databaseURL: 'https://greenhouse-games.firebaseio.com',
+  storageBucket: 'greenhouse-games.appspot.com',
+  messagingSenderId: '832706408675'
 };
