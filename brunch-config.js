@@ -1,5 +1,6 @@
 var fs = require('fs');
 var router = require('base-apps-router');
+const concat = require('concat-files');
 
 module.exports = {
 
@@ -51,7 +52,17 @@ module.exports = {
         root: 'app',
         library: 'node',
         overwrite: true
-      }).then(done);
+      }).then(() => {
+        concat([
+          'node_modules/@greenhousegames/smash-dot/node_modules/phaser/build/custom/pixi.min.js',
+          'node_modules/@greenhousegames/smash-dot/node_modules/phaser/build/custom/phaser-no-physics.min.js'
+        ], 'app/assets/js/phaser.js', () => {
+          concat([
+            'node_modules/@greenhousegames/smash-dot/node_modules/phaser-kinetic-scrolling-plugin/dist/phaser-kinetic-scrolling-plugin.min.js',
+            'node_modules/@greenhousegames/smash-dot/node_modules/phaser-ads/build/phaser-ads.min.js'
+          ], 'app/assets/js/phaser-plugins.js', done);
+        });
+      });
     }
   }
 };

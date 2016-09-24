@@ -5,7 +5,7 @@ import 'angular-base-apps';
 
 // Firebase Configuration
 import firebase from 'firebase';
-import 'angularfire';
+//import 'angularfire';
 import firebaseconfig from './config/config-firebase';
 firebase.initializeApp(firebaseconfig);
 
@@ -22,7 +22,7 @@ import routeconfig from './config/config-routes';
 // Application Configuration
 import moduleconfig from './modules';
 
-const AppConfig = ($urlProvider, $locationProvider, $firebaseRefProvider, $BaseAppsStateProvider) => {
+const AppConfig = ($urlProvider, $locationProvider, /*$firebaseRefProvider,*/ $BaseAppsStateProvider) => {
   $urlProvider.otherwise('/');
 
   $locationProvider.html5Mode({
@@ -30,12 +30,12 @@ const AppConfig = ($urlProvider, $locationProvider, $firebaseRefProvider, $BaseA
     requireBase: false
   });
 
-  $firebaseRefProvider.registerUrl(firebaseconfig.databaseURL);
+  //$firebaseRefProvider.registerUrl(firebaseconfig.databaseURL);
 
   $BaseAppsStateProvider.registerDynamicRoutes(routeconfig);
 };
 
-AppConfig.$inject = ['$urlRouterProvider', '$locationProvider', '$firebaseRefProvider', '$BaseAppsStateProvider'];
+AppConfig.$inject = ['$urlRouterProvider', '$locationProvider', /*'$firebaseRefProvider',*/ '$BaseAppsStateProvider'];
 
 const AppRun = () => {
   fs.FastClick.attach(document.body);
@@ -46,7 +46,7 @@ angular.module('application', [
   'ngAnimate',
 
   // firebase
-  'firebase',
+  //'firebase',
 
   // base apps
   'base',
