@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@greenhousegames/firebase-waiting-room": "^0.0.6",
-    "@greenhousegames/smash-dot": "^0.0.16",
+    "@greenhousegames/smash-dot": "^0.0.17",
     "angular": "^1.5.8",
     "angular-base-apps": "^2.0.0",
     "angular-dynamic-routing": "^1.0.1",

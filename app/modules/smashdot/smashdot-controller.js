@@ -5,13 +5,25 @@ import firebase from 'firebase/app';
 import firebaseconfig from '../../config/config-firebase-smashdot';
 const firebaseInst = firebase.initializeApp(firebaseconfig, 'SmashDot');
 
-export default class SmashDotController {
-  constructor() {
-    const self = this;
+class SmashDotController {
+  constructor($scope, $timeout) {
+    $scope.$on('$destroy', () => {
+      if (this.game) {
+        this.game.destroy();
+      }
+    });
 
-    const game = new Game(firebaseInst);
-    game.state.start('boot');
+    $timeout(() => this.boot());
 
-    return self;
+    return this;
+  }
+
+  boot() {
+    this.game = new Game(firebaseInst);
+    this.game.state.start('boot');
   }
 }
+
+SmashDotController.$inject = ['$scope', '$timeout'];
+
+export default SmashDotController;

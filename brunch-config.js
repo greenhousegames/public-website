@@ -53,15 +53,10 @@ module.exports = {
         library: 'node',
         overwrite: true
       }).then(() => {
-        concat([
-          'node_modules/@greenhousegames/smash-dot/node_modules/phaser/build/custom/pixi.min.js',
-          'node_modules/@greenhousegames/smash-dot/node_modules/phaser/build/custom/phaser-no-physics.min.js'
-        ], 'app/assets/js/phaser.js', () => {
-          concat([
-            'node_modules/@greenhousegames/smash-dot/node_modules/phaser-kinetic-scrolling-plugin/dist/phaser-kinetic-scrolling-plugin.min.js',
-            'node_modules/@greenhousegames/smash-dot/node_modules/phaser-ads/build/phaser-ads.min.js'
-          ], 'app/assets/js/phaser-plugins.js', done);
-        });
+        // copy phaser file
+        const wr = fs.createWriteStream('app/assets/js/phaser.js');
+        fs.createReadStream('./node_modules/@greenhousegames/smash-dot/dist/phaser.js').pipe(wr);
+        wr.on('close', done);
       });
     }
   }
