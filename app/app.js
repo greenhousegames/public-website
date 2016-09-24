@@ -4,8 +4,9 @@ import angular from 'angular';
 import 'angular-base-apps';
 
 // Firebase Configuration
-import firebase from 'firebase';
-//import 'angularfire';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 import firebaseconfig from './config/config-firebase';
 firebase.initializeApp(firebaseconfig);
 
