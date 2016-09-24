@@ -8,6 +8,7 @@ const firebaseInst = firebase.initializeApp(firebaseconfig, 'SmashDot');
 class SmashDotController {
   constructor($scope, $timeout) {
     $scope.$on('$destroy', () => {
+      angular.element(document.querySelector('.top-menu-bar')).removeClass('ng-hide');
       if (this.game) {
         this.game.destroy();
       }
@@ -19,6 +20,9 @@ class SmashDotController {
   }
 
   boot() {
+    // hide menu bar
+    angular.element(document.querySelector('.top-menu-bar')).addClass('ng-hide');
+
     this.game = new Game(firebaseInst);
     this.game.state.start('boot');
   }

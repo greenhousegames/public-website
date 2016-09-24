@@ -6,6 +6,41 @@
   a svg {
     margin: 0;
   }
+
+  li.header {
+    a {
+      cursor: default;
+      background-color: $secondary-color;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.panel#menu {
+  background-color: $primary-color;
+
+  > div.grid-block {
+    height: 100%;
+		overflow: auto;
+
+    // COPY RIGHT
+    > div:last-child {
+      flex-shrink: 0;
+      justify-content: flex-end;
+      padding-top: 1rem;
+
+      ul li a {
+        div {
+          width: 100%;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
 
 .card.circle {
