@@ -1,8 +1,7 @@
 {
-  "name": "greenhouse-public-website",
-  "version": "0.0.0",
+  "name": "@greenhousegames/public-website",
+  "version": "0.0.2",
   "scripts": {
-    "prestart": "npm run prebuild",
     "start": "brunch watch --server",
     "prebuild": "(rm -r public || true) && (rm app/config/config-routes.js || true)",
     "build": "brunch build",
@@ -12,7 +11,8 @@
     "test-debug": "karma start --single-run=false --debug",
     "preproduction": "npm run prebuild",
     "production": "brunch build --production",
-    "firebase": "npm run production && firebase deploy"
+    "prepublish": "npm run production",
+    "postpublish": "firebase deploy"
   },
   "dependencies": {
     "@greenhousegames/firebase-waiting-room": "^0.0.6",
@@ -49,5 +49,15 @@
     "modernizr-brunch": "0.0.2",
     "sass-brunch": "^1.8.10",
     "uglify-js-brunch": "^2.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenhousegames/public-website.git"
+  },
+  "author": "Greenhouse Games, LLC",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/greenhousegames/public-website/issues"
+  },
+  "homepage": "https://github.com/greenhousegames/public-website#readme"
 }
