@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "scripts": {
     "start": "brunch watch --server",
     "prebuild": "(rm -r public || true) && (rm app/config/config-routes.js || true)",
