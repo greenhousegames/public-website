@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "scripts": {
     "start": "brunch watch --server",
     "prebuild": "(rm -r public || true) && (rm app/config/config-routes.js || true)",
@@ -48,7 +48,6 @@
     "karma-jasmine": "^1.0.2",
     "karma-spec-reporter": "0.0.26",
     "mockfirebase": "^0.12.0",
-    "modernizr-brunch": "0.0.2",
     "postcss-brunch": "^2.0.3",
     "sass-brunch": "^1.8.10",
     "uglify-js-brunch": "^2.0.0"
