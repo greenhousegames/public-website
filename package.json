@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "scripts": {
     "start": "brunch watch --server",
     "prebuild": "(rm -r public || true) && (rm app/config/config-routes.js || true)",
@@ -36,6 +36,7 @@
     "brunch": "^2.4.0",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.0.0",
+    "digest-brunch": "^1.5.1",
     "eslint": "^3.0.0",
     "eslint-brunch": "^3.9.0",
     "html-pages-brunch": "^2.0.0",
