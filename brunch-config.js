@@ -52,12 +52,7 @@ module.exports = {
         root: 'app',
         library: 'node',
         overwrite: true
-      }).then(() => {
-        // copy phaser file
-        const wr = fs.createWriteStream('app/assets/js/phaser.js');
-        fs.createReadStream('./node_modules/@greenhousegames/smash-dot/dist/phaser.js').pipe(wr);
-        wr.on('close', done);
-      });
+      }).then(done);
     }
   }
 };

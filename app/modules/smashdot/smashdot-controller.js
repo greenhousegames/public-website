@@ -23,7 +23,7 @@ class SmashDotController {
     // hide menu bar
     angular.element(document.querySelector('.top-menu-bar')).addClass('ng-hide');
 
-    this.game = new Game(firebaseInst);
+    this.game = new Game(firebaseInst, 'games/smashdot');
     this.game.state.start('boot');
   }
 }

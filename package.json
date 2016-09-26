@@ -2,9 +2,12 @@
   "name": "@greenhousegames/public-website",
   "version": "0.0.16",
   "scripts": {
-    "start": "brunch watch --server",
+    "precopy-assets": "(rm -r app/assets/games || true) && mkdir app/assets/games",
+    "copy-assets": "npm run copy-smashdot-assets",
+    "copy-smashdot-assets": "mkdir app/assets/games/smashdot && cp -R node_modules/@greenhousegames/smash-dot/dist/assets/ app/assets/games/smashdot/",
+    "start": "npm run copy-assets && brunch watch --server",
     "prebuild": "(rm -r public || true) && (rm app/config/config-routes.js || true)",
-    "build": "brunch build",
+    "build": "npm run copy-assets && brunch build",
     "pretest": "npm run build",
     "test": "npm run test-only",
     "test-only": "karma start",
@@ -16,7 +19,7 @@
   },
   "dependencies": {
     "@greenhousegames/firebase-waiting-room": "^0.0.6",
-    "@greenhousegames/smash-dot": "^0.0.17",
+    "@greenhousegames/smash-dot": "^0.0.18",
     "angular": "^1.5.8",
     "angular-base-apps": "^2.0.0",
     "angular-dynamic-routing": "^1.0.1",
