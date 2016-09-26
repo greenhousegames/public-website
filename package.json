@@ -14,12 +14,12 @@
     "test-debug": "karma start --single-run=false --debug",
     "preproduction": "npm run prebuild",
     "production": "npm run copy-assets && brunch build --production",
-    "prepublish": "npm run production",
-    "postpublish": "firebase deploy"
+    "version": "npm run production",
+    "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
     "@greenhousegames/firebase-waiting-room": "^0.0.6",
-    "@greenhousegames/smash-dot": "^0.0.23",
+    "@greenhousegames/smash-dot": "^0.0.25",
     "angular": "^1.5.8",
     "angular-base-apps": "^2.0.0",
     "angular-dynamic-routing": "^1.0.1",
