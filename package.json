@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "scripts": {
     "precopy-assets": "(rm -r app/assets/games || true) && mkdir app/assets/games",
     "copy-assets": "npm run copy-smashdot-assets",
@@ -13,7 +13,7 @@
     "test-only": "karma start",
     "test-debug": "karma start --single-run=false --debug",
     "preproduction": "npm run prebuild",
-    "production": "brunch build --production",
+    "production": "npm run copy-assets && brunch build --production",
     "prepublish": "npm run production",
     "postpublish": "firebase deploy"
   },
