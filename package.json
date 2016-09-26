@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.16",
+  "version": "0.0.19",
   "scripts": {
     "precopy-assets": "(rm -r app/assets/games || true) && mkdir app/assets/games",
     "copy-assets": "npm run copy-smashdot-assets",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@greenhousegames/firebase-waiting-room": "^0.0.6",
-    "@greenhousegames/smash-dot": "^0.0.18",
+    "@greenhousegames/smash-dot": "^0.0.19",
     "angular": "^1.5.8",
     "angular-base-apps": "^2.0.0",
     "angular-dynamic-routing": "^1.0.1",
