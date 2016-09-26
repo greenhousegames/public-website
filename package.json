@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "scripts": {
     "precopy-assets": "(rm -r app/assets/games || true) && mkdir app/assets/games",
     "copy-assets": "npm run copy-smashdot-assets",
