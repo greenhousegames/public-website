@@ -1,0 +1,60 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.back {
+  background-image: url(smashdot.png);
+  background-position: 0px 0px;
+  width: 32px;
+  height: 32px;
+}
+.exit-game {
+  background-image: url(smashdot.png);
+  background-position: -33px 0px;
+  width: 32px;
+  height: 32px;
+}
+.pause {
+  background-image: url(smashdot.png);
+  background-position: 0px -33px;
+  width: 32px;
+  height: 32px;
+}
+.question {
+  background-image: url(smashdot.png);
+  background-position: -33px -33px;
+  width: 32px;
+  height: 32px;
+}
+.reset-colors {
+  background-image: url(smashdot.png);
+  background-position: -66px 0px;
+  width: 32px;
+  height: 32px;
+}
+.restart-game {
+  background-image: url(smashdot.png);
+  background-position: -66px -33px;
+  width: 32px;
+  height: 32px;
+}
+.resume-game {
+  background-image: url(smashdot.png);
+  background-position: 0px -66px;
+  width: 32px;
+  height: 32px;
+}
