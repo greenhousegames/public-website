@@ -3,21 +3,9 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "public",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
+    "public": "dist",
     "headers": [{
-      "source": "/index.html",
-      "headers": [{
-      	"key": "Cache-Control",
-      	"value": "max-age=0, private, no-store, no-cache, must-revalidate"
-      }]
-    },{
-      "source": "/games/**/*.@(json|png|fnt)",
+      "source": "/games/**/*.*",
       "headers": [{
       	"key": "Cache-Control",
       	"value": "max-age=0, private, no-store, no-cache, must-revalidate"
