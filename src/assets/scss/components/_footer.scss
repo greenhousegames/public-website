@@ -1,0 +1,55 @@
+div.footer {
+  background-color: $secondary-color;
+  height: 100px;
+
+  ul.social-menu {
+    display: block;
+        right: auto;
+    margin-bottom: 8px;
+
+    li {
+      list-style: none;
+      display: block;
+      float: left;
+
+      a {
+        display: block;
+        height: 50px;
+        width: 50px;
+        background: url(/assets/img/icons/social-icons.png) no-repeat center 0;
+
+        &.twitter {
+          background-position: center 0;
+        }
+        &.facebook {
+          background-position: center -200px;
+        }
+        &.mail {
+          background-position: center -400px;
+        }
+      }
+    }
+  }
+
+  ul.zurb-links {
+    margin: 0;
+    display: inline-block;
+
+    li {
+      display: block;
+      float: left;
+      margin-left: 6px;
+      font-family: "Proxima Nova Condensed", "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.875em;
+      color: $white;
+    }
+  }
+
+  p.copyright {
+    margin: 6px 0 0;
+    font-size: 0.75em;
+    color: $white;
+  }
+}
