@@ -47,7 +47,7 @@ function copy() {
 
 function copyGames() {
   return gulp.src(PATHS.games.smashdot)
-    .pipe(gulp.dest(PATHS.dist + '/games/smashdot'));
+    .pipe(gulp.dest(PATHS.dist + '/smashdot/play'));
 }
 
 // Copy page templates into finished HTML files
