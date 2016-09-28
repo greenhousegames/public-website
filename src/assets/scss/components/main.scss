@@ -1,0 +1,57 @@
+section.main {
+  div.main-header {
+    margin-bottom: 16px;
+    background-color: $primary-color;
+    padding-top: 100px;
+    height: 300px;
+    @include breakpoint(medium) {
+      padding-top: 100px;
+      height: 400px;
+    }
+    @include breakpoint(large) {
+      padding-top: 200px;
+      height: 600px;
+    }
+    div.logo-container {
+      background-color: $white;
+      margin: auto;
+      height: 100px;
+      width: 100px;
+      box-shadow: 0px 0px 4px 0px black;
+      border-radius: 50%;
+
+      div.logo {
+        background: url(/assets/img/logo-small.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100px;
+        width: 100px;
+      }
+
+      @include breakpoint(medium) {
+        height: 200px;
+        width: 200px;
+
+        div.logo {
+          background-image: url(/assets/img/logo.png);
+          height: 200px;
+          width: 200px;
+        }
+      }
+    }
+  }
+  div.games-container {
+    div.game {
+      margin-bottom: 16px;
+      text-align: center;
+
+      @include grid-column(12);
+      @include breakpoint(medium) {
+        @include grid-column(6);
+      }
+      @include breakpoint(large) {
+        @include grid-column(4);
+      }
+    }
+  }
+}
