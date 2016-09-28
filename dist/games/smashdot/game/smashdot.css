@@ -18,43 +18,49 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .back {
   background-image: url(smashdot.png);
-  background-position: 0px 0px;
+  background-position: -129px -129px;
   width: 32px;
   height: 32px;
 }
 .exit-game {
   background-image: url(smashdot.png);
-  background-position: -33px 0px;
+  background-position: 0px 0px;
+  width: 128px;
+  height: 128px;
+}
+.home {
+  background-image: url(smashdot.png);
+  background-position: -162px -129px;
   width: 32px;
   height: 32px;
 }
 .pause {
   background-image: url(smashdot.png);
-  background-position: 0px -33px;
+  background-position: -195px -129px;
   width: 32px;
   height: 32px;
 }
 .question {
   background-image: url(smashdot.png);
-  background-position: -33px -33px;
+  background-position: -129px -162px;
   width: 32px;
   height: 32px;
 }
 .reset-colors {
   background-image: url(smashdot.png);
-  background-position: -66px 0px;
+  background-position: -162px -162px;
   width: 32px;
   height: 32px;
 }
 .restart-game {
   background-image: url(smashdot.png);
-  background-position: -66px -33px;
-  width: 32px;
-  height: 32px;
+  background-position: -129px 0px;
+  width: 128px;
+  height: 128px;
 }
 .resume-game {
   background-image: url(smashdot.png);
-  background-position: 0px -66px;
-  width: 32px;
-  height: 32px;
+  background-position: 0px -129px;
+  width: 128px;
+  height: 128px;
 }
