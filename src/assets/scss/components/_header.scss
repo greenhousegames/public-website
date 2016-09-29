@@ -1,0 +1,78 @@
+section.header {
+  div.title-bar, div.main-header {
+    margin-bottom: $header-padding;
+    background-color: $primary-color;
+  }
+
+  div.title-bar {
+    height: $header-titlebar-height-small;
+    @include breakpoint(medium) {
+      height: $header-titlebar-height-medium;
+    }
+    @include breakpoint(large) {
+      height: $header-titlebar-height-large;
+    }
+
+    a {
+      color: $white;
+      margin: 0;
+      font-size: 1rem;
+
+      @include breakpoint(medium) {
+        font-size: 1.5rem;
+        margin-top: -3px;
+      }
+    }
+  }
+
+  div.main-header {
+    padding-top: ($header-height-small - $header-logo-size-small)/2;
+    height: $header-height-small;
+    @include breakpoint(medium) {
+      padding-top: ($header-height-medium - $header-logo-size-medium)/2;
+      height: $header-height-medium;
+    }
+    @include breakpoint(large) {
+      padding-top: ($header-height-large - $header-logo-size-large)/2;
+      height: $header-height-large;
+    }
+    div.logo-container {
+      background-color: $white;
+      margin: auto;
+      height: $header-logo-size-small;
+      width: $header-logo-size-small;
+      box-shadow: 0px 0px 8px 0px black;
+      border-radius: 50%;
+
+      div.logo {
+        background: url(/assets/img/logo-small.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: $header-logo-size-small;
+        width: $header-logo-size-small;
+      }
+
+      @include breakpoint(medium) {
+        height: $header-logo-size-medium;
+        width: $header-logo-size-medium;
+
+        div.logo {
+          background-image: url(/assets/img/logo-medium.png);
+          height: $header-logo-size-medium;
+          width: $header-logo-size-medium;
+        }
+      }
+
+      @include breakpoint(large) {
+        height: $header-logo-size-large;
+        width: $header-logo-size-large;
+
+        div.logo {
+          background-image: url(/assets/img/logo-large.png);
+          height: $header-logo-size-large;
+          width: $header-logo-size-large;
+        }
+      }
+    }
+  }
+}

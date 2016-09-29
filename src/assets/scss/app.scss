@@ -49,6 +49,8 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+@import 'variables';
 @import 'components/main';
 @import 'components/gamehome';
+@import 'components/header';
 @import 'components/footer';

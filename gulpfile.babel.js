@@ -26,7 +26,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy, copyGames), styleGuide));
+ gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy, copyGames()), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -46,8 +46,14 @@ function copy() {
 }
 
 function copyGames() {
-  return gulp.src(PATHS.games.smashdot)
-    .pipe(gulp.dest(PATHS.dist + '/smashdot/play'));
+  var copies = [];
+  for (var game in PATHS.games) {
+    copies.push(function() {
+      return gulp.src(PATHS.games[game])
+        .pipe(gulp.dest(PATHS.dist + '/' + game + '/play'));
+    });
+  }
+  return gulp.parallel(copies);
 }
 
 // Copy page templates into finished HTML files

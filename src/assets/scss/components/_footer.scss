@@ -1,22 +1,15 @@
-div.body {
-  min-height: calc(100% - 130px);
-  @include breakpoint(medium) {
-    min-height: calc(100% - 100px);
-  }
-}
-
 div.footer {
   background-color: $secondary-color;
-  height: 130px;
+  height: $footer-height-small;
   @include breakpoint(medium) {
-    height: 100px;
+    height: $footer-height-medium;
+  }
+  @include breakpoint(large) {
+    height: $footer-height-large;
   }
 
   div.row {
     padding-top: 25px;
-    @include breakpoint(medium) {
-      padding-top: 25px;
-    }
 
     div.columns {
       position: relative;

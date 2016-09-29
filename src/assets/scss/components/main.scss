@@ -1,56 +1,12 @@
 section.main {
-  div.main-header {
-    margin-bottom: 16px;
-    background-color: $primary-color;
-    padding-top: 50px;
-    height: 200px;
-    @include breakpoint(medium) {
-      padding-top: 75px;
-      height: 300px;
-    }
-    @include breakpoint(large) {
-      padding-top: 100px;
-      height: 400px;
-    }
-    div.logo-container {
-      background-color: $white;
-      margin: auto;
-      height: 100px;
-      width: 100px;
-      box-shadow: 0px 0px 8px 0px black;
-      border-radius: 50%;
-
-      div.logo {
-        background: url(/assets/img/logo-small.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 100px;
-        width: 100px;
-      }
-
-      @include breakpoint(medium) {
-        height: 150px;
-        width: 150px;
-
-        div.logo {
-          background-image: url(/assets/img/logo-medium.png);
-          height: 150px;
-          width: 150px;
-        }
-      }
-
-      @include breakpoint(large) {
-        height: 200px;
-        width: 200px;
-
-        div.logo {
-          background-image: url(/assets/img/logo-large.png);
-          height: 200px;
-          width: 200px;
-        }
-      }
-    }
+  min-height: calc(100% - #{$header-height-small} - #{$header-padding} - #{$footer-height-small});
+  @include breakpoint(medium) {
+    min-height: calc(100% - #{$header-height-medium} - #{$header-padding} - #{$footer-height-medium});
   }
+  @include breakpoint(large) {
+    min-height: calc(100% - #{$header-height-large} - #{$header-padding} - #{$footer-height-large});
+  }
+
   div.games-container {
     div.game {
       margin-bottom: 16px;
