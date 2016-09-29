@@ -1,55 +1,80 @@
+div.body {
+  min-height: calc(100% - 130px);
+  @include breakpoint(medium) {
+    min-height: calc(100% - 100px);
+  }
+}
+
 div.footer {
   background-color: $secondary-color;
-  height: 100px;
+  height: 130px;
+  @include breakpoint(medium) {
+    height: 100px;
+  }
 
-  ul.social-menu {
-    display: block;
-        right: auto;
-    margin-bottom: 8px;
+  div.row {
+    padding-top: 25px;
+    @include breakpoint(medium) {
+      padding-top: 25px;
+    }
 
-    li {
-      list-style: none;
-      display: block;
-      float: left;
+    div.columns {
+      position: relative;
+      text-align: center;
 
-      a {
-        display: block;
-        height: 50px;
-        width: 50px;
-        background: url(/assets/img/icons/social-icons.png) no-repeat center 0;
-
-        &.twitter {
-          background-position: center 0;
+      @include breakpoint(medium) {
+        &:first-child {
+          left: 66.6666%;
+          right: auto;
+          text-align: right;
         }
-        &.facebook {
-          background-position: center -200px;
-        }
-        &.mail {
-          background-position: center -400px;
+        &:last-child {
+          right: 33.3333%;
+          left: auto;
+          text-align: left;
         }
       }
     }
-  }
 
-  ul.zurb-links {
-    margin: 0;
-    display: inline-block;
+    ul.social-menu {
+      right: auto;
+      text-align: center;
+      display: inline-block;
+      margin: 0;
 
-    li {
-      display: block;
-      float: left;
-      margin-left: 6px;
-      font-family: "Proxima Nova Condensed", "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 0.875em;
+      @include breakpoint(medium) {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      li {
+        list-style: none;
+        display: block;
+        float: right;
+
+        a {
+          display: block;
+          height: 50px;
+          width: 50px;
+          background: url(/assets/img/icons/social-icons.png) no-repeat center 0;
+
+          &.twitter {
+            background-position: center 0;
+          }
+          &.facebook {
+            background-position: center -200px;
+          }
+          &.mail {
+            background-position: center -400px;
+          }
+        }
+      }
+    }
+
+    p.copyright {
+      margin: 6px 0 0;
+      font-size: 0.75em;
       color: $white;
     }
-  }
-
-  p.copyright {
-    margin: 6px 0 0;
-    font-size: 0.75em;
-    color: $white;
   }
 }

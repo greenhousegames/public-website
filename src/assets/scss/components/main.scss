@@ -2,22 +2,22 @@ section.main {
   div.main-header {
     margin-bottom: 16px;
     background-color: $primary-color;
-    padding-top: 100px;
-    height: 300px;
+    padding-top: 50px;
+    height: 200px;
     @include breakpoint(medium) {
-      padding-top: 100px;
-      height: 400px;
+      padding-top: 75px;
+      height: 300px;
     }
     @include breakpoint(large) {
-      padding-top: 200px;
-      height: 600px;
+      padding-top: 100px;
+      height: 400px;
     }
     div.logo-container {
       background-color: $white;
       margin: auto;
       height: 100px;
       width: 100px;
-      box-shadow: 0px 0px 4px 0px black;
+      box-shadow: 0px 0px 8px 0px black;
       border-radius: 50%;
 
       div.logo {
@@ -29,11 +29,22 @@ section.main {
       }
 
       @include breakpoint(medium) {
+        height: 150px;
+        width: 150px;
+
+        div.logo {
+          background-image: url(/assets/img/logo-medium.png);
+          height: 150px;
+          width: 150px;
+        }
+      }
+
+      @include breakpoint(large) {
         height: 200px;
         width: 200px;
 
         div.logo {
-          background-image: url(/assets/img/logo.png);
+          background-image: url(/assets/img/logo-large.png);
           height: 200px;
           width: 200px;
         }

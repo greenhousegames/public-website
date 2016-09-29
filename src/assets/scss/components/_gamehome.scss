@@ -1,7 +1,24 @@
 a.play-game-button {
   margin: 0;
+  font-size: 1rem;
 
   @include breakpoint(medium) {
     font-size: 1.5rem;
+  }
+}
+
+div.title-bar {
+  background-color: $primary-color;
+  margin-bottom: 1rem;
+
+  a {
+    color: $white;
+    margin: 0;
+    font-size: 1rem;
+
+    @include breakpoint(medium) {
+      font-size: 1.5rem;
+      margin-top: -3px;
+    }
   }
 }
