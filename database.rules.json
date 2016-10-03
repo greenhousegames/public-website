@@ -1,6 +1,18 @@
 {
   "rules": {
     ".read": "auth != null",
-    ".write": "auth != null"
+    ".write": "auth != null",
+
+    "users": {
+      ".indexOn": [
+        "smashdot-classic-played",
+        "smashdot-classic-score",
+        "smashdot-survival-played",
+        "smashdot-survival-duration",
+        "smashdot-battle-played",
+        "smashdot-battle-score",
+        "smashdot-battle-win"
+      ]
+    }
   }
 }
