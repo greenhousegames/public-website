@@ -21,9 +21,13 @@ PATHS:
   # Paths to game repos
   games:
     smashdot:
-      - "node_modules/@greenhousegames/smash-dot-cordova/dist/www/**/*"
-    rock-paper-scissors:
-      - "node_modules/@greenhousegames/rock-paper-scissors-cordova/dist/www/**/*"
+      src:
+        - "node_modules/@greenhousegames/smash-dot-cordova/dist/www/**/*"
+      dest: "dist/smashdot/play"
+    rock_paper_scissors:
+      src:
+        - "node_modules/@greenhousegames/rock-paper-scissors-cordova/dist/www/**/*"
+      dest: "dist/rock-paper-scissors/play"
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     - "src/assets/**/*"

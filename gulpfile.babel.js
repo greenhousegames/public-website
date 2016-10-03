@@ -24,9 +24,24 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
+function initGames() {
+  var copies = [];
+  for (var game in PATHS.games) {
+    copies.push(createGameTask(PATHS.games[game].src, PATHS.games[game].dest));
+  }
+  return copies;
+}
+
+function createGameTask(src, dest) {
+  return function() {
+    return gulp.src(src)
+      .pipe(gulp.dest(dest));
+  };
+}
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy, copyGames()), styleGuide));
+ gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy), gulp.parallel(initGames()), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -49,8 +64,8 @@ function copyGames() {
   var copies = [];
   for (var game in PATHS.games) {
     copies.push(function() {
-      return gulp.src(PATHS.games[game])
-        .pipe(gulp.dest(PATHS.dist + '/' + game + '/play'));
+      return gulp.src(PATHS.games[game].src)
+        .pipe(gulp.dest(PATHS.games[game].dest));
     });
   }
   return gulp.parallel(copies);
