@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
