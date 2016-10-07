@@ -4,11 +4,12 @@ PATHS:
   dist: "public"
   # Paths to game repos
   games:
+    game_template:
+      npm: 'game-template-cordova'
+      dist: 'game-template'
     smashdot:
-      src:
-        - "node_modules/@greenhousegames/smash-dot-cordova/dist/www/**/*"
-      dest: "public/smashdot/play"
+      npm: 'smash-dot-cordova'
+      dist: 'smashdot'
     rock_paper_scissors:
-      src:
-        - "node_modules/@greenhousegames/rock-paper-scissors-cordova/dist/www/**/*"
-      dest: "public/rock-paper-scissors/play"
+      npm: 'rock-paper-scissors-cordova'
+      dist: 'rock-paper-scissors'

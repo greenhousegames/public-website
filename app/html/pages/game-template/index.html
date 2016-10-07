@@ -1,17 +1,14 @@
 ---
-id: smashdot
-gameName: Smash Dot
+id: game-template
+gameName: Game Template
 description: Lorem ipsum.
-gameImage: http://placehold.it/400x200?text=smashdot
+gameImage: http://placehold.it/400x200?text=game-template
 ---
 <section class="game-home">
   {{> game}}
   <div class="row">
     <div class="columns small-12 medium-6">
       <div id="pie_chart_div"></div>
-    </div>
-    <div class="columns small-12 medium-6">
-      <div id="bar_chart_div"></div>
     </div>
   </div>
 </section>
@@ -24,17 +21,13 @@ jQuery(document).ready(function() {
   });
 
   function draw() {
-    var reporting = window.GreenhouseGames.reporting[('{{ id }}')]();
+    var reporting = window.GreenhouseGames.reporting['{{ id }}']();
 
     var gamesPlayedQuery = reporting.where().sum('played').select(1);
     var usersPlayedQuery = reporting.where('users').sum('played').count();
     var lastPlayedQuery = reporting.where().last('endedAt').select(1);
-    var survivalPlayed = reporting.where('modes', { mode: 'survival' }).sum('played').value();
-    var battlePlayed = reporting.where('modes', { mode: 'battle' }).sum('played').value();
-    var classicPlayed = reporting.where('modes', { mode: 'classic' }).sum('played').value();
-    var survivalMax = reporting.where('modes', { mode: 'survival' }).max('survival-score').value();
-    var battleMax = reporting.where('modes', { mode: 'battle' }).max('battle-score').value();
-    var classicMax = reporting.where('modes', { mode: 'classic' }).max('classic-score').value();
+    var aClickedQuery = reporting.where().sum('aclicked').value();
+    var bClickedQuery = reporting.where().sum('bclicked').value();
 
     gamesPlayedQuery.then(function(values) {
       jQuery('#game_played_count').text(values[0] || 0);
@@ -54,46 +47,23 @@ jQuery(document).ready(function() {
       }
     }).catch(function(err) { console.log(err); });
 
-    rsvp.all([survivalPlayed, classicPlayed, battlePlayed]).then(function(values) {
+    rsvp.all([aClickedQuery, bClickedQuery]).then(function(values) {
       // Create the data table.
       var data = new google.visualization.arrayToDataTable([
-        ['Mode', 'Times Played'],
-        ['Survival', values[0]],
-        ['Classic', values[1]],
-        ['Battle', values[2]]
+        ['Button', 'Times Clicked'],
+        ['A', values[0]],
+        ['B', values[1]]
       ]);
 
       // Set chart options
       var options = {
-         title:'Games Played',
+         title:'Buttons Clicked',
          width: 600,
-         height: 400,
-         pieHole: 0.4
+         height: 400
       };
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
-      chart.draw(data, options);
-    });
-
-    rsvp.all([survivalMax, classicMax, battleMax]).then(function(values) {
-      // Create the data table.
-      var data = new google.visualization.arrayToDataTable([
-        ['Mode', 'Max Score'],
-        ['Survival', values[0]],
-        ['Classic', values[1]],
-        ['Battle', values[2]]
-      ]);
-
-      // Set chart options
-      var options = {
-        title:'Max Scores',
-        width: 600,
-        height: 400
-      };
-
-      // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.ColumnChart(document.getElementById('bar_chart_div'));
       chart.draw(data, options);
     });
   }

@@ -1,4 +1,5 @@
-import FirebaseReporting from 'firebase-reporting';
+import GameTemplateReporting from '@greenhousegames/game-template/dist/reporting';
+import SmashDotReporting from '@greenhousegames/smash-dot/dist/reporting';
 import firebase from 'firebase';
 import rsvp from 'rsvp';
 import $ from 'jquery';
@@ -24,7 +25,7 @@ window.GreenhouseGames = {
     });
     return promise;
   },
-  requireAuth() {
+  requireAuth: () => {
     const promise = new rsvp.Promise((resolve, reject) => {
       window.GreenhouseGames.waitForAuth().then(() => {
         if (!firebaseInst.auth().currentUser) {
@@ -36,26 +37,11 @@ window.GreenhouseGames = {
     });
     return promise;
   },
-  reporting: (game) => {
-    const reporting = new FirebaseReporting({
-      firebase: firebaseInst.database().ref('reporting').child(game)
-    });
-
-    reporting.addFilter('modes', ['mode']);
-    reporting.addFilter('users', ['uid']);
-    reporting.addFilter('users-modes', ['mode', 'uid']);
-
-    reporting.addMetric('endedAt', ['first', 'last']);
-    reporting.addMetric('played', ['sum']);
-    reporting.addMetric('classic-score', ['max']);
-    reporting.addMetric('battle-score', ['max']);
-    reporting.addMetric('survival-duration', ['min']);
-    reporting.addMetric('win', ['sum']);
-    reporting.addMetric('loss', ['sum']);
-    reporting.addMetric('tie', ['sum']);
-
-    return reporting;
+  reporting: {
+    'game-template': () => new GameTemplateReporting(firebaseInst),
+    'smashdot': () => new SmashDotReporting(firebaseInst)
   }
 };
 
+window.GreenhouseGames.requireAuth();
 $(document).foundation();

@@ -1,119 +1,25 @@
-<section class="game-home">
-  <div class="row">
-    <div class="columns text-center">
-      <img src="{{ gameImage }}">
-    </div>
+<div class="row">
+  <div class="columns text-center">
+    <img src="{{ gameImage }}">
   </div>
-  <div class="row">
-    <div class="columns text-center">
-      <h1>{{ gameName }}</h1>
-    </div>
-    <div class="columns text-center">
-      <a href="play" class="button play-game-button">
-        PLAY
-      </a>
-    </div>
-    <div class="columns">
-      <h4>Description</h4>
-      <p>{{ description }}</p>
-      <h4>Stats</h4>
-      <ul class="no-bullet">
-        <li>Games Played: <span id="game_played_count"></span></li>
-        <li>Users Played: <span id="user_played_count"></span></li>
-        <li>Last Played: <span id="last_played_count"></span></li>
-      </ul>
-    </div>
+</div>
+<div class="row">
+  <div class="columns text-center">
+    <h1>{{ gameName }}</h1>
   </div>
-  <div class="row">
-    <div class="columns small-12 medium-6">
-      <div id="pie_chart_div"></div>
-    </div>
-    <div class="columns small-12 medium-6">
-      <div id="bar_chart_div"></div>
-    </div>
+  <div class="columns text-center">
+    <a href="play" class="button play-game-button">
+      PLAY
+    </a>
   </div>
-</section>
-<script type="text/javascript">
-jQuery(document).ready(function() {
-  // Load the Visualization API and the corechart package.
-  google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(function() {
-    window.GreenhouseGames.requireAuth().then(draw).catch(function(err) { console.log(err); });
-  });
-
-  function draw() {
-    var reporting = window.GreenhouseGames.reporting('{{ id }}');
-
-    var gamesPlayedQuery = reporting.where().sum('played').select(1);
-    var usersPlayedQuery = reporting.where('users').sum('played').count();
-    var lastPlayedQuery = reporting.where().last('endedAt').select(1);
-    var survivalPlayed = reporting.where('modes', { mode: 'survival' }).sum('played').value();
-    var battlePlayed = reporting.where('modes', { mode: 'battle' }).sum('played').value();
-    var classicPlayed = reporting.where('modes', { mode: 'classic' }).sum('played').value();
-    var survivalMax = reporting.where('modes', { mode: 'survival' }).max('survival-score').value();
-    var battleMax = reporting.where('modes', { mode: 'battle' }).max('battle-score').value();
-    var classicMax = reporting.where('modes', { mode: 'classic' }).max('classic-score').value();
-
-    gamesPlayedQuery.then(function(values) {
-      jQuery('#game_played_count').text(values[0] || 0);
-    }).catch(function(err) { console.log(err); });
-
-    usersPlayedQuery.then(function(total) {
-      jQuery('#user_played_count').text(total);
-    }).catch(function(err) { console.log(err); });
-
-    lastPlayedQuery.then(function(values) {
-      if (!values) {
-        jQuery('#last_played_count').text('never');
-      } else {
-        var date = new Date();
-        date.setTime(values[0]);
-        jQuery('#last_played_count').text(date.toLocaleString());
-      }
-    }).catch(function(err) { console.log(err); });
-
-    rsvp.all([survivalPlayed, classicPlayed, battlePlayed]).then(function(values) {
-      // Create the data table.
-      var data = new google.visualization.arrayToDataTable([
-        ['Mode', 'Times Played'],
-        ['Survival', values[0]],
-        ['Classic', values[1]],
-        ['Battle', values[2]]
-      ]);
-
-      // Set chart options
-      var options = {
-         title:'Games Played',
-         width: 600,
-         height: 400,
-         pieHole: 0.4
-      };
-
-      // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
-      chart.draw(data, options);
-    });
-
-    rsvp.all([survivalMax, classicMax, battleMax]).then(function(values) {
-      // Create the data table.
-      var data = new google.visualization.arrayToDataTable([
-        ['Mode', 'Max Score'],
-        ['Survival', values[0]],
-        ['Classic', values[1]],
-        ['Battle', values[2]]
-      ]);
-
-      // Set chart options
-      var options = {
-        title:'Max Scores',
-        width: 600,
-        height: 400
-      };
-
-      // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.ColumnChart(document.getElementById('bar_chart_div'));
-      chart.draw(data, options);
-    });
-  }
-});
-</script>
+  <div class="columns">
+    <h4>Description</h4>
+    <p>{{ description }}</p>
+    <h4>Stats</h4>
+    <ul class="no-bullet">
+      <li>Games Played: <span id="game_played_count"></span></li>
+      <li>Users Played: <span id="user_played_count"></span></li>
+      <li>Last Played: <span id="last_played_count"></span></li>
+    </ul>
+  </div>
+</div>

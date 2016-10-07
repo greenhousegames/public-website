@@ -16,12 +16,14 @@ function loadConfig() {
 function initGames() {
   var copies = [];
   for (var game in PATHS.games) {
-    copies.push(createGameTask(PATHS.games[game].src, PATHS.games[game].dest));
+    copies.push(createGameTask(game));
   }
   return copies;
 }
 
-function createGameTask(src, dest) {
+function createGameTask(game) {
+  var src = 'node_modules/@greenhousegames/' + PATHS.games[game].npm + '/dist/www/**/*';
+  var dest = PATHS.dist + '/' + PATHS.games[game].dist + '/play';
   return function() {
     return gulp.src(src)
       .pipe(gulp.dest(dest));
@@ -36,17 +38,6 @@ gulp.task('default',
 // This happens every time a build starts
 function clean(done) {
   rimraf(PATHS.dist, done);
-}
-
-function copyGames() {
-  var copies = [];
-  for (var game in PATHS.games) {
-    copies.push(function() {
-      return gulp.src(PATHS.games[game].src)
-        .pipe(gulp.dest(PATHS.games[game].dest));
-    });
-  }
-  return gulp.parallel(copies);
 }
 
 // Copy page templates into finished HTML files

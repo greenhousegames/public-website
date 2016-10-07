@@ -14,6 +14,12 @@
     "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
+    "@greenhousegames/game-template": "~0.0.1",
+    "@greenhousegames/game-template-cordova": "~0.0.1",
+    "@greenhousegames/rock-paper-scissors": "~0.0.1",
+    "@greenhousegames/rock-paper-scissors-cordova": "~0.0.1",
+    "@greenhousegames/smash-dot": "~0.0.1",
+    "@greenhousegames/smash-dot-cordova": "~0.0.1",
     "firebase": "^3.4.1",
     "firebase-reporting": "~0.0.1",
     "foundation-sites": "~6.2.3",
@@ -23,8 +29,6 @@
     "what-input": "^2.0.0"
   },
   "devDependencies": {
-    "@greenhousegames/rock-paper-scissors-cordova": "~0.0.1",
-    "@greenhousegames/smash-dot-cordova": "~0.0.1",
     "autoprefixer": "^6.4.1",
     "babel-brunch": "^6.0.6",
     "babel-preset-es2015": "^6.3.13",
