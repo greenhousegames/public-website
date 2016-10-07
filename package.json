@@ -9,7 +9,8 @@
     "test-only": "karma start",
     "test-debug": "karma start --single-run=false --debug",
     "production": "gulp && brunch build --production",
-    "version": "npm run production && git add -A public",
+    "preversion": "(rm -r dist || true) && mkdir dist",
+    "version": "npm run production && cp -R public dist && git add -A dist",
     "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
