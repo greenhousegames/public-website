@@ -3,6 +3,4 @@ node_modules
 npm-debug.log
 bower_components
 .sass-cache
-app/config/config-routes.js
-app/assets/games
-public
+src/assets/js

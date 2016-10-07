@@ -1,0 +1,15 @@
+@charset 'utf-8';
+
+@import '_settings.scss';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-everything;
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+@import '_variables.scss';
+@import 'components/_main.scss';
+@import 'components/_gamehome.scss';
+@import 'components/_header.scss';
+@import 'components/_footer.scss';
