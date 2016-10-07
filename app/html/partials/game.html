@@ -25,7 +25,12 @@
     </div>
   </div>
   <div class="row">
-    <div id="chart_div"></div>
+    <div class="columns small-12 medium-6">
+      <div id="pie_chart_div"></div>
+    </div>
+    <div class="columns small-12 medium-6">
+      <div id="bar_chart_div"></div>
+    </div>
   </div>
 </section>
 <script type="text/javascript">
@@ -45,6 +50,9 @@ jQuery(document).ready(function() {
     var survivalPlayed = reporting.where('modes', { mode: 'survival' }).sum('played').value();
     var battlePlayed = reporting.where('modes', { mode: 'battle' }).sum('played').value();
     var classicPlayed = reporting.where('modes', { mode: 'classic' }).sum('played').value();
+    var survivalMax = reporting.where('modes', { mode: 'survival' }).max('survival-score').value();
+    var battleMax = reporting.where('modes', { mode: 'battle' }).max('battle-score').value();
+    var classicMax = reporting.where('modes', { mode: 'classic' }).max('classic-score').value();
 
     gamesPlayedQuery.then(function(values) {
       jQuery('#game_played_count').text(values[0] || 0);
@@ -66,22 +74,44 @@ jQuery(document).ready(function() {
 
     rsvp.all([survivalPlayed, classicPlayed, battlePlayed]).then(function(values) {
       // Create the data table.
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Mode');
-      data.addColumn('number', 'Times Played');
-      data.addRows([
+      var data = new google.visualization.arrayToDataTable([
+        ['Mode', 'Times Played'],
         ['Survival', values[0]],
         ['Classic', values[1]],
         ['Battle', values[2]]
       ]);
 
       // Set chart options
-      var options = {'title':'Modes Played',
-                     'width':400,
-                     'height':300};
+      var options = {
+         title:'Games Played',
+         width: 600,
+         height: 400,
+         pieHole: 0.4
+      };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+      chart.draw(data, options);
+    });
+
+    rsvp.all([survivalMax, classicMax, battleMax]).then(function(values) {
+      // Create the data table.
+      var data = new google.visualization.arrayToDataTable([
+        ['Mode', 'Max Score'],
+        ['Survival', values[0]],
+        ['Classic', values[1]],
+        ['Battle', values[2]]
+      ]);
+
+      // Set chart options
+      var options = {
+        title:'Max Scores',
+        width: 600,
+        height: 400
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('bar_chart_div'));
       chart.draw(data, options);
     });
   }
