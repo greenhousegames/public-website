@@ -1,6 +1,7 @@
 import FirebaseReporting from 'firebase-reporting';
 import firebase from 'firebase';
 import rsvp from 'rsvp';
+import $ from 'jquery';
 
 // Initialize Firebase
 const firebaseInst = firebase.initializeApp({

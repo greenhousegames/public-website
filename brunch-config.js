@@ -4,6 +4,17 @@ module.exports = {
     ignored:  ['test/**/*.js','app/scss/components/*.scss']
   },
 
+  npm: {
+    globals: {
+      "jQuery": "jquery",
+      "$": "jquery"
+    },
+    static: [
+      'node_modules/what-input/what-input.js',
+      'node_modules/foundation-sites/dist/foundation.js'
+    ]
+  },
+
   files: {
     javascripts: {
       joinTo: {
@@ -11,9 +22,8 @@ module.exports = {
         'assets/js/app.js': /(^app)/
       },
       order: {
-        before: [
-          'node_modules/jquery/dist/jquery.js',
-          'node_modules/what-input/dist/what-input.js',
+        after: [
+          'node_modules/what-input/what-input.js',
           'node_modules/foundation-sites/dist/foundation.js'
         ]
       }
