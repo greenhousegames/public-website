@@ -12,9 +12,9 @@ module.exports = {
       },
       order: {
         before: [
-          'bower_components/jquery/dist/jquery.js',
-          'bower_components/what-input/what-input.js',
-          'bower_components/foundation-sites/dist/foundation.js'
+          'node_modules/jquery/dist/jquery.js',
+          'node_modules/what-input/dist/what-input.js',
+          'node_modules/foundation-sites/dist/foundation.js'
         ]
       }
     },
@@ -30,8 +30,8 @@ module.exports = {
     sass: {
       options: {
         includePaths: [
-          'bower_components/foundation-sites/scss',
-          'bower_components/motion-ui/src'
+          'node_modules/foundation-sites/scss',
+          'node_modules/motion-ui/src'
         ]
       }
     },

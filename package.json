@@ -14,8 +14,12 @@
   },
   "dependencies": {
     "firebase": "^3.4.1",
-    "firebase-reporting": "0.0.9",
-    "jquery": "^3.1.1"
+    "firebase-reporting": "~0.0.1",
+    "foundation-sites": "~6.2.3",
+    "jquery": "^3.1.1",
+    "motion-ui": "~1.2.2",
+    "rsvp": "^3.3.3",
+    "what-input": "^4.0.1"
   },
   "devDependencies": {
     "@greenhousegames/rock-paper-scissors-cordova": "~0.0.1",
