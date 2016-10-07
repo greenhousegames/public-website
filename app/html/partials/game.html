@@ -18,9 +18,9 @@
       <p>{{ description }}</p>
       <h4>Stats</h4>
       <ul class="no-bullet">
-        <li>Games Played: </li>
-        <li>Users Played: </li>
-        <li>Last Played: </li>
+        <li>Games Played: <span id="game_played_count"></span></li>
+        <li>Users Played: <span id="user_played_count"></span></li>
+        <li>Last Played: <span id="last_played_count"></span></li>
       </ul>
     </div>
   </div>
@@ -33,34 +33,57 @@ jQuery(document).ready(function() {
   // Load the Visualization API and the corechart package.
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(function() {
-    window.GreenhouseGames.requireAuth().then(draw).catch((err) => console.log(err));
+    window.GreenhouseGames.requireAuth().then(draw).catch(function(err) { console.log(err); });
   });
 
   function draw() {
     var reporting = window.GreenhouseGames.reporting('{{ id }}');
 
-    reporting.where().sum('played').count().then((total) => {
+    var gamesPlayedQuery = reporting.where().sum('played').select(1);
+    var usersPlayedQuery = reporting.where('users').sum('played').count();
+    var lastPlayedQuery = reporting.where().last('endedAt').select(1);
+    var survivalPlayed = reporting.where('modes', { mode: 'survival' }).sum('played').value();
+    var battlePlayed = reporting.where('modes', { mode: 'battle' }).sum('played').value();
+    var classicPlayed = reporting.where('modes', { mode: 'classic' }).sum('played').value();
+
+    gamesPlayedQuery.then(function(values) {
+      jQuery('#game_played_count').text(values[0] || 0);
+    }).catch(function(err) { console.log(err); });
+
+    usersPlayedQuery.then(function(total) {
+      jQuery('#user_played_count').text(total);
+    }).catch(function(err) { console.log(err); });
+
+    lastPlayedQuery.then(function(values) {
+      if (!values) {
+        jQuery('#last_played_count').text('never');
+      } else {
+        var date = new Date();
+        date.setTime(values[0]);
+        jQuery('#last_played_count').text(date.toLocaleString());
+      }
+    }).catch(function(err) { console.log(err); });
+
+    rsvp.all([survivalPlayed, classicPlayed, battlePlayed]).then(function(values) {
       // Create the data table.
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Topping');
-      data.addColumn('number', 'Slices');
+      data.addColumn('string', 'Mode');
+      data.addColumn('number', 'Times Played');
       data.addRows([
-        ['Mushrooms', total],
-        ['Onions', 1],
-        ['Olives', 1],
-        ['Zucchini', 3],
-        ['Pepperoni', 2]
+        ['Survival', values[0]],
+        ['Classic', values[1]],
+        ['Battle', values[2]]
       ]);
 
       // Set chart options
-      var options = {'title':'How Much Pizza I Ate Last Night',
+      var options = {'title':'Modes Played',
                      'width':400,
                      'height':300};
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
       chart.draw(data, options);
-    }).catch((err) => console.log(err));
+    });
   }
 });
 </script>

@@ -37,9 +37,24 @@ window.GreenhouseGames = {
     return promise;
   },
   reporting: (game) => {
-    return new FirebaseReporting({
+    const reporting = new FirebaseReporting({
       firebase: firebaseInst.database().ref('reporting').child(game)
     });
+
+    reporting.addFilter('modes', ['mode']);
+    reporting.addFilter('users', ['uid']);
+    reporting.addFilter('users-modes', ['mode', 'uid']);
+
+    reporting.addMetric('endedAt', ['first', 'last']);
+    reporting.addMetric('played', ['sum']);
+    reporting.addMetric('classic-score', ['max']);
+    reporting.addMetric('battle-score', ['max']);
+    reporting.addMetric('survival-duration', ['min']);
+    reporting.addMetric('win', ['sum']);
+    reporting.addMetric('loss', ['sum']);
+    reporting.addMetric('tie', ['sum']);
+
+    return reporting;
   }
 };
 
