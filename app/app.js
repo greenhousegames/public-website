@@ -4,8 +4,15 @@ import './reporting';
 $(document).foundation();
 
 if (window.GreenhouseGames.reporting) {
-  $(document).ready(() => {
-    var Reporting = require('reporting/' + window.GreenhouseGames.reporting + '.js');
-    new Reporting();
+  var Reporting = require('reporting/' + window.GreenhouseGames.reporting + '.js');
+  var report = new Reporting();
+  report.loadCharts(() => {
+    $(document).ready(() => {
+      report.draw();
+
+      $(window).resize(() => {
+        report.draw();
+      });
+    });
   });
 }

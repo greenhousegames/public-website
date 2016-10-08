@@ -5,15 +5,21 @@ import rsvp from 'rsvp';
 class Reporting extends FirebaseClient {
   constructor() {
     super();
+    this.requireAuth();
+  }
 
-    // Load the Visualization API and the corechart package.
+  loadCharts(done) {
     google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(() => {
-      this.requireAuth().then(() => this.draw()).catch((err) => console.log(err));
-    });
+    google.charts.setOnLoadCallback(done);
   }
 
   draw() {
+    this.requireAuth().then(() => {
+      this._draw();
+    });
+  }
+
+  _draw() {
     var reporting = new GameReporting(this.firebase);
 
     var gamesPlayedQuery = reporting.where().sum('played').select(1);
@@ -45,7 +51,7 @@ class Reporting extends FirebaseClient {
     }).catch(function(err) { console.log(err); });
 
     rsvp.all([survivalPlayed, classicPlayed, battlePlayed]).then(function(values) {
-      // Create the data table.
+      var element = jQuery('#line_chart_div4');
       var data = new google.visualization.arrayToDataTable([
         ['Mode', 'Times Played'],
         ['Survival', values[0]],
@@ -56,18 +62,19 @@ class Reporting extends FirebaseClient {
       // Set chart options
       var options = {
          title:'Games Played',
-         width: 600,
+         width: element.width(),
          height: 400,
-         pieHole: 0.4
+         pieHole: 0.4,
+         legend: { position: 'bottom' }
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+      var chart = new google.visualization.PieChart(element[0]);
       chart.draw(data, options);
     });
 
     rsvp.all([survivalMax, classicMax, battleMax]).then(function(values) {
-      // Create the data table.
+      var element = jQuery('#line_chart_div4');
       var data = new google.visualization.arrayToDataTable([
         ['Mode', 'Max Score'],
         ['Survival', values[0]],
@@ -78,12 +85,13 @@ class Reporting extends FirebaseClient {
       // Set chart options
       var options = {
         title:'Max Scores',
-        width: 600,
-        height: 400
+        width: element.width(),
+        height: 400,
+        legend: { position: 'bottom' }
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.ColumnChart(document.getElementById('bar_chart_div'));
+      var chart = new google.visualization.ColumnChart(element[0]);
       chart.draw(data, options);
     });
   }

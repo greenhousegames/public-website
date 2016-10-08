@@ -5,15 +5,21 @@ import rsvp from 'rsvp';
 class Reporting extends FirebaseClient {
   constructor() {
     super();
+    this.requireAuth();
+  }
 
-    // Load the Visualization API and the corechart package.
+  loadCharts(done) {
     google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(() => {
-      this.requireAuth().then(() => this.draw()).catch((err) => console.log(err));
-    });
+    google.charts.setOnLoadCallback(done);
   }
 
   draw() {
+    this.requireAuth().then(() => {
+      this._draw();
+    });
+  }
+
+  _draw() {
     var reporting = new GameReporting(this.firebase);
 
     var gamesPlayedQuery = reporting.where().sum('played').select(1);
@@ -69,7 +75,7 @@ class Reporting extends FirebaseClient {
     }).catch(function(err) { console.log(err); });
 
     rsvp.all([aClickedQuery, bClickedQuery]).then(function(values) {
-      // Create the data table.
+      var element = jQuery('#pie_chart_div');
       var data = new google.visualization.arrayToDataTable([
         ['Button', 'Times Clicked'],
         ['A', values[0]],
@@ -79,17 +85,18 @@ class Reporting extends FirebaseClient {
       // Set chart options
       var options = {
          title:'Buttons Clicked',
-         width: 600,
-         height: 400
+         width: element.width(),
+         height: 400,
+         legend: { position: 'bottom' }
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+      var chart = new google.visualization.PieChart(element[0]);
       chart.draw(data, options);
     });
 
     rsvp.all([aClickedThisHourQuery, bClickedThisHourQuery]).then(function(values) {
-      // Create the data table.
+      var element = jQuery('#line_chart_div');
       var chartdata = [['Time', 'A', 'B']];
       for (var i = 0; i < values[0].length; i++) {
         chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
@@ -99,18 +106,18 @@ class Reporting extends FirebaseClient {
       // Set chart options
       var options = {
          title:'Buttons Clicked this Hour',
-         width: 600,
+         width: element.width(),
          height: 400,
          legend: { position: 'bottom' }
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+      var chart = new google.visualization.LineChart(element[0]);
       chart.draw(data, options);
     });
 
     rsvp.all([aClickedTodayQuery, bClickedTodayQuery]).then(function(values) {
-      // Create the data table.
+      var element = jQuery('#line_chart_div2');
       var chartdata = [['Time', 'A', 'B']];
       for (var i = 0; i < values[0].length; i++) {
         chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
@@ -120,18 +127,18 @@ class Reporting extends FirebaseClient {
       // Set chart options
       var options = {
          title:'Buttons Clicked Today',
-         width: 600,
+         width: element.width(),
          height: 400,
          legend: { position: 'bottom' }
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div2'));
+      var chart = new google.visualization.LineChart(element[0]);
       chart.draw(data, options);
     });
 
     rsvp.all([aClickedMonthQuery, bClickedMonthQuery]).then(function(values) {
-      // Create the data table.
+    var element = jQuery('#line_chart_div3');
       var chartdata = [['Time', 'A', 'B']];
       for (var i = 0; i < values[0].length; i++) {
         chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
@@ -141,18 +148,18 @@ class Reporting extends FirebaseClient {
       // Set chart options
       var options = {
          title:'Buttons Clicked this Month',
-         width: 600,
+         width: element.width(),
          height: 400,
          legend: { position: 'bottom' }
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div3'));
+      var chart = new google.visualization.LineChart(element[0]);
       chart.draw(data, options);
     });
 
     rsvp.all([aClickedYearQuery, bClickedYearQuery]).then(function(values) {
-      // Create the data table.
+      var element = jQuery('#line_chart_div4');
       var chartdata = [['Time', 'A', 'B']];
       for (var i = 0; i < values[0].length; i++) {
         chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
@@ -162,13 +169,13 @@ class Reporting extends FirebaseClient {
       // Set chart options
       var options = {
          title:'Buttons Clicked this Year',
-         width: 600,
+         width: element.width(),
          height: 400,
          legend: { position: 'bottom' }
       };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div4'));
+      var chart = new google.visualization.LineChart(element[0]);
       chart.draw(data, options);
     });
   }
