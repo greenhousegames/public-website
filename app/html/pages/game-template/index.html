@@ -7,8 +7,20 @@ gameImage: http://placehold.it/400x200?text=game-template
 <section class="game-home">
   {{> game}}
   <div class="row">
-    <div class="columns small-12 medium-6">
+    <div class="columns small-12">
       <div id="pie_chart_div"></div>
+    </div>
+    <div class="columns small-12 medium-6">
+      <div id="line_chart_div"></div>
+    </div>
+    <div class="columns small-12 medium-6">
+      <div id="line_chart_div2"></div>
+    </div>
+    <div class="columns small-12 medium-6">
+      <div id="line_chart_div3"></div>
+    </div>
+    <div class="columns small-12 medium-6">
+      <div id="line_chart_div4"></div>
     </div>
   </div>
 </section>
@@ -28,6 +40,34 @@ jQuery(document).ready(function() {
     var lastPlayedQuery = reporting.where().last('endedAt').select(1);
     var aClickedQuery = reporting.where().sum('aclicked').value();
     var bClickedQuery = reporting.where().sum('bclicked').value();
+
+    var queryStartTime = new Date();
+    queryStartTime.setMinutes(0);
+    queryStartTime.setSeconds(0);
+    queryStartTime.setMilliseconds(0);
+    var queryEndTime = new Date();
+    queryEndTime.setTime(queryStartTime.getTime());
+    queryEndTime.setHours(queryStartTime.getHours() + 1);
+    var aClickedThisHourQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'minute').valuesAsArray();
+    var bClickedThisHourQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'minute').valuesAsArray();
+
+    queryStartTime.setHours(0);
+    queryEndTime.setTime(queryStartTime.getTime());
+    queryEndTime.setDate(queryStartTime.getDate() + 1);
+    var aClickedTodayQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'hour').valuesAsArray();
+    var bClickedTodayQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'hour').valuesAsArray();
+
+    queryStartTime.setDate(1);
+    queryEndTime.setTime(queryStartTime.getTime());
+    queryEndTime.setMonth(queryStartTime.getMonth() + 1);
+    var aClickedMonthQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'day').valuesAsArray();
+    var bClickedMonthQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'day').valuesAsArray();
+
+    queryStartTime.setMonth(1);
+    queryEndTime.setTime(queryStartTime.getTime());
+    queryEndTime.setFullYear(queryStartTime.getFullYear() + 1);
+    var aClickedYearQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'week').valuesAsArray();
+    var bClickedYearQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'week').valuesAsArray();
 
     gamesPlayedQuery.then(function(values) {
       jQuery('#game_played_count').text(values[0] || 0);
@@ -64,6 +104,90 @@ jQuery(document).ready(function() {
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+      chart.draw(data, options);
+    });
+
+    rsvp.all([aClickedThisHourQuery, bClickedThisHourQuery]).then(function(values) {
+      // Create the data table.
+      var chartdata = [['Time', 'A', 'B']];
+      for (var i = 0; i < values[0].length; i++) {
+        chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
+      }
+      var data = new google.visualization.arrayToDataTable(chartdata);
+
+      // Set chart options
+      var options = {
+         title:'Buttons Clicked this Hour',
+         width: 600,
+         height: 400,
+         legend: { position: 'bottom' }
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+      chart.draw(data, options);
+    });
+
+    rsvp.all([aClickedTodayQuery, bClickedTodayQuery]).then(function(values) {
+      // Create the data table.
+      var chartdata = [['Time', 'A', 'B']];
+      for (var i = 0; i < values[0].length; i++) {
+        chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
+      }
+      var data = new google.visualization.arrayToDataTable(chartdata);
+
+      // Set chart options
+      var options = {
+         title:'Buttons Clicked Today',
+         width: 600,
+         height: 400,
+         legend: { position: 'bottom' }
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div2'));
+      chart.draw(data, options);
+    });
+
+    rsvp.all([aClickedMonthQuery, bClickedMonthQuery]).then(function(values) {
+      // Create the data table.
+      var chartdata = [['Time', 'A', 'B']];
+      for (var i = 0; i < values[0].length; i++) {
+        chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
+      }
+      var data = new google.visualization.arrayToDataTable(chartdata);
+
+      // Set chart options
+      var options = {
+         title:'Buttons Clicked this Month',
+         width: 600,
+         height: 400,
+         legend: { position: 'bottom' }
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div3'));
+      chart.draw(data, options);
+    });
+
+    rsvp.all([aClickedYearQuery, bClickedYearQuery]).then(function(values) {
+      // Create the data table.
+      var chartdata = [['Time', 'A', 'B']];
+      for (var i = 0; i < values[0].length; i++) {
+        chartdata.push([new Date(values[0][i].timestamp), values[0][i].value, values[1][i].value]);
+      }
+      var data = new google.visualization.arrayToDataTable(chartdata);
+
+      // Set chart options
+      var options = {
+         title:'Buttons Clicked this Year',
+         width: 600,
+         height: 400,
+         legend: { position: 'bottom' }
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.LineChart(document.getElementById('line_chart_div4'));
       chart.draw(data, options);
     });
   }
