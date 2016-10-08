@@ -7,8 +7,7 @@ module.exports = {
   npm: {
     globals: {
       'jQuery': 'jquery',
-      '$': 'jquery',
-      'rsvp': 'rsvp'
+      '$': 'jquery'
     },
     static: [
       'node_modules/what-input/what-input.js',
