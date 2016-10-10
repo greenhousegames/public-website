@@ -1,4 +1,11 @@
 section.header {
+  a.root-user-header {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+  }
+
   div.title-bar, div.main-header {
     margin-bottom: $header-padding;
     background-color: $primary-color;

@@ -1,5 +1,6 @@
 <section class="header">
 {{#ifequal root ''}}
+  <a href="/account" class="root-user-header"><i class="fi-torso"></i><span id="user_header"></span></a>
   <div class="main-header">
     <div class="logo-container">
       <div class="logo">
@@ -11,6 +12,9 @@
   <div class="title-bar">
     <div class="title-bar-left">
       <a href="/"><</a>
+    </div>
+    <div class="title-bar-right">
+      <a href="/account"><i class="fi-torso"></i><span id="user_header"></span></a>
     </div>
   </div>
 {{/ifequal}}

@@ -2,15 +2,20 @@ import GameTemplateReporting from '@greenhousegames/game-template/dist/reporting
 import firebase from 'firebase';
 import rsvp from 'rsvp';
 
+let staticFirebase = null;
+
 class FirebaseClient {
   constructor() {
-    this.firebase = firebase.initializeApp({
-      apiKey: 'AIzaSyDPGXl6Bc8jf_IPlkcVJe6jNlrNz72zaCo',
-      authDomain: 'greenhouse-games.firebaseapp.com',
-      databaseURL: 'https://greenhouse-games.firebaseio.com',
-      storageBucket: 'greenhouse-games.appspot.com',
-      messagingSenderId: '832706408675'
-    });
+    if (!staticFirebase) {
+      staticFirebase = firebase.initializeApp({
+        apiKey: 'AIzaSyDPGXl6Bc8jf_IPlkcVJe6jNlrNz72zaCo',
+        authDomain: 'greenhouse-games.firebaseapp.com',
+        databaseURL: 'https://greenhouse-games.firebaseio.com',
+        storageBucket: 'greenhouse-games.appspot.com',
+        messagingSenderId: '832706408675'
+      });
+    }
+    this.firebase = staticFirebase;
   }
 
   currentUID() {
