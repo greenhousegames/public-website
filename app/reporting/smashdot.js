@@ -5,7 +5,7 @@ import rsvp from 'rsvp';
 class Reporting extends FirebaseClient {
   constructor() {
     super();
-    this.requireAuth();
+    this.reporting = new GameReporting(this.firebase.database().ref('games/smashdot/data'), this.firebase.database().ref('games/smashdot/reporting'));
   }
 
   loadCharts(done) {
@@ -16,21 +16,65 @@ class Reporting extends FirebaseClient {
   draw() {
     this.requireAuth().then(() => {
       this._draw();
+      this._drawClassicRankings();
+      this._drawSurvivalRankings();
     });
   }
 
-  _draw() {
-    var reporting = new GameReporting(this.firebase);
+  _drawClassicRankings() {
+    const prQuery = this.reporting.filter('users-modes', {
+      uid: this.currentUID(),
+      mode: 'classic'
+    }).max('classic-score').value();
 
-    var gamesPlayedQuery = reporting.where().sum('played').select(1);
-    var usersPlayedQuery = reporting.where('users').sum('played').count();
-    var lastPlayedQuery = reporting.where().last('endedAt').select(1);
-    var survivalPlayed = reporting.where('modes', { mode: 'survival' }).sum('played').value();
-    var battlePlayed = reporting.where('modes', { mode: 'battle' }).sum('played').value();
-    var classicPlayed = reporting.where('modes', { mode: 'classic' }).sum('played').value();
-    var survivalMax = reporting.where('modes', { mode: 'survival' }).max('survival-score').value();
-    var battleMax = reporting.where('modes', { mode: 'battle' }).max('battle-score').value();
-    var classicMax = reporting.where('modes', { mode: 'classic' }).max('classic-score').value();
+    prQuery.then((pr) => {
+      if (pr) {
+        const totalQuery = this.reporting.filter('users').max('classic-score').count();
+        const rankingQuery = this.reporting.filter('users', {
+          uid: this.currentUserUID()
+        }).max('classic-score').greater(pr).count();
+
+        rsvp.all([rankingQuery, totalQuery]).then((values) => {
+          jQuery('#classic_ranking').text('#' + values[0] + ' of ' + values[1]);
+        });
+      } else {
+        jQuery('#classic_ranking').text('N/A');
+      }
+    }).catch(function(err) { console.log(err); });
+  }
+
+  _drawSurvivalRankings() {
+    const prQuery = this.reporting.filter('users-modes', {
+      uid: this.currentUID(),
+      mode: 'survival'
+    }).max('survival-duration').value();
+
+    prQuery.then((pr) => {
+      if (pr) {
+        const totalQuery = this.reporting.filter('users').max('survival-duration').count();
+        const rankingQuery = this.reporting.filter('users', {
+          uid: this.game.greenhouse.auth.currentUserUID()
+        }).max('survival-duration').greater(pr).count();
+
+        rsvp.all([rankingQuery, totalQuery]).then((values) => {
+          jQuery('#survival_ranking').text('#' + values[0] + ' of ' + values[1]);
+        });
+      } else {
+        jQuery('#survival_ranking').text('N/A');
+      }
+    }).catch(function(err) { console.log(err); });
+  }
+
+  _draw() {
+    var gamesPlayedQuery = this.reporting.filter().sum('played').select(1);
+    var usersPlayedQuery = this.reporting.filter('users').sum('played').count();
+    var lastPlayedQuery = this.reporting.filter().last('endedAt').select(1);
+    var survivalPlayed = this.reporting.filter('modes', { mode: 'survival' }).sum('played').value();
+    var battlePlayed = this.reporting.filter('modes', { mode: 'battle' }).sum('played').value();
+    var classicPlayed = this.reporting.filter('modes', { mode: 'classic' }).sum('played').value();
+    var survivalMax = this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value();
+    var battleMax = this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value();
+    var classicMax = this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value();
 
     gamesPlayedQuery.then(function(values) {
       jQuery('#game_played_count').text(values[0] || 0);
@@ -41,7 +85,7 @@ class Reporting extends FirebaseClient {
     }).catch(function(err) { console.log(err); });
 
     lastPlayedQuery.then(function(values) {
-      if (!values) {
+      if (!values[0]) {
         jQuery('#last_played_count').text('never');
       } else {
         var date = new Date();

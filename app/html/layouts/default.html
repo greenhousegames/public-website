@@ -15,14 +15,21 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       window.GreenhouseGames = {
-        report: ''
+        report: null,
+        account: null
       };
     </script>
   </head>
   <body>
-    {{> header}}
-    {{> body}}
-    {{> footer}}
+    <section class="header">
+      {{> header}}
+    </section>
+    <section class="main">
+      {{> body}}
+    </section>
+    <section class="footer">
+      {{> footer}}
+    </section>
     <script onload="require('app.js')" src="{{root}}assets/js/app.js"></script>
   </body>
 </html>

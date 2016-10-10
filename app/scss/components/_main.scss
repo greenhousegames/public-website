@@ -1,3 +1,4 @@
+// force footer to bottom
 section.main {
   min-height: calc(100% - #{$header-height-small} - #{$header-padding} - #{$footer-height-small});
   @include breakpoint(medium) {
@@ -6,19 +7,28 @@ section.main {
   @include breakpoint(large) {
     min-height: calc(100% - #{$header-height-large} - #{$header-padding} - #{$footer-height-large});
   }
+}
+section.main.subpage {
+  min-height: calc(100% - #{$header-titlebar-height-small} - #{$header-padding} - #{$footer-height-small});
+  @include breakpoint(medium) {
+    min-height: calc(100% - #{$header-titlebar-height-medium} - #{$header-padding} - #{$footer-height-medium});
+  }
+  @include breakpoint(large) {
+    min-height: calc(100% - #{$header-titlebar-height-large} - #{$header-padding} - #{$footer-height-large});
+  }
+}
 
-  div.games-container {
-    div.game {
-      margin-bottom: 16px;
-      text-align: center;
+div.games-container {
+  div.game {
+    margin-bottom: 16px;
+    text-align: center;
 
-      @include grid-column(12);
-      @include breakpoint(medium) {
-        @include grid-column(6);
-      }
-      @include breakpoint(large) {
-        @include grid-column(4);
-      }
+    @include grid-column(12);
+    @include breakpoint(medium) {
+      @include grid-column(6);
+    }
+    @include breakpoint(large) {
+      @include grid-column(4);
     }
   }
 }

@@ -1,4 +1,4 @@
-div.footer {
+section.footer {
   background-color: $secondary-color;
   height: $footer-height-small;
   @include breakpoint(medium) {

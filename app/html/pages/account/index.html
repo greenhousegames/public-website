@@ -1,0 +1,57 @@
+<div id="user_logged_in" class="row text-center" style="display: none;">
+  <div class="column small-12">
+    <img class="profile-image" id="user_image"></img>
+  </div>
+  <div class="column small-12">
+    <h2 id="user_name"></h2>
+  </div>
+  <div class="column small-12">
+    <a class="button" id="logout_button">Logout</a>
+  </div>
+</div>
+<div id="user_logged_out" class="row text-center" style="display: none;">
+  <div class="row">
+    <div class="column small-12 text-center">
+      <h1>Login</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-12 medium-6 medium-offset-3">
+      <a class="button large expanded" id="facebookLogin_button">Facebook</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small- medium-6 medium-offset-3">
+      <a class="button large expanded" id="twitterLogin_button">Twitter</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small- medium-6 medium-offset-3">
+      <a class="button large expanded" id="googleLogin_button">Google</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small- medium-6 medium-offset-3">
+      <a class="button large expanded" id="githubLogin_button">Github</a>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+window.GreenhouseGames.account = {
+  sections: {
+    loggedIn: 'user_logged_in',
+    loggedOut: 'user_logged_out'
+  },
+  user: {
+    image: 'user_image',
+    name: 'user_name'
+  },
+  buttons: {
+    logout: 'logout_button',
+    twitter: 'twitterLogin_button',
+    facebook: 'facebookLogin_button',
+    google: 'googleLogin_button',
+    github: 'githubLogin_button'
+  }
+};
+</script>

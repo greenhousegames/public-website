@@ -5,7 +5,7 @@ import rsvp from 'rsvp';
 class Reporting extends FirebaseClient {
   constructor() {
     super();
-    this.requireAuth();
+    this.reporting = new GameReporting(this.firebase.database().ref('games/game-template/data'), this.firebase.database().ref('games/game-template/reporting'));
   }
 
   loadCharts(done) {
@@ -20,13 +20,11 @@ class Reporting extends FirebaseClient {
   }
 
   _draw() {
-    var reporting = new GameReporting(this.firebase);
-
-    var gamesPlayedQuery = reporting.where().sum('played').select(1);
-    var usersPlayedQuery = reporting.where('users').sum('played').count();
-    var lastPlayedQuery = reporting.where().last('endedAt').select(1);
-    var aClickedQuery = reporting.where().sum('aclicked').value();
-    var bClickedQuery = reporting.where().sum('bclicked').value();
+    var gamesPlayedQuery = this.reporting.filter().sum('played').select(1);
+    var usersPlayedQuery = this.reporting.filter('users').sum('played').count();
+    var lastPlayedQuery = this.reporting.filter().last('endedAt').select(1);
+    var aClickedQuery = this.reporting.filter().sum('aclicked').value();
+    var bClickedQuery = this.reporting.filter().sum('bclicked').value();
 
     var queryStartTime = new Date();
     queryStartTime.setMinutes(0);
@@ -35,26 +33,26 @@ class Reporting extends FirebaseClient {
     var queryEndTime = new Date();
     queryEndTime.setTime(queryStartTime.getTime());
     queryEndTime.setHours(queryStartTime.getHours() + 1);
-    var aClickedThisHourQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'minute').valuesAsArray();
-    var bClickedThisHourQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'minute').valuesAsArray();
+    var aClickedThisHourQuery = this.reporting.filter().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'minute').valuesAsArray();
+    var bClickedThisHourQuery = this.reporting.filter().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'minute').valuesAsArray();
 
     queryStartTime.setHours(0);
     queryEndTime.setTime(queryStartTime.getTime());
     queryEndTime.setDate(queryStartTime.getDate() + 1);
-    var aClickedTodayQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'hour').valuesAsArray();
-    var bClickedTodayQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'hour').valuesAsArray();
+    var aClickedTodayQuery = this.reporting.filter().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'hour').valuesAsArray();
+    var bClickedTodayQuery = this.reporting.filter().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'hour').valuesAsArray();
 
     queryStartTime.setDate(1);
     queryEndTime.setTime(queryStartTime.getTime());
     queryEndTime.setMonth(queryStartTime.getMonth() + 1);
-    var aClickedMonthQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'day').valuesAsArray();
-    var bClickedMonthQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'day').valuesAsArray();
+    var aClickedMonthQuery = this.reporting.filter().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'day').valuesAsArray();
+    var bClickedMonthQuery = this.reporting.filter().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'day').valuesAsArray();
 
     queryStartTime.setMonth(1);
     queryEndTime.setTime(queryStartTime.getTime());
     queryEndTime.setFullYear(queryStartTime.getFullYear() + 1);
-    var aClickedYearQuery = reporting.where().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'week').valuesAsArray();
-    var bClickedYearQuery = reporting.where().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'week').valuesAsArray();
+    var aClickedYearQuery = this.reporting.filter().sum('aclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'week').valuesAsArray();
+    var bClickedYearQuery = this.reporting.filter().sum('bclicked').during(queryStartTime.getTime(), queryEndTime.getTime(), 'week').valuesAsArray();
 
     gamesPlayedQuery.then(function(values) {
       jQuery('#game_played_count').text(values[0] || 0);

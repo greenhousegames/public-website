@@ -13,6 +13,37 @@ class FirebaseClient {
     });
   }
 
+  currentUID() {
+    return this.firebase.auth().currentUser ? this.firebase.auth().currentUser.uid : null;
+  }
+
+  signOut() {
+    return this.firebase.auth().signOut();
+  }
+
+  signInWithPopup(name) {
+    let provider;
+    switch (name) {
+      case 'google':
+        provider = new firebase.auth.GoogleAuthProvider();
+        break;
+      case 'facebook':
+        provider = new firebase.auth.FacebookAuthProvider();
+        break;
+      case 'twitter':
+        provider = new firebase.auth.TwitterAuthProvider();
+        break;
+      case 'github':
+        provider = new firebase.auth.GithubAuthProvider();
+        break;
+      default:
+        console.log('Provider "' + name + '" is not support');
+        return;
+    }
+
+    return this.firebase.auth().signInWithPopup(provider);
+  }
+
   waitForAuth() {
     const auth = this.firebase.auth();
     const promise = new rsvp.Promise((resolve) => {
