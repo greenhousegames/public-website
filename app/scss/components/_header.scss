@@ -5,6 +5,20 @@ section.header {
     a, a:hover {
       color: white;
     }
+
+    div.top-bar-left {
+      li {
+        height: 40px;
+        width: 40px;
+        padding: 4px;
+
+        a.logo-back-button {
+          background: url(/assets/img/logo-circle.png);
+          height: 32px;
+          width: 32px;
+        }
+      }
+    }
   }
 
   a.root-user-header {
@@ -52,6 +66,7 @@ section.header {
       @include breakpoint(medium) {
         height: $header-logo-size-medium;
         width: $header-logo-size-medium;
+        box-shadow: 0px 0px 12px 0px black;
 
         div.logo {
           background-image: url(/icon-75x75.png);
@@ -63,6 +78,7 @@ section.header {
       @include breakpoint(large) {
         height: $header-logo-size-large;
         width: $header-logo-size-large;
+        box-shadow: 0px 0px 16px 0px black;
 
         div.logo {
           background-image: url(/icon-100x100.png);
