@@ -52,18 +52,18 @@ class Reporting extends FirebaseClient {
   }
 
   _drawSurvivalRankings() {
-    this.reporting.filter('users').max('survival-duration').count().then((value) => {
+    this.reporting.filter('users').min('survival-duration').count().then((value) => {
       jQuery('#survival_ranking2').text('of ' + value);
     }).catch(function(err) { console.log(err); });
 
     this.reporting.filter('users-modes', {
       uid: this.currentUID(),
       mode: 'survival'
-    }).max('survival-duration').value().then((pr) => {
+    }).min('survival-duration').value().then((pr) => {
       if (pr) {
         this.reporting.filter('users', {
           uid: this.currentUID()
-        }).max('survival-duration').greater(pr).count().then((value) => {
+        }).min('survival-duration').greater(pr).count().then((value) => {
           jQuery('#survival_ranking1').text('#' + value);
         });
       } else {
@@ -87,11 +87,12 @@ class Reporting extends FirebaseClient {
   _drawLastPlayed() {
     this.reporting.filter().last('endedAt').select(1).then(function(values) {
       if (!values[0]) {
-        jQuery('#last_played_count').text('never');
+        jQuery('#last_played_timestamp').text('never');
       } else {
         var date = new Date();
         date.setTime(values[0]);
-        jQuery('#last_played_count').text(date.toLocaleString());
+        jQuery('#last_played_timestamp').attr('datetime', date.toISOString());
+        jQuery('#last_played_timestamp').timeago();
       }
     }).catch(function(err) { console.log(err); });
   }

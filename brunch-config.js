@@ -11,6 +11,7 @@ module.exports = {
     },
     static: [
       'node_modules/what-input/what-input.js',
+      'node_modules/timeago/jquery.timeago.js',
       'node_modules/foundation-sites/dist/foundation.js'
     ]
   },
@@ -24,6 +25,7 @@ module.exports = {
       order: {
         after: [
           'node_modules/what-input/what-input.js',
+          'node_modules/timeago/jquery.timeago.js',
           'node_modules/foundation-sites/dist/foundation.js'
         ]
       }
