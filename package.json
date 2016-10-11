@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "scripts": {
     "start": "gulp && brunch watch --server",
     "build": "gulp && brunch build",
