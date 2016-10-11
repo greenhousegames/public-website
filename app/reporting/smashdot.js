@@ -113,7 +113,7 @@ class Reporting extends FirebaseClient {
 
       // Set chart options
       var options = {
-         title:'Games Played',
+         title:'Modes Played',
          width: element.width(),
          height: 400,
          pieHole: 0.4,
