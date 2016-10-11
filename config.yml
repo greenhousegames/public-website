@@ -4,12 +4,6 @@ PATHS:
   dist: "public"
   # Paths to game repos
   games:
-    game_template:
-      npm: 'game-template-cordova'
-      dist: 'game-template'
     smashdot:
       npm: 'smash-dot-cordova'
       dist: 'smashdot'
-    rock_paper_scissors:
-      npm: 'rock-paper-scissors-cordova'
-      dist: 'rock-paper-scissors'

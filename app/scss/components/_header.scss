@@ -1,38 +1,28 @@
 section.header {
+  div.top-bar {
+    margin-bottom: $header-padding;
+
+    a, a:hover {
+      color: white;
+    }
+  }
+
   a.root-user-header {
     position: absolute;
     right: 0;
     top: 0;
     color: white;
-  }
+    padding-right: 8px;
 
-  div.title-bar, div.main-header {
-    margin-bottom: $header-padding;
-    background-color: $primary-color;
-  }
-
-  div.title-bar {
-    height: $header-titlebar-height-small;
-    @include breakpoint(medium) {
-      height: $header-titlebar-height-medium;
-    }
-    @include breakpoint(large) {
-      height: $header-titlebar-height-large;
-    }
-
-    a {
-      color: $white;
-      margin: 0;
-      font-size: 1rem;
-
-      @include breakpoint(medium) {
-        font-size: 1.5rem;
-        margin-top: -3px;
-      }
+    i {
+      margin-right: 4px;
     }
   }
 
   div.main-header {
+    margin-bottom: $header-padding;
+    background-color: $primary-color;
+
     padding-top: ($header-height-small - $header-logo-size-small)/2;
     height: $header-height-small;
     @include breakpoint(medium) {

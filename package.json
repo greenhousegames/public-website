@@ -14,10 +14,6 @@
     "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
-    "@greenhousegames/game-template": "~0.0.1",
-    "@greenhousegames/game-template-cordova": "~0.0.1",
-    "@greenhousegames/rock-paper-scissors": "~0.0.1",
-    "@greenhousegames/rock-paper-scissors-cordova": "~0.0.1",
     "@greenhousegames/smash-dot": "~0.0.1",
     "@greenhousegames/smash-dot-cordova": "~0.0.1",
     "firebase": "^3.4.1",
