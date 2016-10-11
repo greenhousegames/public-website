@@ -23,7 +23,7 @@ function initGames() {
 
 function createGameTask(game) {
   var src = 'node_modules/@greenhousegames/' + PATHS.games[game].npm + '/dist/www/**/*';
-  var dest = PATHS.dist + '/' + PATHS.games[game].dist + '/play';
+  var dest = PATHS.dist + '/games/' + PATHS.games[game].dist + '/play';
   return function() {
     return gulp.src(src)
       .pipe(gulp.dest(dest));
