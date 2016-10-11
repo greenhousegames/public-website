@@ -3,16 +3,27 @@
     ".read": "auth != null",
     ".write": "auth != null",
 
-    "users": {
-      ".indexOn": [
-        "smashdot-classic-played",
-        "smashdot-classic-score",
-        "smashdot-survival-played",
-        "smashdot-survival-duration",
-        "smashdot-battle-played",
-        "smashdot-battle-score",
-        "smashdot-battle-win"
-      ]
+    "games": {
+      "smashdot": {
+        "reporting": {
+          "default": {
+            "metrics": {
+              ".indexOn": [
+                "played~~sum"
+                "endedAt~~last"
+              ]
+            }
+          },
+          "users": {
+            "metrics": {
+              ".indexOn": [
+                "classic-score~~max"
+                "survival-duration~~min"
+              ]
+            }
+          }
+        }
+      }
     }
   }
 }
