@@ -42,7 +42,7 @@ section.header {
       border-radius: 50%;
 
       div.logo {
-        background: url(/assets/img/logo-small.png);
+        background: url(/icon-50x50.png);
         background-repeat: no-repeat;
         background-position: center;
         height: $header-logo-size-small;
@@ -54,7 +54,7 @@ section.header {
         width: $header-logo-size-medium;
 
         div.logo {
-          background-image: url(/assets/img/logo-medium.png);
+          background-image: url(/icon-75x75.png);
           height: $header-logo-size-medium;
           width: $header-logo-size-medium;
         }
@@ -65,7 +65,7 @@ section.header {
         width: $header-logo-size-large;
 
         div.logo {
-          background-image: url(/assets/img/logo-large.png);
+          background-image: url(/icon-100x100.png);
           height: $header-logo-size-large;
           width: $header-logo-size-large;
         }
