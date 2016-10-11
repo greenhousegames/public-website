@@ -9,7 +9,7 @@
           "default": {
             "metrics": {
               ".indexOn": [
-                "played~~sum"
+                "played~~sum",
                 "endedAt~~last"
               ]
             }
@@ -17,7 +17,7 @@
           "users": {
             "metrics": {
               ".indexOn": [
-                "classic-score~~max"
+                "classic-score~~max",
                 "survival-duration~~min"
               ]
             }

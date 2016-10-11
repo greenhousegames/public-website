@@ -5,3 +5,5 @@ bower_components
 .sass-cache
 src/assets/js
 public
+
+firebase-debug.log
