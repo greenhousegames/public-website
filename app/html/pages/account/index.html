@@ -1,4 +1,4 @@
-<div id="user_logged_in" class="row text-center" style="display: none;">
+<div class="row text-center show-auth" style="display: none;">
   <div class="column small-12">
     <img class="profile-image" id="user_image"></img>
   </div>
@@ -9,7 +9,7 @@
     <a class="button large" id="logout_button">Logout</a>
   </div>
 </div>
-<div id="user_logged_out" class="row text-center" style="display: none;">
+<div class="row text-center hide-auth" style="display: none;">
   <div class="row">
     <div class="column small-12 text-center">
       <h1>Login</h1>
@@ -38,10 +38,6 @@
 </div>
 <script type="text/javascript">
 window.GreenhouseGames.account = {
-  sections: {
-    loggedIn: 'user_logged_in',
-    loggedOut: 'user_logged_out'
-  },
   user: {
     image: 'user_image',
     name: 'user_name'

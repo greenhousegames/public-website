@@ -34,18 +34,14 @@ ga('send', 'pageview');
  * AUTH HELPERS
  */
 function showAuth() {
-  if (window.GreenhouseGames.account) {
-    jQuery('#' + window.GreenhouseGames.account.sections.loggedOut).hide();
-    jQuery('#' + window.GreenhouseGames.account.sections.loggedIn).show();
-  }
+  jQuery('.show-auth').show();
+  jQuery('.hide-auth').hide();
 }
 
 function hideAuth() {
-  if (window.GreenhouseGames.account) {
-    jQuery('#' + window.GreenhouseGames.account.sections.loggedOut).show();
-    jQuery('#' + window.GreenhouseGames.account.sections.loggedIn).hide();
-  }
-  jQuery('#user_header').text('Login');
+  jQuery('.hide-auth').show();
+  jQuery('.show-auth').hide();
+  jQuery('span.user-name').text('Login');
 }
 
 function loginSuccess(data) {
@@ -53,7 +49,7 @@ function loginSuccess(data) {
     jQuery('#' + window.GreenhouseGames.account.user.image).attr('src', data.user.photoURL);
     jQuery('#' + window.GreenhouseGames.account.user.name).text(data.user.displayName);
   }
-  jQuery('#user_header').text(data.user.displayName);
+  jQuery('span.user-name').text(data.user.displayName);
   showAuth();
 }
 

@@ -15,76 +15,77 @@ class Reporting extends FirebaseClient {
 
   draw() {
     this.requireAuth().then(() => {
-      this._draw();
+      // metrics
+      this._drawGamePlayed();
+      this._drawUsersPlayed();
+      this._drawLastPlayed();
+
+      // rankings
       this._drawClassicRankings();
       this._drawSurvivalRankings();
+
+      // charts
+      this._drawMaxScores();
+      this._drawModesPlayed();
     });
   }
 
   _drawClassicRankings() {
-    const prQuery = this.reporting.filter('users-modes', {
+    this.reporting.filter('users').max('classic-score').count().then((value) => {
+      jQuery('#classic_ranking2').text('of ' + value);
+    }).catch(function(err) { console.log(err); });
+
+    this.reporting.filter('users-modes', {
       uid: this.currentUID(),
       mode: 'classic'
-    }).max('classic-score').value();
-
-    prQuery.then((pr) => {
+    }).max('classic-score').value().then((pr) => {
       if (pr) {
-        const totalQuery = this.reporting.filter('users').max('classic-score').count();
-        const rankingQuery = this.reporting.filter('users', {
-          uid: this.currentUserUID()
-        }).max('classic-score').greater(pr).count();
-
-        rsvp.all([rankingQuery, totalQuery]).then((values) => {
-          jQuery('#classic_ranking').text('#' + values[0] + ' of ' + values[1]);
+        this.reporting.filter('users', {
+          uid: this.currentUID()
+        }).max('classic-score').greater(pr).count().then((value) => {
+          jQuery('#classic_ranking1').text('#' + value);
         });
       } else {
-        jQuery('#classic_ranking').text('N/A');
+        jQuery('#classic_ranking1').text('N/A');
       }
     }).catch(function(err) { console.log(err); });
   }
 
   _drawSurvivalRankings() {
-    const prQuery = this.reporting.filter('users-modes', {
+    this.reporting.filter('users').max('survival-duration').count().then((value) => {
+      jQuery('#survival_ranking2').text('of ' + value);
+    }).catch(function(err) { console.log(err); });
+
+    this.reporting.filter('users-modes', {
       uid: this.currentUID(),
       mode: 'survival'
-    }).max('survival-duration').value();
-
-    prQuery.then((pr) => {
+    }).max('survival-duration').value().then((pr) => {
       if (pr) {
-        const totalQuery = this.reporting.filter('users').max('survival-duration').count();
-        const rankingQuery = this.reporting.filter('users', {
-          uid: this.game.greenhouse.auth.currentUserUID()
-        }).max('survival-duration').greater(pr).count();
-
-        rsvp.all([rankingQuery, totalQuery]).then((values) => {
-          jQuery('#survival_ranking').text('#' + values[0] + ' of ' + values[1]);
+        this.reporting.filter('users', {
+          uid: this.currentUID()
+        }).max('survival-duration').greater(pr).count().then((value) => {
+          jQuery('#survival_ranking1').text('#' + value);
         });
       } else {
-        jQuery('#survival_ranking').text('N/A');
+        jQuery('#survival_ranking1').text('N/A');
       }
     }).catch(function(err) { console.log(err); });
   }
 
-  _draw() {
-    var gamesPlayedQuery = this.reporting.filter().sum('played').select(1);
-    var usersPlayedQuery = this.reporting.filter('users').sum('played').count();
-    var lastPlayedQuery = this.reporting.filter().last('endedAt').select(1);
-    var survivalPlayed = this.reporting.filter('modes', { mode: 'survival' }).sum('played').value();
-    var battlePlayed = this.reporting.filter('modes', { mode: 'battle' }).sum('played').value();
-    var classicPlayed = this.reporting.filter('modes', { mode: 'classic' }).sum('played').value();
-    var survivalMax = this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value();
-    var battleMax = this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value();
-    var classicMax = this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value();
-
-    gamesPlayedQuery.then(function(values) {
+  _drawGamePlayed() {
+    this.reporting.filter().sum('played').select(1).then(function(values) {
       jQuery('#game_played_count').text(values[0] || 0);
     }).catch(function(err) { console.log(err); });
+  }
 
-    usersPlayedQuery.then(function(total) {
+  _drawUsersPlayed() {
+    this.reporting.filter('users').sum('played').count().then(function(total) {
       jQuery('#user_played_count').text(total);
     }).catch(function(err) { console.log(err); });
+  }
 
-    lastPlayedQuery.then(function(values) {
+  _drawLastPlayed() {
+    this.reporting.filter().last('endedAt').select(1).then(function(values) {
       if (!values[0]) {
         jQuery('#last_played_count').text('never');
       } else {
@@ -93,14 +94,20 @@ class Reporting extends FirebaseClient {
         jQuery('#last_played_count').text(date.toLocaleString());
       }
     }).catch(function(err) { console.log(err); });
+  }
 
-    rsvp.all([survivalPlayed, classicPlayed, battlePlayed]).then(function(values) {
-      var element = jQuery('#line_chart_div4');
+  _drawModesPlayed() {
+    rsvp.all([
+      this.reporting.filter('modes', { mode: 'survival' }).sum('played').value(),
+      this.reporting.filter('modes', { mode: 'classic' }).sum('played').value(),
+      this.reporting.filter('modes', { mode: 'battle' }).sum('played').value()
+    ]).then(function(values) {
+      var element = jQuery('#sum_played_chart');
       var data = new google.visualization.arrayToDataTable([
         ['Mode', 'Times Played'],
-        ['Survival', values[0]],
-        ['Classic', values[1]],
-        ['Battle', values[2]]
+        ['Survival', values[0] || 0],
+        ['Classic', values[1] || 0],
+        ['Battle', values[2] || 0]
       ]);
 
       // Set chart options
@@ -115,15 +122,21 @@ class Reporting extends FirebaseClient {
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(element[0]);
       chart.draw(data, options);
-    });
+    }).catch(function(err) { console.log(err); });
+  }
 
-    rsvp.all([survivalMax, classicMax, battleMax]).then(function(values) {
-      var element = jQuery('#line_chart_div4');
+  _drawMaxScores() {
+    rsvp.all([
+      this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value(),
+      this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value(),
+      this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value()
+    ]).then(function(values) {
+      var element = jQuery('#max_score_chart');
       var data = new google.visualization.arrayToDataTable([
         ['Mode', 'Max Score'],
-        ['Survival', values[0]],
-        ['Classic', values[1]],
-        ['Battle', values[2]]
+        ['Survival', values[0] || 0],
+        ['Classic', values[1] || 0],
+        ['Battle', values[2] || 0]
       ]);
 
       // Set chart options
@@ -137,7 +150,7 @@ class Reporting extends FirebaseClient {
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.ColumnChart(element[0]);
       chart.draw(data, options);
-    });
+    }).catch(function(err) { console.log(err); });
   }
 }
 

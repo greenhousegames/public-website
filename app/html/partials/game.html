@@ -1,6 +1,6 @@
 <div class="row">
   <div class="columns text-center">
-    <img src="{{ gameImage }}">
+    <img src="{{root}}assets/img/games/{{id}}.png">
   </div>
 </div>
 <div class="row">
@@ -26,13 +26,7 @@
       <p>Keep the game alive!  The game is over when any two dots collide.</p>
       <h5>Battle Mode</h5>
       <p>Compete in real-time against a live opponent!  Dots for you and your opponent will appear on the screen at the same time.  The same basic rules apply for the dots except that you cannot touch your opponent's dots.  High score wins!</p>
-  </div>
+    </div>
 {{/ifequal}}
-    <h3>Stats</h3>
-    <ul class="no-bullet">
-      <li>Games Played: <span id="game_played_count"></span></li>
-      <li>Users Played: <span id="user_played_count"></span></li>
-      <li>Last Played: <span id="last_played_count"></span></li>
-    </ul>
   </div>
 </div>
