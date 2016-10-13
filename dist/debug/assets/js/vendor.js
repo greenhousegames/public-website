@@ -256,7 +256,7 @@ var GameReporting = function (_FirebaseReporting) {
         var keys = games ? Object.keys(games) : null;
 
         if (keys && keys.length > 0) {
-          query = query.startAt(games[keys[0]].endedAt + 1);
+          _this3._onSavedQuery = _this3._onSavedQuery.startAt(games[keys[0]].endedAt + 1);
         }
 
         // setup listener
@@ -380,7 +380,7 @@ var GameReporting = function (_FirebaseReporting) {
         var keys = games ? Object.keys(games) : null;
 
         if (keys && keys.length > 0) {
-          query = query.startAt(games[keys[0]].endedAt + 1);
+          _this3._onSavedQuery = _this3._onSavedQuery.startAt(games[keys[0]].endedAt + 1);
         }
 
         // setup listener
@@ -497,7 +497,7 @@ var GameReporting = function (_FirebaseReporting) {
         var keys = games ? Object.keys(games) : null;
 
         if (keys && keys.length > 0) {
-          query = query.startAt(games[keys[0]].endedAt + 1);
+          _this3._onSavedQuery = _this3._onSavedQuery.startAt(games[keys[0]].endedAt + 1);
         }
 
         // setup listener
