@@ -13,7 +13,7 @@
     "production": "npm run copy-prod-config && gulp --production && brunch build --production",
     "preversion": "(rm -r dist || true) && mkdir dist && cd dist && mkdir debug && mkdir release",
     "version": "npm run build && cp -R public/ dist/debug && npm run production && cp -R public/ dist/release",
-    "postversion": "git add -A dist && git push && git push --tags && npm publish"
+    "postversion": "git add -A dist && git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
     "@greenhousegames/game-template": "~0.0.1",
