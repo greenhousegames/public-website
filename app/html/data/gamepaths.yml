@@ -1,0 +1,6 @@
+smashdot:
+  npm: 'smash-dot-cordova'
+  dist: 'smashdot'
+heartbeat:
+  npm: 'heartbeat-cordova'
+  dist: 'heartbeat'

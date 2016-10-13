@@ -2,18 +2,22 @@
   "name": "@greenhousegames/public-website",
   "version": "0.1.3",
   "scripts": {
-    "start": "gulp && brunch watch --server",
-    "build": "gulp && brunch build",
+    "copy-dev-config": "cp config.development.js app/config.js",
+    "copy-prod-config": "cp config.production.js app/config.js",
+    "start": "npm run copy-dev-config && gulp && brunch watch --server",
+    "build": "npm run copy-dev-config && gulp && brunch build",
     "pretest": "npm run build",
     "test": "npm run test-only",
     "test-only": "karma start",
     "test-debug": "karma start --single-run=false --debug",
-    "production": "gulp && brunch build --production",
-    "preversion": "(rm -r dist || true) && mkdir dist",
-    "version": "npm run production && cp -R public/ dist && git add -A dist",
-    "postversion": "git push && git push --tags && npm publish && firebase deploy"
+    "production": "npm run copy-prod-config && gulp --production && brunch build --production",
+    "preversion": "(rm -r dist || true) && mkdir dist && cd dist && mkdir debug && mkdir release",
+    "version": "npm run build && cp -R public/ dist/debug && npm run production && cp -R public/ dist/release",
+    "postversion": "git add -A dist && git push && git push --tags && npm publish"
   },
   "dependencies": {
+    "@greenhousegames/game-template": "~0.0.1",
+    "@greenhousegames/game-template-cordova": "~0.0.1",
     "@greenhousegames/heartbeat": "~0.0.1",
     "@greenhousegames/heartbeat-cordova": "~0.0.1",
     "@greenhousegames/smash-dot": "^0.1.0",
@@ -41,7 +45,8 @@
     "postcss-brunch": "^2.0.3",
     "rimraf": "^2.4.3",
     "sass-brunch": "^1.8.10",
-    "uglify-js-brunch": "^2.0.0"
+    "uglify-js-brunch": "^2.0.0",
+    "yargs": "^6.0.0"
   },
   "repository": {
     "type": "git",

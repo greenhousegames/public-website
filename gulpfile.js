@@ -5,25 +5,42 @@ var panini = require('panini');
 var rimraf = require('rimraf');
 var yaml = require('js-yaml');
 var fs = require('fs');
+var argv = require('yargs').argv;
 
-var PATHS = loadConfig().PATHS;
+var config = loadConfig();
+
+var production = !!argv.production;
+var DIST = 'public';
 
 function loadConfig() {
-  let ymlFile = fs.readFileSync('config.yml', 'utf8');
-  return yaml.load(ymlFile);
+  var config = {};
+
+  var ymlFile = fs.readFileSync('./app/html/data/gamepaths.yml', 'utf8');
+  config.gamepaths = yaml.load(ymlFile);
+
+  ymlFile = fs.readFileSync('./app/html/data/games.yml', 'utf8');
+  config.games = yaml.load(ymlFile);
+
+  return config;
 }
 
 function initGames() {
   var copies = [];
-  for (var game in PATHS.games) {
-    copies.push(createGameTask(game));
+  for (var i = 0; i < config.games.length; i++) {
+    copies.push(createGameTask(config.games[i]));
   }
   return copies;
 }
 
 function createGameTask(game) {
-  var src = 'node_modules/@greenhousegames/' + PATHS.games[game].npm + '/dist/www/**/*';
-  var dest = PATHS.dist + '/games/' + PATHS.games[game].dist + '/play';
+  var src = 'node_modules/@greenhousegames/' + config.gamepaths[game].npm + '/dist/';
+  if (production) {
+    src += 'debug';
+  } else {
+    src += 'production';
+  }
+  src += 'www/**/*';
+  var dest = DIST + '/games/' + config.gamepaths[game].dist + '/play';
   return function() {
     return gulp.src(src)
       .pipe(gulp.dest(dest));
@@ -37,7 +54,7 @@ gulp.task('default',
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
-  rimraf(PATHS.dist, done);
+  rimraf(DIST, done);
 }
 
 // Copy page templates into finished HTML files
@@ -50,5 +67,5 @@ function pages() {
       data: 'app/html/data/',
       helpers: 'app/html/helpers/'
     }))
-    .pipe(gulp.dest(PATHS.dist));
+    .pipe(gulp.dest(DIST));
 }

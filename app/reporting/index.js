@@ -1,2 +1,2 @@
-import './game-template';
+import './heartbeat';
 import './smashdot';

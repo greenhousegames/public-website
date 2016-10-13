@@ -1,19 +1,14 @@
 import GameTemplateReporting from '@greenhousegames/game-template/dist/reporting';
 import firebase from 'firebase';
 import rsvp from 'rsvp';
+import config from './config';
 
 let staticFirebase = null;
 
 class FirebaseClient {
   constructor() {
     if (!staticFirebase) {
-      staticFirebase = firebase.initializeApp({
-        apiKey: 'AIzaSyDPGXl6Bc8jf_IPlkcVJe6jNlrNz72zaCo',
-        authDomain: 'greenhouse-games.firebaseapp.com',
-        databaseURL: 'https://greenhouse-games.firebaseio.com',
-        storageBucket: 'greenhouse-games.appspot.com',
-        messagingSenderId: '832706408675'
-      });
+      staticFirebase = firebase.initializeApp(config);
     }
     this.firebase = staticFirebase;
   }
