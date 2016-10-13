@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "dist/release",
     "headers": [{
       "source": "/games/**/*.*",
       "headers": [{

@@ -33,14 +33,13 @@ function initGames() {
 }
 
 function createGameTask(game) {
-  var src = 'node_modules/@greenhousegames/' + config.gamepaths[game].npm + '/dist/';
+  var src, dest;
   if (production) {
-    src += 'debug';
+    src = config.gamepaths[game].src_release;
   } else {
-    src += 'production';
+    src = config.gamepaths[game].src_debug;
   }
-  src += 'www/**/*';
-  var dest = DIST + '/games/' + config.gamepaths[game].dist + '/play';
+  dest = DIST + '/' + config.gamepaths[game].dist;
   return function() {
     return gulp.src(src)
       .pipe(gulp.dest(dest));
