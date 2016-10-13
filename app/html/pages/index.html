@@ -1,9 +1,9 @@
 <div class="row games-container">
-  <div class="game">
-  {{#each games}}
+{{#each games}}
+  <div class="game columns {{#if @last}}end{{/if}} small-12 medium-6 large-4">
     <a href="games/{{ this }}">
       <img src="{{root}}assets/img/games/{{this}}.png">
     </a>
-  {{/each}}
   </div>
+{{/each}}
 </div>

@@ -21,14 +21,5 @@ section.main.subpage {
 div.games-container {
   div.game {
     margin-bottom: 16px;
-    text-align: center;
-
-    @include grid-column(12);
-    @include breakpoint(medium) {
-      @include grid-column(6);
-    }
-    @include breakpoint(large) {
-      @include grid-column(4);
-    }
   }
 }

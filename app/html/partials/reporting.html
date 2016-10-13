@@ -52,6 +52,26 @@
   <div class="columns small-12 large-6" id="max_score_chart"></div>
 </div>
 {{/ifequal}}
+{{#ifequal id 'heartbeat'}}
+<div class="row">
+  <div class="columns small-12">
+    <h3>Analytics</h3>
+    <p>Various metrics and charts calculated from all games played.</p>
+  </div>
+  <div class="columns small-6 medium-3 large-4 text-center">
+    <h4>Games Played</h4>
+    <h2 id="game_played_count"></h2>
+  </div>
+  <div class="columns small-6 medium-3 large-4 text-center">
+    <h4>Users Played</h4>
+    <h2 id="user_played_count"></h2>
+  </div>
+  <div class="columns small-12 medium-6 large-4 text-center">
+    <h4>Last Played</h4>
+    <h2><time id="last_played_timestamp"></time></h2>
+  </div>
+</div>
+{{/ifequal}}
 <script type="text/javascript">
   window.GreenhouseGames.reporting = '{{ id }}';
 </script>
