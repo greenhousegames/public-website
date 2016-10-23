@@ -13,6 +13,10 @@ client.firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
+if (!window.GreenhouseGames.root) {
+  jQuery('section.main').addClass('subpage');
+}
+
 if (window.GreenhouseGames.account) {
   initAccountPage();
 }
@@ -61,8 +65,6 @@ function loginError(err) {
  * PAGE HELPERS
  */
 function initAccountPage() {
-  jQuery('section.main').addClass('subpage');
-
   // init buttons
   jQuery('#' + window.GreenhouseGames.account.buttons.logout).click(() => client.signOut().then(hideAuth).catch(hideAuth));
   jQuery('#' + window.GreenhouseGames.account.buttons.twitter).click(() => client.signInWithPopup('twitter').then(loginSuccess).catch(loginError));
@@ -72,8 +74,6 @@ function initAccountPage() {
 }
 
 function initGamePage() {
-  jQuery('section.main').addClass('subpage');
-
   var Reporting = require('reporting/' + window.GreenhouseGames.reporting + '.js');
   var report = new Reporting();
   report.loadCharts(() => {

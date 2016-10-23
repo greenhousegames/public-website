@@ -22,4 +22,23 @@ div.games-container {
   div.game {
     margin-bottom: 16px;
   }
+  h1, p {
+    text-align: center;
+  }
+}
+
+div.ideas-container {
+  background-color: $light-gray;
+  text-align: center;
+
+  div.row div.columns {
+    a.button:not(:last-child) {
+      margin-right: 16px;
+      margin-bottom: 32px;
+    }
+    a.button:last-child {
+      margin-left: 16px;
+      margin-bottom: 32px;
+    }
+  }
 }

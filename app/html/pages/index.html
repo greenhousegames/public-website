@@ -1,4 +1,5 @@
 <div class="row games-container">
+  <h1>Games</h1>
 {{#each games}}
   <div class="game columns {{#if @last}}end{{/if}} small-12 medium-6 large-4">
     <a href="games/{{ this }}">
@@ -7,3 +8,16 @@
   </div>
 {{/each}}
 </div>
+<div class="ideas-container">
+  <div class="row">
+    <div class="columns small-12">
+      <h1>Ideas</h1>
+      <p>Got a simple idea for a game you would like see come to life? Use our forum to explain your idea and encourage others to vote for it!</p>
+      <a class="button large" href="ideas">View Ideas</a>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+window.GreenhouseGames.root = {
+};
+</script>
