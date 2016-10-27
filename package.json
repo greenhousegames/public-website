@@ -10,8 +10,8 @@
     "test-debug": "karma start --single-run=false --debug",
     "production": "brunch build --production",
     "preversion": "(rm -r dist || true) && mkdir dist && cd dist && mkdir debug && mkdir release",
-    "version": "npm run build && cp -R public/ dist/debug && npm run production && cp -R public/ dist/release",
-    "postversion": "git add -A dist && git push && git push --tags && npm publish && firebase deploy"
+    "version": "npm run build && cp -R public/ dist/debug && npm run production && cp -R public/ dist/release && git add -A dist",
+    "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
     "@greenhousegames/heartbeat": "~0.0.1",
