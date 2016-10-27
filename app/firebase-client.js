@@ -1,4 +1,3 @@
-import GameTemplateReporting from '@greenhousegames/game-template/dist/reporting';
 import firebase from 'firebase';
 import rsvp from 'rsvp';
 import config from './config';

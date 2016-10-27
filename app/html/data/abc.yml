@@ -1,0 +1,104 @@
+a:
+  letter: 'a'
+  letterUpper: 'A'
+  desc: 'A is for Acceleration'
+b:
+  letter: 'b'
+  letterUpper: 'B'
+  desc: 'B is for Bounce'
+c:
+  letter: 'c'
+  letterUpper: 'C'
+  desc: 'C is for Collide'
+d:
+  letter: 'd'
+  letterUpper: 'D'
+  desc: 'D is for Drag'
+e:
+  letter: 'e'
+  letterUpper: 'E'
+  desc: 'E is for Events'
+f:
+  letter: 'f'
+  letterUpper: 'F'
+  desc: 'F is for Force'
+g:
+  letter: 'g'
+  letterUpper: 'G'
+  desc: 'G is for Gravity'
+h:
+  letter: 'h'
+  letterUpper: 'H'
+  desc: 'H is for Height'
+i:
+  letter: 'i'
+  letterUpper: 'I'
+  desc: 'I is for Immovable'
+j:
+  letter: 'j'
+  letterUpper: 'J'
+  desc: 'J is for Joystick'
+k:
+  letter: 'k'
+  letterUpper: 'K'
+  desc: 'K is for Kick'
+l:
+  letter: 'l'
+  letterUpper: 'L'
+  desc: 'L is for Life'
+m:
+  letter: 'm'
+  letterUpper: 'M'
+  desc: 'M is for Movement'
+n:
+  letter: 'n'
+  letterUpper: 'N'
+  desc: 'N is for Now'
+o:
+  letter: 'o'
+  letterUpper: 'O'
+  desc: 'O is for Opacity'
+p:
+  letter: 'p'
+  letterUpper: 'P'
+  desc: 'P is for Physics'
+q:
+  letter: 'q'
+  letterUpper: 'Q'
+  desc: 'Q is for Quit'
+r:
+  letter: 'r'
+  letterUpper: 'R'
+  desc: 'R is for Revive'
+s:
+  letter: 's'
+  letterUpper: 'S'
+  desc: 'S is for Sound'
+t:
+  letter: 't'
+  letterUpper: 'T'
+  desc: 'T is for Timer'
+u:
+  letter: 'u'
+  letterUpper: 'U'
+  desc: 'U is for Universe'
+v:
+  letter: 'v'
+  letterUpper: 'V'
+  desc: 'V is for Velocity'
+w:
+  letter: 'w'
+  letterUpper: 'W'
+  desc: 'W is for Width'
+x:
+  letter: 'x'
+  letterUpper: 'X'
+  desc: 'X is for X-axis'
+y:
+  letter: 'y'
+  letterUpper: 'Y'
+  desc: 'Y is for Y-axis'
+z:
+  letter: 'z'
+  letterUpper: 'Z'
+  desc: 'Z is for Z-axis'

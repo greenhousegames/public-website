@@ -2,7 +2,7 @@
   <h1>Games</h1>
 {{#each games}}
   <div class="game columns {{#if @last}}end{{/if}} small-12 medium-6 large-4">
-    <a href="games/{{ this }}">
+    <a href="{{root}}games/{{ this }}.html">
       <img src="{{root}}assets/img/games/{{this}}.png">
     </a>
   </div>
@@ -11,9 +11,9 @@
 <div class="ideas-container">
   <div class="row">
     <div class="columns small-12">
-      <h1>Ideas</h1>
-      <p>Got a simple idea for a game you would like see come to life? Use our forum to explain your idea and encourage others to vote for it!</p>
-      <a class="button large" href="ideas">View Ideas</a>
+      <h1>Learning the ABCs</h1>
+      <p>Ever wonder how games are actually created?  Learn the ABCs of game development to find out more!</p>
+      <a class="button large" href="learn/abc">View ABCs</a>
     </div>
   </div>
 </div>

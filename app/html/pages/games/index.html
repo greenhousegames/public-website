@@ -1,0 +1,10 @@
+<div class="row games-container">
+  <h1>Games</h1>
+{{#each games}}
+  <div class="game columns {{#if @last}}end{{/if}} small-12 medium-6 large-4">
+    <a href="{{ this }}.html">
+      <img src="../assets/img/games/{{this}}.png">
+    </a>
+  </div>
+{{/each}}
+</div>

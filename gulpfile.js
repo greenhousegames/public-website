@@ -6,6 +6,7 @@ var rimraf = require('rimraf');
 var yaml = require('js-yaml');
 var fs = require('fs');
 var argv = require('yargs').argv;
+var runSequence = require('run-sequence');
 
 var config = loadConfig();
 
@@ -27,7 +28,8 @@ function loadConfig() {
 function initGames() {
   var copies = [];
   for (var i = 0; i < config.games.length; i++) {
-    copies.push(createGameTask(config.games[i]));
+    createGameTask(config.games[i])
+    copies.push(config.games[i]);
   }
   return copies;
 }
@@ -40,24 +42,25 @@ function createGameTask(game) {
     src = config.gamepaths[game].src_debug;
   }
   dest = DIST + '/' + config.gamepaths[game].dist;
-  return function() {
+  gulp.task(game, function() {
     return gulp.src(src)
       .pipe(gulp.dest(dest));
-  };
+  });
 }
 
 // Build the "dist" folder by running all of the below tasks
-gulp.task('default',
- gulp.series(clean, gulp.parallel(pages, initGames())));
+gulp.task('default', ['pages'], function(cb) {
+  runSequence(initGames(), cb);
+});
 
 // Delete the "dist" folder
 // This happens every time a build starts
-function clean(done) {
+gulp.task('clean', function(done) {
   rimraf(DIST, done);
-}
+});
 
 // Copy page templates into finished HTML files
-function pages() {
+gulp.task('pages', ['clean'], function() {
   return gulp.src('app/html/pages/**/*.{html,hbs,handlebars}')
     .pipe(panini({
       root: 'app/html/pages/',
@@ -67,4 +70,4 @@ function pages() {
       helpers: 'app/html/helpers/'
     }))
     .pipe(gulp.dest(DIST));
-}
+});
