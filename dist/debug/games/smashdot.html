@@ -17,12 +17,7 @@
     <link rel="stylesheet" href="../assets/foundation-icons/foundation-icons.css" />
     <script src="../assets/js/vendor.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      window.GreenhouseGames = {
-        report: null,
-        account: null
-      };
-    </script>
+    <script onload="require('app.js')" src="../assets/js/app.js"></script>
   </head>
   <body>
     <section class="header">
@@ -52,7 +47,7 @@
             <h1>Smash Dot</h1>
           </div>
           <div class="columns text-center">
-            <a href="play/smashdot" class="button play-game-button">
+            <a href="smashdot" class="button play-game-button">
               PLAY
             </a>
           </div>
@@ -112,9 +107,7 @@
           <div class="columns small-12 large-6" id="max_score_chart"></div>
         </div>
       </div>
-      <script type="text/javascript">
-        window.GreenhouseGames.reporting = 'smashdot';
-      </script>
+      <script onload="require('pages/games/smashdot.js')" src="../assets/js/pages/games/smashdot.js"></script>
       
     </section>
     <section class="footer">
@@ -131,6 +124,5 @@
       </div>
       
     </section>
-    <script onload="require('app.js')" src="../assets/js/app.js"></script>
   </body>
 </html>

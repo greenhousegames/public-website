@@ -16,12 +16,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png" />
     <link rel="stylesheet" href="../assets/foundation-icons/foundation-icons.css" />
     <script src="../assets/js/vendor.js"></script>
-    <script type="text/javascript">
-      window.GreenhouseGames = {
-        report: null,
-        account: null
-      };
-    </script>
+    <script onload="require('app.js')" src="../assets/js/app.js"></script>
   </head>
   <body>
     <section class="header">
@@ -39,7 +34,7 @@
       </div>
       
     </section>
-    <section class="main">
+    <section class="main subpage">
       <div class="row text-center show-auth" style="display: none; padding: 0 1rem;">
         <div class="column small-12">
           <img class="profile-image" id="user_image"></img>
@@ -78,21 +73,7 @@
           </div>
         </div>
       </div>
-      <script type="text/javascript">
-      window.GreenhouseGames.account = {
-        user: {
-          image: 'user_image',
-          name: 'user_name'
-        },
-        buttons: {
-          logout: 'logout_button',
-          twitter: 'twitterLogin_button',
-          facebook: 'facebookLogin_button',
-          google: 'googleLogin_button',
-          github: 'githubLogin_button'
-        }
-      };
-      </script>
+      <script onload="require('pages/account/account.js')" src="../assets/js/pages/account/account.js"></script>
       
     </section>
     <section class="footer">
@@ -109,6 +90,5 @@
       </div>
       
     </section>
-    <script onload="require('app.js')" src="../assets/js/app.js"></script>
   </body>
 </html>

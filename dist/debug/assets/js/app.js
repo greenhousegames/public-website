@@ -156,8 +156,6 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-require('./reporting');
-
 var _firebaseClient = require('./firebase-client');
 
 var _firebaseClient2 = _interopRequireDefault(_firebaseClient);
@@ -166,26 +164,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(document).foundation();
 
-var client = new _firebaseClient2.default();
-client.firebase.auth().onAuthStateChanged(function (user) {
+window.GreenhouseGames = {
+  client: new _firebaseClient2.default(),
+  authHelpers: {
+    showAuth: function showAuth() {
+      (0, _jquery2.default)('.show-auth').show();
+      (0, _jquery2.default)('.hide-auth').hide();
+    },
+    hideAuth: function hideAuth() {
+      (0, _jquery2.default)('.hide-auth').show();
+      (0, _jquery2.default)('.show-auth').hide();
+      (0, _jquery2.default)('span.user-name').text('Login');
+    },
+    loginSuccess: function loginSuccess(data) {
+      (0, _jquery2.default)('#user_image').attr('src', data.user.photoURL);
+      (0, _jquery2.default)('#user_name').text(data.user.displayName);
+      (0, _jquery2.default)('span.user-name').text(data.user.displayName);
+      window.GreenhouseGames.authHelpers.showAuth();
+    },
+    loginError: function loginError(err) {
+      console.log(err);
+    }
+  }
+};
+
+window.GreenhouseGames.client.firebase.auth().onAuthStateChanged(function (user) {
   if (user && !user.isAnonymous) {
-    loginSuccess({ user: user });
+    window.GreenhouseGames.authHelpers.loginSuccess({ user: user });
   } else {
-    hideAuth();
+    window.GreenhouseGames.authHelpers.hideAuth();
   }
 });
-
-if (!window.GreenhouseGames.root) {
-  jQuery('section.main').addClass('subpage');
-}
-
-if (window.GreenhouseGames.account) {
-  initAccountPage();
-}
-
-if (window.GreenhouseGames.reporting) {
-  initGamePage();
-}
 
 // Google Analytics
 (function (i, s, o, g, r, a, m) {
@@ -198,67 +207,20 @@ ga('create', 'UA-85526007-1', 'auto');
 ga('send', 'pageview');
 
 /*
- * AUTH HELPERS
- */
-function showAuth() {
-  jQuery('.show-auth').show();
-  jQuery('.hide-auth').hide();
-}
-
-function hideAuth() {
-  jQuery('.hide-auth').show();
-  jQuery('.show-auth').hide();
-  jQuery('span.user-name').text('Login');
-}
-
-function loginSuccess(data) {
-  if (window.GreenhouseGames.account) {
-    jQuery('#' + window.GreenhouseGames.account.user.image).attr('src', data.user.photoURL);
-    jQuery('#' + window.GreenhouseGames.account.user.name).text(data.user.displayName);
-  }
-  jQuery('span.user-name').text(data.user.displayName);
-  showAuth();
-}
-
-function loginError(err) {
-  console.log(err);
-}
-
-/*
- * PAGE HELPERS
- */
-function initAccountPage() {
-  // init buttons
-  jQuery('#' + window.GreenhouseGames.account.buttons.logout).click(function () {
-    return client.signOut().then(hideAuth).catch(hideAuth);
-  });
-  jQuery('#' + window.GreenhouseGames.account.buttons.twitter).click(function () {
-    return client.signInWithPopup('twitter').then(loginSuccess).catch(loginError);
-  });
-  jQuery('#' + window.GreenhouseGames.account.buttons.facebook).click(function () {
-    return client.signInWithPopup('facebook').then(loginSuccess).catch(loginError);
-  });
-  jQuery('#' + window.GreenhouseGames.account.buttons.google).click(function () {
-    return client.signInWithPopup('google');
-  });
-  jQuery('#' + window.GreenhouseGames.account.buttons.github).click(function () {
-    return client.signInWithPopup('github').then(loginSuccess).catch(loginError);
-  });
-}
-
 function initGamePage() {
   var Reporting = require('reporting/' + window.GreenhouseGames.reporting + '.js');
   var report = new Reporting();
-  report.loadCharts(function () {
-    (0, _jquery2.default)(document).ready(function () {
+  report.loadCharts(() => {
+    $(document).ready(() => {
       report.draw();
 
-      (0, _jquery2.default)(window).resize(function () {
+      $(window).resize(() => {
         report.draw();
       });
     });
   });
 }
+*/
 });
 
 ;require.register("config.js", function(exports, require, module) {
@@ -375,317 +337,6 @@ var FirebaseClient = function () {
 }();
 
 module.exports = FirebaseClient;
-});
-
-require.register("reporting/heartbeat.js", function(exports, require, module) {
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _reporting = require('@greenhousegames/heartbeat/dist/reporting');
-
-var _reporting2 = _interopRequireDefault(_reporting);
-
-var _firebaseClient = require('../firebase-client');
-
-var _firebaseClient2 = _interopRequireDefault(_firebaseClient);
-
-var _rsvp = require('rsvp');
-
-var _rsvp2 = _interopRequireDefault(_rsvp);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Reporting = function (_FirebaseClient) {
-  _inherits(Reporting, _FirebaseClient);
-
-  function Reporting() {
-    _classCallCheck(this, Reporting);
-
-    var _this = _possibleConstructorReturn(this, (Reporting.__proto__ || Object.getPrototypeOf(Reporting)).call(this));
-
-    _this.reporting = new _reporting2.default(_this.firebase.database().ref('games/heartbeat/data'), _this.firebase.database().ref('games/heartbeat/reporting'));
-    return _this;
-  }
-
-  _createClass(Reporting, [{
-    key: 'loadCharts',
-    value: function loadCharts(done) {
-      google.charts.load('current', { 'packages': ['corechart'] });
-      google.charts.setOnLoadCallback(done);
-    }
-  }, {
-    key: 'draw',
-    value: function draw() {
-      var _this2 = this;
-
-      this.requireAuth().then(function () {
-        // metrics
-        _this2._drawGamePlayed();
-        _this2._drawUsersPlayed();
-        _this2._drawLastPlayed();
-      });
-    }
-  }, {
-    key: '_drawGamePlayed',
-    value: function _drawGamePlayed() {
-      this.reporting.filter().sum('played').select(1).then(function (values) {
-        jQuery('#game_played_count').text(values[0] || 0);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawUsersPlayed',
-    value: function _drawUsersPlayed() {
-      this.reporting.filter('users').sum('played').count().then(function (total) {
-        jQuery('#user_played_count').text(total);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawLastPlayed',
-    value: function _drawLastPlayed() {
-      this.reporting.filter().last('endedAt').select(1).then(function (values) {
-        if (!values[0]) {
-          jQuery('#last_played_timestamp').text('never');
-        } else {
-          var date = new Date();
-          date.setTime(values[0]);
-          jQuery('#last_played_timestamp').attr('datetime', date.toISOString());
-          jQuery('#last_played_timestamp').timeago();
-        }
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }]);
-
-  return Reporting;
-}(_firebaseClient2.default);
-
-module.exports = Reporting;
-});
-
-require.register("reporting/index.js", function(exports, require, module) {
-'use strict';
-
-require('./heartbeat');
-
-require('./smashdot');
-});
-
-require.register("reporting/smashdot.js", function(exports, require, module) {
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _reporting = require('@greenhousegames/smash-dot/dist/reporting');
-
-var _reporting2 = _interopRequireDefault(_reporting);
-
-var _firebaseClient = require('../firebase-client');
-
-var _firebaseClient2 = _interopRequireDefault(_firebaseClient);
-
-var _rsvp = require('rsvp');
-
-var _rsvp2 = _interopRequireDefault(_rsvp);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Reporting = function (_FirebaseClient) {
-  _inherits(Reporting, _FirebaseClient);
-
-  function Reporting() {
-    _classCallCheck(this, Reporting);
-
-    var _this = _possibleConstructorReturn(this, (Reporting.__proto__ || Object.getPrototypeOf(Reporting)).call(this));
-
-    _this.reporting = new _reporting2.default(_this.firebase.database().ref('games/smashdot/data'), _this.firebase.database().ref('games/smashdot/reporting'));
-    return _this;
-  }
-
-  _createClass(Reporting, [{
-    key: 'loadCharts',
-    value: function loadCharts(done) {
-      google.charts.load('current', { 'packages': ['corechart'] });
-      google.charts.setOnLoadCallback(done);
-    }
-  }, {
-    key: 'draw',
-    value: function draw() {
-      var _this2 = this;
-
-      this.requireAuth().then(function () {
-        // metrics
-        _this2._drawGamePlayed();
-        _this2._drawUsersPlayed();
-        _this2._drawLastPlayed();
-
-        // rankings
-        _this2._drawClassicRankings();
-        _this2._drawSurvivalRankings();
-
-        // charts
-        _this2._drawMaxScores();
-        _this2._drawModesPlayed();
-      });
-    }
-  }, {
-    key: '_drawClassicRankings',
-    value: function _drawClassicRankings() {
-      var _this3 = this;
-
-      this.reporting.filter('users').max('classic-score').count().then(function (value) {
-        jQuery('#classic_ranking2').text('of ' + value);
-      }).catch(function (err) {
-        console.log(err);
-      });
-
-      this.reporting.filter('users-modes', {
-        uid: this.currentUID(),
-        mode: 'classic'
-      }).max('classic-score').value().then(function (pr) {
-        if (pr) {
-          _this3.reporting.filter('users', {
-            uid: _this3.currentUID()
-          }).max('classic-score').greater(pr).count().then(function (value) {
-            jQuery('#classic_ranking1').text('#' + value);
-          });
-        } else {
-          jQuery('#classic_ranking1').text('N/A');
-        }
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawSurvivalRankings',
-    value: function _drawSurvivalRankings() {
-      var _this4 = this;
-
-      this.reporting.filter('users').min('survival-duration').count().then(function (value) {
-        jQuery('#survival_ranking2').text('of ' + value);
-      }).catch(function (err) {
-        console.log(err);
-      });
-
-      this.reporting.filter('users-modes', {
-        uid: this.currentUID(),
-        mode: 'survival'
-      }).min('survival-duration').value().then(function (pr) {
-        if (pr) {
-          _this4.reporting.filter('users', {
-            uid: _this4.currentUID()
-          }).min('survival-duration').greater(pr).count().then(function (value) {
-            jQuery('#survival_ranking1').text('#' + value);
-          });
-        } else {
-          jQuery('#survival_ranking1').text('N/A');
-        }
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawGamePlayed',
-    value: function _drawGamePlayed() {
-      this.reporting.filter().sum('played').select(1).then(function (values) {
-        jQuery('#game_played_count').text(values[0] || 0);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawUsersPlayed',
-    value: function _drawUsersPlayed() {
-      this.reporting.filter('users').sum('played').count().then(function (total) {
-        jQuery('#user_played_count').text(total);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawLastPlayed',
-    value: function _drawLastPlayed() {
-      this.reporting.filter().last('endedAt').select(1).then(function (values) {
-        if (!values[0]) {
-          jQuery('#last_played_timestamp').text('never');
-        } else {
-          var date = new Date();
-          date.setTime(values[0]);
-          jQuery('#last_played_timestamp').attr('datetime', date.toISOString());
-          jQuery('#last_played_timestamp').timeago();
-        }
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawModesPlayed',
-    value: function _drawModesPlayed() {
-      _rsvp2.default.all([this.reporting.filter('modes', { mode: 'survival' }).sum('played').value(), this.reporting.filter('modes', { mode: 'classic' }).sum('played').value(), this.reporting.filter('modes', { mode: 'battle' }).sum('played').value()]).then(function (values) {
-        var element = jQuery('#sum_played_chart');
-        var data = new google.visualization.arrayToDataTable([['Mode', 'Times Played'], ['Survival', values[0] || 0], ['Classic', values[1] || 0], ['Battle', values[2] || 0]]);
-
-        // Set chart options
-        var options = {
-          title: 'Modes Played',
-          width: element.width(),
-          height: 400,
-          pieHole: 0.4,
-          legend: { position: 'bottom' }
-        };
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(element[0]);
-        chart.draw(data, options);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: '_drawMaxScores',
-    value: function _drawMaxScores() {
-      _rsvp2.default.all([this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value(), this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value(), this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value()]).then(function (values) {
-        var element = jQuery('#max_score_chart');
-        var data = new google.visualization.arrayToDataTable([['Mode', 'Max Score'], ['Survival', values[0] || 0], ['Classic', values[1] || 0], ['Battle', values[2] || 0]]);
-
-        // Set chart options
-        var options = {
-          title: 'Max Scores',
-          width: element.width(),
-          height: 400,
-          legend: { position: 'bottom' }
-        };
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.ColumnChart(element[0]);
-        chart.draw(data, options);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    }
-  }]);
-
-  return Reporting;
-}(_firebaseClient2.default);
-
-module.exports = Reporting;
 });
 
 require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
