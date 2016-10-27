@@ -2,15 +2,13 @@
   "name": "@greenhousegames/public-website",
   "version": "0.1.8",
   "scripts": {
-    "copy-dev-config": "cp config.development.js app/config.js",
-    "copy-prod-config": "cp config.production.js app/config.js",
-    "start": "npm run copy-dev-config && gulp && brunch watch --server",
-    "build": "npm run copy-dev-config && gulp && brunch build",
+    "start": "brunch watch --server",
+    "build": "brunch build",
     "pretest": "npm run build",
     "test": "npm run test-only",
     "test-only": "karma start",
     "test-debug": "karma start --single-run=false --debug",
-    "production": "npm run copy-prod-config && gulp --production && brunch build --production",
+    "production": "brunch build --production",
     "preversion": "(rm -r dist || true) && mkdir dist && cd dist && mkdir debug && mkdir release",
     "version": "npm run build && cp -R public/ dist/debug && npm run production && cp -R public/ dist/release",
     "postversion": "git add -A dist && git push && git push --tags && npm publish && firebase deploy"
@@ -32,7 +30,9 @@
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "babel-brunch": "^6.0.6",
+    "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.3.13",
+    "before-brunch": "0.0.5",
     "brunch": "2.8.2",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.0.0",

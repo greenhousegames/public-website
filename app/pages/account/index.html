@@ -1,0 +1,39 @@
+<div class="row text-center show-auth" style="display: none; padding: 0 1rem;">
+  <div class="column small-12">
+    <img class="profile-image" id="user_image"></img>
+  </div>
+  <div class="column small-12">
+    <h2 id="user_name"></h2>
+  </div>
+  <div class="column small-12">
+    <a class="button large" id="logout_button">Logout</a>
+  </div>
+</div>
+<div class="row text-center hide-auth" style="display: none; padding: 0 1rem;">
+  <div class="row">
+    <div class="column small-12 text-center">
+      <h1>Login</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-12 medium-6 medium-offset-3">
+      <a class="button large expanded" id="facebookLogin_button"><i class="fi-social-facebook" style="margin-right: 8px;"></i>Facebook</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small- medium-6 medium-offset-3">
+      <a class="button large expanded" id="twitterLogin_button"><i class="fi-social-twitter" style="margin-right: 8px;"></i>Twitter</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small- medium-6 medium-offset-3">
+      <a class="button large expanded" id="googleLogin_button"><i class="fi-social-google-plus" style="margin-right: 8px;"></i>Google</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small- medium-6 medium-offset-3">
+      <a class="button large expanded" id="githubLogin_button"><i class="fi-social-github" style="margin-right: 8px;"></i>Github</a>
+    </div>
+  </div>
+</div>
+<script onload="require('pages/account/account.js')" src="{{root}}assets/js/pages/account/account.js"></script>

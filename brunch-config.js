@@ -20,7 +20,10 @@ module.exports = {
     javascripts: {
       joinTo: {
         'assets/js/vendor.js': /^(?!app)/,
-        'assets/js/app.js': /(^app)/
+        'assets/js/app.js': "app/*.js",
+        'assets/js/pages/account/account.js': "app/pages/account/account.js",
+        'assets/js/pages/games/heartbeat.js': "app/pages/games/heartbeat.js",
+        'assets/js/pages/games/smashdot.js': "app/pages/games/smashdot.js"
       },
       order: {
         after: [
@@ -51,6 +54,21 @@ module.exports = {
       processors: [
         require('autoprefixer')(['last 8 versions','ie >= 9'])
       ]
+    },
+    beforeBrunch: [
+      'cp config.development.js app/config.js',
+      'gulp'
+    ]
+  },
+
+  overrides: {
+    production: {
+      plugins: {
+        beforeBrunch: [
+          'cp config.production.js app/config.js',
+          'gulp --production'
+        ]
+      }
     }
   }
 };

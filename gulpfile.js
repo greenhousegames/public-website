@@ -16,10 +16,10 @@ var DIST = 'public';
 function loadConfig() {
   var config = {};
 
-  var ymlFile = fs.readFileSync('./app/html/data/gamepaths.yml', 'utf8');
+  var ymlFile = fs.readFileSync('./app/data/gamepaths.yml', 'utf8');
   config.gamepaths = yaml.load(ymlFile);
 
-  ymlFile = fs.readFileSync('./app/html/data/games.yml', 'utf8');
+  ymlFile = fs.readFileSync('./app/data/games.yml', 'utf8');
   config.games = yaml.load(ymlFile);
 
   return config;
@@ -61,13 +61,13 @@ gulp.task('clean', function(done) {
 
 // Copy page templates into finished HTML files
 gulp.task('pages', ['clean'], function() {
-  return gulp.src('app/html/pages/**/*.{html,hbs,handlebars}')
+  return gulp.src('app/pages/**/*.{html,hbs,handlebars}')
     .pipe(panini({
-      root: 'app/html/pages/',
-      layouts: 'app/html/layouts/',
-      partials: 'app/html/partials/',
-      data: 'app/html/data/',
-      helpers: 'app/html/helpers/'
+      root: 'app/pages/',
+      layouts: 'app/layouts/',
+      partials: 'app/partials/',
+      data: 'app/data/',
+      helpers: 'app/helpers/'
     }))
     .pipe(gulp.dest(DIST));
 });
