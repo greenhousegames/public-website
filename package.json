@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "copy-dev-config": "cp config.development.js app/config.js",
     "copy-prod-config": "cp config.production.js app/config.js",
