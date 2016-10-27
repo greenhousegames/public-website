@@ -1,4 +1,4 @@
-module.exports = {
+var config = {
   conventions: {
     assets:   /^(app)(\\|\/)(assets)/,
     ignored:  ['test/**/*.js','app/scss/components/*.scss']
@@ -72,3 +72,12 @@ module.exports = {
     }
   }
 };
+
+// LEARNING ABCs
+for (var i = 65; i <= 90; i++) {
+  var letter = String.fromCharCode(i).toLowerCase();
+  var path = 'pages/learn/abc/' + letter + '.js';
+  config.files.javascripts.joinTo['assets/js/' + path] = 'app/' + path;
+}
+
+module.exports = config;
