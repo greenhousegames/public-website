@@ -1,5 +1,7 @@
 // force footer to bottom
 section.main {
+  padding-top: $header-padding;
+
   min-height: calc(100% - #{$header-height-small} - #{$header-padding} - #{$footer-height-small});
   @include breakpoint(medium) {
     min-height: calc(100% - #{$header-height-medium} - #{$header-padding} - #{$footer-height-medium});
@@ -7,8 +9,14 @@ section.main {
   @include breakpoint(large) {
     min-height: calc(100% - #{$header-height-large} - #{$header-padding} - #{$footer-height-large});
   }
+
+  > div:last-of-type {
+    padding-bottom: $header-padding;
+  }
 }
 section.main.subpage {
+  background: $light-gray;
+
   min-height: calc(100% - #{$header-titlebar-height-small} - #{$header-padding} - #{$footer-height-small});
   @include breakpoint(medium) {
     min-height: calc(100% - #{$header-titlebar-height-medium} - #{$header-padding} - #{$footer-height-medium});

@@ -1,7 +1,5 @@
 section.header {
   div.top-bar {
-    margin-bottom: $header-padding;
-
     a, a:hover {
       color: white;
     }
@@ -44,7 +42,6 @@ section.header {
   }
 
   div.main-header {
-    margin-bottom: $header-padding;
     background-color: $primary-color;
 
     padding-top: ($header-height-small - $header-logo-size-small)/2;

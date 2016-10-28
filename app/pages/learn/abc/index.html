@@ -2,9 +2,15 @@
   <div class="column small-12 text-center">
     <h1>ABCs of Game Development</h1>
   </div>
+  <div class="column small-12">
+    <p>Whether you're looking to become a rock-star game developer or E-sport champion, you must understand how games truly works.  Many games share similar concepts which have been broken down into the ABCs of Game Development.  Select a lesson below to start the exploration!</p>
+  </div>
 {{#each abc}}
   <div class="columns {{#if @last}}end{{/if}} small-12 medium-6 large-4 text-center">
     <a class="button large expanded" href="{{ this.letter }}.html"><h2>{{this.letterUpper}}</h2><span>{{ this.desc }}</span></a>
   </div>
 {{/each}}
+  <div class="column small-12">
+    <p>All lessons have been built using <a class="dark" href="http://phaser.io">Phaser</a>.  Check out Phaser's amazing set of <a class="dark" href="http://phaser.io/examples">examples</a> to learn more!</p>
+  </div>
 </div>
