@@ -150,10 +150,34 @@ var __makeRelativeRequire = function(require, mappings, pref) {
   }
 };
 require.register("pages/learn/abc/b.js", function(exports, require, module) {
-"use strict";
+'use strict';
+
+var width = Math.min($('#game-container').width(), 600);
+var sprite;
+
+var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game', {
+  preload: function preload() {
+    game.load.image('greenhouse', '/assets/img/logo-circle.png');
+  },
+  create: function create() {
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.stage.backgroundColor = '#000000';
+
+    sprite = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+    sprite.anchor.setTo(0.5, 0.5);
+    game.physics.enable(sprite, Phaser.Physics.ARCADE);
+    sprite.body.velocity.setTo(200, 200);
+    sprite.body.collideWorldBounds = true;
+    sprite.body.bounce.set(1);
+  },
+  update: function update() {},
+  render: function render() {
+    game.debug.spriteInfo(sprite, 32, 32);
+  }
+});
 });
 
-;require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
 // Auto-loaded modules from config.npm.globals.

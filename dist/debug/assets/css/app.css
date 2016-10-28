@@ -5160,5 +5160,10 @@ img.profile-image {
       width: 200px;
       height: 200px; } }
 
+/* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+div#learning-game canvas {
+  margin: 0 auto;
+  box-shadow: black 0px 0px 16px; }
+
 
 /*# sourceMappingURL=app.css.map*/

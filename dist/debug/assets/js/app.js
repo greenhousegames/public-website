@@ -205,25 +205,9 @@ window.GreenhouseGames.client.firebase.auth().onAuthStateChanged(function (user)
 
 ga('create', 'UA-85526007-1', 'auto');
 ga('send', 'pageview');
-
-/*
-function initGamePage() {
-  var Reporting = require('reporting/' + window.GreenhouseGames.reporting + '.js');
-  var report = new Reporting();
-  report.loadCharts(() => {
-    $(document).ready(() => {
-      report.draw();
-
-      $(window).resize(() => {
-        report.draw();
-      });
-    });
-  });
-}
-*/
 });
 
-;require.register("config.js", function(exports, require, module) {
+require.register("config.js", function(exports, require, module) {
 'use strict';
 
 module.exports = {

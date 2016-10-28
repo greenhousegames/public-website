@@ -1869,6 +1869,74 @@ process.umask = function() { return 0; };
   })();
 });
 
+require.register("firebase-reporting/dist/countquery.js", function(exports, require, module) {
+  require = __makeRelativeRequire(require, {}, "firebase-reporting");
+  (function() {
+    'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _rsvp = require('rsvp');
+
+var _rsvp2 = _interopRequireDefault(_rsvp);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var CountQuery = function () {
+  function CountQuery() {
+    _classCallCheck(this, CountQuery);
+
+    this.filterRef = null;
+    this.filterChildRef = null;
+    this.metricKey = null;
+    this.filterKey = null;
+    this.comparision = null;
+    this.comparisionValue1 = null;
+    this.comparisionValue2 = null;
+  }
+
+  _createClass(CountQuery, [{
+    key: 'setComparision',
+    value: function setComparision(type, value, value2) {
+      this.comparision = type;
+      this.comparisionValue1 = value;
+      this.comparisionValue2 = value2;
+    }
+  }, {
+    key: 'count',
+    value: function count() {
+      var _this = this;
+
+      var promise = new _rsvp2.default.Promise(function (resolve, reject) {
+        var query = _this.filterRef.child('metrics').orderByChild(_this.metricKey);
+        switch (_this.comparision) {
+          case 'lesser':
+            query = query.endAt(_this.comparisionValue1);
+            break;
+          case 'greater':
+            query = query.startAt(_this.comparisionValue1);
+            break;
+          case 'between':
+            query = query.startAt(_this.comparisionValue1).endAt(_this.comparisionValue2);
+            break;
+        }
+        query.once('value').then(function (snapshot) {
+          resolve(snapshot.numChildren());
+        }).catch(reject);
+      });
+      return promise;
+    }
+  }]);
+
+  return CountQuery;
+}();
+
+module.exports = CountQuery;
+  })();
+});
+
 require.register("firebase-reporting/dist/index.js", function(exports, require, module) {
   require = __makeRelativeRequire(require, {}, "firebase-reporting");
   (function() {
@@ -2204,6 +2272,368 @@ var FirebaseReporting = function () {
 }();
 
 module.exports = FirebaseReporting;
+  })();
+});
+
+require.register("firebase-reporting/dist/metricquery.js", function(exports, require, module) {
+  require = __makeRelativeRequire(require, {}, "firebase-reporting");
+  (function() {
+    'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _rsvp = require('rsvp');
+
+var _rsvp2 = _interopRequireDefault(_rsvp);
+
+var _countquery = require('./countquery');
+
+var _countquery2 = _interopRequireDefault(_countquery);
+
+var _retainerquery = require('./retainerquery');
+
+var _retainerquery2 = _interopRequireDefault(_retainerquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MetricQuery = function () {
+  function MetricQuery(reporting) {
+    _classCallCheck(this, MetricQuery);
+
+    this.reporting = reporting;
+    this.filterRef = null;
+    this.filterChildRef = null;
+    this.metricKey = null;
+    this.filterKey = null;
+  }
+
+  _createClass(MetricQuery, [{
+    key: 'setMetric',
+    value: function setMetric(prop, evaluator) {
+      this.metricKey = this.reporting.getMetricKey(prop, evaluator);
+    }
+  }, {
+    key: 'value',
+    value: function value() {
+      if (!this.filterKey) {
+        throw 'Filter key not set';
+      }
+      if (!this.metricKey) {
+        throw 'Metric key not set';
+      }
+      var query = this.filterRef.child('metrics').child(this.filterKey).child(this.metricKey);
+      var promise = new _rsvp2.default.Promise(function (resolve, reject) {
+        query.once('value').then(function (snapshot) {
+          resolve(snapshot.val());
+        }).catch(reject);
+      });
+      return promise;
+    }
+  }, {
+    key: 'select',
+    value: function select(limit, order) {
+      var _this = this;
+
+      limit = limit || 1;
+      order = order || 'desc';
+
+      var query = this.filterRef.child('metrics').orderByChild(this.metricKey);
+      if (order === 'desc') {
+        query = query.limitToLast(limit);
+      } else if (order === 'asc') {
+        query = query.limitToFirst(limit);
+      }
+
+      var promise = new _rsvp2.default.Promise(function (resolve) {
+        var values = [];
+        query.on('child_added', function (snapshot) {
+          values.push(snapshot.child(_this.metricKey).val());
+          if (values.length === limit) {
+            done();
+          }
+        });
+
+        var done = function done() {
+          clearTimeout(timeout);
+          query.off('child_added');
+          if (order === 'desc') {
+            values.sort(function (a, b) {
+              return b - a;
+            });
+          } else if (order === 'asc') {
+            values.sort(function (a, b) {
+              return a - b;
+            });
+          }
+          resolve(values);
+        };
+        var timeout = setTimeout(done, 5000);
+      });
+      return promise;
+    }
+  }, {
+    key: 'lesser',
+    value: function lesser(value) {
+      var query = new _countquery2.default();
+      query.filterRef = this.filterRef;
+      query.filterKey = this.filterKey;
+      query.metricKey = this.metricKey;
+      query.setComparision('lesser', value, null);
+      return query;
+    }
+  }, {
+    key: 'greater',
+    value: function greater(value) {
+      var query = new _countquery2.default();
+      query.filterRef = this.filterRef;
+      query.filterKey = this.filterKey;
+      query.metricKey = this.metricKey;
+      query.setComparision('greater', value, null);
+      return query;
+    }
+  }, {
+    key: 'between',
+    value: function between(value, value2) {
+      var query = new _countquery2.default();
+      query.filterRef = this.filterRef;
+      query.filterKey = this.filterKey;
+      query.metricKey = this.metricKey;
+      query.setComparision('between', value, value2);
+      return query;
+    }
+  }, {
+    key: 'equal',
+    value: function equal(value) {
+      var query = new _countquery2.default();
+      query.filterRef = this.filterRef;
+      query.filterKey = this.filterKey;
+      query.metricKey = this.metricKey;
+      query.setComparision('between', value, value);
+      return query;
+    }
+  }, {
+    key: 'count',
+    value: function count() {
+      var query = new _countquery2.default();
+      query.filterRef = this.filterRef;
+      query.filterKey = this.filterKey;
+      query.metricKey = this.metricKey;
+      return query.count();
+    }
+  }, {
+    key: 'during',
+    value: function during(retainer) {
+      var query = new _retainerquery2.default(this.reporting);
+      query.filterRef = this.filterRef;
+      query.filterKey = this.filterKey;
+      query.metricKey = this.metricKey;
+      query.setRetainer(retainer);
+      return query;
+    }
+  }]);
+
+  return MetricQuery;
+}();
+
+module.exports = MetricQuery;
+  })();
+});
+
+require.register("firebase-reporting/dist/reportquery.js", function(exports, require, module) {
+  require = __makeRelativeRequire(require, {}, "firebase-reporting");
+  (function() {
+    'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _metricquery = require('./metricquery');
+
+var _metricquery2 = _interopRequireDefault(_metricquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ReportQuery = function () {
+  function ReportQuery(reporting) {
+    _classCallCheck(this, ReportQuery);
+
+    this.reporting = reporting;
+    this.filterRef = null;
+    this.filterChildRef = null;
+    this.filterKey = null;
+  }
+
+  _createClass(ReportQuery, [{
+    key: 'setFilter',
+    value: function setFilter(filter, value) {
+      this.filterKey = null;
+      this.filterRef = this.reporting.getFilterRef(filter);
+
+      if (value) {
+        this.filterKey = value;
+      }
+    }
+  }, {
+    key: 'min',
+    value: function min(prop) {
+      return this.createMetricQuery(prop, 'min');
+    }
+  }, {
+    key: 'max',
+    value: function max(prop) {
+      return this.createMetricQuery(prop, 'max');
+    }
+  }, {
+    key: 'diff',
+    value: function diff(prop) {
+      return this.createMetricQuery(prop, 'diff');
+    }
+  }, {
+    key: 'sum',
+    value: function sum(prop) {
+      return this.createMetricQuery(prop, 'sum');
+    }
+  }, {
+    key: 'multi',
+    value: function multi(prop) {
+      return this.createMetricQuery(prop, 'multi');
+    }
+  }, {
+    key: 'div',
+    value: function div(prop) {
+      return this.createMetricQuery(prop, 'div');
+    }
+  }, {
+    key: 'first',
+    value: function first(prop) {
+      return this.createMetricQuery(prop, 'first');
+    }
+  }, {
+    key: 'last',
+    value: function last(prop) {
+      return this.createMetricQuery(prop, 'last');
+    }
+  }, {
+    key: 'createMetricQuery',
+    value: function createMetricQuery(prop, type) {
+      var query = new _metricquery2.default(this.reporting);
+      query.filterRef = this.filterRef;
+      query.filterKey = this.filterKey;
+      query.setMetric(prop, type);
+      return query;
+    }
+  }]);
+
+  return ReportQuery;
+}();
+
+module.exports = ReportQuery;
+  })();
+});
+
+require.register("firebase-reporting/dist/retainerquery.js", function(exports, require, module) {
+  require = __makeRelativeRequire(require, {}, "firebase-reporting");
+  (function() {
+    'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _rsvp = require('rsvp');
+
+var _rsvp2 = _interopRequireDefault(_rsvp);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RetainerQuery = function () {
+  function RetainerQuery(reporting) {
+    _classCallCheck(this, RetainerQuery);
+
+    this.reporting = reporting;
+    this.filterRef = null;
+    this.filterChildRef = null;
+    this.metricKey = null;
+    this.filterKey = null;
+    this.retainer = null;
+    this.retainerStart = null;
+    this.retainerEnd = null;
+  }
+
+  _createClass(RetainerQuery, [{
+    key: 'setRetainer',
+    value: function setRetainer(type) {
+      this.retainer = type;
+    }
+  }, {
+    key: 'range',
+    value: function range(start, end) {
+      this.retainerStart = start;
+      this.retainerEnd = end;
+      return this;
+    }
+  }, {
+    key: 'valuesAsObject',
+    value: function valuesAsObject(fill) {
+      var _this = this;
+
+      var promise = new _rsvp2.default.Promise(function (resolve, reject) {
+        var query = _this.filterRef.child('retainers').child(_this.filterKey).child(_this.retainer).orderByKey();
+        if (_this.retainerStart) {
+          var startBucket = _this.reporting.getRetainerBucketKey(_this.retainer, _this.retainerStart);
+          query = query.startAt(startBucket);
+        }
+        if (_this.retainerEnd) {
+          var endBucket = _this.reporting.getRetainerBucketKey(_this.retainer, _this.retainerEnd);
+          query = query.endAt(endBucket);
+        }
+        query.once('value').then(function (snapshot) {
+          var buckets = {};
+          if (fill && _this.retainerStart && _this.retainerEnd) {
+            buckets = _this.reporting.getEmptyBuckets(_this.retainer, _this.retainerStart, _this.retainerEnd);
+          }
+          snapshot.forEach(function (snap) {
+            var val = snap.child(_this.metricKey).val();
+            if (typeof val !== 'undefined') {
+              buckets[snap.key] = val;
+            }
+          });
+          resolve(buckets);
+        }).catch(reject);
+      });
+      return promise;
+    }
+  }, {
+    key: 'values',
+    value: function values(fill) {
+      var _this2 = this;
+
+      var promise = new _rsvp2.default.Promise(function (resolve, reject) {
+        _this2.valuesAsObject(fill).then(function (values) {
+          var keys = Object.keys(values).sort();
+          var data = [];
+          var duration = _this2.reporting.getRetainer(_this2.retainer).duration;
+          keys.forEach(function (key) {
+            data.push({
+              bucket: key,
+              timestamp: +key * duration,
+              value: values[key]
+            });
+          });
+          resolve(data);
+        }).catch(reject);
+      });
+      return promise;
+    }
+  }]);
+
+  return RetainerQuery;
+}();
+
+module.exports = RetainerQuery;
   })();
 });
 
