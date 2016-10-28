@@ -10,12 +10,22 @@ section.header {
       li {
         height: 40px;
         width: 40px;
-        padding: 4px;
 
         a.logo-back-button {
+          margin: 4px;
           background: url(/assets/img/logo-circle.png);
           height: 32px;
           width: 32px;
+        }
+
+        a.arrow-back-button {
+          margin: 4px;
+          padding: 0;
+
+          i.fi-arrow-left {
+            font-size: 32px;
+            padding-left: 4px;
+          }
         }
       }
     }

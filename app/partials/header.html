@@ -12,7 +12,16 @@
 <div class="top-bar primary">
   <div class="top-bar-left">
     <ul class="menu">
+      {{#ifequal layout 'abc'}}
+        {{#ifpage 'index'}}
+        <li><a href="/" class="logo-back-button"></a></li>
+        {{/ifpage}}
+        {{#unlesspage 'index'}}
+        <li><a href="/learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li>
+        {{/unlesspage}}
+      {{else}}
       <li><a href="/" class="logo-back-button"></a></li>
+      {{/ifequal}}
     </ul>
   </div>
   <div class="top-bar-right">
