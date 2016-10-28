@@ -21,7 +21,7 @@ e:
 f:
   letter: 'f'
   letterUpper: 'F'
-  desc: 'F is for Force'
+  desc: 'F is for Filter'
 g:
   letter: 'g'
   letterUpper: 'G'
@@ -41,11 +41,11 @@ j:
 k:
   letter: 'k'
   letterUpper: 'K'
-  desc: 'K is for Kick'
+  desc: 'K is for Kill'
 l:
   letter: 'l'
   letterUpper: 'L'
-  desc: 'L is for Life'
+  desc: 'L is for Load'
 m:
   letter: 'm'
   letterUpper: 'M'
@@ -57,11 +57,11 @@ n:
 o:
   letter: 'o'
   letterUpper: 'O'
-  desc: 'O is for Opacity'
+  desc: 'O is for Origin'
 p:
   letter: 'p'
   letterUpper: 'P'
-  desc: 'P is for Physics'
+  desc: 'P is for Particles'
 q:
   letter: 'q'
   letterUpper: 'Q'
@@ -89,7 +89,7 @@ v:
 w:
   letter: 'w'
   letterUpper: 'W'
-  desc: 'W is for Width'
+  desc: 'W is for Weapon'
 x:
   letter: 'x'
   letterUpper: 'X'
@@ -101,4 +101,4 @@ y:
 z:
   letter: 'z'
   letterUpper: 'Z'
-  desc: 'Z is for Z-axis'
+  desc: 'Z is for Z-index'

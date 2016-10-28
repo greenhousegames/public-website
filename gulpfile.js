@@ -65,6 +65,9 @@ gulp.task('pages', ['clean'], function() {
     .pipe(panini({
       root: 'app/pages/',
       layouts: 'app/layouts/',
+      pageLayouts: {
+        'learn/abc': 'abc'
+      },
       partials: 'app/partials/',
       data: 'app/data/',
       helpers: 'app/helpers/'

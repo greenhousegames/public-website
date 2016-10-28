@@ -43,19 +43,3 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-85526007-1', 'auto');
 ga('send', 'pageview');
-
-/*
-function initGamePage() {
-  var Reporting = require('reporting/' + window.GreenhouseGames.reporting + '.js');
-  var report = new Reporting();
-  report.loadCharts(() => {
-    $(document).ready(() => {
-      report.draw();
-
-      $(window).resize(() => {
-        report.draw();
-      });
-    });
-  });
-}
-*/
