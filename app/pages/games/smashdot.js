@@ -1,6 +1,5 @@
 import GameReporting from '@greenhousegames/smash-dot/dist/reporting';
 import FirebaseClient from 'firebase-client.js';
-import rsvp from 'rsvp';
 
 class Reporting extends FirebaseClient {
   constructor() {
@@ -91,7 +90,7 @@ class Reporting extends FirebaseClient {
   }
 
   _drawModesPlayed() {
-    rsvp.all([
+    Promise.all([
       this.reporting.filter('modes', { mode: 'survival' }).sum('played').value(),
       this.reporting.filter('modes', { mode: 'classic' }).sum('played').value(),
       this.reporting.filter('modes', { mode: 'battle' }).sum('played').value()
@@ -120,7 +119,7 @@ class Reporting extends FirebaseClient {
   }
 
   _drawMaxScores() {
-    rsvp.all([
+    Promise.all([
       this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value(),
       this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value(),
       this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value()

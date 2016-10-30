@@ -1,6 +1,5 @@
 import GameReporting from '@greenhousegames/heartbeat/dist/reporting';
 import FirebaseClient from 'firebase-client.js';
-import rsvp from 'rsvp';
 
 class Reporting extends FirebaseClient {
   constructor() {
