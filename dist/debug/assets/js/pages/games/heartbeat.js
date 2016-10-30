@@ -162,10 +162,6 @@ var _firebaseClient = require('firebase-client.js');
 
 var _firebaseClient2 = _interopRequireDefault(_firebaseClient);
 
-var _rsvp = require('rsvp');
-
-var _rsvp2 = _interopRequireDefault(_rsvp);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -248,7 +244,7 @@ google.charts.setOnLoadCallback(function () {
 });
 });
 
-require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
 // Auto-loaded modules from config.npm.globals.

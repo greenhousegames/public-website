@@ -162,10 +162,6 @@ var _firebaseClient = require('firebase-client.js');
 
 var _firebaseClient2 = _interopRequireDefault(_firebaseClient);
 
-var _rsvp = require('rsvp');
-
-var _rsvp2 = _interopRequireDefault(_rsvp);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -295,7 +291,7 @@ var Reporting = function (_FirebaseClient) {
   }, {
     key: '_drawModesPlayed',
     value: function _drawModesPlayed() {
-      _rsvp2.default.all([this.reporting.filter('modes', { mode: 'survival' }).sum('played').value(), this.reporting.filter('modes', { mode: 'classic' }).sum('played').value(), this.reporting.filter('modes', { mode: 'battle' }).sum('played').value()]).then(function (values) {
+      Promise.all([this.reporting.filter('modes', { mode: 'survival' }).sum('played').value(), this.reporting.filter('modes', { mode: 'classic' }).sum('played').value(), this.reporting.filter('modes', { mode: 'battle' }).sum('played').value()]).then(function (values) {
         var element = jQuery('#sum_played_chart');
         var data = new google.visualization.arrayToDataTable([['Mode', 'Times Played'], ['Survival', values[0] || 0], ['Classic', values[1] || 0], ['Battle', values[2] || 0]]);
 
@@ -318,7 +314,7 @@ var Reporting = function (_FirebaseClient) {
   }, {
     key: '_drawMaxScores',
     value: function _drawMaxScores() {
-      _rsvp2.default.all([this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value(), this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value(), this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value()]).then(function (values) {
+      Promise.all([this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value(), this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value(), this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value()]).then(function (values) {
         var element = jQuery('#max_score_chart');
         var data = new google.visualization.arrayToDataTable([['Mode', 'Max Score'], ['Survival', values[0] || 0], ['Classic', values[1] || 0], ['Battle', values[2] || 0]]);
 
@@ -357,7 +353,7 @@ google.charts.setOnLoadCallback(function () {
 });
 });
 
-require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
 // Auto-loaded modules from config.npm.globals.

@@ -199,8 +199,8 @@ require.register("index.html", function(exports, require, module) {
 
 });
 
-;require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/path-browserify/index.js", "path");
-require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+;require.alias("path-browserify/index.js", "path");
+require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
 

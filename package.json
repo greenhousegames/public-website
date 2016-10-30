@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "scripts": {
     "start": "brunch watch --server",
     "build": "brunch build",

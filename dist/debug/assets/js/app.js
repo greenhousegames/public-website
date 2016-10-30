@@ -228,10 +228,6 @@ var _firebase = require('firebase');
 
 var _firebase2 = _interopRequireDefault(_firebase);
 
-var _rsvp = require('rsvp');
-
-var _rsvp2 = _interopRequireDefault(_rsvp);
-
 var _config = require('./config');
 
 var _config2 = _interopRequireDefault(_config);
@@ -290,7 +286,7 @@ var FirebaseClient = function () {
     key: 'waitForAuth',
     value: function waitForAuth() {
       var auth = this.firebase.auth();
-      var promise = new _rsvp2.default.Promise(function (resolve) {
+      var promise = new Promise(function (resolve) {
         var callback = function callback() {
           off();
           resolve();
@@ -304,7 +300,7 @@ var FirebaseClient = function () {
     value: function requireAuth() {
       var _this = this;
 
-      var promise = new _rsvp2.default.Promise(function (resolve, reject) {
+      var promise = new Promise(function (resolve, reject) {
         _this.waitForAuth().then(function () {
           if (!_this.firebase.auth().currentUser) {
             _this.firebase.auth().signInAnonymously().then(resolve).catch(reject);
@@ -323,7 +319,7 @@ var FirebaseClient = function () {
 module.exports = FirebaseClient;
 });
 
-require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
 // Auto-loaded modules from config.npm.globals.
