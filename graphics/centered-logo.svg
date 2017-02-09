@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500"
+   height="500"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="centered-logo.svg"
+   inkscape:export-filename="/Users/brian/GitHub/greenhouse-website/app/assets/icon-100x100.png"
+   inkscape:export-xdpi="18"
+   inkscape:export-ydpi="18">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1031"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="1.0754721"
+     inkscape:cx="180.07062"
+     inkscape:cy="200.69313"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g7">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3394" />
+  </sodipodi:namedview>
+  <title
+     id="title4">Home</title>
+  <metadata
+     id="metadata7">image/svg+xml<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title>Home</dc:title>
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <g
+     id="g7">
+    <title
+       id="title9">Layer 1</title>
+    <path
+       stroke-miterlimit="4"
+       id="rect2391"
+       d="M 250.02526,169.94897 162.5,252.5 l 0,122.5 60,0 0,-55 55,0 0,55 60,0 0,-122.5 z"
+       style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc" />
+    <path
+       stroke-miterlimit="4"
+       id="path2399"
+       d="M 249.5161,125 125,241.53808 138.11634,257.17879 250.02549,152.43181 361.90913,257.17879 375,241.53808 250.50938,125 250.02549,125.59225 249.5161,125 l -1e-5,0 z"
+       style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"
+       inkscape:connector-curvature="0" />
+    <path
+       stroke-miterlimit="4"
+       id="rect2404"
+       d="m 162.5,141.77522 31.2974,0 -0.27505,19.76129 L 162.5,191.41489 Z"
+       style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>
