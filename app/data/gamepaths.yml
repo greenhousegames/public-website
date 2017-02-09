@@ -1,6 +1,6 @@
 smashdot:
-  src_debug: 'node_modules/@greenhousegames/smash-dot-cordova/dist/debug/www/**/*'
-  src_release: 'node_modules/@greenhousegames/smash-dot-cordova/dist/release/www/**/*'
+  src_debug: 'node_modules/@greenhousegames/smash-dot-app/dist/browser/debug/package.zip'
+  src_release: 'node_modules/@greenhousegames/smash-dot-app/dist/browser/release/package.zip'
   dist: 'games/smashdot'
 heartbeat:
   src_debug: 'node_modules/@greenhousegames/heartbeat-cordova/dist/debug/www/**/*'

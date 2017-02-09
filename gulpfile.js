@@ -7,6 +7,7 @@ var yaml = require('js-yaml');
 var fs = require('fs');
 var argv = require('yargs').argv;
 var runSequence = require('run-sequence');
+var unzip = require('gulp-unzip');
 
 var config = loadConfig();
 
@@ -42,10 +43,21 @@ function createGameTask(game) {
     src = config.gamepaths[game].src_debug;
   }
   dest = DIST + '/' + config.gamepaths[game].dist;
-  gulp.task(game, function() {
-    return gulp.src(src)
-      .pipe(gulp.dest(dest));
-  });
+
+  if (src.indexOf('.zip') !== -1) {
+    // source is zip file
+    gulp.task(game, function() {
+      return gulp.src(src)
+        .pipe(unzip())
+        .pipe(gulp.dest(dest));
+    });
+  } else {
+    // source is blob
+    gulp.task(game, function() {
+      return gulp.src(src)
+        .pipe(gulp.dest(dest));
+    });
+  }
 }
 
 // Build the "dist" folder by running all of the below tasks
