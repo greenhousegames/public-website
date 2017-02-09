@@ -4981,12 +4981,17 @@ div.ideas-container {
     margin-left: 16px;
     margin-bottom: 32px; }
 
-/* line 2, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
+/* line 3, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
+div.game-home div.app-store-buttons a img {
+  height: auto;
+  width: 240px; }
+
+/* line 8, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
 div.game-home a.play-game-button {
   margin: 0;
   font-size: 1rem; }
   @media screen and (min-width: 40em) {
-    /* line 2, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
+    /* line 8, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
     div.game-home a.play-game-button {
       font-size: 1.5rem; } }
 
