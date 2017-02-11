@@ -117,7 +117,6 @@
 
 (function() {
 var global = window;
-var process;
 var __makeRelativeRequire = function(require, mappings, pref) {
   var none = {};
   var tryReq = function(name, pref) {
@@ -183,7 +182,7 @@ var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game'
 });
 });
 
-require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.register("___globals___", function(exports, require, module) {
   
 
 // Auto-loaded modules from config.npm.globals.
