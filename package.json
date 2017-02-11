@@ -16,8 +16,8 @@
   "dependencies": {
     "@greenhousegames/heartbeat": "~0.0.1",
     "@greenhousegames/heartbeat-cordova": "~0.0.1",
-    "@greenhousegames/smash-dot": "^0.1.0",
-    "@greenhousegames/smash-dot-app": "~0.0.1",
+    "@greenhousegames/smash-dot": "^1.0.0",
+    "@greenhousegames/smash-dot-app": "~0.1.0",
     "firebase": "^3.6.1",
     "firebase-reporting": "~0.0.1",
     "foundation-sites": "~6.2.3",
