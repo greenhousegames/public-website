@@ -961,7 +961,7 @@ var GameReporting = function (_FirebaseReporting) {
     _this.addMetric('classic-score', ['max']);
     _this.addMetric('survival-score', ['max']);
     _this.addMetric('battle-score', ['max']);
-    _this.addMetric('survival-duration', ['min']);
+    _this.addMetric('survival-duration', ['max']);
     _this.addMetric('win', ['sum']);
     _this.addMetric('loss', ['sum']);
     _this.addMetric('tie', ['sum']);
