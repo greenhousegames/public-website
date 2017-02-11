@@ -23575,18 +23575,30 @@ page-classic ion-content.content.fullscreen div.fixed-content {
   margin-bottom: 0 !important;
 }
 
-page-menu ion-content ion-row {
-  height: calc(100%);
+page-leaderboard ion-list[hidden] {
+  display: none;
 }
 
-page-menu ion-content ion-col {
-  padding: 0;
-  margin: 0 !important;
+page-menu ion-content ion-row {
+  height: 33.33%;
+  padding: 32px;
 }
 
 page-menu ion-content button[ion-button] {
-  height: calc(100% - 64px) !important;
-  width: calc(100% - 64px) !important;
-  margin: 32px;
+  height: 100%;
+  width: 100%;
   font-size: 2em;
+}
+
+page-menu ion-content ion-row:first-child {
+  padding-bottom: 16px;
+}
+
+page-menu ion-content ion-row:not(:first-child):not(:last-child) {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+page-menu ion-content ion-row:last-child {
+  padding-top: 16px;
 }
