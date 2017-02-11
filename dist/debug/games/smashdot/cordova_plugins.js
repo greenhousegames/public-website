@@ -58,6 +58,14 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "file": "plugins/twitter-connect-plugin/www/TwitterConnect.js",
+        "id": "twitter-connect-plugin.TwitterConnect",
+        "pluginId": "twitter-connect-plugin",
+        "clobbers": [
+            "TwitterConnect"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -69,7 +77,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.1",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1"
+    "ionic-plugin-keyboard": "2.2.1",
+    "twitter-connect-plugin": "0.6.0"
 }
 // BOTTOM OF METADATA
 });
