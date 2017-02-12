@@ -65,14 +65,8 @@ gulp.task('default', ['pages'], function(cb) {
   runSequence(initGames(), cb);
 });
 
-// Delete the "dist" folder
-// This happens every time a build starts
-gulp.task('clean', function(done) {
-  rimraf(DIST, done);
-});
-
 // Copy page templates into finished HTML files
-gulp.task('pages', ['clean'], function() {
+gulp.task('pages', function() {
   return gulp.src('app/pages/**/*.{html,hbs,handlebars}')
     .pipe(panini({
       root: 'app/pages/',

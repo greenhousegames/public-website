@@ -56,7 +56,9 @@ var config = {
       ]
     },
     beforeBrunch: [
-      'cp config.development.js app/config.js',
+      'cp config.development.js app/config.js'
+    ],
+    afterBrunch: [
       'gulp'
     ]
   },
@@ -65,7 +67,9 @@ var config = {
     production: {
       plugins: {
         beforeBrunch: [
-          'cp config.production.js app/config.js',
+          'cp config.production.js app/config.js'
+        ],
+        afterBrunch: [
           'gulp --production'
         ]
       }
