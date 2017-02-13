@@ -1,13 +1,13 @@
 (function() {
   'use strict';
 
-  var globals = typeof window === 'undefined' ? global : window;
+  var globals = typeof global === 'undefined' ? self : global;
   if (typeof globals.require === 'function') return;
 
   var modules = {};
   var cache = {};
   var aliases = {};
-  var has = ({}).hasOwnProperty;
+  var has = {}.hasOwnProperty;
 
   var expRe = /^\.\.?(\/|$)/;
   var expand = function(root, name) {
@@ -36,8 +36,7 @@
   };
 
   var initModule = function(name, definition) {
-    var hot = null;
-    hot = hmr && hmr.createHot(name);
+    var hot = hmr && hmr.createHot(name);
     var module = {id: name, exports: {}, hot: hot};
     cache[name] = module;
     definition(module.exports, localRequire(name), module);
@@ -85,7 +84,7 @@
   };
 
   require.register = require.define = function(bundle, fn) {
-    if (typeof bundle === 'object') {
+    if (bundle && typeof bundle === 'object') {
       for (var key in bundle) {
         if (has.call(bundle, key)) {
           require.register(key, bundle[key]);
@@ -116,7 +115,7 @@
 })();
 
 (function() {
-var global = window;
+var global = typeof window === 'undefined' ? this : window;
 var process;
 var __makeRelativeRequire = function(require, mappings, pref) {
   var none = {};
@@ -174,6 +173,7 @@ var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game'
   update: function update() {},
   render: function render() {}
 });
+
 });
 
 require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {

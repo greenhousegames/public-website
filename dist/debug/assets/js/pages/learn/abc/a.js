@@ -1,13 +1,13 @@
 (function() {
   'use strict';
 
-  var globals = typeof window === 'undefined' ? global : window;
+  var globals = typeof global === 'undefined' ? self : global;
   if (typeof globals.require === 'function') return;
 
   var modules = {};
   var cache = {};
   var aliases = {};
-  var has = ({}).hasOwnProperty;
+  var has = {}.hasOwnProperty;
 
   var expRe = /^\.\.?(\/|$)/;
   var expand = function(root, name) {
@@ -36,8 +36,7 @@
   };
 
   var initModule = function(name, definition) {
-    var hot = null;
-    hot = hmr && hmr.createHot(name);
+    var hot = hmr && hmr.createHot(name);
     var module = {id: name, exports: {}, hot: hot};
     cache[name] = module;
     definition(module.exports, localRequire(name), module);
@@ -85,7 +84,7 @@
   };
 
   require.register = require.define = function(bundle, fn) {
-    if (typeof bundle === 'object') {
+    if (bundle && typeof bundle === 'object') {
       for (var key in bundle) {
         if (has.call(bundle, key)) {
           require.register(key, bundle[key]);
@@ -116,7 +115,7 @@
 })();
 
 (function() {
-var global = window;
+var global = typeof window === 'undefined' ? this : window;
 var process;
 var __makeRelativeRequire = function(require, mappings, pref) {
   var none = {};
@@ -152,34 +151,46 @@ var __makeRelativeRequire = function(require, mappings, pref) {
 require.register("pages/learn/abc/a.js", function(exports, require, module) {
 'use strict';
 
-var width = Math.min($('#game-container').width(), 600);
-var sprite;
+var width = $('#game-container').width();
+var sprite1, sprite2;
 
 var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game', {
   preload: function preload() {
-    game.load.image('greenhouse', '/assets/img/logo-circle.png');
+    if (width > 1000) {
+      game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
+    } else if (width > 600) {
+      game.load.image('greenhouse', '/assets/img/logo-circle-medium.png');
+    } else {
+      game.load.image('greenhouse', '/assets/img/logo-circle-small.png');
+    }
+    game.load.image('reload', '/assets/img/restart-game.png');
   },
   create: function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.stage.backgroundColor = '#000000';
+    game.add.button(game.width - 16 - 8, game.height - 16 - 8, 'reload', function () {
+      return game.state.restart();
+    });
 
-    sprite = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
-    sprite.anchor.setTo(0.5, 0.5);
+    sprite1 = game.add.sprite(0, game.height / 4, 'greenhouse');
+    sprite1.anchor.setTo(0, 0.5);
 
-    game.physics.enable(sprite, Phaser.Physics.ARCADE);
-    sprite.body.allowRotation = false;
+    game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+    sprite1.body.collideWorldBounds = true;
+    sprite1.body.velocity.x = 50;
+    sprite1.body.acceleration.x = 10;
+
+    sprite2 = game.add.sprite(0, game.height * 3 / 4, 'greenhouse');
+    sprite2.anchor.setTo(0, 0.5);
+
+    game.physics.enable(sprite2, Phaser.Physics.ARCADE);
+    sprite2.body.collideWorldBounds = true;
+    sprite2.body.velocity.x = 50;
   },
-  update: function update() {
-    game.physics.arcade.accelerateToPointer(sprite, game.input.activePointer, 100, 100, 0);
-  },
-  render: function render() {
-    var pos = 24;
-    game.debug.text("velocity: " + sprite.body.velocity.x, 16, pos, "#ffffff");
-    pos += 16;
-    game.debug.text("acceleration: " + sprite.body.acceleration.x, 16, pos, "#ffffff");
-    pos += 16;
-  }
+  update: function update() {},
+  render: function render() {}
 });
+
 });
 
 require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {

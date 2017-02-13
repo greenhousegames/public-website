@@ -1,13 +1,13 @@
 (function() {
   'use strict';
 
-  var globals = typeof window === 'undefined' ? global : window;
+  var globals = typeof global === 'undefined' ? self : global;
   if (typeof globals.require === 'function') return;
 
   var modules = {};
   var cache = {};
   var aliases = {};
-  var has = ({}).hasOwnProperty;
+  var has = {}.hasOwnProperty;
 
   var expRe = /^\.\.?(\/|$)/;
   var expand = function(root, name) {
@@ -36,8 +36,7 @@
   };
 
   var initModule = function(name, definition) {
-    var hot = null;
-    hot = hmr && hmr.createHot(name);
+    var hot = hmr && hmr.createHot(name);
     var module = {id: name, exports: {}, hot: hot};
     cache[name] = module;
     definition(module.exports, localRequire(name), module);
@@ -85,7 +84,7 @@
   };
 
   require.register = require.define = function(bundle, fn) {
-    if (typeof bundle === 'object') {
+    if (bundle && typeof bundle === 'object') {
       for (var key in bundle) {
         if (has.call(bundle, key)) {
           require.register(key, bundle[key]);
@@ -116,7 +115,7 @@
 })();
 
 (function() {
-var global = window;
+var global = typeof window === 'undefined' ? this : window;
 var process;
 var __makeRelativeRequire = function(require, mappings, pref) {
   var none = {};
@@ -152,12 +151,18 @@ var __makeRelativeRequire = function(require, mappings, pref) {
 require.register("pages/learn/abc/c.js", function(exports, require, module) {
 'use strict';
 
-var width = Math.min($('#game-container').width(), 600);
+var width = $('#game-container').width();
 var sprite1, sprite2;
 
 var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game', {
   preload: function preload() {
-    game.load.image('greenhouse', '/assets/img/logo-circle.png');
+    if (width > 1000) {
+      game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
+    } else if (width > 600) {
+      game.load.image('greenhouse', '/assets/img/logo-circle-medium.png');
+    } else {
+      game.load.image('greenhouse', '/assets/img/logo-circle-small.png');
+    }
   },
   create: function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -167,17 +172,20 @@ var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game'
     sprite1.anchor.setTo(0.5, 0.5);
     game.physics.enable(sprite1, Phaser.Physics.ARCADE);
     sprite1.body.velocity.x = 100;
+    sprite1.body.bounce.set(1);
 
     sprite2 = game.add.sprite(game.width, game.height / 2, 'greenhouse');
     sprite2.anchor.setTo(0.5, 0.5);
     game.physics.enable(sprite2, Phaser.Physics.ARCADE);
     sprite2.body.velocity.x = -100;
+    sprite1.body.bounce.set(1);
   },
   update: function update() {
     game.physics.arcade.collide(sprite1, sprite2);
   },
   render: function render() {}
 });
+
 });
 
 require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
