@@ -44,14 +44,14 @@ section.header {
   div.main-header {
     background-color: $primary-color;
 
-    padding-top: ($header-height-small - $header-logo-size-small)/2;
+    padding-top: ($header-height-small - $header-logo-size-small)/4;
     height: $header-height-small;
     @include breakpoint(medium) {
-      padding-top: ($header-height-medium - $header-logo-size-medium)/2;
+      padding-top: ($header-height-medium - $header-logo-size-medium)/4;
       height: $header-height-medium;
     }
     @include breakpoint(large) {
-      padding-top: ($header-height-large - $header-logo-size-large)/2;
+      padding-top: ($header-height-large - $header-logo-size-large)/4;
       height: $header-height-large;
     }
 

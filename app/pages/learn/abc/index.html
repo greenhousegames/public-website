@@ -5,11 +5,24 @@
   <div class="column small-12">
     <p>Whether you're looking to become a rock-star game developer or E-sport champion, you must understand how games truly works.  Many games share similar concepts which have been broken down into the ABCs of Game Development.  Select a lesson below to start the exploration!</p>
   </div>
+</div>
+<div class="row small-up-1 medium-up-2 large-up-3 text-center">
 {{#each abc}}
-  <div class="columns {{#if @last}}end{{/if}} small-12 medium-6 large-4 text-center">
-    <a class="button large expanded" href="{{ this.letter }}.html"><h2>{{this.letterUpper}}</h2><span>{{ this.desc }}</span></a>
+  <div class="abc column {{#if @last}}end{{/if}}">
+    <div class="card">
+      <a href="{{ this.letter }}.html">
+        <div class="card-divider primary show-for-medium">
+          <h4>{{ this.letterUpper }}</h4>
+        </div>
+        <div class="card-section">
+          <p>{{ this.desc }}</p>
+        </div>
+      </a>
+    </div>
   </div>
 {{/each}}
+</div>
+<div class="row">
   <div class="column small-12">
     <p>All lessons have been built using <a class="dark" href="http://phaser.io">Phaser</a>.  Check out Phaser's amazing set of <a class="dark" href="http://phaser.io/examples">examples</a> to learn more!</p>
   </div>

@@ -1,24 +1,14 @@
 ---
 title: Learning | Acceleration
+heading: A is for Acceleration
+subheading: Acceleration is the rate of change of velocity over time
+content: In this example, the greenhouse is set to accelerate towards the pointer with a max
+  acceleration of 100.  Notice how the velocity increases over time as the
+  icon accelerates towards the pointer.  Once the icon passes the pointer, the
+  icon begins to accelerate in the opposite direction.  This causes the icon
+  to slow down until it reaches a velocity of zero.  Once the icon reaches zero
+  velocity, it begins to move back towards the pointer.
+script: pages/learn/abc/a.js
+next: b.html
 ---
-<div class="row">
-  <div class="column small-12 text-center">
-    <h1>A is for Acceleration</h1>
-  </div>
-  <div class="column small-12" id="game-container">
-    <div id="learning-game">
-    </div>
-  </div>
-  <div class="column small-12 learning-content">
-    <h4>Acceleration is the rate of change of velocity over time</h4>
-    <p>
-      In this example, the greenhouse icon is set to accelerate towards the pointer with a max
-      acceleration of 100.  Notice how the velocity increases over time as the
-      icon accelerates towards the pointer.  Once the icon passes the pointer, the
-      icon begins to accelerate in the opposite direction.  This causes the icon
-      to slow down until it reaches a velocity of zero.  Once the icon reaches zero
-      velocity, it begins to move back towards the pointer.
-    </p>
-  </div>
-</div>
-<script onload="require('pages/learn/abc/a.js')" src="{{root}}assets/js/pages/learn/abc/a.js"></script>
+{{> learn_abc}}

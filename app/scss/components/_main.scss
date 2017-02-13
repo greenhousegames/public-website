@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 // force footer to bottom
 section.main {
   padding-top: $header-padding;
@@ -26,27 +30,55 @@ section.main.subpage {
   }
 }
 
-div.games-container {
-  div.game {
-    margin-bottom: 16px;
-  }
-  h1, p {
-    text-align: center;
+div.light-background {
+  background-color: $light-gray;
+}
+
+div.card-divider.primary {
+  @include card-divider($background: $primary-color);
+  color: $white;
+}
+
+div.card-divider.secondary {
+  @include card-divider($background: $secondary-color);
+  color: $white;
+}
+
+a.button.icon-button, a.button.icon-button-left {
+  i {
+    margin-right: 8px;
   }
 }
 
-div.ideas-container {
-  background-color: $light-gray;
-  text-align: center;
+a.button.icon-button-right {
+  i {
+    margin-left: 8px;
+  }
+}
 
-  div.row div.columns {
-    a.button:not(:last-child) {
-      margin-right: 16px;
-      margin-bottom: 32px;
+a.playstore-button {
+  img {
+    margin-top: -32px;
+    max-width: 135px + 32px;
+
+    @include breakpoint(medium) {
+      margin-top: -50px;
+      max-width: 200px + 32px;
     }
-    a.button:last-child {
-      margin-left: 16px;
-      margin-bottom: 32px;
-    }
+  }
+}
+
+a.appstore-button {
+  display:inline-block;
+  overflow:hidden;
+  background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;
+  width: 135px;
+  height: 40px;
+  background-size:contain;
+
+
+  @include breakpoint(medium) {
+    width: 200px;
+    height: 60px;
   }
 }

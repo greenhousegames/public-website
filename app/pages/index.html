@@ -1,20 +1,61 @@
-<div class="row games-container">
-  <h1>Games</h1>
+<div class="row small-up-1 text-center">
 {{#each games}}
-  <div class="game columns {{#if @last}}end{{/if}} small-12 medium-6 large-4">
-    <a href="{{root}}games/{{ this }}.html">
-      <img src="{{root}}assets/img/games/{{this}}.png">
-    </a>
+  <div class="column {{#if @last}}end{{/if}}">
+    <div class="card">
+      <img src="{{root}}assets/img/games/{{this.key}}/screenshot.png"/>
+      <div class="card-divider secondary">
+        <h4>{{this.name}}</h4>
+      </div>
+      <div class="card-section">
+        <div class="row column small-centered">
+          {{#if this.playstore}}<a class="playstore-button" href="{{this.playstore}}">
+            <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
+          </a>{{/if}}
+          {{#if this.appstore}}<a class="appstore-button" href="{{this.appstore}}"></a>{{/if}}
+        </div>
+        <p>{{this.desc}}</p>
+        <div class="row small-up-1 medium-up-2">
+          <div class="column">
+            <a class="button secondary icon-button expanded" href="{{root}}games/{{this.key}}.html">
+              <span><i class="fi-info"></i></span>VIEW APP
+            </a>
+          </div>
+          <div class="column">
+            <a class="button secondary icon-button expanded" href="{{root}}games/{{this.key}}">
+              <i class="fi-play-circle"></i><span>PLAY NOW</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {{/each}}
 </div>
-<div class="ideas-container">
+<br/>
+<div class="light-background text-center">
+  <br/>
   <div class="row">
     <div class="columns small-12">
       <h1>Learning the ABCs</h1>
       <p>Ever wonder how games are actually created?  Learn the ABCs of game development to find out more!</p>
-      <a class="button large" href="learn/abc">Start Learning</a>
+      <a class="button large secondary" href="learn/abc">Start Learning</a>
     </div>
+  </div>
+  <div class="row small-up-1 medium-up-2 large-up-3">
+{{#each abc}}
+    <div class="column {{#if @last}}end{{/if}}">
+      <div class="card">
+        <a href="learn/abc/{{ this.letter }}.html">
+          <div class="card-divider primary show-for-medium">
+            <h4>{{ this.letterUpper }}</h4>
+          </div>
+          <div class="card-section">
+            <p>{{ this.desc }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+{{/each}}
   </div>
 </div>
 <script type="text/javascript">

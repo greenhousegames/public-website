@@ -8,6 +8,7 @@ var fs = require('fs');
 var argv = require('yargs').argv;
 var runSequence = require('run-sequence');
 var unzip = require('gulp-unzip');
+var rename = require('gulp-rename');
 
 var config = loadConfig();
 
@@ -28,32 +29,43 @@ function loadConfig() {
 
 function initGames() {
   var copies = [];
-  for (var i = 0; i < config.games.length; i++) {
-    createGameTask(config.games[i])
-    copies.push(config.games[i]);
+  for (var key in config.games) {
+    createGameTask(key)
+    copies.push(key);
   }
   return copies;
 }
 
 function createGameTask(game) {
-  var src, dest;
+  var src, dest, imgsrc, assetDest, assetTask;
+  assetTask = game + '-assets';
+  assetDest = DIST + '/assets/img/games/' + game;
   if (production) {
     src = config.gamepaths[game].src_release;
   } else {
     src = config.gamepaths[game].src_debug;
   }
+  imgsrc = config.gamepaths[game].screenshot;
   dest = DIST + '/' + config.gamepaths[game].dist;
+
+  if (imgsrc) {
+    gulp.task(assetTask, function() {
+      return gulp.src(imgsrc)
+      .pipe(rename('screenshot.png'))
+        .pipe(gulp.dest(assetDest));
+    });
+  }
 
   if (src.indexOf('.zip') !== -1) {
     // source is zip file
-    gulp.task(game, function() {
+    gulp.task(game, imgsrc ? [assetTask] : [], function() {
       return gulp.src(src)
         .pipe(unzip())
         .pipe(gulp.dest(dest));
     });
   } else {
     // source is blob
-    gulp.task(game, function() {
+    gulp.task(game, imgsrc ? [assetTask] : [], function() {
       return gulp.src(src)
         .pipe(gulp.dest(dest));
     });

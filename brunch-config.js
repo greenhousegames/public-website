@@ -12,7 +12,7 @@ var config = {
     static: [
       'node_modules/what-input/what-input.js',
       'node_modules/timeago/jquery.timeago.js',
-      'node_modules/foundation-sites/dist/foundation.js'
+      'node_modules/foundation-sites/dist/js/foundation.js'
     ]
   },
 
@@ -29,7 +29,7 @@ var config = {
         after: [
           'node_modules/what-input/what-input.js',
           'node_modules/timeago/jquery.timeago.js',
-          'node_modules/foundation-sites/dist/foundation.js'
+          'node_modules/foundation-sites/dist/js/foundation.js'
         ]
       }
     },

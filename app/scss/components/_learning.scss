@@ -1,15 +1,8 @@
 div#learning-game canvas {
-  margin: 0 auto;
   box-shadow: black 0px 0px 16px;
   background-color: $light-gray;
 }
 
-div.learning-content {
-  h4 {
-    margin-top: 16px;
-    text-align: center;
-  }
-  p {
-    margin-top: 8px;
-  }
+h4.subheader {
+  font-style: italic;
 }
