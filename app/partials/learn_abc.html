@@ -8,14 +8,14 @@
   <div class="column">
     <div class="card">
       <div class="card-divider primary text-center">
-        <h1>{{ heading }}</h1>
+        <h1>{{ header }}</h1>
       </div>
       <div class="card-section">
-        <h4 class="text-center subheader">{{ subheading }}</h4>
+        <h4 class="text-center subheader">{{ subheader }}</h4>
         <p>{{{ content }}}</p>
         <div class="text-center">
-          {{#if prev}}<a class="button icon-button secondary" href="{{ prev }}"><i class="fi-rewind medium-icon"></i>PREVIOUS LESSON</a>{{/if}}
-          {{#if next}}<a class="button icon-button-right secondary" href="{{ next }}">NEXT LESSON<i class="fi-fast-forward medium-icon"></i></a>{{/if}}
+          {{#if prev}}<a class="button icon-button secondary" href="{{ prev }}"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>{{/if}}
+          {{#if next}}<a class="button icon-button-right secondary" href="{{ next }}">NEXT<i class="fi-fast-forward medium-icon"></i></a>{{/if}}
         </div>
       </div>
     </div>

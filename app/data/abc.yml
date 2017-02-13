@@ -17,11 +17,11 @@ d:
 e:
   letter: 'e'
   letterUpper: 'E'
-  desc: 'E is for Events'
+  desc: 'E is for Experience'
 f:
   letter: 'f'
   letterUpper: 'F'
-  desc: 'F is for Filter'
+  desc: 'F is for Frames'
 g:
   letter: 'g'
   letterUpper: 'G'
@@ -29,7 +29,7 @@ g:
 h:
   letter: 'h'
   letterUpper: 'H'
-  desc: 'H is for Height'
+  desc: 'H is for Health'
 i:
   letter: 'i'
   letterUpper: 'I'
@@ -73,7 +73,7 @@ r:
 s:
   letter: 's'
   letterUpper: 'S'
-  desc: 'S is for Sound'
+  desc: 'S is for Sprite'
 t:
   letter: 't'
   letterUpper: 'T'
