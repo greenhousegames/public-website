@@ -157,7 +157,7 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var sprite1;
+var sprite1, sprite2, sprite3;
 
 var game = _utils2.default.init({
   preload: function preload() {
@@ -166,8 +166,14 @@ var game = _utils2.default.init({
   create: function create() {
     _utils2.default.create(game);
 
-    sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+    sprite1 = game.add.sprite(game.width / 2 - _utils2.default.getIconWidth(game) / 2, game.height / 2, 'greenhouse');
     sprite1.anchor.setTo(0.5, 0.5);
+
+    sprite2 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+    sprite2.anchor.setTo(0.5, 0.5);
+
+    sprite3 = game.add.sprite(game.width / 2 + _utils2.default.getIconWidth(game) / 2, game.height / 2, 'greenhouse');
+    sprite3.anchor.setTo(0.5, 0.5);
   },
   update: function update() {},
   render: function render() {}

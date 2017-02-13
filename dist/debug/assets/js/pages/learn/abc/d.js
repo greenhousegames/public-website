@@ -166,7 +166,10 @@ var game = _utils2.default.init({
   create: function create() {
     _utils2.default.create(game);
 
-    sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+    sprite1 = game.add.sprite(game.width / 4, game.height / 2, 'greenhouse');
+    sprite1.anchor.setTo(0.5, 0.5);
+
+    sprite1 = game.add.sprite(game.width * 3 / 4, game.height / 2, 'greenhouse');
     sprite1.anchor.setTo(0.5, 0.5);
     sprite1.inputEnabled = true;
     sprite1.input.enableDrag();
