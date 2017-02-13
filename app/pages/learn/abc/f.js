@@ -1,31 +1,17 @@
-var width = Math.min($('#game-container').width(), 600);
-var sprite, filter, background;
+import utils from './utils.js';
+var sprite1;
 
-var game = new Phaser.Game(width, width/(16/9), Phaser.AUTO, 'learning-game', {
+var game = utils.init({
   preload: () => {
-    game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
-    game.load.script('filter', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Marble.js');
+    utils.preload(game);
   },
   create: () => {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.stage.backgroundColor = '#000000';
+    utils.create(game);
 
-    sprite = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
-    sprite.anchor.setTo(0.5, 0.5);
-
-    game.physics.enable(sprite, Phaser.Physics.ARCADE);
-    sprite.body.allowRotation = false;
-
-    filter = game.add.filter('Marble', game.width, game.height);
-	  filter.alpha = 0.1;
-
-    background = game.add.sprite(0, 0);
-  	background.width = game.width;
-  	background.height = game.height;
-  	background.filters = [filter];
+    sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
+    sprite1.anchor.setTo(0.5, 0.5);
   },
   update: () => {
-    filter.update();
   },
   render: () => {
   }

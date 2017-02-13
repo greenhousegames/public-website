@@ -78,9 +78,11 @@ var config = {
 };
 
 // LEARNING ABCs
+var path = 'pages/learn/abc/utils.js';
+config.files.javascripts.joinTo['assets/js/' + path] = 'app/' + path;
 for (var i = 65; i <= 90; i++) {
   var letter = String.fromCharCode(i).toLowerCase();
-  var path = 'pages/learn/abc/' + letter + '.js';
+  path = 'pages/learn/abc/' + letter + '.js';
   config.files.javascripts.joinTo['assets/js/' + path] = 'app/' + path;
 }
 

@@ -1,15 +1,15 @@
-var width = Math.min($('#game-container').width(), 600);
-var sprite;
+import utils from './utils.js';
+var sprite1;
 
-var game = new Phaser.Game(width, width/(16/9), Phaser.AUTO, 'learning-game', {
+var game = utils.init({
   preload: () => {
-    game.load.image('greenhouse', '/assets/img/logo-circle.png');
+    utils.preload(game);
   },
   create: () => {
-    game.stage.backgroundColor = '#000000';
+    utils.create(game);
 
-    sprite = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
-    sprite.anchor.setTo(0.5, 0.5);
+    sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
+    sprite1.anchor.setTo(0.5, 0.5);
   },
   update: () => {
   },

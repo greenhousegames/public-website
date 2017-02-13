@@ -1,21 +1,12 @@
-var width = $('#game-container').width();
+import utils from './utils.js';
 var sprite1, sprite2;
 
-var game = new Phaser.Game(width, width/(16/9), Phaser.AUTO, 'learning-game', {
+var game = utils.init({
   preload: () => {
-    if (width > 1000) {
-      game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
-    } else if (width > 600) {
-      game.load.image('greenhouse', '/assets/img/logo-circle-medium.png');
-    } else {
-      game.load.image('greenhouse', '/assets/img/logo-circle-small.png');
-    }
-    game.load.image('reload', '/assets/img/restart-game.png');
+    utils.preload(game);
   },
   create: () => {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.stage.backgroundColor = '#000000';
-    game.add.button(game.width - 16 - 8, game.height - 16 - 8, 'reload', () => game.state.restart());
+    utils.create(game);
 
     sprite1 = game.add.sprite(0, game.height/4, 'greenhouse');
     sprite1.anchor.setTo(0, 0.5);
