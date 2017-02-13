@@ -151,18 +151,23 @@ var __makeRelativeRequire = function(require, mappings, pref) {
 require.register("pages/learn/abc/s.js", function(exports, require, module) {
 'use strict';
 
-var width = Math.min($('#game-container').width(), 600);
-var sprite;
+var _utils = require('./utils.js');
 
-var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game', {
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var sprite1;
+
+var game = _utils2.default.init({
   preload: function preload() {
-    game.load.image('greenhouse', '/assets/img/logo-circle.png');
+    _utils2.default.preload(game);
   },
   create: function create() {
-    game.stage.backgroundColor = '#000000';
+    _utils2.default.create(game);
 
-    sprite = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
-    sprite.anchor.setTo(0.5, 0.5);
+    sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+    sprite1.anchor.setTo(0.5, 0.5);
   },
   update: function update() {},
   render: function render() {}

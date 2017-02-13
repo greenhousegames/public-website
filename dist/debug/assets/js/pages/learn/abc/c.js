@@ -151,44 +151,59 @@ var __makeRelativeRequire = function(require, mappings, pref) {
 require.register("pages/learn/abc/c.js", function(exports, require, module) {
 'use strict';
 
-var width = $('#game-container').width();
-var sprite1, sprite2;
+var _utils = require('./utils.js');
 
-var game = new Phaser.Game(width, width / (16 / 9), Phaser.AUTO, 'learning-game', {
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var sprite1, sprite2, sprite3, sprite4;
+
+var game = _utils2.default.init({
   preload: function preload() {
-    if (width > 1000) {
-      game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
-    } else if (width > 600) {
-      game.load.image('greenhouse', '/assets/img/logo-circle-medium.png');
-    } else {
-      game.load.image('greenhouse', '/assets/img/logo-circle-small.png');
-    }
+    _utils2.default.preload(game);
   },
   create: function create() {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.stage.backgroundColor = '#000000';
+    _utils2.default.create(game);
 
-    sprite1 = game.add.sprite(0, game.height / 2, 'greenhouse');
-    sprite1.anchor.setTo(0.5, 0.5);
-    game.physics.enable(sprite1, Phaser.Physics.ARCADE);
-    sprite1.body.velocity.x = 100;
-    sprite1.body.bounce.set(1);
+    sprite1 = game.add.sprite(0, 0, 'greenhouse');
+    setSprite(sprite1, game);
+    sprite1.body.velocity.set(150);
 
-    sprite2 = game.add.sprite(game.width, game.height / 2, 'greenhouse');
-    sprite2.anchor.setTo(0.5, 0.5);
-    game.physics.enable(sprite2, Phaser.Physics.ARCADE);
-    sprite2.body.velocity.x = -100;
-    sprite1.body.bounce.set(1);
+    sprite2 = game.add.sprite(0, game.height / 2, 'greenhouse');
+    setSprite(sprite2, game);
+    sprite2.body.velocity.set(100);
+
+    sprite3 = game.add.sprite(game.width, game.height / 2, 'greenhouse');
+    setSprite(sprite3, game);
+    sprite3.body.velocity.set(100);
+
+    sprite4 = game.add.sprite(game.width, game.height, 'greenhouse');
+    setSprite(sprite4, game);
+    sprite4.body.velocity.set(150);
   },
   update: function update() {
     game.physics.arcade.collide(sprite1, sprite2);
+    game.physics.arcade.collide(sprite1, sprite3);
+    game.physics.arcade.collide(sprite1, sprite4);
+    game.physics.arcade.collide(sprite2, sprite3);
+    game.physics.arcade.collide(sprite2, sprite4);
+    game.physics.arcade.collide(sprite3, sprite4);
   },
   render: function render() {}
 });
 
+function setSprite(sprite, game) {
+  sprite.anchor.setTo(0.5, 0.5);
+  game.physics.enable(sprite, Phaser.Physics.ARCADE);
+  sprite.body.bounce.set(1);
+  sprite.body.collideWorldBounds = true;
+  sprite.body.setCircle(_utils2.default.getIconWidth(game) / 2);
+}
+
 });
 
-require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+;require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
 // Auto-loaded modules from config.npm.globals.
