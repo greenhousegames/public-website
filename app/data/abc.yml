@@ -49,27 +49,27 @@ l:
 m:
   letter: 'm'
   letterUpper: 'M'
-  desc: 'M is for Movement'
+  desc: 'M is for Money'
 n:
   letter: 'n'
   letterUpper: 'N'
-  desc: 'N is for Now'
+  desc: 'N is for Network'
 o:
   letter: 'o'
   letterUpper: 'O'
-  desc: 'O is for Origin'
+  desc: 'O is for Obstacles'
 p:
   letter: 'p'
   letterUpper: 'P'
-  desc: 'P is for Particles'
+  desc: 'P is for Points'
 q:
   letter: 'q'
   letterUpper: 'Q'
-  desc: 'Q is for Quest'
+  desc: 'Q is for Quests'
 r:
   letter: 'r'
   letterUpper: 'R'
-  desc: 'R is for Revive'
+  desc: 'R is for Rotation'
 s:
   letter: 's'
   letterUpper: 'S'
@@ -81,7 +81,7 @@ t:
 u:
   letter: 'u'
   letterUpper: 'U'
-  desc: 'U is for Universe'
+  desc: 'U is for Upgrading'
 v:
   letter: 'v'
   letterUpper: 'V'

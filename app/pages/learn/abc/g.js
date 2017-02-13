@@ -1,5 +1,5 @@
 import utils from './utils.js';
-var sprite1;
+var sprite1, sprite2, sprite3;
 
 var game = utils.init({
   preload: () => {
@@ -7,9 +7,25 @@ var game = utils.init({
   },
   create: () => {
     utils.create(game);
+    game.physics.arcade.gravity.y = 100;
 
-    sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
+    sprite1 = game.add.sprite(game.width/6, game.height/2, 'greenhouse');
+    sprite2 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
+    sprite3 = game.add.sprite(game.width*5/6, game.height/2, 'greenhouse');
+
+    game.physics.enable( [ sprite1, sprite2, sprite3 ], Phaser.Physics.ARCADE);
+
     sprite1.anchor.setTo(0.5, 0.5);
+    sprite1.body.allowGravity = false;
+    sprite1.body.collideWorldBounds = true;
+
+    sprite2.anchor.setTo(0.5, 0.5);
+    sprite2.body.collideWorldBounds = true;
+    sprite2.body.bounce.set(0);
+
+    sprite3.anchor.setTo(0.5, 0.5);
+    sprite3.body.collideWorldBounds = true;
+    sprite3.body.bounce.set(1);
   },
   update: () => {
   },
