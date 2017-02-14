@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="svg2" width="500" height="500" viewBox="283 -29 500 500" xmlns="http://www.w3.org/2000/svg">
+  <title id="title4">Home</title>
+  <g id="g7" transform="matrix(1, 0, 0, 1, -125, -125)">
+    <title id="title9">Layer 1</title>
+    <rect x="408" y="96" width="500" height="500" style="fill: rgb(255, 255, 255);"/>
+    <path stroke-miterlimit="4" id="rect2391" d="M 658.029 249.939 L 553 349 L 553 496 L 625 496 L 625 430 L 691 430 L 691 496 L 763 496 L 763 349 Z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+    <path stroke-miterlimit="4" id="path2399" d="M 657.42 196 L 508 335.846 L 523.741 354.615 L 658.032 228.918 L 792.291 354.615 L 808 335.846 L 658.612 196 L 658.032 196.712 L 657.42 196 L 657.42 196 Z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+    <path stroke-miterlimit="4" id="rect2404" d="M 553 216.13 L 590.559 216.13 L 590.226 239.844 L 553 275.698 Z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+  </g>
+</svg>
