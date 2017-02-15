@@ -3,6 +3,9 @@ section.footer {
   height: $footer-height-small;
   @include breakpoint(medium) {
     height: $footer-height-medium;
+    .menu-centered {
+      text-align: inherit;
+    }
   }
   @include breakpoint(large) {
     height: $footer-height-large;
@@ -64,10 +67,22 @@ section.footer {
       }
     }
 
+    a.logo-button {
+      background: url(/assets/img/logo-circle.png);
+      height: 32px;
+      width: 32px;
+    }
+
     p.copyright {
       margin: 6px 0 0;
       font-size: 0.75em;
       color: $white;
+    }
+
+    ul.menu {
+      li a {
+        color: $light-gray;
+      }
     }
   }
 }

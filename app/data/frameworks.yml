@@ -1,0 +1,10 @@
+phaser:
+  name: 'Phaser'
+  desc: 'A fast, free and fun open source framework for Canvas and WebGL powered browser games.'
+  page: 'phaser.html'
+  website: 'https://phaser.io'
+unity:
+  name: 'Unity'
+  desc: 'Everything you need to succeed in games and VR/AR'
+  page: 'unity.html'
+  website: 'https://unity3d.com'
