@@ -2,7 +2,7 @@
   "name": "@greenhousegames/public-website",
   "version": "0.2.6",
   "scripts": {
-    "clean": "(rm -r publish || true)",
+    "clean": "(rm -r public || true)",
     "start": "npm run clean && brunch watch --server",
     "build": "npm run clean && brunch build",
     "pretest": "npm run build",
@@ -15,8 +15,6 @@
     "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
-    "@greenhousegames/heartbeat": "~0.0.1",
-    "@greenhousegames/heartbeat-cordova": "~0.0.1",
     "@greenhousegames/smash-dot": "^1.0.0",
     "@greenhousegames/smash-dot-app": "~0.1.0",
     "firebase": "^3.6.1",

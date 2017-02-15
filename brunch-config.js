@@ -22,7 +22,6 @@ var config = {
         'assets/js/vendor.js': /^(?!app)/,
         'assets/js/app.js': "app/*.js",
         'assets/js/pages/account/account.js': "app/pages/account/account.js",
-        'assets/js/pages/games/heartbeat.js': "app/pages/games/heartbeat.js",
         'assets/js/pages/games/smashdot.js': "app/pages/games/smashdot.js"
       },
       order: {
