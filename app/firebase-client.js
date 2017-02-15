@@ -19,6 +19,10 @@ class FirebaseClient {
     return this.firebase.auth().signOut();
   }
 
+  signInAnonymously() {
+    return this.firebase.auth().signInAnonymously();
+  }
+
   signInWithPopup(name) {
     let provider;
     switch (name) {

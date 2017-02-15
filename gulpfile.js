@@ -9,6 +9,7 @@ var argv = require('yargs').argv;
 var runSequence = require('run-sequence');
 var unzip = require('gulp-unzip');
 var rename = require('gulp-rename');
+var sitemap = require('gulp-sitemap');
 
 var config = loadConfig();
 
@@ -74,7 +75,11 @@ function createGameTask(game) {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('default', ['pages'], function(cb) {
-  runSequence(initGames(), cb);
+  if (production) {
+    runSequence(initGames(), 'sitemap', cb);
+  } else {
+    runSequence(initGames(), cb);
+  }
 });
 
 // Copy page templates into finished HTML files
@@ -91,4 +96,14 @@ gulp.task('pages', function() {
       helpers: 'app/helpers/'
     }))
     .pipe(gulp.dest(DIST));
+});
+
+gulp.task('sitemap', function() {
+  gulp.src(DIST + '/**/*.html', {
+          read: false
+      })
+      .pipe(sitemap({
+          siteUrl: 'https://www.greenhousegames.com'
+      }))
+      .pipe(gulp.dest(DIST));
 });

@@ -4,11 +4,12 @@ section.header {
       color: white;
     }
 
+    ul.dropdown.menu .submenu {
+      margin-top: 8px;
+    }
+
     div.top-bar-left {
       li {
-        height: 40px;
-        width: 40px;
-
         a.logo-back-button {
           margin: 4px;
           background: url(/assets/img/logo-circle.png);
@@ -41,77 +42,10 @@ section.header {
     }
   }
 
-  div.main-header {
-    background-color: $primary-color;
-
-    padding-top: ($header-height-small - $header-logo-size-small)/4;
-    height: $header-height-small;
-    @include breakpoint(medium) {
-      padding-top: ($header-height-medium - $header-logo-size-medium)/4;
-      height: $header-height-medium;
-    }
-    @include breakpoint(large) {
-      padding-top: ($header-height-large - $header-logo-size-large)/4;
-      height: $header-height-large;
-    }
-
-    div.logo-container {
-      background-color: $white;
-      margin: auto;
-      height: $header-logo-size-small;
-      width: $header-logo-size-small;
-      box-shadow: 0px 0px 8px 0px black;
-      border-radius: 50%;
-
-      & ~ p {
-        color: white;
-        text-align: center;
-        font-weight: bold;
-        margin-top: (($header-height-small - $header-logo-size-small)/2 - $header-caption-size-small*$paragraph-lineheight)/2;
-        font-size: $header-caption-size-small;
-      }
-
-      div.logo {
-        background: url(/icon-50x50.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        height: $header-logo-size-small;
-        width: $header-logo-size-small;
-      }
-
-      @include breakpoint(medium) {
-        height: $header-logo-size-medium;
-        width: $header-logo-size-medium;
-        box-shadow: 0px 0px 12px 0px black;
-
-        & ~ p {
-          margin-top: (($header-height-medium - $header-logo-size-medium)/2 - $header-caption-size-medium*$paragraph-lineheight)/2;
-          font-size: $header-caption-size-medium;
-        }
-
-        div.logo {
-          background-image: url(/icon-75x75.png);
-          height: $header-logo-size-medium;
-          width: $header-logo-size-medium;
-        }
-      }
-
-      @include breakpoint(large) {
-        height: $header-logo-size-large;
-        width: $header-logo-size-large;
-        box-shadow: 0px 0px 16px 0px black;
-
-        & ~ p {
-          margin-top: (($header-height-large - $header-logo-size-large)/2 - $header-caption-size-large*$paragraph-lineheight)/2;
-          font-size: $header-caption-size-large;
-        }
-
-        div.logo {
-          background-image: url(/icon-100x100.png);
-          height: $header-logo-size-large;
-          width: $header-logo-size-large;
-        }
-      }
-    }
+  img.thumbnail-image {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-right: 8px;
   }
 }

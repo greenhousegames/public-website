@@ -7,3 +7,4 @@ src/assets/js
 public
 firebase-debug.log
 app/config.js
+app/google-analytics.js

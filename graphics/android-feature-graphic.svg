@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="svg2" width="500" height="500" viewBox="283 -29 1024 500" xmlns="http://www.w3.org/2000/svg">
+  <title id="title4">Home</title>
+  <g id="g7" transform="matrix(1, 0, 0, 1, -35.297718, -126.031059)">
+    <title id="title9">Layer 1</title>
+    <rect x="318.298" y="97.031" width="1024" height="500" style="fill: rgb(255, 255, 255);"/>
+    <path stroke-miterlimit="4" id="rect2391" d="M 830.327 250.97 L 725.298 350.031 L 725.298 497.031 L 797.298 497.031 L 797.298 431.031 L 863.298 431.031 L 863.298 497.031 L 935.298 497.031 L 935.298 350.031 Z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+    <path stroke-miterlimit="4" id="path2399" d="M 829.718 197.031 L 680.298 336.877 L 696.039 355.646 L 830.33 229.949 L 964.589 355.646 L 980.298 336.877 L 830.91 197.031 L 830.33 197.743 L 829.718 197.031 L 829.718 197.031 Z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+    <path stroke-miterlimit="4" id="rect2404" d="M 725.298 217.161 L 762.857 217.161 L 762.524 240.875 L 725.298 276.729 Z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+  </g>
+</svg>

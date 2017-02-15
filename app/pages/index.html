@@ -1,29 +1,34 @@
-<div class="row small-up-1 text-center">
+<div class="row small-up-1 medium-up-2 text-center">
 {{#each games}}
   <div class="column {{#if @last}}end{{/if}}">
     <div class="card">
       <img src="{{root}}assets/img/games/{{this.key}}/screenshot.png"/>
-      <div class="card-divider secondary">
+      <div class="card-divider primary">
         <h4>{{this.name}}</h4>
       </div>
       <div class="card-section">
-        <div class="row column small-centered">
-          {{#if this.playstore}}<a class="playstore-button" href="{{this.playstore}}">
-            <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
-          </a>{{/if}}
-          {{#if this.appstore}}<a class="appstore-button" href="{{this.appstore}}"></a>{{/if}}
-        </div>
         <p>{{this.desc}}</p>
-        <div class="row small-up-1 medium-up-2">
+        <div class="row small-up-1 text-center">
+          {{#if this.playstore}}
           <div class="column">
-            <a class="button secondary icon-button expanded" href="{{root}}games/{{this.key}}.html">
-              <span><i class="fi-info"></i></span>VIEW APP
+            <a class="playstore-button" href="{{this.playstore}}">
+              <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
             </a>
           </div>
+          {{/if}}
+          {{#if this.appstore}}
           <div class="column">
-            <a class="button secondary icon-button expanded" href="{{root}}games/{{this.key}}">
-              <i class="fi-play-circle"></i><span>PLAY NOW</span>
+            <a class="appstore-button" href="{{this.appstore}}"></a>
+          </div>
+          {{/if}}
+          <div class="column">
+            <a class="greenhousestore-button button dark" href="{{root}}games/{{this.key}}">
+              <div class="image"></div><div class="text">Play on<br/><strong>Greenhouse</strong></div>
             </a>
+          </div>
+        </div>
+        <div class="row small-up-1 medium-up-2">
+          <div class="column">
           </div>
         </div>
       </div>

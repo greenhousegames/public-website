@@ -56,7 +56,8 @@ var config = {
       ]
     },
     beforeBrunch: [
-      'cp config.development.js app/config.js'
+      'cp environments/debug/config.development.js app/config.js',
+      'cp environments/debug/google-analytics.js app/google-analytics.js'
     ],
     afterBrunch: [
       'gulp'
@@ -67,7 +68,8 @@ var config = {
     production: {
       plugins: {
         beforeBrunch: [
-          'cp config.production.js app/config.js'
+          'cp environments/release/config.production.js app/config.js',
+          'cp environments/release/google-analytics.js app/google-analytics.js'
         ],
         afterBrunch: [
           'gulp --production'
