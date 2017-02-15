@@ -160,11 +160,8 @@ $('#twitterLogin_button').click(function () {
 $('#facebookLogin_button').click(function () {
   return window.GreenhouseGames.client.signInWithPopup('facebook').then(window.GreenhouseGames.authHelpers.loginSuccess).catch(window.GreenhouseGames.authHelpers.loginError);
 });
-$('#googleLogin_button').click(function () {
-  return window.GreenhouseGames.client.signInWithPopup('google');
-});
-$('#githubLogin_button').click(function () {
-  return window.GreenhouseGames.client.signInWithPopup('github').then(window.GreenhouseGames.authHelpers.loginSuccess).catch(window.GreenhouseGames.authHelpers.loginError);
+$('#guestLogin_button').click(function () {
+  return window.GreenhouseGames.client.signInAnonymously().then(window.GreenhouseGames.authHelpers.loginSuccess).catch(window.GreenhouseGames.authHelpers.loginError);
 });
 
 });

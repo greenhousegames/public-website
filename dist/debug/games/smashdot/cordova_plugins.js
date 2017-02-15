@@ -51,6 +51,44 @@ module.exports = [
         "runs": true
     },
     {
+        "file": "plugins/heyzap-cordova/www/ads/HeyzapAds.js",
+        "id": "heyzap-cordova.ads.HeyzapAds",
+        "pluginId": "heyzap-cordova",
+        "merges": [
+            "HeyzapAds"
+        ]
+    },
+    {
+        "file": "plugins/heyzap-cordova/www/ads/InterstitialAd.js",
+        "id": "heyzap-cordova.ads.InterstitialAd",
+        "pluginId": "heyzap-cordova"
+    },
+    {
+        "file": "plugins/heyzap-cordova/www/ads/IncentivizedAd.js",
+        "id": "heyzap-cordova.ads.IncentivizedAd",
+        "pluginId": "heyzap-cordova"
+    },
+    {
+        "file": "plugins/heyzap-cordova/www/ads/BannerAd.js",
+        "id": "heyzap-cordova.ads.BannerAd",
+        "pluginId": "heyzap-cordova"
+    },
+    {
+        "file": "plugins/heyzap-cordova/www/Common.js",
+        "id": "heyzap-cordova.Common",
+        "pluginId": "heyzap-cordova"
+    },
+    {
+        "file": "plugins/heyzap-cordova/www/Promise.js",
+        "id": "heyzap-cordova.Promise",
+        "pluginId": "heyzap-cordova"
+    },
+    {
+        "file": "plugins/heyzap-cordova/www/vendor/es6-promise.min.js",
+        "id": "heyzap-cordova.vendor.PromisePolyfill",
+        "pluginId": "heyzap-cordova"
+    },
+    {
         "file": "plugins/ionic-plugin-keyboard/www/browser/keyboard.js",
         "id": "ionic-plugin-keyboard.keyboard",
         "pluginId": "ionic-plugin-keyboard",
@@ -77,6 +115,7 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.1",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
+    "heyzap-cordova": "1.2.1",
     "ionic-plugin-keyboard": "2.2.1",
     "twitter-connect-plugin": "0.6.0"
 }

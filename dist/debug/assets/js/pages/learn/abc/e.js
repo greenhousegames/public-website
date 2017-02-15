@@ -190,7 +190,7 @@ var game = _utils2.default.init({
       align: 'center'
     });
     lvlText.fill = '#ffffff';
-    lvlText.text = 'Levels\n0';
+    lvlText.text = 'Levels\n1';
     lvlText.anchor.setTo(0.5, 0.5);
 
     xpText = game.add.text(game.width * 3 / 4, game.height / 4, {

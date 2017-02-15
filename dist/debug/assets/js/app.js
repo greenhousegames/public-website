@@ -159,9 +159,9 @@ var _firebaseClient = require('./firebase-client');
 
 var _firebaseClient2 = _interopRequireDefault(_firebaseClient);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+require('./google-analytics');
 
-(0, _jquery2.default)(document).foundation();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.GreenhouseGames = {
   client: new _firebaseClient2.default(),
@@ -173,12 +173,17 @@ window.GreenhouseGames = {
     hideAuth: function hideAuth() {
       (0, _jquery2.default)('.hide-auth').show();
       (0, _jquery2.default)('.show-auth').hide();
-      (0, _jquery2.default)('span.user-name').text('Login');
     },
     loginSuccess: function loginSuccess(data) {
-      (0, _jquery2.default)('#user_image').attr('src', data.user.photoURL);
-      (0, _jquery2.default)('#user_name').text(data.user.displayName);
-      (0, _jquery2.default)('span.user-name').text(data.user.displayName);
+      if (!data.isAnonymous) {
+        (0, _jquery2.default)('img.user-image').attr('src', data.user.photoURL);
+        (0, _jquery2.default)('img.user-image').show();
+        (0, _jquery2.default)('.user-name').text(data.user.displayName);
+      } else {
+        (0, _jquery2.default)('img.user-image').attr('src', '');
+        (0, _jquery2.default)('img.user-image').hide();
+        (0, _jquery2.default)('.user-name').text('Guest');
+      }
       window.GreenhouseGames.authHelpers.showAuth();
     },
     loginError: function loginError(err) {
@@ -187,23 +192,15 @@ window.GreenhouseGames = {
   }
 };
 
-window.GreenhouseGames.client.firebase.auth().onAuthStateChanged(function (user) {
-  if (user && !user.isAnonymous) {
-    window.GreenhouseGames.authHelpers.loginSuccess({ user: user });
-  } else {
-    window.GreenhouseGames.authHelpers.hideAuth();
-  }
+(0, _jquery2.default)(document).ready(function () {
+  window.GreenhouseGames.client.firebase.auth().onAuthStateChanged(function (user) {
+    if (user && !user.isAnonymous) {
+      window.GreenhouseGames.authHelpers.loginSuccess({ user: user });
+    } else {
+      window.GreenhouseGames.authHelpers.hideAuth();
+    }
+  });
 });
-
-// Google Analytics
-(function (i, s, o, g, r, a, m) {
-  i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
-    (i[r].q = i[r].q || []).push(arguments);
-  }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-ga('create', 'UA-85526007-1', 'auto');
-ga('send', 'pageview');
 
 });
 
@@ -258,6 +255,11 @@ var FirebaseClient = function () {
     key: 'signOut',
     value: function signOut() {
       return this.firebase.auth().signOut();
+    }
+  }, {
+    key: 'signInAnonymously',
+    value: function signInAnonymously() {
+      return this.firebase.auth().signInAnonymously();
     }
   }, {
     key: 'signInWithPopup',
@@ -318,6 +320,12 @@ var FirebaseClient = function () {
 }();
 
 module.exports = FirebaseClient;
+
+});
+
+require.register("google-analytics.js", function(exports, require, module) {
+// Google Analytics disabled for debug builds
+"use strict";
 
 });
 
