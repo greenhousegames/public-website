@@ -1,2 +1,0 @@
-
-/*# sourceMappingURL=heartbeat.js.map*/
