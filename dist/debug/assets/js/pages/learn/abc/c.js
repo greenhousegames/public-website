@@ -157,35 +157,39 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var sprite1, sprite2, sprite3, sprite4;
+function create() {
+  var sprite1, sprite2, sprite3, sprite4;
 
-var game = _utils2.default.init({
-  preload: function preload() {
-    _utils2.default.preload(game);
-  },
-  create: function create() {
-    _utils2.default.create(game);
+  var game = _utils2.default.init('c', {
+    preload: function preload() {
+      _utils2.default.preload(game);
+    },
+    create: function create() {
+      _utils2.default.create(game);
 
-    sprite1 = game.add.sprite(0, game.height / 4, 'greenhouse');
-    setSprite(sprite1, game);
-    sprite1.body.velocity.x = 100;
+      sprite1 = game.add.sprite(0, game.height / 4, 'greenhouse');
+      setSprite(sprite1, game);
+      sprite1.body.velocity.x = 100;
 
-    sprite2 = game.add.sprite(game.width, game.height / 4, 'greenhouse');
-    setSprite(sprite2, game);
-    sprite2.body.velocity.x = -100;
+      sprite2 = game.add.sprite(game.width, game.height / 4, 'greenhouse');
+      setSprite(sprite2, game);
+      sprite2.body.velocity.x = -100;
 
-    sprite3 = game.add.sprite(0, game.height * 3 / 4, 'greenhouse');
-    setSprite(sprite3, game);
-    sprite3.body.velocity.x = 100;
+      sprite3 = game.add.sprite(0, game.height * 3 / 4, 'greenhouse');
+      setSprite(sprite3, game);
+      sprite3.body.velocity.x = 100;
 
-    sprite4 = game.add.sprite(game.width, game.height * 3 / 4, 'greenhouse');
-    setSprite(sprite4, game);
-    sprite4.body.velocity.x = -100;
-  },
-  update: function update() {
-    game.physics.arcade.collide(sprite1, sprite2);
-  }
-});
+      sprite4 = game.add.sprite(game.width, game.height * 3 / 4, 'greenhouse');
+      setSprite(sprite4, game);
+      sprite4.body.velocity.x = -100;
+    },
+    update: function update() {
+      game.physics.arcade.collide(sprite1, sprite2);
+    }
+  });
+
+  return game;
+}
 
 function setSprite(sprite, game) {
   sprite.anchor.setTo(0.5, 0.5);
@@ -195,9 +199,11 @@ function setSprite(sprite, game) {
   sprite.body.setCircle(_utils2.default.getIconWidth(game) / 2);
 }
 
+module.exports = create;
+
 });
 
-;require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 
 // Auto-loaded modules from config.npm.globals.

@@ -46,7 +46,7 @@
               <a href="">Learn</a>
               <ul class="menu vertical">
                 <li><a href="/learn/abc">ABC of Games</a></li>
-                <li><a href="/learn/frameworks">Game Frameworks</a></li>
+                <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
               </ul>
             </li>
             <li>
@@ -67,8 +67,8 @@
     </section>
     <section class="main subpage">
       <div class="row">
-        <div class="column small-12" id="game-container">
-          <div id="learning-game">
+        <div class="column small-12" id="learning-game-v-container">
+          <div id="learning-game-v">
           </div>
         </div>
       </div>
@@ -82,15 +82,21 @@
               <h4 class="text-center subheader">Velocity is the rate of change of distance over time</h4>
               <p>Take a look at the three <a href="s.html">sprites</a> in the game.  All sprites start out at the same <a href="x.html">x</a> position.  The bottom sprite has zero velocity, the top sprite has positive velocity and the middle sprite has half the velocity of the top sprite. <br/> <br/> Due to not having any velocity, the x position of the bottom sprite does not change. <br/> <br/> Due to having positive velocity, the x position of the top sprite increases over time until it hits the wall. <br/> <br/> Due to having half the velocity of the top sprite, the middle sprite travels half the distance of the top sprite in the same amount of time.  This causes the middle sprite to be half way across the game once the top sprite reaches the wall.</p>
               <div class="text-center">
-                <a class="button icon-button secondary" href="u.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-                <a class="button icon-button-right secondary" href="w.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
+                <a class="button icon-button secondary " href="u.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+                <a class="button icon-button-right secondary " href="w.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <script src="../../assets/js/pages/learn/abc/utils.js"></script>
-      <script onload="require('pages/learn/abc/v.js')" src="../../assets/js/pages/learn/abc/v.js"></script>
+      <script src="../../assets/js/pages/learn/abc/v.js"></script>
+      <script>
+      $(document).ready(function() {
+        var create = require('pages/learn/abc/v.js');
+        create();
+      });
+      </script>
       
       
     </section>
@@ -119,6 +125,5 @@
     <script>
       $(document).foundation();
     </script>
-    <script type="text/javascript"> var infolinks_pid = 2955248; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
   </body>
 </html>

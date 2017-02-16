@@ -46,7 +46,7 @@
               <a href="">Learn</a>
               <ul class="menu vertical">
                 <li><a href="/learn/abc">ABC of Games</a></li>
-                <li><a href="/learn/frameworks">Game Frameworks</a></li>
+                <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
               </ul>
             </li>
             <li>
@@ -67,8 +67,8 @@
     </section>
     <section class="main subpage">
       <div class="row">
-        <div class="column small-12" id="game-container">
-          <div id="learning-game">
+        <div class="column small-12" id="learning-game-b-container">
+          <div id="learning-game-b">
           </div>
         </div>
       </div>
@@ -82,15 +82,21 @@
               <h4 class="text-center subheader">Bounce is the elasticity of an object</h4>
               <p>Take a look at the three <a href="s.html">sprites</a> in the game.  All sprites start out with the same <a href="v.html">velocity</a>.  The bottom sprite has zero bounce, the middle sprite has 75% bounce, and the top sprite has 100% bounce. <br/> <br/> Due to having 100% bounce, the top sprite rebounds off the wall at the same speed. This causes the velocity of the top sprite to be the same before and after hitting the wall. <br/> <br/> Due to having zero bounce, the bottom sprite does not rebound off the wall.  This causes the velocity of the bottom sprite to be zero after it hits the wall. <br/> <br/> Due to having between zero and 100% bounce, the middle sprite rebounds off the wall, but at a slower speed.  This causes the velocity of the middle sprite to be 75% the speed after hitting the wall.</p>
               <div class="text-center">
-                <a class="button icon-button secondary" href="a.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-                <a class="button icon-button-right secondary" href="c.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
+                <a class="button icon-button secondary " href="a.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+                <a class="button icon-button-right secondary " href="c.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <script src="../../assets/js/pages/learn/abc/utils.js"></script>
-      <script onload="require('pages/learn/abc/b.js')" src="../../assets/js/pages/learn/abc/b.js"></script>
+      <script src="../../assets/js/pages/learn/abc/b.js"></script>
+      <script>
+      $(document).ready(function() {
+        var create = require('pages/learn/abc/b.js');
+        create();
+      });
+      </script>
       
       
     </section>
@@ -119,6 +125,5 @@
     <script>
       $(document).foundation();
     </script>
-    <script type="text/javascript"> var infolinks_pid = 2955248; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
   </body>
 </html>

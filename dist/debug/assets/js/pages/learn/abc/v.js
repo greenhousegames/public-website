@@ -157,39 +157,44 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var sprite1, sprite2, sprite3;
+function create() {
+  var sprite1, sprite2, sprite3;
 
-var game = _utils2.default.init({
-  preload: function preload() {
-    _utils2.default.preload(game);
-  },
-  create: function create() {
-    _utils2.default.create(game);
+  var game = _utils2.default.init('v', {
+    preload: function preload() {
+      _utils2.default.preload(game);
+    },
+    create: function create() {
+      _utils2.default.create(game);
 
-    sprite1 = game.add.sprite(0, game.height / 6, 'greenhouse');
-    sprite1.anchor.setTo(0, 0.5);
+      sprite1 = game.add.sprite(0, game.height / 6, 'greenhouse');
+      sprite1.anchor.setTo(0, 0.5);
 
-    game.physics.enable(sprite1, Phaser.Physics.ARCADE);
-    sprite1.body.collideWorldBounds = true;
-    sprite1.body.velocity.x = 100;
+      game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+      sprite1.body.collideWorldBounds = true;
+      sprite1.body.velocity.x = 100;
 
-    sprite2 = game.add.sprite(0, game.height / 2, 'greenhouse');
-    sprite2.anchor.setTo(0, 0.5);
+      sprite2 = game.add.sprite(0, game.height / 2, 'greenhouse');
+      sprite2.anchor.setTo(0, 0.5);
 
-    game.physics.enable(sprite2, Phaser.Physics.ARCADE);
-    sprite2.body.collideWorldBounds = true;
-    sprite2.body.velocity.x = 50;
+      game.physics.enable(sprite2, Phaser.Physics.ARCADE);
+      sprite2.body.collideWorldBounds = true;
+      sprite2.body.velocity.x = 50;
 
-    sprite3 = game.add.sprite(0, game.height * 5 / 6, 'greenhouse');
-    sprite3.anchor.setTo(0, 0.5);
+      sprite3 = game.add.sprite(0, game.height * 5 / 6, 'greenhouse');
+      sprite3.anchor.setTo(0, 0.5);
 
-    game.physics.enable(sprite3, Phaser.Physics.ARCADE);
-    sprite3.body.collideWorldBounds = true;
-    sprite3.body.velocity.x = 0;
-  },
-  update: function update() {},
-  render: function render() {}
-});
+      game.physics.enable(sprite3, Phaser.Physics.ARCADE);
+      sprite3.body.collideWorldBounds = true;
+      sprite3.body.velocity.x = 0;
+    },
+    update: function update() {},
+    render: function render() {}
+  });
+  return game;
+}
+
+module.exports = create;
 
 });
 

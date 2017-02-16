@@ -157,26 +157,31 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var sprite1;
+function create() {
+  var sprite1;
 
-var game = _utils2.default.init({
-  preload: function preload() {
-    _utils2.default.preload(game);
-  },
-  create: function create() {
-    _utils2.default.create(game);
+  var game = _utils2.default.init('d', {
+    preload: function preload() {
+      _utils2.default.preload(game);
+    },
+    create: function create() {
+      _utils2.default.create(game);
 
-    sprite1 = game.add.sprite(game.width / 4, game.height / 2, 'greenhouse');
-    sprite1.anchor.setTo(0.5, 0.5);
+      sprite1 = game.add.sprite(game.width / 4, game.height / 2, 'greenhouse');
+      sprite1.anchor.setTo(0.5, 0.5);
 
-    sprite1 = game.add.sprite(game.width * 3 / 4, game.height / 2, 'greenhouse');
-    sprite1.anchor.setTo(0.5, 0.5);
-    sprite1.inputEnabled = true;
-    sprite1.input.enableDrag();
-  },
-  update: function update() {},
-  render: function render() {}
-});
+      sprite1 = game.add.sprite(game.width * 3 / 4, game.height / 2, 'greenhouse');
+      sprite1.anchor.setTo(0.5, 0.5);
+      sprite1.inputEnabled = true;
+      sprite1.input.enableDrag();
+    },
+    update: function update() {},
+    render: function render() {}
+  });
+  return game;
+}
+
+module.exports = create;
 
 });
 

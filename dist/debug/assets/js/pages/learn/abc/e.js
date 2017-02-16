@@ -157,53 +157,58 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var sprite1, lvlText, xpText, lvl, xp, nextLvl;
+function create() {
+  var sprite1, lvlText, xpText, lvl, xp, nextLvl;
 
-var game = _utils2.default.init({
-  preload: function preload() {
-    _utils2.default.preload(game);
-  },
-  create: function create() {
-    _utils2.default.create(game);
-    xp = 0;
-    nextLvl = 2;
-    lvl = 1;
+  var game = _utils2.default.init('e', {
+    preload: function preload() {
+      _utils2.default.preload(game);
+    },
+    create: function create() {
+      _utils2.default.create(game);
+      xp = 0;
+      nextLvl = 2;
+      lvl = 1;
 
-    sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
-    sprite1.anchor.setTo(0.5, 0.5);
-    sprite1.inputEnabled = true;
-    sprite1.events.onInputDown.add(function () {
-      xp++;
+      sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+      sprite1.anchor.setTo(0.5, 0.5);
+      sprite1.inputEnabled = true;
+      sprite1.events.onInputDown.add(function () {
+        xp++;
 
-      if (xp >= nextLvl) {
-        lvl++;
-        xp = 0;
-        nextLvl = nextLvl * 2;
-      }
+        if (xp >= nextLvl) {
+          lvl++;
+          xp = 0;
+          nextLvl = nextLvl * 2;
+        }
 
-      lvlText.text = 'Levels\n' + lvl;
-      xpText.text = 'Experience\n' + xp + ' / ' + nextLvl;
-    });
+        lvlText.text = 'Levels\n' + lvl;
+        xpText.text = 'Experience\n' + xp + ' / ' + nextLvl;
+      });
 
-    lvlText = game.add.text(game.width / 4, game.height / 4, {
-      fill: 'white',
-      align: 'center'
-    });
-    lvlText.fill = '#ffffff';
-    lvlText.text = 'Levels\n1';
-    lvlText.anchor.setTo(0.5, 0.5);
+      lvlText = game.add.text(game.width / 4, game.height / 4, {
+        fill: 'white',
+        align: 'center'
+      });
+      lvlText.fill = '#ffffff';
+      lvlText.text = 'Levels\n1';
+      lvlText.anchor.setTo(0.5, 0.5);
 
-    xpText = game.add.text(game.width * 3 / 4, game.height / 4, {
-      fill: 'white',
-      align: 'center'
-    });
-    xpText.fill = '#ffffff';
-    xpText.text = 'Experience\n0 / 2';
-    xpText.anchor.setTo(0.5, 0.5);
-  },
-  update: function update() {},
-  render: function render() {}
-});
+      xpText = game.add.text(game.width * 3 / 4, game.height / 4, {
+        fill: 'white',
+        align: 'center'
+      });
+      xpText.fill = '#ffffff';
+      xpText.text = 'Experience\n0 / 2';
+      xpText.anchor.setTo(0.5, 0.5);
+    },
+    update: function update() {},
+    render: function render() {}
+  });
+  return game;
+}
+
+module.exports = create;
 
 });
 

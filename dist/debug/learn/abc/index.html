@@ -46,7 +46,7 @@
               <a href="">Learn</a>
               <ul class="menu vertical">
                 <li><a href="/learn/abc">ABC of Games</a></li>
-                <li><a href="/learn/frameworks">Game Frameworks</a></li>
+                <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
               </ul>
             </li>
             <li>
@@ -75,318 +75,995 @@
         </div>
       </div>
       <div class="row small-up-1 medium-up-2 large-up-3 text-center">
-        <div class="abc column ">
-          <div class="card">
-            <a href="a.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>A</h4>
-              </div>
-              <div class="card-section">
-                <p>A is for Acceleration</p>
-              </div>
-            </a>
+      <script src="../../assets/js/pages/learn/abc/utils.js"></script>
+        <div class="abc column">
+          <div id="card-letter-a" class="card">
+            <div id="learning-game-a-container">
+              <div id="learning-game-a"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>A</h4>
+            </div>
+            <div class="card-section">
+              <p>A is for Acceleration</p>
+              <a href="../../learn/abc/a.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="b.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>B</h4>
-              </div>
-              <div class="card-section">
-                <p>B is for Bounce</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/a.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/a.js');
+          var game;
+          $('#learning-game-a-container').hide();
+          $('#card-letter-a').hover(function() {
+            if (!game) {
+              $('#learning-game-a-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-a-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-b" class="card">
+            <div id="learning-game-b-container">
+              <div id="learning-game-b"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>B</h4>
+            </div>
+            <div class="card-section">
+              <p>B is for Bounce</p>
+              <a href="../../learn/abc/b.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="c.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>C</h4>
-              </div>
-              <div class="card-section">
-                <p>C is for Collide</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/b.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/b.js');
+          var game;
+          $('#learning-game-b-container').hide();
+          $('#card-letter-b').hover(function() {
+            if (!game) {
+              $('#learning-game-b-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-b-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-c" class="card">
+            <div id="learning-game-c-container">
+              <div id="learning-game-c"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>C</h4>
+            </div>
+            <div class="card-section">
+              <p>C is for Collide</p>
+              <a href="../../learn/abc/c.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="d.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>D</h4>
-              </div>
-              <div class="card-section">
-                <p>D is for Drag</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/c.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/c.js');
+          var game;
+          $('#learning-game-c-container').hide();
+          $('#card-letter-c').hover(function() {
+            if (!game) {
+              $('#learning-game-c-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-c-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-d" class="card">
+            <div id="learning-game-d-container">
+              <div id="learning-game-d"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>D</h4>
+            </div>
+            <div class="card-section">
+              <p>D is for Drag</p>
+              <a href="../../learn/abc/d.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="e.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>E</h4>
-              </div>
-              <div class="card-section">
-                <p>E is for Experience</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/d.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/d.js');
+          var game;
+          $('#learning-game-d-container').hide();
+          $('#card-letter-d').hover(function() {
+            if (!game) {
+              $('#learning-game-d-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-d-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-e" class="card">
+            <div id="learning-game-e-container">
+              <div id="learning-game-e"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>E</h4>
+            </div>
+            <div class="card-section">
+              <p>E is for Experience</p>
+              <a href="../../learn/abc/e.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="f.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>F</h4>
-              </div>
-              <div class="card-section">
-                <p>F is for Frames</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/e.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/e.js');
+          var game;
+          $('#learning-game-e-container').hide();
+          $('#card-letter-e').hover(function() {
+            if (!game) {
+              $('#learning-game-e-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-e-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-f" class="card">
+            <div id="learning-game-f-container">
+              <div id="learning-game-f"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>F</h4>
+            </div>
+            <div class="card-section">
+              <p>F is for Frames</p>
+              <a href="../../learn/abc/f.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="g.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>G</h4>
-              </div>
-              <div class="card-section">
-                <p>G is for Gravity</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/f.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/f.js');
+          var game;
+          $('#learning-game-f-container').hide();
+          $('#card-letter-f').hover(function() {
+            if (!game) {
+              $('#learning-game-f-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-f-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-g" class="card">
+            <div id="learning-game-g-container">
+              <div id="learning-game-g"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>G</h4>
+            </div>
+            <div class="card-section">
+              <p>G is for Gravity</p>
+              <a href="../../learn/abc/g.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="h.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>H</h4>
-              </div>
-              <div class="card-section">
-                <p>H is for Health</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/g.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/g.js');
+          var game;
+          $('#learning-game-g-container').hide();
+          $('#card-letter-g').hover(function() {
+            if (!game) {
+              $('#learning-game-g-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-g-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-h" class="card">
+            <div id="learning-game-h-container">
+              <div id="learning-game-h"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>H</h4>
+            </div>
+            <div class="card-section">
+              <p>H is for Health</p>
+              <a href="../../learn/abc/h.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="i.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>I</h4>
-              </div>
-              <div class="card-section">
-                <p>I is for Immovable</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/h.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/h.js');
+          var game;
+          $('#learning-game-h-container').hide();
+          $('#card-letter-h').hover(function() {
+            if (!game) {
+              $('#learning-game-h-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-h-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-i" class="card">
+            <div id="learning-game-i-container">
+              <div id="learning-game-i"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>I</h4>
+            </div>
+            <div class="card-section">
+              <p>I is for Immovable</p>
+              <a href="../../learn/abc/i.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="j.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>J</h4>
-              </div>
-              <div class="card-section">
-                <p>J is for Joystick</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/i.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/i.js');
+          var game;
+          $('#learning-game-i-container').hide();
+          $('#card-letter-i').hover(function() {
+            if (!game) {
+              $('#learning-game-i-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-i-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-j" class="card">
+            <div id="learning-game-j-container">
+              <div id="learning-game-j"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>J</h4>
+            </div>
+            <div class="card-section">
+              <p>J is for Joystick</p>
+              <a href="../../learn/abc/j.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="k.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>K</h4>
-              </div>
-              <div class="card-section">
-                <p>K is for Kill</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/j.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/j.js');
+          var game;
+          $('#learning-game-j-container').hide();
+          $('#card-letter-j').hover(function() {
+            if (!game) {
+              $('#learning-game-j-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-j-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-k" class="card">
+            <div id="learning-game-k-container">
+              <div id="learning-game-k"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>K</h4>
+            </div>
+            <div class="card-section">
+              <p>K is for Kill</p>
+              <a href="../../learn/abc/k.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="l.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>L</h4>
-              </div>
-              <div class="card-section">
-                <p>L is for Load</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/k.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/k.js');
+          var game;
+          $('#learning-game-k-container').hide();
+          $('#card-letter-k').hover(function() {
+            if (!game) {
+              $('#learning-game-k-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-k-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-l" class="card">
+            <div id="learning-game-l-container">
+              <div id="learning-game-l"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>L</h4>
+            </div>
+            <div class="card-section">
+              <p>L is for Load</p>
+              <a href="../../learn/abc/l.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="m.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>M</h4>
-              </div>
-              <div class="card-section">
-                <p>M is for Money</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/l.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/l.js');
+          var game;
+          $('#learning-game-l-container').hide();
+          $('#card-letter-l').hover(function() {
+            if (!game) {
+              $('#learning-game-l-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-l-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-m" class="card">
+            <div id="learning-game-m-container">
+              <div id="learning-game-m"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>M</h4>
+            </div>
+            <div class="card-section">
+              <p>M is for Money</p>
+              <a href="../../learn/abc/m.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="n.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>N</h4>
-              </div>
-              <div class="card-section">
-                <p>N is for Network</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/m.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/m.js');
+          var game;
+          $('#learning-game-m-container').hide();
+          $('#card-letter-m').hover(function() {
+            if (!game) {
+              $('#learning-game-m-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-m-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-n" class="card">
+            <div id="learning-game-n-container">
+              <div id="learning-game-n"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>N</h4>
+            </div>
+            <div class="card-section">
+              <p>N is for Network</p>
+              <a href="../../learn/abc/n.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="o.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>O</h4>
-              </div>
-              <div class="card-section">
-                <p>O is for Obstacles</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/n.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/n.js');
+          var game;
+          $('#learning-game-n-container').hide();
+          $('#card-letter-n').hover(function() {
+            if (!game) {
+              $('#learning-game-n-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-n-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-o" class="card">
+            <div id="learning-game-o-container">
+              <div id="learning-game-o"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>O</h4>
+            </div>
+            <div class="card-section">
+              <p>O is for Obstacles</p>
+              <a href="../../learn/abc/o.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="p.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>P</h4>
-              </div>
-              <div class="card-section">
-                <p>P is for Points</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/o.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/o.js');
+          var game;
+          $('#learning-game-o-container').hide();
+          $('#card-letter-o').hover(function() {
+            if (!game) {
+              $('#learning-game-o-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-o-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-p" class="card">
+            <div id="learning-game-p-container">
+              <div id="learning-game-p"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>P</h4>
+            </div>
+            <div class="card-section">
+              <p>P is for Points</p>
+              <a href="../../learn/abc/p.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="q.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>Q</h4>
-              </div>
-              <div class="card-section">
-                <p>Q is for Quests</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/p.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/p.js');
+          var game;
+          $('#learning-game-p-container').hide();
+          $('#card-letter-p').hover(function() {
+            if (!game) {
+              $('#learning-game-p-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-p-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-q" class="card">
+            <div id="learning-game-q-container">
+              <div id="learning-game-q"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>Q</h4>
+            </div>
+            <div class="card-section">
+              <p>Q is for Quests</p>
+              <a href="../../learn/abc/q.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="r.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>R</h4>
-              </div>
-              <div class="card-section">
-                <p>R is for Rotation</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/q.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/q.js');
+          var game;
+          $('#learning-game-q-container').hide();
+          $('#card-letter-q').hover(function() {
+            if (!game) {
+              $('#learning-game-q-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-q-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-r" class="card">
+            <div id="learning-game-r-container">
+              <div id="learning-game-r"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>R</h4>
+            </div>
+            <div class="card-section">
+              <p>R is for Rotation</p>
+              <a href="../../learn/abc/r.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="s.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>S</h4>
-              </div>
-              <div class="card-section">
-                <p>S is for Sprite</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/r.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/r.js');
+          var game;
+          $('#learning-game-r-container').hide();
+          $('#card-letter-r').hover(function() {
+            if (!game) {
+              $('#learning-game-r-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-r-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-s" class="card">
+            <div id="learning-game-s-container">
+              <div id="learning-game-s"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>S</h4>
+            </div>
+            <div class="card-section">
+              <p>S is for Sprite</p>
+              <a href="../../learn/abc/s.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="t.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>T</h4>
-              </div>
-              <div class="card-section">
-                <p>T is for Timer</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/s.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/s.js');
+          var game;
+          $('#learning-game-s-container').hide();
+          $('#card-letter-s').hover(function() {
+            if (!game) {
+              $('#learning-game-s-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-s-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-t" class="card">
+            <div id="learning-game-t-container">
+              <div id="learning-game-t"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>T</h4>
+            </div>
+            <div class="card-section">
+              <p>T is for Timer</p>
+              <a href="../../learn/abc/t.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="u.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>U</h4>
-              </div>
-              <div class="card-section">
-                <p>U is for Upgrading</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/t.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/t.js');
+          var game;
+          $('#learning-game-t-container').hide();
+          $('#card-letter-t').hover(function() {
+            if (!game) {
+              $('#learning-game-t-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-t-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-u" class="card">
+            <div id="learning-game-u-container">
+              <div id="learning-game-u"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>U</h4>
+            </div>
+            <div class="card-section">
+              <p>U is for Upgrading</p>
+              <a href="../../learn/abc/u.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="v.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>V</h4>
-              </div>
-              <div class="card-section">
-                <p>V is for Velocity</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/u.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/u.js');
+          var game;
+          $('#learning-game-u-container').hide();
+          $('#card-letter-u').hover(function() {
+            if (!game) {
+              $('#learning-game-u-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-u-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-v" class="card">
+            <div id="learning-game-v-container">
+              <div id="learning-game-v"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>V</h4>
+            </div>
+            <div class="card-section">
+              <p>V is for Velocity</p>
+              <a href="../../learn/abc/v.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="w.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>W</h4>
-              </div>
-              <div class="card-section">
-                <p>W is for Weapon</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/v.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/v.js');
+          var game;
+          $('#learning-game-v-container').hide();
+          $('#card-letter-v').hover(function() {
+            if (!game) {
+              $('#learning-game-v-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-v-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-w" class="card">
+            <div id="learning-game-w-container">
+              <div id="learning-game-w"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>W</h4>
+            </div>
+            <div class="card-section">
+              <p>W is for Weapon</p>
+              <a href="../../learn/abc/w.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="x.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>X</h4>
-              </div>
-              <div class="card-section">
-                <p>X is for X-axis</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/w.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/w.js');
+          var game;
+          $('#learning-game-w-container').hide();
+          $('#card-letter-w').hover(function() {
+            if (!game) {
+              $('#learning-game-w-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-w-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-x" class="card">
+            <div id="learning-game-x-container">
+              <div id="learning-game-x"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>X</h4>
+            </div>
+            <div class="card-section">
+              <p>X is for X-axis</p>
+              <a href="../../learn/abc/x.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column ">
-          <div class="card">
-            <a href="y.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>Y</h4>
-              </div>
-              <div class="card-section">
-                <p>Y is for Y-axis</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/x.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/x.js');
+          var game;
+          $('#learning-game-x-container').hide();
+          $('#card-letter-x').hover(function() {
+            if (!game) {
+              $('#learning-game-x-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-x-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-y" class="card">
+            <div id="learning-game-y-container">
+              <div id="learning-game-y"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>Y</h4>
+            </div>
+            <div class="card-section">
+              <p>Y is for Y-axis</p>
+              <a href="../../learn/abc/y.html">START LESSON</a>
+            </div>
           </div>
         </div>
-        <div class="abc column end">
-          <div class="card">
-            <a href="z.html">
-              <div class="card-divider primary show-for-medium">
-                <h4>Z</h4>
-              </div>
-              <div class="card-section">
-                <p>Z is for Z-index</p>
-              </div>
-            </a>
+        <script src="../../assets/js/pages/learn/abc/y.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/y.js');
+          var game;
+          $('#learning-game-y-container').hide();
+          $('#card-letter-y').hover(function() {
+            if (!game) {
+              $('#learning-game-y-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-y-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
+        <div class="abc column">
+          <div id="card-letter-z" class="card">
+            <div id="learning-game-z-container">
+              <div id="learning-game-z"></div>
+            </div>
+            <div class="card-divider primary show-for-medium">
+              <h4>Z</h4>
+            </div>
+            <div class="card-section">
+              <p>Z is for Z-index</p>
+              <a href="../../learn/abc/z.html">START LESSON</a>
+            </div>
           </div>
         </div>
+        <script src="../../assets/js/pages/learn/abc/z.js"></script>
+        <script>
+        $(document).ready(function() {
+          var create = require('pages/learn/abc/z.js');
+          var game;
+          $('#learning-game-z-container').hide();
+          $('#card-letter-z').hover(function() {
+            if (!game) {
+              $('#learning-game-z-container').show();
+              game = create();
+            }
+          }, function() {
+            $('#learning-game-z-container').fadeOut({
+              complete: function() {
+                if (game) {
+                  game.destroy();
+                  game = null;
+                }
+              }
+            });
+          });
+        });
+        </script>
+        
       </div>
       <div class="row">
         <div class="column small-12">
@@ -420,6 +1097,5 @@
     <script>
       $(document).foundation();
     </script>
-    <script type="text/javascript"> var infolinks_pid = 2955248; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
   </body>
 </html>

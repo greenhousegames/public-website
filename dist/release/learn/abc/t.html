@@ -46,7 +46,7 @@
               <a href="">Learn</a>
               <ul class="menu vertical">
                 <li><a href="/learn/abc">ABC of Games</a></li>
-                <li><a href="/learn/frameworks">Game Frameworks</a></li>
+                <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
               </ul>
             </li>
             <li>
@@ -67,8 +67,8 @@
     </section>
     <section class="main subpage">
       <div class="row">
-        <div class="column small-12" id="game-container">
-          <div id="learning-game">
+        <div class="column small-12" id="learning-game-t-container">
+          <div id="learning-game-t">
           </div>
         </div>
       </div>
@@ -82,15 +82,21 @@
               <h4 class="text-center subheader">Timers help with periodic events in a game</h4>
               <p></p>
               <div class="text-center">
-                <a class="button icon-button secondary" href="s.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-                <a class="button icon-button-right secondary" href="u.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
+                <a class="button icon-button secondary " href="s.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+                <a class="button icon-button-right secondary " href="u.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <script src="../../assets/js/pages/learn/abc/utils.js"></script>
-      <script onload="require('pages/learn/abc/t.js')" src="../../assets/js/pages/learn/abc/t.js"></script>
+      <script src="../../assets/js/pages/learn/abc/t.js"></script>
+      <script>
+      $(document).ready(function() {
+        var create = require('pages/learn/abc/t.js');
+        create();
+      });
+      </script>
       
       
     </section>
@@ -119,6 +125,5 @@
     <script>
       $(document).foundation();
     </script>
-    <script type="text/javascript"> var infolinks_pid = 2955248; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
   </body>
 </html>

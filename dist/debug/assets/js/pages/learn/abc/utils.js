@@ -152,7 +152,7 @@ require.register("pages/learn/abc/utils.js", function(exports, require, module) 
 'use strict';
 
 function resize(game) {
-  var dim = getGameDim();
+  var dim = getGameDim(game.containerId);
   if (game.width != dim.width) {
     game.scale.setGameSize(dim.width, dim.height);
     return true;
@@ -196,16 +196,19 @@ function getIconWidth(game) {
   }
 }
 
-function getGameDim() {
-  var width = $('#game-container').width();
+function getGameDim(id) {
+  var width = $('#' + id).width();
   return {
     width: width,
     height: width / (16 / 9)
   };
 }
 
-function init(config) {
-  return new Phaser.Game(getGameDim().width, getGameDim().height, Phaser.AUTO, 'learning-game', config);
+function init(letter, config) {
+  var containerId = 'learning-game-' + letter + '-container';
+  var game = new Phaser.Game(getGameDim(containerId).width, getGameDim(containerId).height, Phaser.AUTO, 'learning-game-' + letter, config);
+  game.containerId = containerId;
+  return game;
 }
 
 module.exports = {

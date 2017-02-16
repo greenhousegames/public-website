@@ -159,31 +159,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var sprite1, sprite2;
 
-var game = _utils2.default.init({
-  preload: function preload() {
-    _utils2.default.preload(game);
-  },
-  create: function create() {
-    _utils2.default.create(game);
+function create() {
+  var game = _utils2.default.init('a', {
+    preload: function preload() {
+      _utils2.default.preload(game);
+    },
+    create: function create() {
+      _utils2.default.create(game);
 
-    sprite1 = game.add.sprite(0, game.height / 4, 'greenhouse');
-    sprite1.anchor.setTo(0, 0.5);
+      sprite1 = game.add.sprite(0, game.height / 4, 'greenhouse');
+      sprite1.anchor.setTo(0, 0.5);
 
-    game.physics.enable(sprite1, Phaser.Physics.ARCADE);
-    sprite1.body.collideWorldBounds = true;
-    sprite1.body.velocity.x = 50;
-    sprite1.body.acceleration.x = 10;
+      game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+      sprite1.body.collideWorldBounds = true;
+      sprite1.body.velocity.x = 50;
+      sprite1.body.acceleration.x = 10;
 
-    sprite2 = game.add.sprite(0, game.height * 3 / 4, 'greenhouse');
-    sprite2.anchor.setTo(0, 0.5);
+      sprite2 = game.add.sprite(0, game.height * 3 / 4, 'greenhouse');
+      sprite2.anchor.setTo(0, 0.5);
 
-    game.physics.enable(sprite2, Phaser.Physics.ARCADE);
-    sprite2.body.collideWorldBounds = true;
-    sprite2.body.velocity.x = 50;
-  },
-  update: function update() {},
-  render: function render() {}
-});
+      game.physics.enable(sprite2, Phaser.Physics.ARCADE);
+      sprite2.body.collideWorldBounds = true;
+      sprite2.body.velocity.x = 50;
+    },
+    update: function update() {},
+    render: function render() {}
+  });
+  return game;
+}
+
+module.exports = create;
 
 });
 
