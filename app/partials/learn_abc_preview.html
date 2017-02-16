@@ -1,0 +1,37 @@
+<div class="abc column">
+  <div id="card-letter-{{ letter }}" class="card">
+    <div id="learning-game-{{ letter }}-container">
+      <div id="learning-game-{{ letter }}"></div>
+    </div>
+    <div class="card-divider primary show-for-medium">
+      <h4>{{ letterUpper }}</h4>
+    </div>
+    <div class="card-section">
+      <p>{{ desc }}</p>
+      <a href="{{ @root.root }}learn/abc/{{ letter }}.html">START LESSON</a>
+    </div>
+  </div>
+</div>
+<script src="{{ @root.root }}assets/js/pages/learn/abc/{{ letter }}.js"></script>
+<script>
+$(document).ready(function() {
+  var create = require('pages/learn/abc/{{ letter }}.js');
+  var game;
+  $('#learning-game-{{ letter }}-container').hide();
+  $('#card-letter-{{ letter }}').hover(function() {
+    if (!game) {
+      $('#learning-game-{{ letter }}-container').show();
+      game = create();
+    }
+  }, function() {
+    $('#learning-game-{{ letter }}-container').fadeOut({
+      complete: function() {
+        if (game) {
+          game.destroy();
+          game = null;
+        }
+      }
+    });
+  });
+});
+</script>

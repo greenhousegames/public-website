@@ -7,19 +7,9 @@
   </div>
 </div>
 <div class="row small-up-1 medium-up-2 large-up-3 text-center">
+<script src="{{root}}assets/js/pages/learn/abc/utils.js"></script>
 {{#each abc}}
-  <div class="abc column {{#if @last}}end{{/if}}">
-    <div class="card">
-      <a href="{{ this.letter }}.html">
-        <div class="card-divider primary show-for-medium">
-          <h4>{{ this.letterUpper }}</h4>
-        </div>
-        <div class="card-section">
-          <p>{{ this.desc }}</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  {{> learn_abc_preview}}
 {{/each}}
 </div>
 <div class="row">

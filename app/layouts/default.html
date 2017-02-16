@@ -23,10 +23,20 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{{root}}apple-icon-114x114.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="{{root}}apple-icon-144x144.png" />
     <link rel="stylesheet" href="{{root}}assets/foundation-icons/foundation-icons.css" />
+    <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
     <script src="{{root}}assets/js/vendor.js"></script>
     <script onload="require('app.js')" src="{{root}}assets/js/app.js"></script>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1193182344132806";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <section class="header">
       {{> header}}
     </section>
@@ -39,6 +49,5 @@
     <script>
       $(document).foundation();
     </script>
-    <script type="text/javascript"> var infolinks_pid = 2955248; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
   </body>
 </html>

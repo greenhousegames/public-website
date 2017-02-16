@@ -2,7 +2,6 @@
   <div class="top-bar-left">
     <ul class="menu">
       {{#ifequal root ''}}
-      <li><a href="/" class="logo-back-button"></a></li>
       {{else}}
         {{#ifequal layout 'abc'}}
           {{#ifpage 'index'}}
@@ -29,7 +28,7 @@
         <a href="">Learn</a>
         <ul class="menu vertical">
           <li><a href="/learn/abc">ABC of Games</a></li>
-          <li><a href="/learn/frameworks">Game Frameworks</a></li>
+          <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
         </ul>
       </li>
       <li>
@@ -43,6 +42,14 @@
     </ul>
   </div>
 </div>
+{{#ifequal root ''}}
+<div class="row expanded">
+  <div class="main-header-banner">
+    <div class="logo"></div>
+    <span>Greenhouse Games</span>
+  </div>
+</div>
+{{/ifequal}}
 <script>
 $('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));
 </script>

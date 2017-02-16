@@ -1,50 +1,56 @@
 import utils from './utils.js';
-var sprite1, lvlText, xpText, lvl, xp, nextLvl;
 
-var game = utils.init({
-  preload: () => {
-    utils.preload(game);
-  },
-  create: () => {
-    utils.create(game);
-    xp = 0;
-    nextLvl = 2;
-    lvl = 1;
+function create() {
+  var sprite1, lvlText, xpText, lvl, xp, nextLvl;
 
-    sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
-    sprite1.anchor.setTo(0.5, 0.5);
-    sprite1.inputEnabled = true;
-    sprite1.events.onInputDown.add(() => {
-      xp++;
+  var game = utils.init('e', {
+    preload: () => {
+      utils.preload(game);
+    },
+    create: () => {
+      utils.create(game);
+      xp = 0;
+      nextLvl = 2;
+      lvl = 1;
 
-      if (xp >= nextLvl) {
-        lvl++;
-        xp = 0;
-        nextLvl = nextLvl * 2;
-      }
+      sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
+      sprite1.anchor.setTo(0.5, 0.5);
+      sprite1.inputEnabled = true;
+      sprite1.events.onInputDown.add(() => {
+        xp++;
 
-      lvlText.text = 'Levels\n' + lvl;
-      xpText.text = 'Experience\n' + xp + ' / ' + nextLvl;
-    });
+        if (xp >= nextLvl) {
+          lvl++;
+          xp = 0;
+          nextLvl = nextLvl * 2;
+        }
 
-    lvlText = game.add.text(game.width/4, game.height/4, {
-      fill: 'white',
-      align: 'center'
-    });
-    lvlText.fill = '#ffffff';
-    lvlText.text = 'Levels\n1';
-    lvlText.anchor.setTo(0.5, 0.5);
+        lvlText.text = 'Levels\n' + lvl;
+        xpText.text = 'Experience\n' + xp + ' / ' + nextLvl;
+      });
 
-    xpText = game.add.text(game.width*3/4, game.height/4, {
-      fill: 'white',
-      align: 'center'
-    });
-    xpText.fill = '#ffffff';
-    xpText.text = 'Experience\n0 / 2';
-    xpText.anchor.setTo(0.5, 0.5);
-  },
-  update: () => {
-  },
-  render: () => {
-  }
-});
+      lvlText = game.add.text(game.width/4, game.height/4, {
+        fill: 'white',
+        align: 'center'
+      });
+      lvlText.fill = '#ffffff';
+      lvlText.text = 'Levels\n1';
+      lvlText.anchor.setTo(0.5, 0.5);
+
+      xpText = game.add.text(game.width*3/4, game.height/4, {
+        fill: 'white',
+        align: 'center'
+      });
+      xpText.fill = '#ffffff';
+      xpText.text = 'Experience\n0 / 2';
+      xpText.anchor.setTo(0.5, 0.5);
+    },
+    update: () => {
+    },
+    render: () => {
+    }
+  });
+  return game;
+}
+
+module.exports = create;
