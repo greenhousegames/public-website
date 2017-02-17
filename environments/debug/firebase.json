@@ -1,6 +1,6 @@
 {
   "database": {
-    "rules": "environments/debug/database.rules.json"
+    "rules": "environments/shared/database.rules.json"
   },
   "hosting": {
     "public": "dist/debug",

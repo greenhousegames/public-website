@@ -1,10 +1,24 @@
 {
   "rules": {
-    ".read": "auth != null",
+    ".read": true,
     ".write": "auth != null",
+
+    "battles": {
+      "rooms": {
+        ".indexOn": [
+          "ready"
+        ]
+      }
+    },
 
     "games": {
       "smashdot": {
+        "data": {
+          ".indexOn": [
+            "classic-score",
+            "survival-duration"
+          ]
+        },
         "reporting": {
           "default": {
             "metrics": {
@@ -18,7 +32,8 @@
             "metrics": {
               ".indexOn": [
                 "classic-score~~max",
-                "survival-duration~~min"
+                "survival-duration~~min",
+                "win~~sum"
               ]
             }
           }

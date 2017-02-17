@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "greenhouse-games"
+    "debug": "greenhouse-games-test",
+    "release": "greenhouse-games"
   }
 }
