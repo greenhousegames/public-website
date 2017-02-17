@@ -1,13 +1,22 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Smash Dot",
+  "short_name": "Smash Dot",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
-    "src": "assets/imgs/logo.png",
+    "src": "assets/icon-144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  },{
+    "src": "assets/icon.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
   "background_color": "#4e8ef7",
-  "theme_color": "#4e8ef7"
+  "theme_color": "#4e8ef7",
+  "prefer_related_applications": true,
+  "related_applications": [{
+    "platform": "play",
+    "id": "com.greenhousegames.smashdot2"
+  }]
 }

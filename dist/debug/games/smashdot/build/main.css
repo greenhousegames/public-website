@@ -23587,7 +23587,58 @@ page-menu ion-content ion-row {
 page-menu ion-content button[ion-button] {
   height: 100%;
   width: 100%;
-  font-size: 2em;
+}
+
+page-menu ion-content button[ion-button] ion-icon {
+  display: block;
+  padding-bottom: 8px;
+}
+
+@media screen and (min-width: 767px) {
+  page-menu ion-content button[ion-button] ion-icon {
+    padding-bottom: 12px;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  page-menu ion-content button[ion-button] ion-icon {
+    padding-bottom: 16px;
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  page-menu ion-content button[ion-button] span.mode {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  page-menu ion-content button[ion-button] span.mode {
+    font-size: 2em;
+  }
+}
+
+page-menu ion-content button[ion-button] span.bottom-left, page-menu ion-content button[ion-button] span.bottom-right {
+  position: absolute;
+  bottom: 0;
+  padding: 8px;
+  font-size: 0.6em;
+}
+
+@media screen and (min-width: 767px) {
+  page-menu ion-content button[ion-button] span.bottom-left, page-menu ion-content button[ion-button] span.bottom-right {
+    font-size: 1em;
+  }
+}
+
+page-menu ion-content button[ion-button] span.bottom-left {
+  left: 0;
+}
+
+page-menu ion-content button[ion-button] span.bottom-right {
+  right: 0;
 }
 
 page-menu ion-content ion-row:first-child {

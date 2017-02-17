@@ -51,44 +51,6 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/heyzap-cordova/www/ads/HeyzapAds.js",
-        "id": "heyzap-cordova.ads.HeyzapAds",
-        "pluginId": "heyzap-cordova",
-        "merges": [
-            "HeyzapAds"
-        ]
-    },
-    {
-        "file": "plugins/heyzap-cordova/www/ads/InterstitialAd.js",
-        "id": "heyzap-cordova.ads.InterstitialAd",
-        "pluginId": "heyzap-cordova"
-    },
-    {
-        "file": "plugins/heyzap-cordova/www/ads/IncentivizedAd.js",
-        "id": "heyzap-cordova.ads.IncentivizedAd",
-        "pluginId": "heyzap-cordova"
-    },
-    {
-        "file": "plugins/heyzap-cordova/www/ads/BannerAd.js",
-        "id": "heyzap-cordova.ads.BannerAd",
-        "pluginId": "heyzap-cordova"
-    },
-    {
-        "file": "plugins/heyzap-cordova/www/Common.js",
-        "id": "heyzap-cordova.Common",
-        "pluginId": "heyzap-cordova"
-    },
-    {
-        "file": "plugins/heyzap-cordova/www/Promise.js",
-        "id": "heyzap-cordova.Promise",
-        "pluginId": "heyzap-cordova"
-    },
-    {
-        "file": "plugins/heyzap-cordova/www/vendor/es6-promise.min.js",
-        "id": "heyzap-cordova.vendor.PromisePolyfill",
-        "pluginId": "heyzap-cordova"
-    },
-    {
         "file": "plugins/ionic-plugin-keyboard/www/browser/keyboard.js",
         "id": "ionic-plugin-keyboard.keyboard",
         "pluginId": "ionic-plugin-keyboard",
@@ -96,6 +58,22 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+        "id": "cordova-plugin-admobpro.AdMob",
+        "pluginId": "cordova-plugin-admobpro",
+        "clobbers": [
+            "window.AdMob"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-firebase/www/firebase-browser.js",
+        "id": "cordova-plugin-firebase.FirebasePlugin",
+        "pluginId": "cordova-plugin-firebase",
+        "clobbers": [
+            "FirebasePlugin"
+        ]
     },
     {
         "file": "plugins/twitter-connect-plugin/www/TwitterConnect.js",
@@ -115,8 +93,10 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.1",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
-    "heyzap-cordova": "1.2.1",
     "ionic-plugin-keyboard": "2.2.1",
+    "cordova-plugin-extension": "1.5.1",
+    "cordova-plugin-admobpro": "2.26.0",
+    "cordova-plugin-firebase": "0.1.19",
     "twitter-connect-plugin": "0.6.0"
 }
 // BOTTOM OF METADATA
