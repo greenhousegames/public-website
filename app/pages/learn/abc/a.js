@@ -1,7 +1,8 @@
 import utils from './utils.js';
-var sprite1, sprite2;
 
 function create() {
+  var sprite1, sprite2;
+
   var game = utils.init('a', {
     preload: () => {
       utils.preload(game);
