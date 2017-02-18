@@ -45,15 +45,15 @@ k:
 l:
   letter: 'l'
   letterUpper: 'L'
-  desc: 'L is for Load'
+  desc: 'L is for Levels'
 m:
   letter: 'm'
   letterUpper: 'M'
-  desc: 'M is for Money'
+  desc: 'M is for Movement'
 n:
   letter: 'n'
   letterUpper: 'N'
-  desc: 'N is for Network'
+  desc: 'N is for Noise'
 o:
   letter: 'o'
   letterUpper: 'O'
@@ -61,7 +61,7 @@ o:
 p:
   letter: 'p'
   letterUpper: 'P'
-  desc: 'P is for Points'
+  desc: 'P is for Platformer'
 q:
   letter: 'q'
   letterUpper: 'Q'
@@ -69,7 +69,7 @@ q:
 r:
   letter: 'r'
   letterUpper: 'R'
-  desc: 'R is for Rotation'
+  desc: 'R is for Runner'
 s:
   letter: 's'
   letterUpper: 'S'
