@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   	<meta name="mobile-web-app-capable" content="yes">
   	<meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Greenhouse Games</title>
+    <title>Account</title>
     <link rel="stylesheet" href="../assets/css/app.css">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
     <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png" />
@@ -36,11 +36,10 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-    <section class="header">
+    <section class="header large">
       <div class="top-bar primary">
         <div class="top-bar-left">
           <ul class="menu">
-              <li><a href="/" class="logo-back-button"></a></li>
           </ul>
         </div>
         <div class="top-bar-right">
@@ -62,11 +61,23 @@
               <a href="">Account</a>
               <ul class="menu vertical">
                 <li class="hide-auth"><a href="/account">Login</a></li>
-                <li class="show-auth"><a href="/account"><img class="thumbnail-image user-image"></img><span class="user-name"></span></a></li>
+                <li class="show-auth"><a href="/account">
+                  <img class="thumbnail-image user-image"></img>
+                  <i class="fi-torso user-image-guest"></i>
+                  <span class="user-name"></span>
+                </a></li>
                 <li class="show-auth"><a id="header-logout-button">Logout</a></li>
               </ul>
             </li>
           </ul>
+        </div>
+      </div>
+      <div class="row expanded">
+        <div class="main-header-banner">
+          <div class=logo-container>
+            <a class="logo" href="/"></a>
+          </div>
+          <span>Account</span>
         </div>
       </div>
       <script>
@@ -74,42 +85,46 @@
       </script>
       
     </section>
-    <section class="main subpage">
-      <div class="row text-center">
-        <div class="row">
-          <div class="column small-12 text-center">
-            <div class="card">
-              <div class="card-divider primary">
-                <h1>Account</h1>
-              </div>
-              <div class="card-section show-auth" style="display: none;">
-                <h2 class="user-name"></h2>
-                <div class="row">
-                  <div class="column small-12">
-                    <img class="profile-image user-image"></img>
+    <section class="main">
+      <div class="row">
+        <div class="column small-12 text-center">
+          <div class="card show-auth" style="display: none;">
+            <div class="card-divider">
+              <h2 class="user-name"></h2>
+            </div>
+            <div class="card-section">
+              <div class="row">
+                <div class="column small-12">
+                  <img class="profile-image user-image"></img>
+                  <div class="profile-image user-image-guest">
+                    <i class="fi-torso"></i>
                   </div>
-                  <div class="column small-12">
-                    <br/>
-                    <a class="button large" id="logout_button">Logout</a>
-                  </div>
+                </div>
+                <div class="column small-12">
+                  <br/>
+                  <a class="button large alert" id="logout_button" style="color: white">Logout</a>
                 </div>
               </div>
-              <div class="card-section hide-auth" style="display: none;">
-                <h2>Login</h2>
-                <div class="row">
-                  <div class="column small-12 medium-6 medium-offset-3">
-                    <a class="button large expanded" id="facebookLogin_button"><i class="fi-social-facebook" style="margin-right: 8px;"></i>Facebook</a>
-                  </div>
+            </div>
+          </div>
+          <div class="card hide-auth" style="display: none;">
+            <div class="card-divider">
+              <h2>Login</h2>
+            </div>
+            <div class="card-section">
+              <div class="row">
+                <div class="column small-12 medium-6 medium-offset-3">
+                  <a class="button large expanded" id="facebookLogin_button"><i class="fi-social-facebook" style="margin-right: 8px;"></i>Facebook</a>
                 </div>
-                <div class="row">
-                  <div class="column small- medium-6 medium-offset-3">
-                    <a class="button large expanded" id="twitterLogin_button"><i class="fi-social-twitter" style="margin-right: 8px;"></i>Twitter</a>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="column small- medium-6 medium-offset-3">
+                  <a class="button large expanded" id="twitterLogin_button"><i class="fi-social-twitter" style="margin-right: 8px;"></i>Twitter</a>
                 </div>
-                <div class="row">
-                  <div class="column small- medium-6 medium-offset-3">
-                    <a class="button large expanded" id="guestLogin_button"><i class="fi-person" style="margin-right: 8px;"></i>Guest</a>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="column small- medium-6 medium-offset-3">
+                  <a class="button large expanded" id="guestLogin_button"><i class="fi-person" style="margin-right: 8px;"></i>Guest</a>
                 </div>
               </div>
             </div>

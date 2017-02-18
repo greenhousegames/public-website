@@ -166,7 +166,7 @@ $('#guestLogin_button').click(function () {
 });
 
 require.register("___globals___", function(exports, require, module) {
-
+  
 
 // Auto-loaded modules from config.npm.globals.
 window.jQuery = require("jquery");

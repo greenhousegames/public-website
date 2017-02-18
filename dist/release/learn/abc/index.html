@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   	<meta name="mobile-web-app-capable" content="yes">
   	<meta name="apple-mobile-web-app-capable" content="yes">
-    <title></title>
+    <title>ABC of Games</title>
     <link rel="stylesheet" href="../../assets/css/app.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico"/>
     <link rel="apple-touch-icon" sizes="57x57" href="../../apple-icon-57x57.png" />
@@ -27,11 +27,19 @@
     <script onload="require('app.js')" src="../../assets/js/app.js"></script>
   </head>
   <body>
-    <section class="header">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1193182344132806";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <section class="header large">
       <div class="top-bar primary">
         <div class="top-bar-left">
           <ul class="menu">
-                <li><a href="/" class="logo-back-button"></a></li>
           </ul>
         </div>
         <div class="top-bar-right">
@@ -53,11 +61,23 @@
               <a href="">Account</a>
               <ul class="menu vertical">
                 <li class="hide-auth"><a href="/account">Login</a></li>
-                <li class="show-auth"><a href="/account"><img class="thumbnail-image user-image"></img><span class="user-name"></span></a></li>
+                <li class="show-auth"><a href="/account">
+                  <img class="thumbnail-image user-image"></img>
+                  <i class="fi-torso user-image-guest"></i>
+                  <span class="user-name"></span>
+                </a></li>
                 <li class="show-auth"><a id="header-logout-button">Logout</a></li>
               </ul>
             </li>
           </ul>
+        </div>
+      </div>
+      <div class="row expanded">
+        <div class="main-header-banner">
+          <div class=logo-container>
+            <a class="logo" href="/"></a>
+          </div>
+          <span>ABC of Games</span>
         </div>
       </div>
       <script>
@@ -65,21 +85,20 @@
       </script>
       
     </section>
-    <section class="main subpage">
+    <section class="main">
       <div class="row">
-        <div class="column small-12 text-center">
-          <h1>ABC of Games</h1>
-        </div>
         <div class="column small-12">
           <p>Whether you're looking to become a rock-star game developer or E-sport champion, you must understand how games truly works.  Many games share similar concepts which have been broken down into the ABCs of Game Development.  Select a lesson below to start the exploration!</p>
+          <p class="show-for-medium text-center" style="font-style: italic">(hover over lesson to see interactive preview)</p>
         </div>
       </div>
       <div class="row small-up-1 medium-up-2 large-up-3 text-center">
       <script src="../../assets/js/pages/learn/abc/utils.js"></script>
         <div class="abc column">
           <div id="card-letter-a" class="card">
-            <div id="learning-game-a-container">
+            <div id="learning-game-a-container" class="show-for-medium">
               <div id="learning-game-a"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>A</h4>
@@ -95,16 +114,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/a.js');
           var game;
-          $('#learning-game-a-container').hide();
           $('#card-letter-a').hover(function() {
             if (!game) {
-              $('#learning-game-a-container').show();
+              $('#learning-game-a-container img').hide();
+              $('#learning-game-a').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-a-container').fadeOut({
+            $('#learning-game-a').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-a-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -116,8 +136,9 @@
         
         <div class="abc column">
           <div id="card-letter-b" class="card">
-            <div id="learning-game-b-container">
+            <div id="learning-game-b-container" class="show-for-medium">
               <div id="learning-game-b"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>B</h4>
@@ -133,16 +154,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/b.js');
           var game;
-          $('#learning-game-b-container').hide();
           $('#card-letter-b').hover(function() {
             if (!game) {
-              $('#learning-game-b-container').show();
+              $('#learning-game-b-container img').hide();
+              $('#learning-game-b').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-b-container').fadeOut({
+            $('#learning-game-b').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-b-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -154,8 +176,9 @@
         
         <div class="abc column">
           <div id="card-letter-c" class="card">
-            <div id="learning-game-c-container">
+            <div id="learning-game-c-container" class="show-for-medium">
               <div id="learning-game-c"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>C</h4>
@@ -171,16 +194,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/c.js');
           var game;
-          $('#learning-game-c-container').hide();
           $('#card-letter-c').hover(function() {
             if (!game) {
-              $('#learning-game-c-container').show();
+              $('#learning-game-c-container img').hide();
+              $('#learning-game-c').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-c-container').fadeOut({
+            $('#learning-game-c').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-c-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -192,8 +216,9 @@
         
         <div class="abc column">
           <div id="card-letter-d" class="card">
-            <div id="learning-game-d-container">
+            <div id="learning-game-d-container" class="show-for-medium">
               <div id="learning-game-d"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>D</h4>
@@ -209,16 +234,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/d.js');
           var game;
-          $('#learning-game-d-container').hide();
           $('#card-letter-d').hover(function() {
             if (!game) {
-              $('#learning-game-d-container').show();
+              $('#learning-game-d-container img').hide();
+              $('#learning-game-d').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-d-container').fadeOut({
+            $('#learning-game-d').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-d-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -230,8 +256,9 @@
         
         <div class="abc column">
           <div id="card-letter-e" class="card">
-            <div id="learning-game-e-container">
+            <div id="learning-game-e-container" class="show-for-medium">
               <div id="learning-game-e"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>E</h4>
@@ -247,16 +274,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/e.js');
           var game;
-          $('#learning-game-e-container').hide();
           $('#card-letter-e').hover(function() {
             if (!game) {
-              $('#learning-game-e-container').show();
+              $('#learning-game-e-container img').hide();
+              $('#learning-game-e').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-e-container').fadeOut({
+            $('#learning-game-e').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-e-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -268,8 +296,9 @@
         
         <div class="abc column">
           <div id="card-letter-f" class="card">
-            <div id="learning-game-f-container">
+            <div id="learning-game-f-container" class="show-for-medium">
               <div id="learning-game-f"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>F</h4>
@@ -285,16 +314,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/f.js');
           var game;
-          $('#learning-game-f-container').hide();
           $('#card-letter-f').hover(function() {
             if (!game) {
-              $('#learning-game-f-container').show();
+              $('#learning-game-f-container img').hide();
+              $('#learning-game-f').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-f-container').fadeOut({
+            $('#learning-game-f').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-f-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -306,8 +336,9 @@
         
         <div class="abc column">
           <div id="card-letter-g" class="card">
-            <div id="learning-game-g-container">
+            <div id="learning-game-g-container" class="show-for-medium">
               <div id="learning-game-g"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>G</h4>
@@ -323,16 +354,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/g.js');
           var game;
-          $('#learning-game-g-container').hide();
           $('#card-letter-g').hover(function() {
             if (!game) {
-              $('#learning-game-g-container').show();
+              $('#learning-game-g-container img').hide();
+              $('#learning-game-g').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-g-container').fadeOut({
+            $('#learning-game-g').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-g-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -344,8 +376,9 @@
         
         <div class="abc column">
           <div id="card-letter-h" class="card">
-            <div id="learning-game-h-container">
+            <div id="learning-game-h-container" class="show-for-medium">
               <div id="learning-game-h"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>H</h4>
@@ -361,16 +394,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/h.js');
           var game;
-          $('#learning-game-h-container').hide();
           $('#card-letter-h').hover(function() {
             if (!game) {
-              $('#learning-game-h-container').show();
+              $('#learning-game-h-container img').hide();
+              $('#learning-game-h').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-h-container').fadeOut({
+            $('#learning-game-h').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-h-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -382,8 +416,9 @@
         
         <div class="abc column">
           <div id="card-letter-i" class="card">
-            <div id="learning-game-i-container">
+            <div id="learning-game-i-container" class="show-for-medium">
               <div id="learning-game-i"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>I</h4>
@@ -399,16 +434,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/i.js');
           var game;
-          $('#learning-game-i-container').hide();
           $('#card-letter-i').hover(function() {
             if (!game) {
-              $('#learning-game-i-container').show();
+              $('#learning-game-i-container img').hide();
+              $('#learning-game-i').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-i-container').fadeOut({
+            $('#learning-game-i').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-i-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -420,8 +456,9 @@
         
         <div class="abc column">
           <div id="card-letter-j" class="card">
-            <div id="learning-game-j-container">
+            <div id="learning-game-j-container" class="show-for-medium">
               <div id="learning-game-j"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>J</h4>
@@ -437,16 +474,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/j.js');
           var game;
-          $('#learning-game-j-container').hide();
           $('#card-letter-j').hover(function() {
             if (!game) {
-              $('#learning-game-j-container').show();
+              $('#learning-game-j-container img').hide();
+              $('#learning-game-j').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-j-container').fadeOut({
+            $('#learning-game-j').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-j-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -458,8 +496,9 @@
         
         <div class="abc column">
           <div id="card-letter-k" class="card">
-            <div id="learning-game-k-container">
+            <div id="learning-game-k-container" class="show-for-medium">
               <div id="learning-game-k"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>K</h4>
@@ -475,16 +514,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/k.js');
           var game;
-          $('#learning-game-k-container').hide();
           $('#card-letter-k').hover(function() {
             if (!game) {
-              $('#learning-game-k-container').show();
+              $('#learning-game-k-container img').hide();
+              $('#learning-game-k').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-k-container').fadeOut({
+            $('#learning-game-k').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-k-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -496,8 +536,9 @@
         
         <div class="abc column">
           <div id="card-letter-l" class="card">
-            <div id="learning-game-l-container">
+            <div id="learning-game-l-container" class="show-for-medium">
               <div id="learning-game-l"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>L</h4>
@@ -513,16 +554,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/l.js');
           var game;
-          $('#learning-game-l-container').hide();
           $('#card-letter-l').hover(function() {
             if (!game) {
-              $('#learning-game-l-container').show();
+              $('#learning-game-l-container img').hide();
+              $('#learning-game-l').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-l-container').fadeOut({
+            $('#learning-game-l').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-l-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -534,8 +576,9 @@
         
         <div class="abc column">
           <div id="card-letter-m" class="card">
-            <div id="learning-game-m-container">
+            <div id="learning-game-m-container" class="show-for-medium">
               <div id="learning-game-m"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>M</h4>
@@ -551,16 +594,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/m.js');
           var game;
-          $('#learning-game-m-container').hide();
           $('#card-letter-m').hover(function() {
             if (!game) {
-              $('#learning-game-m-container').show();
+              $('#learning-game-m-container img').hide();
+              $('#learning-game-m').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-m-container').fadeOut({
+            $('#learning-game-m').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-m-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -572,8 +616,9 @@
         
         <div class="abc column">
           <div id="card-letter-n" class="card">
-            <div id="learning-game-n-container">
+            <div id="learning-game-n-container" class="show-for-medium">
               <div id="learning-game-n"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>N</h4>
@@ -589,16 +634,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/n.js');
           var game;
-          $('#learning-game-n-container').hide();
           $('#card-letter-n').hover(function() {
             if (!game) {
-              $('#learning-game-n-container').show();
+              $('#learning-game-n-container img').hide();
+              $('#learning-game-n').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-n-container').fadeOut({
+            $('#learning-game-n').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-n-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -610,8 +656,9 @@
         
         <div class="abc column">
           <div id="card-letter-o" class="card">
-            <div id="learning-game-o-container">
+            <div id="learning-game-o-container" class="show-for-medium">
               <div id="learning-game-o"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>O</h4>
@@ -627,16 +674,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/o.js');
           var game;
-          $('#learning-game-o-container').hide();
           $('#card-letter-o').hover(function() {
             if (!game) {
-              $('#learning-game-o-container').show();
+              $('#learning-game-o-container img').hide();
+              $('#learning-game-o').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-o-container').fadeOut({
+            $('#learning-game-o').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-o-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -648,8 +696,9 @@
         
         <div class="abc column">
           <div id="card-letter-p" class="card">
-            <div id="learning-game-p-container">
+            <div id="learning-game-p-container" class="show-for-medium">
               <div id="learning-game-p"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>P</h4>
@@ -665,16 +714,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/p.js');
           var game;
-          $('#learning-game-p-container').hide();
           $('#card-letter-p').hover(function() {
             if (!game) {
-              $('#learning-game-p-container').show();
+              $('#learning-game-p-container img').hide();
+              $('#learning-game-p').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-p-container').fadeOut({
+            $('#learning-game-p').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-p-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -686,8 +736,9 @@
         
         <div class="abc column">
           <div id="card-letter-q" class="card">
-            <div id="learning-game-q-container">
+            <div id="learning-game-q-container" class="show-for-medium">
               <div id="learning-game-q"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>Q</h4>
@@ -703,16 +754,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/q.js');
           var game;
-          $('#learning-game-q-container').hide();
           $('#card-letter-q').hover(function() {
             if (!game) {
-              $('#learning-game-q-container').show();
+              $('#learning-game-q-container img').hide();
+              $('#learning-game-q').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-q-container').fadeOut({
+            $('#learning-game-q').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-q-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -724,8 +776,9 @@
         
         <div class="abc column">
           <div id="card-letter-r" class="card">
-            <div id="learning-game-r-container">
+            <div id="learning-game-r-container" class="show-for-medium">
               <div id="learning-game-r"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>R</h4>
@@ -741,16 +794,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/r.js');
           var game;
-          $('#learning-game-r-container').hide();
           $('#card-letter-r').hover(function() {
             if (!game) {
-              $('#learning-game-r-container').show();
+              $('#learning-game-r-container img').hide();
+              $('#learning-game-r').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-r-container').fadeOut({
+            $('#learning-game-r').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-r-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -762,8 +816,9 @@
         
         <div class="abc column">
           <div id="card-letter-s" class="card">
-            <div id="learning-game-s-container">
+            <div id="learning-game-s-container" class="show-for-medium">
               <div id="learning-game-s"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>S</h4>
@@ -779,16 +834,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/s.js');
           var game;
-          $('#learning-game-s-container').hide();
           $('#card-letter-s').hover(function() {
             if (!game) {
-              $('#learning-game-s-container').show();
+              $('#learning-game-s-container img').hide();
+              $('#learning-game-s').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-s-container').fadeOut({
+            $('#learning-game-s').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-s-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -800,8 +856,9 @@
         
         <div class="abc column">
           <div id="card-letter-t" class="card">
-            <div id="learning-game-t-container">
+            <div id="learning-game-t-container" class="show-for-medium">
               <div id="learning-game-t"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>T</h4>
@@ -817,16 +874,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/t.js');
           var game;
-          $('#learning-game-t-container').hide();
           $('#card-letter-t').hover(function() {
             if (!game) {
-              $('#learning-game-t-container').show();
+              $('#learning-game-t-container img').hide();
+              $('#learning-game-t').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-t-container').fadeOut({
+            $('#learning-game-t').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-t-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -838,8 +896,9 @@
         
         <div class="abc column">
           <div id="card-letter-u" class="card">
-            <div id="learning-game-u-container">
+            <div id="learning-game-u-container" class="show-for-medium">
               <div id="learning-game-u"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>U</h4>
@@ -855,16 +914,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/u.js');
           var game;
-          $('#learning-game-u-container').hide();
           $('#card-letter-u').hover(function() {
             if (!game) {
-              $('#learning-game-u-container').show();
+              $('#learning-game-u-container img').hide();
+              $('#learning-game-u').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-u-container').fadeOut({
+            $('#learning-game-u').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-u-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -876,8 +936,9 @@
         
         <div class="abc column">
           <div id="card-letter-v" class="card">
-            <div id="learning-game-v-container">
+            <div id="learning-game-v-container" class="show-for-medium">
               <div id="learning-game-v"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>V</h4>
@@ -893,16 +954,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/v.js');
           var game;
-          $('#learning-game-v-container').hide();
           $('#card-letter-v').hover(function() {
             if (!game) {
-              $('#learning-game-v-container').show();
+              $('#learning-game-v-container img').hide();
+              $('#learning-game-v').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-v-container').fadeOut({
+            $('#learning-game-v').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-v-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -914,8 +976,9 @@
         
         <div class="abc column">
           <div id="card-letter-w" class="card">
-            <div id="learning-game-w-container">
+            <div id="learning-game-w-container" class="show-for-medium">
               <div id="learning-game-w"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>W</h4>
@@ -931,16 +994,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/w.js');
           var game;
-          $('#learning-game-w-container').hide();
           $('#card-letter-w').hover(function() {
             if (!game) {
-              $('#learning-game-w-container').show();
+              $('#learning-game-w-container img').hide();
+              $('#learning-game-w').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-w-container').fadeOut({
+            $('#learning-game-w').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-w-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -952,8 +1016,9 @@
         
         <div class="abc column">
           <div id="card-letter-x" class="card">
-            <div id="learning-game-x-container">
+            <div id="learning-game-x-container" class="show-for-medium">
               <div id="learning-game-x"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>X</h4>
@@ -969,16 +1034,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/x.js');
           var game;
-          $('#learning-game-x-container').hide();
           $('#card-letter-x').hover(function() {
             if (!game) {
-              $('#learning-game-x-container').show();
+              $('#learning-game-x-container img').hide();
+              $('#learning-game-x').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-x-container').fadeOut({
+            $('#learning-game-x').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-x-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -990,8 +1056,9 @@
         
         <div class="abc column">
           <div id="card-letter-y" class="card">
-            <div id="learning-game-y-container">
+            <div id="learning-game-y-container" class="show-for-medium">
               <div id="learning-game-y"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>Y</h4>
@@ -1007,16 +1074,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/y.js');
           var game;
-          $('#learning-game-y-container').hide();
           $('#card-letter-y').hover(function() {
             if (!game) {
-              $('#learning-game-y-container').show();
+              $('#learning-game-y-container img').hide();
+              $('#learning-game-y').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-y-container').fadeOut({
+            $('#learning-game-y').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-y-container img').show();
                   game.destroy();
                   game = null;
                 }
@@ -1028,8 +1096,9 @@
         
         <div class="abc column">
           <div id="card-letter-z" class="card">
-            <div id="learning-game-z-container">
+            <div id="learning-game-z-container" class="show-for-medium">
               <div id="learning-game-z"></div>
+              <img src="../../assets/img/learning/preview-placeholder.png"></img>
             </div>
             <div class="card-divider primary show-for-medium">
               <h4>Z</h4>
@@ -1045,16 +1114,17 @@
         $(document).ready(function() {
           var create = require('pages/learn/abc/z.js');
           var game;
-          $('#learning-game-z-container').hide();
           $('#card-letter-z').hover(function() {
             if (!game) {
-              $('#learning-game-z-container').show();
+              $('#learning-game-z-container img').hide();
+              $('#learning-game-z').show();
               game = create();
             }
           }, function() {
-            $('#learning-game-z-container').fadeOut({
+            $('#learning-game-z').fadeOut({
               complete: function() {
                 if (game) {
+                  $('#learning-game-z-container img').show();
                   game.destroy();
                   game = null;
                 }

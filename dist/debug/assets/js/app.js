@@ -174,13 +174,15 @@ window.GreenhouseGames = {
       (0, _jquery2.default)('.show-auth').hide();
     },
     loginSuccess: function loginSuccess(data) {
-      if (!data.isAnonymous) {
+      if (data.user && !data.user.isAnonymous) {
         (0, _jquery2.default)('img.user-image').attr('src', data.user.photoURL);
         (0, _jquery2.default)('img.user-image').show();
+        (0, _jquery2.default)('.user-image-guest').hide();
         (0, _jquery2.default)('.user-name').text(data.user.displayName);
       } else {
         (0, _jquery2.default)('img.user-image').attr('src', '');
         (0, _jquery2.default)('img.user-image').hide();
+        (0, _jquery2.default)('.user-image-guest').show();
         (0, _jquery2.default)('.user-name').text('Guest');
       }
       window.GreenhouseGames.authHelpers.showAuth();
@@ -193,7 +195,8 @@ window.GreenhouseGames = {
 
 (0, _jquery2.default)(document).ready(function () {
   window.GreenhouseGames.client.firebase.auth().onAuthStateChanged(function (user) {
-    if (user && !user.isAnonymous) {
+    console.log(user);
+    if (user) {
       window.GreenhouseGames.authHelpers.loginSuccess({ user: user });
     } else {
       window.GreenhouseGames.authHelpers.hideAuth();
