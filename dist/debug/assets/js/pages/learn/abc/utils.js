@@ -198,6 +198,16 @@ function getIconWidth(game) {
   }
 }
 
+function getBreakpoint(game) {
+  if (game.width > 1000) {
+    return 'large';
+  } else if (game.width > 600) {
+    return 'medium';
+  } else {
+    return 'small';
+  }
+}
+
 function getGameDim(id) {
   var width = $('#' + id).width();
   return {
@@ -218,7 +228,8 @@ module.exports = {
   preload: preload,
   create: create,
   getIconWidth: getIconWidth,
-  init: init
+  init: init,
+  getBreakpoint: getBreakpoint
 };
 
 });

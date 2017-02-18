@@ -157,7 +157,7 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var sprite1, sprite2, sprite3;
 
   var game = _utils2.default.init('k', {
     preload: function preload() {
@@ -166,13 +166,41 @@ function create() {
     create: function create() {
       _utils2.default.create(game);
 
-      sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+      sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse-square');
+      game.physics.enable(sprite1, Phaser.Physics.ARCADE);
       sprite1.anchor.setTo(0.5, 0.5);
+      sprite1.body.velocity.set(game.rnd.integerInRange(-100, 100), game.rnd.integerInRange(-100, 100));
+      sprite1.body.collideWorldBounds = true;
+      sprite1.body.bounce.setTo(1);
+
+      sprite2 = game.add.sprite(game.width / 4, game.height / 2, 'greenhouse-square');
+      sprite2.anchor.setTo(0.5, 0.5);
+      game.physics.enable(sprite2, Phaser.Physics.ARCADE);
+      sprite2.body.immovable = true;
+      sprite2.body.bounce.set(1);
+
+      sprite3 = game.add.sprite(game.width * 3 / 4, game.height / 2, 'greenhouse-square');
+      sprite3.anchor.setTo(0.5, 0.5);
+      game.physics.enable(sprite3, Phaser.Physics.ARCADE);
+      sprite3.body.immovable = true;
+      sprite3.body.bounce.set(1);
     },
-    update: function update() {},
+    update: function update() {
+      game.physics.arcade.collide(sprite1, sprite2, reset);
+      game.physics.arcade.collide(sprite1, sprite3, reset);
+    },
     render: function render() {}
   });
   return game;
+
+  function reset() {
+    sprite1.kill();
+    game.time.events.add(Phaser.Timer.SECOND, function () {
+      sprite1.revive();
+      sprite1.position.setTo(game.width / 2, game.height / 2);
+      sprite1.body.velocity.set(game.rnd.integerInRange(-100, 100), game.rnd.integerInRange(-100, 100));
+    });
+  }
 }
 
 module.exports = create;
