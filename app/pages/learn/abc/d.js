@@ -1,7 +1,7 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1;
+  var sprite1, sprite2;
 
   var game = utils.init('d', {
     preload: () => {
@@ -13,10 +13,10 @@ function create() {
       sprite1 = game.add.sprite(game.width/4, game.height/2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
 
-      sprite1 = game.add.sprite(game.width*3/4, game.height/2, 'greenhouse');
-      sprite1.anchor.setTo(0.5, 0.5);
-      sprite1.inputEnabled = true;
-      sprite1.input.enableDrag();
+      sprite2 = game.add.sprite(game.width*3/4, game.height/2, 'greenhouse');
+      sprite2.anchor.setTo(0.5, 0.5);
+      sprite2.inputEnabled = true;
+      sprite2.input.enableDrag();
     },
     update: () => {
     },
