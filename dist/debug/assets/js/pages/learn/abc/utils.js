@@ -163,10 +163,13 @@ function resize(game) {
 function preload(game) {
   if (game.width > 1000) {
     game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
+    game.load.image('greenhouse-square', '/assets/img/logo-square-large.png');
   } else if (game.width > 600) {
     game.load.image('greenhouse', '/assets/img/logo-circle-medium.png');
+    game.load.image('greenhouse-square', '/assets/img/logo-square-medium.png');
   } else {
     game.load.image('greenhouse', '/assets/img/logo-circle-small.png');
+    game.load.image('greenhouse-square', '/assets/img/logo-square-small.png');
   }
   game.load.image('reload', '/assets/img/restart-game.png');
 }
