@@ -1,7 +1,7 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, lvlText, xpText, lvl, xp, nextLvl;
+  var sprite1, lvl, xp, nextLvl;
 
   var game = utils.init('e', {
     preload: () => {
@@ -24,30 +24,13 @@ function create() {
           xp = 0;
           nextLvl = nextLvl * 2;
         }
-
-        lvlText.text = 'Levels\n' + lvl;
-        xpText.text = 'Experience\n' + xp + ' / ' + nextLvl;
       });
-
-      lvlText = game.add.text(game.width/4, game.height/4, {
-        fill: 'white',
-        align: 'center'
-      });
-      lvlText.fill = '#ffffff';
-      lvlText.text = 'Levels\n1';
-      lvlText.anchor.setTo(0.5, 0.5);
-
-      xpText = game.add.text(game.width*3/4, game.height/4, {
-        fill: 'white',
-        align: 'center'
-      });
-      xpText.fill = '#ffffff';
-      xpText.text = 'Experience\n0 / 2';
-      xpText.anchor.setTo(0.5, 0.5);
     },
     update: () => {
     },
     render: () => {
+      game.debug.text('Levels: ' + lvl, 32, 32);
+      game.debug.text('Experience: ' + xp + ' / ' + nextLvl, 32, 48);
     }
   });
   return game;
