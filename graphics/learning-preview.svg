@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 338" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="338"/>
+  <g id="g7" transform="matrix(0.128, 0, 0, 0.128, 267.999969, 137)">
+    <title id="title9">Layer 1</title>
+    <circle style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1" id="path3339" cx="250" cy="250" r="250"/>
+    <path stroke-miterlimit="4" id="rect2391" d="M 250.03031,153.93876 145,253 l 0,147 72,0 0,-66 66,0 0,66 72,0 0,-147 z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+    <path stroke-miterlimit="4" id="path2399" d="M 249.41932,100 100,239.8457 115.73961,258.61455 250.03059,132.91817 384.29096,258.61455 400,239.8457 250.61126,100 l -0.58067,0.7107 -0.61127,-0.7107 -1e-5,0 z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+    <path stroke-miterlimit="4" id="rect2404" d="m 145,120.13026 37.55688,0 -0.33006,23.71355 L 145,179.69787 Z" style="opacity:1;fill:#77dd77;fill-opacity:1;stroke-width:0.40000001;stroke-miterlimit:4"/>
+  </g>
+</svg>

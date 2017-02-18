@@ -11,14 +11,14 @@ section.header {
     div.top-bar-left {
       li {
         a.logo-back-button {
-          margin: 4px;
+          margin: 3px;
           background: url(/assets/img/logo-circle.png);
           height: 32px;
           width: 32px;
         }
 
         a.arrow-back-button {
-          margin: 4px;
+          margin: 3px;
           padding: 0;
 
           i.fi-arrow-left {
@@ -50,12 +50,15 @@ section.header {
   }
 
   div.main-header-banner {
-    height: 200px;
+    height: $header-banner-height-small;
     background: $primary-color;
     background: linear-gradient($primary-color, $white);
 
     @include breakpoint(medium) {
-      height: 250px;
+      height: $header-banner-height-medium;
+    }
+    @include breakpoint(large) {
+      height: $header-banner-height-large;
     }
 
     span {
@@ -70,17 +73,29 @@ section.header {
       }
     }
 
-    div.logo {
-      background: url(/assets/img/logo-circle-large.png);
-      background-size: contain;
+    div.logo-container {
       height: 96px;
       width: 96px;
       margin-left: auto;
       margin-right: auto;
+      position: relative;
 
       @include breakpoint(medium) {
-      height: 128px;
-      width: 128px;
+        height: 128px;
+        width: 128px;
+      }
+
+      a.logo {
+        background: url(/assets/img/logo-circle-large.png);
+        background-size: contain;
+        position: absolute;
+        height: 96px;
+        width: 96px;
+
+        @include breakpoint(medium) {
+          height: 128px;
+          width: 128px;
+        }
       }
     }
   }

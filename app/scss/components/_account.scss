@@ -8,3 +8,23 @@ img.profile-image {
     height: 200px;
   }
 }
+
+div.profile-image {
+  display: inline-block;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+
+  @include breakpoint(medium) {
+    width: 200px;
+    height: 200px;
+  }
+
+  i {
+    font-size: 100px;
+
+    @include breakpoint(medium) {
+      font-size: 200px;
+    }
+  }
+}

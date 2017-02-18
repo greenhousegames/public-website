@@ -151,7 +151,7 @@ require.register("pages/account/account.js", function(exports, require, module) 
 'use strict';
 
 $('#logout_button').click(function () {
-  return window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth);
+  return window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth);
 });
 $('#twitterLogin_button').click(function () {
   return window.GreenhouseGames.client.signInWithPopup('twitter').then(window.GreenhouseGames.authHelpers.loginSuccess).catch(window.GreenhouseGames.authHelpers.loginError);
@@ -166,7 +166,7 @@ $('#guestLogin_button').click(function () {
 });
 
 require.register("___globals___", function(exports, require, module) {
-  
+
 
 // Auto-loaded modules from config.npm.globals.
 window.jQuery = require("jquery");

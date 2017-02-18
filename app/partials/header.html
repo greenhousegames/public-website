@@ -1,8 +1,7 @@
 <div class="top-bar primary">
   <div class="top-bar-left">
     <ul class="menu">
-      {{#ifequal root ''}}
-      {{else}}
+      {{#unless largeheader}}
         {{#ifequal layout 'abc'}}
           {{#ifpage 'index'}}
           <li><a href="/" class="logo-back-button"></a></li>
@@ -13,7 +12,7 @@
         {{else}}
         <li><a href="/" class="logo-back-button"></a></li>
         {{/ifequal}}
-      {{/ifequal}}
+      {{/unless}}
     </ul>
   </div>
   <div class="top-bar-right">
@@ -35,21 +34,27 @@
         <a href="">Account</a>
         <ul class="menu vertical">
           <li class="hide-auth"><a href="/account">Login</a></li>
-          <li class="show-auth"><a href="/account"><img class="thumbnail-image user-image"></img><span class="user-name"></span></a></li>
+          <li class="show-auth"><a href="/account">
+            <img class="thumbnail-image user-image"></img>
+            <i class="fi-torso user-image-guest"></i>
+            <span class="user-name"></span>
+          </a></li>
           <li class="show-auth"><a id="header-logout-button">Logout</a></li>
         </ul>
       </li>
     </ul>
   </div>
 </div>
-{{#ifequal root ''}}
+{{#if largeheader}}
 <div class="row expanded">
   <div class="main-header-banner">
-    <div class="logo"></div>
-    <span>Greenhouse Games</span>
+    <div class=logo-container>
+      <a class="logo" href="/"></a>
+    </div>
+    <span>{{ title }}</span>
   </div>
 </div>
-{{/ifequal}}
+{{/if}}
 <script>
 $('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));
 </script>

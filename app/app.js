@@ -13,13 +13,15 @@ window.GreenhouseGames = {
       $('.show-auth').hide();
     },
     loginSuccess: (data) => {
-      if (!data.isAnonymous) {
+      if (data.user && !data.user.isAnonymous) {
         $('img.user-image').attr('src', data.user.photoURL);
         $('img.user-image').show();
+        $('.user-image-guest').hide();
         $('.user-name').text(data.user.displayName);
       } else {
         $('img.user-image').attr('src', '');
         $('img.user-image').hide();
+        $('.user-image-guest').show();
         $('.user-name').text('Guest');
       }
       window.GreenhouseGames.authHelpers.showAuth();
@@ -32,7 +34,8 @@ window.GreenhouseGames = {
 
 $(document).ready(() => {
   window.GreenhouseGames.client.firebase.auth().onAuthStateChanged((user) => {
-    if (user && !user.isAnonymous) {
+    console.log(user);
+    if (user) {
       window.GreenhouseGames.authHelpers.loginSuccess({user: user});
     } else {
       window.GreenhouseGames.authHelpers.hideAuth();

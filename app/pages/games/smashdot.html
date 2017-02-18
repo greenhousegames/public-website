@@ -1,40 +1,33 @@
 ---
 layout: game
+title: Smash Dot
 ---
 <div class="game-home">
   <div class="row">
-    <div class="columns text-center">
-      <img src="{{root}}assets/img/games/{{ games.smashdot.key }}/screenshot.png">
-    </div>
-  </div>
-  <br/>
-  <div class="row small-up-1 medium-up-3 text-center small-collapse">
-    {{#if games.smashdot.playstore}}
-    <div class="column">
-      <a class="playstore-button" href="{{games.smashdot.playstore}}">
-        <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
-      </a>
-    </div>
-    {{/if}}
-    {{#if games.smashdot.appstore}}
-    <div class="column">
-      <a class="appstore-button" href="{{games.smashdot.appstore}}"></a>
-    </div>
-    {{/if}}
-    <div class="column">
-      <a class="greenhousestore-button button dark" href="{{ games.smashdot.key }}">
-        <div class="image"></div><div class="text">Play on<br/><strong>Greenhouse</strong></div>
-      </a>
-    </div>
-  </div>
-  <br/>
-  <div class="row">
     <div class="column">
       <div class="card">
-        <div class="card-divider text-center primary">
-          <h1>{{ games.smashdot.name }}</h1>
-        </div>
+        <img src="{{root}}assets/img/games/{{ games.smashdot.key }}/screenshot.png">
         <div class="card-section">
+          <div class="row small-up-1 medium-up-3 text-center small-collapse">
+            {{#if games.smashdot.playstore}}
+            <div class="column">
+              <a class="playstore-button" href="{{games.smashdot.playstore}}">
+                <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
+              </a>
+            </div>
+            {{/if}}
+            {{#if games.smashdot.appstore}}
+            <div class="column">
+              <a class="appstore-button" href="{{games.smashdot.appstore}}"></a>
+            </div>
+            {{/if}}
+            <div class="column">
+              <a class="greenhousestore-button button dark" href="{{ games.smashdot.key }}">
+                <div class="image"></div><div class="text">Play on<br/><strong>Greenhouse</strong></div>
+              </a>
+            </div>
+          </div>
+          <br/>
           <p>Dots will appear randomly on the screen and grow over time.  The dots can be collected by tapping them, but be careful, the dots will disappear if they collide with each other.</p>
           <div style='margin-left: 32px'>
             <h5>Classic Mode</h5>
