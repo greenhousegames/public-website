@@ -157,20 +157,47 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var sprite1, abutton, bbutton;
 
   var game = _utils2.default.init('l', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a', 'b']);
     },
     create: function create() {
       _utils2.default.create(game);
 
       sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
+      sprite1.health = 100;
+      sprite1.lives = 3;
+
+      abutton = game.add.button(0, 0, 'a-button', function () {
+        if (sprite1.health > 0) {
+          sprite1.health -= 10;
+
+          if (sprite1.health == 0) {
+            sprite1.kill();
+            sprite1.lives--;
+          }
+        }
+      });
+      bbutton = game.add.button(0, 0, 'b-button', function () {
+        return sprite1.lives++;
+      });
+      _utils2.default.alignButtons(game, [abutton, bbutton]);
     },
-    update: function update() {},
-    render: function render() {}
+    update: function update() {
+      if (!sprite1.alive && sprite1.lives > 0) {
+        sprite1.health = 100;
+        sprite1.x = game.rnd.integerInRange(0, game.width);
+        sprite1.y = game.rnd.integerInRange(0, game.height);
+        sprite1.revive();
+      }
+    },
+    render: function render() {
+      game.debug.text('Lives: ' + sprite1.lives, 32, 32);
+      game.debug.text('Health: ' + sprite1.health + ' / 100', 32, 48);
+    }
   });
   return game;
 }
