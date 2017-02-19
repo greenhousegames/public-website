@@ -5450,6 +5450,18 @@ a.greenhousestore-button {
         a.greenhousestore-button div.text strong {
           font-size: 22px; } }
 
+/* line 132, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+div.card {
+  position: relative; }
+  /* line 135, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+  div.card i.card-number {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+    /* line 140, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+    div.card i.card-number small {
+      margin-right: 4px; }
+
 /* line 3, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
 div.game-home div.app-store-buttons a img {
   height: auto;
