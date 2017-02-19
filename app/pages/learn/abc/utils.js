@@ -11,25 +11,25 @@ function resize(game) {
 function preload(game, buttons) {
   buttons = buttons || [];
   if (game.width > 1000) {
-    game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
-    game.load.image('greenhouse-square', '/assets/img/logo-square-large.png');
+    game.load.image('greenhouse', '/assets/img/learning/logo-circle-large.png');
+    game.load.image('greenhouse-square', '/assets/img/learning/logo-square-large.png');
     buttons.forEach(name => {
       game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-large.png');
     });
   } else if (game.width > 600) {
-    game.load.image('greenhouse', '/assets/img/logo-circle-medium.png');
-    game.load.image('greenhouse-square', '/assets/img/logo-square-medium.png');
+    game.load.image('greenhouse', '/assets/img/learning/logo-circle-medium.png');
+    game.load.image('greenhouse-square', '/assets/img/learning/logo-square-medium.png');
     buttons.forEach(name => {
       game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-medium.png');
     });
   } else {
-    game.load.image('greenhouse', '/assets/img/logo-circle-small.png');
-    game.load.image('greenhouse-square', '/assets/img/logo-square-small.png');
+    game.load.image('greenhouse', '/assets/img/learning/logo-circle-small.png');
+    game.load.image('greenhouse-square', '/assets/img/learning/logo-square-small.png');
     buttons.forEach(name => {
       game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-small.png');
     });
   }
-  game.load.image('reload', '/assets/img/restart-game.png');
+  game.load.image('reload', '/assets/img/learning/restart-game.png');
 }
 
 function create(game) {

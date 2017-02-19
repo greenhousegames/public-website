@@ -1,11 +1,11 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1;
+  var sprite1, abutton;
 
   var game = utils.init('h', {
     preload: () => {
-      utils.preload(game);
+      utils.preload(game, ['a']);
     },
     create: () => {
       utils.create(game);
@@ -13,14 +13,17 @@ function create() {
       sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
       sprite1.health = 100;
-      sprite1.inputEnabled = true;
-      sprite1.events.onInputDown.add(() => {
-        sprite1.health -= 10;
 
-        if (sprite1.health == 0) {
-          sprite1.kill();
+      abutton = game.add.button(0, 0, 'a-button', () => {
+        if (sprite1.health > 0) {
+          sprite1.health -= 10;
+
+          if (sprite1.health == 0) {
+            sprite1.kill();
+          }
         }
       });
+      utils.alignButtons(game, [abutton]);
     },
     update: () => {
     },
