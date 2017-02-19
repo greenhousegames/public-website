@@ -1,11 +1,11 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1;
+  var sprite1, abutton;
 
   var game = utils.init('j', {
     preload: () => {
-      utils.preload(game);
+      utils.preload(game, ['a']);
     },
     create: () => {
       utils.create(game);
@@ -16,8 +16,9 @@ function create() {
       sprite1.anchor.setTo(0.5, 0.5);
       sprite1.body.collideWorldBounds = true;
       sprite1.body.bounce.set(0);
-
-      game.input.onDown.add(jump);
+      
+      abutton = game.add.button(0, 0, 'a-button', jump);
+      utils.alignButtons(game, [abutton]);
     },
     update: () => {
     },

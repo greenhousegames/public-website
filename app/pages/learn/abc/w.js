@@ -1,11 +1,11 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, weapon;
+  var sprite1, weapon, abutton;
 
   var game = utils.init('w', {
     preload: () => {
-      utils.preload(game);
+      utils.preload(game, ['a']);
       game.load.image('bullet', '/assets/img/learning/weapon-bullet.png');
     },
     create: () => {
@@ -22,7 +22,8 @@ function create() {
 
       weapon.trackSprite(sprite1, 0, 0, false);
 
-      game.input.onDown.add(fire);
+      abutton = game.add.button(0, 0, 'a-button', fire);
+      utils.alignButtons(game, [abutton]);
     },
     update: () => {
     },
@@ -32,7 +33,7 @@ function create() {
   return game;
 
   function fire() {
-    weapon.fireAngle = Phaser.Math.radToDeg(game.physics.arcade.angleToPointer(sprite1));
+    weapon.fireAngle = game.rnd.integerInRange(-180,180);
     weapon.fire();
   }
 }

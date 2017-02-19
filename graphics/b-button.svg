@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Bubblegum+Sans:400);</style>
+  </defs>
+  <ellipse cx="250" cy="250" rx="250" ry="250" style="fill: rgb(183, 183, 183);"/>
+  <ellipse cx="250" cy="250" rx="200" ry="200" style="fill: rgb(28, 106, 189);"/>
+  <text x="177.642" y="317.533" style="font-family: &quot;Bubblegum Sans&quot;; font-size: 250px; white-space: pre;">B</text>
+</svg>
