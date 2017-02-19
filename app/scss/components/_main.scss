@@ -128,3 +128,17 @@ a.greenhousestore-button {
     }
   }
 }
+
+div.card {
+  position: relative;
+
+  i.card-number {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    small {
+      margin-right: 4px;
+    }
+  }
+}

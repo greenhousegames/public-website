@@ -2,103 +2,129 @@ a:
   letter: 'a'
   letterUpper: 'A'
   desc: 'A is for Acceleration'
+  order: 6
 b:
   letter: 'b'
   letterUpper: 'B'
   desc: 'B is for Bounce'
+  order: 7
 c:
   letter: 'c'
   letterUpper: 'C'
   desc: 'C is for Collide'
+  order: 12
 d:
   letter: 'd'
   letterUpper: 'D'
   desc: 'D is for Drag'
+  order: 13
 e:
   letter: 'e'
   letterUpper: 'E'
   desc: 'E is for Experience'
+  order: 20
 f:
   letter: 'f'
   letterUpper: 'F'
   desc: 'F is for Frames'
+  order: 10
 g:
   letter: 'g'
   letterUpper: 'G'
   desc: 'G is for Gravity'
+  order: 8
 h:
   letter: 'h'
   letterUpper: 'H'
   desc: 'H is for Health'
+  order: 17
 i:
   letter: 'i'
   letterUpper: 'I'
   desc: 'I is for Immovable'
+  order: 15
 j:
   letter: 'j'
   letterUpper: 'J'
   desc: 'J is for Jump'
+  order: 9
 k:
   letter: 'k'
   letterUpper: 'K'
   desc: 'K is for Kill'
+  order: 16
 l:
   letter: 'l'
   letterUpper: 'L'
   desc: 'L is for Levels'
+  order: 26
 m:
   letter: 'm'
   letterUpper: 'M'
   desc: 'M is for Movement'
+  order: 11
 n:
   letter: 'n'
   letterUpper: 'N'
   desc: 'N is for Noise'
+  order: 22
 o:
   letter: 'o'
   letterUpper: 'O'
   desc: 'O is for Obstacles'
+  order: 23
 p:
   letter: 'p'
   letterUpper: 'P'
   desc: 'P is for Platformer'
+  order: 24
 q:
   letter: 'q'
   letterUpper: 'Q'
   desc: 'Q is for Quests'
+  order: 21
 r:
   letter: 'r'
   letterUpper: 'R'
   desc: 'R is for Runner'
+  order: 25
 s:
   letter: 's'
   letterUpper: 'S'
   desc: 'S is for Sprite'
+  order: 1
 t:
   letter: 't'
   letterUpper: 'T'
   desc: 'T is for Timer'
+  order: 14
 u:
   letter: 'u'
   letterUpper: 'U'
   desc: 'U is for Upgrading'
+  order: 19
 v:
   letter: 'v'
   letterUpper: 'V'
   desc: 'V is for Velocity'
+  order: 5
 w:
   letter: 'w'
   letterUpper: 'W'
   desc: 'W is for Weapon'
+  order: 18
 x:
   letter: 'x'
   letterUpper: 'X'
   desc: 'X is for X-axis'
+  order: 2
 y:
   letter: 'y'
   letterUpper: 'Y'
   desc: 'Y is for Y-axis'
+  order: 3
 z:
   letter: 'z'
   letterUpper: 'Z'
   desc: 'Z is for Z-index'
+  order: 4

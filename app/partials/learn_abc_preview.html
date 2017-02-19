@@ -1,9 +1,11 @@
 <div class="abc column">
   <div id="card-letter-{{ letter }}" class="card">
+    {{#if preview}}
     <div id="learning-game-{{ letter }}-container" class="show-for-medium">
       <div id="learning-game-{{ letter }}"></div>
       <img src="{{ @root.root }}assets/img/learning/preview-placeholder.png"></img>
     </div>
+    {{/if}}
     {{#if header}}
     <div class="card-divider primary show-for-medium">
       <h4>{{ letterUpper }}</h4>
