@@ -157,22 +157,43 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var sprite1, weapon, abutton, sound;
 
   var game = _utils2.default.init('n', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a']);
+      game.load.image('bullet', '/assets/img/learning/weapon-bullet.png');
+      game.load.audio('fire-sound', ['/assets/sounds/zap1.ogg', '/assets/sounds/zap1.mp4', '/assets/sounds/zap1.mp3']);
     },
     create: function create() {
       _utils2.default.create(game);
 
+      weapon = game.add.weapon(30, 'bullet');
+      weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+      weapon.bulletSpeed = 600;
+      weapon.fireRate = 100;
+
       sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
+      game.physics.arcade.enable(sprite1);
+
+      weapon.trackSprite(sprite1, 0, 0, false);
+
+      abutton = game.add.button(0, 0, 'a-button', fire);
+      _utils2.default.alignButtons(game, [abutton]);
+
+      sound = game.add.audio('fire-sound');
     },
     update: function update() {},
     render: function render() {}
   });
   return game;
+
+  function fire() {
+    weapon.fireAngle = game.rnd.integerInRange(-180, 180);
+    weapon.fire();
+    sound.play();
+  }
 }
 
 module.exports = create;

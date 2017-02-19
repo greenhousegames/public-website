@@ -183,17 +183,15 @@ function create() {
 
   function jump() {
     if (sprite1.y == game.height - _utils2.default.getIconWidth(game) / 2) {
-      switch (_utils2.default.getBreakpoint(game)) {
-        case 'large':
-          sprite1.body.velocity.y = -300;
-          break;
-        case 'medium':
-          sprite1.body.velocity.y = -250;
-          break;
-        case 'small':
-          sprite1.body.velocity.y = -200;
-          break;
-      }
+      _utils2.default.ifBreakpoint(game, 'small', function () {
+        return sprite1.body.velocity.y = -200;
+      });
+      _utils2.default.ifBreakpoint(game, 'medium', function () {
+        return sprite1.body.velocity.y = -250;
+      });
+      _utils2.default.ifBreakpoint(game, 'large', function () {
+        return sprite1.body.velocity.y = -300;
+      });
     }
   }
 }
