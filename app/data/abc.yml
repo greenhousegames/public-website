@@ -22,7 +22,7 @@ e:
   letter: 'e'
   letterUpper: 'E'
   desc: 'E is for Experience'
-  order: 20
+  order: 22
 f:
   letter: 'f'
   letterUpper: 'F'
@@ -56,8 +56,8 @@ k:
 l:
   letter: 'l'
   letterUpper: 'L'
-  desc: 'L is for Levels'
-  order: 26
+  desc: 'L is for Lives'
+  order: 18
 m:
   letter: 'm'
   letterUpper: 'M'
@@ -67,27 +67,27 @@ n:
   letter: 'n'
   letterUpper: 'N'
   desc: 'N is for Noise'
-  order: 22
+  order: 20
 o:
   letter: 'o'
   letterUpper: 'O'
   desc: 'O is for Obstacles'
-  order: 23
+  order: 24
 p:
   letter: 'p'
   letterUpper: 'P'
   desc: 'P is for Platformer'
-  order: 24
+  order: 25
 q:
   letter: 'q'
   letterUpper: 'Q'
   desc: 'Q is for Quests'
-  order: 21
+  order: 23
 r:
   letter: 'r'
   letterUpper: 'R'
   desc: 'R is for Runner'
-  order: 25
+  order: 26
 s:
   letter: 's'
   letterUpper: 'S'
@@ -102,7 +102,7 @@ u:
   letter: 'u'
   letterUpper: 'U'
   desc: 'U is for Upgrading'
-  order: 19
+  order: 21
 v:
   letter: 'v'
   letterUpper: 'V'
@@ -112,7 +112,7 @@ w:
   letter: 'w'
   letterUpper: 'W'
   desc: 'W is for Weapon'
-  order: 18
+  order: 19
 x:
   letter: 'x'
   letterUpper: 'X'

@@ -16,7 +16,7 @@ function create() {
       sprite1.anchor.setTo(0.5, 0.5);
       sprite1.body.collideWorldBounds = true;
       sprite1.body.bounce.set(0);
-      
+
       abutton = game.add.button(0, 0, 'a-button', jump);
       utils.alignButtons(game, [abutton]);
     },
@@ -29,17 +29,9 @@ function create() {
 
   function jump() {
     if (sprite1.y == (game.height - utils.getIconWidth(game)/2)) {
-      switch (utils.getBreakpoint(game)) {
-        case 'large':
-          sprite1.body.velocity.y = -300;
-          break;
-        case 'medium':
-          sprite1.body.velocity.y = -250;
-          break;
-        case 'small':
-          sprite1.body.velocity.y = -200;
-          break;
-      }
+      utils.ifBreakpoint(game, 'small', () => sprite1.body.velocity.y = -200);
+      utils.ifBreakpoint(game, 'medium', () => sprite1.body.velocity.y = -250);
+      utils.ifBreakpoint(game, 'large', () => sprite1.body.velocity.y = -300);
     }
   }
 }

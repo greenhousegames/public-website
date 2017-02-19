@@ -1,7 +1,7 @@
 var config = {
   conventions: {
     assets:   /^(app)(\\|\/)(assets)/,
-    ignored:  ['test/**/*.js','app/scss/components/*.scss']
+    ignored:  ['test/**/*.js','app/scss/components/*.scss', 'app/helpers/**/*.js']
   },
 
   npm: {
