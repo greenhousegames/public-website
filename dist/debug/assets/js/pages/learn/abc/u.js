@@ -157,22 +157,69 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var weapon, sprite1, sprite2, abutton, bbutton, cbutton, dbutton, weaponLvl, shieldLvl, health;
 
   var game = _utils2.default.init('u', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a', 'b', 'c', 'd']);
+      game.load.image('bullet', '/assets/img/learning/weapon-bullet.png');
     },
     create: function create() {
       _utils2.default.create(game);
+      weaponLvl = 1;
+      shieldLvl = 1;
+      health = 100;
 
-      sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
+      weapon = game.add.weapon(30, 'bullet');
+      weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+      weapon.bulletSpeed = 600;
+      weapon.fireRate = 100;
+      weapon.fireAngle = 0;
+
+      sprite1 = game.add.sprite(game.width / 4, game.height / 2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
+
+      weapon.trackSprite(sprite1, 0, 0, false);
+
+      sprite2 = game.add.sprite(game.width * 3 / 4, game.height / 2, 'greenhouse');
+      sprite2.anchor.setTo(0.5, 0.5);
+      game.physics.arcade.enable(sprite2);
+      sprite2.body.immovable = true;
+
+      abutton = game.add.button(0, 0, 'a-button', function () {
+        return weapon.fire();
+      });
+      bbutton = game.add.button(0, 0, 'b-button', function () {
+        return weaponLvl++;
+      });
+      cbutton = game.add.button(0, 0, 'c-button', function () {
+        return shieldLvl++;
+      });
+      _utils2.default.alignButtons(game, [abutton, bbutton, cbutton]);
     },
-    update: function update() {},
-    render: function render() {}
+    update: function update() {
+      game.physics.arcade.collide(sprite2, weapon.bullets, function (sprite, bullet) {
+        if (shieldLvl <= weaponLvl) {
+          health -= (weaponLvl - shieldLvl + 1) * 10;
+        }
+        if (health <= 0) {
+          health = 0;
+          sprite2.kill();
+        }
+        bullet.kill();
+      });
+    },
+    render: function render() {
+      game.debug.text("Health: " + health, 32, 32);
+      game.debug.text("Weapon Level: " + weaponLvl, 32, 48);
+      game.debug.text("Shield Level: " + shieldLvl, 32, 64);
+    }
   });
   return game;
+
+  function fire() {
+    weapon.fire();
+  }
 }
 
 module.exports = create;

@@ -157,11 +157,11 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, weapon;
+  var sprite1, weapon, abutton;
 
   var game = _utils2.default.init('w', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a']);
       game.load.image('bullet', '/assets/img/learning/weapon-bullet.png');
     },
     create: function create() {
@@ -178,7 +178,8 @@ function create() {
 
       weapon.trackSprite(sprite1, 0, 0, false);
 
-      game.input.onDown.add(fire);
+      abutton = game.add.button(0, 0, 'a-button', fire);
+      _utils2.default.alignButtons(game, [abutton]);
     },
     update: function update() {},
     render: function render() {}
@@ -186,7 +187,7 @@ function create() {
   return game;
 
   function fire() {
-    weapon.fireAngle = Phaser.Math.radToDeg(game.physics.arcade.angleToPointer(sprite1));
+    weapon.fireAngle = game.rnd.integerInRange(-180, 180);
     weapon.fire();
   }
 }

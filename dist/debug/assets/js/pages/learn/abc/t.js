@@ -157,11 +157,11 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var sprite1, abutton, bbutton, timer;
 
   var game = _utils2.default.init('t', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a', 'b']);
     },
     create: function create() {
       _utils2.default.create(game);
@@ -169,11 +169,21 @@ function create() {
       sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
 
-      game.time.events.loop(Phaser.Timer.SECOND * 3, moveSprite);
+      timer = game.time.create(false);
+      timer.loop(Phaser.Timer.SECOND * 3, moveSprite);
+      timer.start();
+
+      abutton = game.add.button(0, 0, 'a-button', function () {
+        return timer.pause();
+      });
+      bbutton = game.add.button(0, 0, 'b-button', function () {
+        return timer.resume();
+      });
+      _utils2.default.alignButtons(game, [abutton, bbutton]);
     },
     update: function update() {},
     render: function render() {
-      game.debug.text("Time left: " + game.time.events.duration.toFixed(0) + ' ms', 32, 32);
+      game.debug.text("Time left: " + timer.duration.toFixed(0) + ' ms', 32, 32);
     }
   });
   return game;

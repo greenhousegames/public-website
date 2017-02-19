@@ -157,19 +157,45 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var sprite1, abutton, bbutton, cbutton, dbutton;
 
   var game = _utils2.default.init('m', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a', 'b', 'c', 'd']);
     },
     create: function create() {
       _utils2.default.create(game);
 
       sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
+      game.physics.arcade.enable(sprite1);
+
+      abutton = game.add.button(0, 0, 'a-button', function () {
+        return sprite1.body.velocity.x = 100;
+      });
+      bbutton = game.add.button(0, 0, 'b-button', function () {
+        return sprite1.body.velocity.x = -100;
+      });
+      cbutton = game.add.button(0, 0, 'c-button', function () {
+        return sprite1.body.velocity.y = 100;
+      });
+      dbutton = game.add.button(0, 0, 'd-button', function () {
+        return sprite1.body.velocity.y = -100;
+      });
+      _utils2.default.alignButtons(game, [abutton, bbutton, cbutton, dbutton]);
     },
-    update: function update() {},
+    update: function update() {
+      if (sprite1.body.velocity.x > 0) {
+        sprite1.body.velocity.x--;
+      } else if (sprite1.body.velocity.x < 0) {
+        sprite1.body.velocity.x++;
+      }
+      if (sprite1.body.velocity.y > 0) {
+        sprite1.body.velocity.y--;
+      } else if (sprite1.body.velocity.y < 0) {
+        sprite1.body.velocity.y++;
+      }
+    },
     render: function render() {}
   });
   return game;

@@ -157,11 +157,11 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var sprite1, abutton;
 
   var game = _utils2.default.init('j', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a']);
     },
     create: function create() {
       _utils2.default.create(game);
@@ -173,7 +173,8 @@ function create() {
       sprite1.body.collideWorldBounds = true;
       sprite1.body.bounce.set(0);
 
-      game.input.onDown.add(jump);
+      abutton = game.add.button(0, 0, 'a-button', jump);
+      _utils2.default.alignButtons(game, [abutton]);
     },
     update: function update() {},
     render: function render() {}

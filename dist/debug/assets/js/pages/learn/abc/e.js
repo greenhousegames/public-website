@@ -157,35 +157,31 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, lvl, xp, nextLvl;
+  var sprite1, xp, abutton;
 
   var game = _utils2.default.init('e', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a']);
     },
     create: function create() {
       _utils2.default.create(game);
       xp = 0;
-      nextLvl = 2;
-      lvl = 1;
 
       sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
-      sprite1.inputEnabled = true;
-      sprite1.events.onInputDown.add(function () {
-        xp++;
+      sprite1.width = 32;
+      sprite1.height = 32;
 
-        if (xp >= nextLvl) {
-          lvl++;
-          xp = 0;
-          nextLvl = nextLvl * 2;
-        }
+      abutton = game.add.button(0, 0, 'a-button', function () {
+        xp++;
+        sprite1.width = 32 + xp;
+        sprite1.height = 32 + xp;
       });
+      _utils2.default.alignButtons(game, [abutton]);
     },
     update: function update() {},
     render: function render() {
-      game.debug.text('Levels: ' + lvl, 32, 32);
-      game.debug.text('Experience: ' + xp + ' / ' + nextLvl, 32, 48);
+      game.debug.text('Experience: ' + xp, 32, 32);
     }
   });
   return game;

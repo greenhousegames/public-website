@@ -160,16 +160,26 @@ function resize(game) {
   }
 }
 
-function preload(game) {
+function preload(game, buttons) {
+  buttons = buttons || [];
   if (game.width > 1000) {
     game.load.image('greenhouse', '/assets/img/logo-circle-large.png');
     game.load.image('greenhouse-square', '/assets/img/logo-square-large.png');
+    buttons.forEach(function (name) {
+      game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-large.png');
+    });
   } else if (game.width > 600) {
     game.load.image('greenhouse', '/assets/img/logo-circle-medium.png');
     game.load.image('greenhouse-square', '/assets/img/logo-square-medium.png');
+    buttons.forEach(function (name) {
+      game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-medium.png');
+    });
   } else {
     game.load.image('greenhouse', '/assets/img/logo-circle-small.png');
     game.load.image('greenhouse-square', '/assets/img/logo-square-small.png');
+    buttons.forEach(function (name) {
+      game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-small.png');
+    });
   }
   game.load.image('reload', '/assets/img/restart-game.png');
 }
@@ -223,13 +233,42 @@ function init(letter, config) {
   return game;
 }
 
+function alignButtons(game, buttons) {
+  var padding;
+  switch (getBreakpoint(game)) {
+    case 'small':
+      padding = 8;
+      break;
+    case 'medium':
+      padding = 12;
+      break;
+    case 'large':
+      padding = 16;
+      break;
+  }
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].anchor.setTo(0, 1);
+    buttons[i].x = padding + (buttons[i].width + padding) * i;
+    buttons[i].y = game.height - padding;
+  }
+}
+
+function ifBreakpoint(game, breakpoint, callback) {
+  if (getBreakpoint(game) == breakpoint) {
+    callback();
+  }
+}
+
 module.exports = {
   resize: resize,
   preload: preload,
   create: create,
   getIconWidth: getIconWidth,
   init: init,
-  getBreakpoint: getBreakpoint
+  getBreakpoint: getBreakpoint,
+  alignButtons: alignButtons,
+  ifBreakpoint: ifBreakpoint
 };
 
 });
