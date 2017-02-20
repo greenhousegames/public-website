@@ -12,7 +12,7 @@ section.header {
       li {
         a.logo-back-button {
           margin: 3px;
-          background: url(/assets/img/logo-circle.png);
+          background: url(../img/logo-circle.png);
           height: 32px;
           width: 32px;
         }
@@ -52,7 +52,7 @@ section.header {
   div.main-header-banner {
     height: $header-banner-height-small;
     background: $primary-color;
-    background: linear-gradient($primary-color, $white);
+    background: linear-gradient($primary-color, $light-background-color);
 
     @include breakpoint(medium) {
       height: $header-banner-height-medium;
@@ -86,7 +86,7 @@ section.header {
       }
 
       a.logo {
-        background: url(/assets/img/logo-circle-large.png);
+        background: url(../img/logo-circle-large.png);
         background-size: contain;
         position: absolute;
         height: 96px;

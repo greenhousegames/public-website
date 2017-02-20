@@ -1,47 +1,31 @@
 ---
 title: Account
 ---
-<div class="row">
+<div class="row show-auth" style="display: none;">
   <div class="column small-12 text-center">
-    <div class="card show-auth" style="display: none;">
-      <div class="card-divider">
-        <h2 class="user-name"></h2>
-      </div>
-      <div class="card-section">
-        <div class="row">
-          <div class="column small-12">
-            <img class="profile-image user-image"></img>
-            <div class="profile-image user-image-guest">
-              <i class="fi-torso"></i>
-            </div>
-          </div>
-          <div class="column small-12">
-            <br/>
-            <a class="button large alert" id="logout_button" style="color: white">Logout</a>
-          </div>
-        </div>
+    <img class="profile-image user-image"></img>
+    <div class="profile-image user-image-guest">
+      <i class="fi-torso"></i>
+    </div>
+    <h2 class="user-name"></h2>
+    <a class="button large alert" id="logout_button" style="color: white">Logout</a>
+  </div>
+</div>
+<div class="row hide-auth" style="display: none;">
+  <div class="column small-12 text-center">
+    <div class="row">
+      <div class="column small-12 medium-6 medium-offset-3">
+        <a class="button large expanded" id="facebookLogin_button"><i class="fi-social-facebook" style="margin-right: 8px;"></i>Facebook</a>
       </div>
     </div>
-    <div class="card hide-auth" style="display: none;">
-      <div class="card-divider">
-        <h2>Login</h2>
+    <div class="row">
+      <div class="column small- medium-6 medium-offset-3">
+        <a class="button large expanded" id="twitterLogin_button"><i class="fi-social-twitter" style="margin-right: 8px;"></i>Twitter</a>
       </div>
-      <div class="card-section">
-        <div class="row">
-          <div class="column small-12 medium-6 medium-offset-3">
-            <a class="button large expanded" id="facebookLogin_button"><i class="fi-social-facebook" style="margin-right: 8px;"></i>Facebook</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column small- medium-6 medium-offset-3">
-            <a class="button large expanded" id="twitterLogin_button"><i class="fi-social-twitter" style="margin-right: 8px;"></i>Twitter</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column small- medium-6 medium-offset-3">
-            <a class="button large expanded" id="guestLogin_button"><i class="fi-person" style="margin-right: 8px;"></i>Guest</a>
-          </div>
-        </div>
+    </div>
+    <div class="row">
+      <div class="column small- medium-6 medium-offset-3">
+        <a class="button large expanded" id="guestLogin_button"><i class="fi-person" style="margin-right: 8px;"></i>Guest</a>
       </div>
     </div>
   </div>

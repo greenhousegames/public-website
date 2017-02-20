@@ -29,10 +29,6 @@ section.header.large + section {
   }
 }
 
-div.light-background {
-  background-color: $light-gray;
-}
-
 div.card-divider.primary {
   @include card-divider($background: $primary-color);
   color: $white;
@@ -98,7 +94,7 @@ a.greenhousestore-button {
   }
 
   div.image {
-    background: url(/assets/img/logo-circle.png);
+    background: url(../img/logo-circle.png);
     background-size: contain;
     width: 24px;
     height: 24px;
@@ -141,4 +137,32 @@ div.card {
       margin-right: 4px;
     }
   }
+
+  div.float-divider {
+    position: relative;
+
+    div.row {
+      position: absolute;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+
+      div.columns {
+        height: 100%;
+        position: relative;
+        padding: 0;
+        top: 50%;
+
+        div.card-divider {
+          transform: translateY(-50%);
+          background: rgba(0,0,0,0.2);
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+div.row.padding-top {
+  padding-top: 16px;
 }

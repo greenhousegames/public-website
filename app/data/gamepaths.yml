@@ -1,5 +1,0 @@
-smashdot:
-  src_debug: 'node_modules/@greenhousegames/smash-dot-app/dist/debug/browser/package.zip'
-  src_release: 'node_modules/@greenhousegames/smash-dot-app/dist/release/browser/package.zip'
-  screenshot: 'node_modules/@greenhousegames/smash-dot-app/resources/android/screen-shot-1.png'
-  dist: 'games/smashdot'

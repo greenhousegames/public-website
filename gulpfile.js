@@ -19,10 +19,7 @@ var DIST = 'public';
 function loadConfig() {
   var config = {};
 
-  var ymlFile = fs.readFileSync('./app/data/gamepaths.yml', 'utf8');
-  config.gamepaths = yaml.load(ymlFile);
-
-  ymlFile = fs.readFileSync('./app/data/games.yml', 'utf8');
+  var ymlFile = fs.readFileSync('./app/data/games.yml', 'utf8');
   config.games = yaml.load(ymlFile);
 
   return config;
@@ -42,12 +39,12 @@ function createGameTask(game) {
   assetTask = game + '-assets';
   assetDest = DIST + '/assets/img/games/' + game;
   if (production) {
-    src = config.gamepaths[game].src_release;
+    src = config.games[game].paths.src_release;
   } else {
-    src = config.gamepaths[game].src_debug;
+    src = config.games[game].paths.src_debug;
   }
-  imgsrc = config.gamepaths[game].screenshot;
-  dest = DIST + '/' + config.gamepaths[game].dist;
+  imgsrc = config.games[game].paths.screenshot;
+  dest = DIST + '/' + config.games[game].paths.dist;
 
   if (imgsrc) {
     gulp.task(assetTask, function() {
