@@ -3,7 +3,7 @@ smashdot:
   name: 'Smash Dot'
   playstore: 'https://play.google.com/store/apps/details?id=com.greenhousegames.smashdot2&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
   appstore: 'https://itunes.apple.com/us/app/smash-dot-pro/id1204046667?mt=8'
-  desc: 'Keep on Smashing!'
+  description: 'Keep on Smashing!'
   paths:
     src_debug: 'node_modules/@greenhousegames/smash-dot-app/dist/debug/browser/package.zip'
     src_release: 'node_modules/@greenhousegames/smash-dot-app/dist/release/browser/package.zip'
