@@ -175,13 +175,11 @@ window.GreenhouseGames = {
     },
     loginSuccess: function loginSuccess(data) {
       if (data.user && !data.user.isAnonymous) {
-        (0, _jquery2.default)('img.user-image').attr('src', data.user.photoURL);
-        (0, _jquery2.default)('img.user-image').removeClass('hidden');
+        (0, _jquery2.default)('div.user-image').html('<img src="' + data.user.photoURL + '">');
         (0, _jquery2.default)('.user-image-guest').addClass('hidden');
         (0, _jquery2.default)('.user-name').text(data.user.displayName);
       } else {
-        (0, _jquery2.default)('img.user-image').attr('src', '');
-        (0, _jquery2.default)('img.user-image').addClass('hidden');
+        (0, _jquery2.default)('div.user-image').html('');
         (0, _jquery2.default)('.user-image-guest').removeClass('hidden');
         (0, _jquery2.default)('.user-name').text('Guest');
       }
