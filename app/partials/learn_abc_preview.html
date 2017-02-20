@@ -17,27 +17,51 @@
     </div>
   </div>
 </div>
-<script src="{{ @root.root }}assets/js/pages/learn/abc/{{ letter }}.js"></script>
+{{#if preview}}
 <script>
 $(document).ready(function() {
-  var create = require('pages/learn/abc/{{ letter }}.js');
-  var game;
-  $('#card-letter-{{ letter }}').hover(function() {
-    if (!game) {
-      $('#learning-game-{{ letter }}-container img').hide();
-      $('#learning-game-{{ letter }}').show();
-      game = create();
-    }
-  }, function() {
-    $('#learning-game-{{ letter }}').fadeOut({
-      complete: function() {
-        if (game) {
-          $('#learning-game-{{ letter }}-container img').show();
-          game.destroy();
-          game = null;
-        }
-      }
-    });
+  var loaded = false, loading = false;
+  $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+    changed(newSize);
   });
+  changed(Foundation.MediaQuery.current);
+
+  function changed(bp) {
+    if (bp != 'small' && !loaded && !loading) {
+      loading = true;
+      $.getScript("{{ @root.root }}assets/js/pages/learn/abc/{{ letter }}.js")
+        .done(function( script, textStatus ) {
+          loaded = true;
+          loading = false;
+          load();
+        })
+        .fail(function( jqxhr, settings, exception ) {
+          loading = false;
+        });
+    }
+  }
+
+  function load() {
+    var create = require('pages/learn/abc/{{ letter }}.js');
+    var game;
+    $('#card-letter-{{ letter }}').hover(function() {
+      if (!game) {
+        $('#learning-game-{{ letter }}-container img').hide();
+        $('#learning-game-{{ letter }}').show();
+        game = create();
+      }
+    }, function() {
+      $('#learning-game-{{ letter }}').fadeOut({
+        complete: function() {
+          if (game) {
+            $('#learning-game-{{ letter }}-container img').show();
+            game.destroy();
+            game = null;
+          }
+        }
+      });
+    });
+  }
 });
 </script>
+{{/if}}
