@@ -1,6 +1,7 @@
 a:
   order: 6
   letter: a
+  name: Acceleration
   header: A is for Acceleration
   subheader: Acceleration is the rate of change of velocity over time
   dependencies:
@@ -22,6 +23,7 @@ a:
 b:
   order: 7
   letter: b
+  name: Bounce
   header: B is for Bounce
   subheader: Bounce is the elasticity of an object
   dependencies:
@@ -47,6 +49,7 @@ b:
 c:
   order: 12
   letter: c
+  name: Collision
   header: C is for Collision
   subheader: Collision causes objects to hit each other
   dependencies:
@@ -63,6 +66,7 @@ c:
 d:
   order: 13
   letter: d
+  name: Drag
   header: D is for Drag
   subheader: Dragging is a way to interact with an object
   dependencies:
@@ -78,6 +82,7 @@ d:
 e:
   order: 22
   letter: e
+  name: Experience
   header: E is for Experience
   subheader: Experience is a way to track user progress
   dependencies:
@@ -88,6 +93,7 @@ e:
 f:
   order: 10
   letter: f
+  name: Frames
   header: F is for Frames
   subheader: Frames are used to design animations
   dependencies:
@@ -104,6 +110,7 @@ f:
 g:
   order: 8
   letter: g
+  name: Gravity
   header: G is for Gravity
   subheader: Gravity is the acceleration in the world
   dependencies:
@@ -126,6 +133,7 @@ g:
 h:
   order: 17
   letter: h
+  name: Health
   header: H is for Health
   subheader: Health is a way to track damage to an object
   dependencies:
@@ -136,6 +144,7 @@ h:
 i:
   order: 15
   letter: i
+  name: Immovable
   header: I is for Immovable
   subheader: Immovable objects create the boundaries of the game
   dependencies:
@@ -147,6 +156,7 @@ i:
 j:
   order: 9
   letter: j
+  name: Jump
   header: J is for Jump
   subheader: Jumping is a way to control an object
   dependencies:
@@ -168,6 +178,7 @@ j:
 k:
   order: 16
   letter: k
+  name: Kill
   header: K is for Kill
   subheader: Kill refers to destroying objects
   dependencies:
@@ -193,6 +204,7 @@ k:
 l:
   order: 18
   letter: l
+  name: Lives
   header: L is for Lives
   subheader: Lives are a way to track how long a game lasts
   dependencies:
@@ -212,6 +224,7 @@ l:
 m:
   order: 11
   letter: m
+  name: Movement
   header: M is for Movement
   subheader: Movement provides a way to control an object
   dependencies:
@@ -220,6 +233,7 @@ m:
 n:
   order: 20
   letter: n
+  name: Noise
   header: N is for Noise
   subheader: Noise occurs when using sound effects
   dependencies:
@@ -228,6 +242,7 @@ n:
 o:
   order: 24
   letter: o
+  name: Obstacles
   header: O is for Obstacles
   subheader: Obstacles are objects the user must avoid
   dependencies:
@@ -236,6 +251,7 @@ o:
 p:
   order: 25
   letter: p
+  name: Platformer
   header: P is for Platformer
   subheader: Platformer is a style of game play
   dependencies:
@@ -244,6 +260,7 @@ p:
 q:
   order: 23
   letter: q
+  name: Quests
   header: Q is for Quests
   subheader: Quests provide a challenge for users to complete
   dependencies:
@@ -252,6 +269,7 @@ q:
 r:
   order: 26
   letter: r
+  name: Runner
   header: R is for Runner
   subheader: Runner is a style of game play
   dependencies:
@@ -260,6 +278,7 @@ r:
 s:
   order: 1
   letter: s
+  name: Sprite
   header: S is for Sprite
   subheader: Sprites are the objects in the game
   dependencies:
@@ -284,6 +303,7 @@ s:
 t:
   order: 14
   letter: t
+  name: Timer
   header: T is for Timer
   subheader: Timers help with periodic events in a game
   dependencies:
@@ -295,6 +315,7 @@ t:
 u:
   order: 21
   letter: u
+  name: Upgrading
   header: U is for Upgrading
   subheader: Upgrading is way to enhance the attributes of an object
   dependencies:
@@ -303,6 +324,7 @@ u:
 v:
   order: 5
   letter: v
+  name: Velocity
   header: V is for Velocity
   subheader: Velocity is the rate of change of distance over time
   dependencies:
@@ -327,6 +349,7 @@ v:
 w:
   order: 19
   letter: w
+  name: Weapon
   header: W is for Weapon
   subheader: Weapon is an object used to shoot a projectile
   dependencies:
@@ -345,6 +368,7 @@ w:
 x:
   order: 2
   letter: x
+  name: X-axis
   header: X is for X-axis
   subheader: X-axis is the location of an object side to side
   dependencies:
@@ -354,6 +378,7 @@ x:
 y:
   order: 3
   letter: y
+  name: Y-axis
   header: Y is for Y-axis
   subheader: Y-axis is the location of an object up and down
   dependencies:
@@ -363,6 +388,7 @@ y:
 z:
   order: 4
   letter: z
+  name: Z-index
   header: Z is for Z-index
   subheader: Z-index is the layering of objects
   dependencies:

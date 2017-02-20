@@ -1,3 +1,17 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Course",
+  "name": "{{ header }}",
+  "description": "Lesson about {{ name }} in games",
+  "url": "https://www.greenhousegames.com/learn/abc/{{ letter }}.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Greenhouse Games, LLC",
+    "sameAs": "https://www.greenhousegames.com"
+  }
+}
+</script>
 <div class="abc column">
   <div id="card-letter-{{ letter }}" class="card">
     {{#if preview}}
