@@ -38,6 +38,8 @@ $(document).ready(() => {
       window.GreenhouseGames.authHelpers.hideAuth();
     }
   });
+
+  $(document).foundation();
 });
 
 import './google-analytics';
