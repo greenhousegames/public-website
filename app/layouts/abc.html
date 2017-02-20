@@ -15,7 +15,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   	<meta name="mobile-web-app-capable" content="yes">
   	<meta name="apple-mobile-web-app-capable" content="yes">
+    {{#if keywords}}
+    <meta name="keywords" content="{{keywords}}">
+    {{else}}
+    <meta name="keywords" content="games, learn, abc">
+    {{/if}}
+    <meta name="author" content="Greenhouse Games, LLC">
+    {{#if description}}
+    <meta name="description" content="{{description}}">
+    {{else}}
+    <meta name="description" content="Learn the ABC of Games!">
+    {{/if}}
+    {{#if title}}
     <title>{{title}}</title>
+    {{else}}
+    <title>Greenhouse Games</title>
+    {{/if}}
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
     <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/icons/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="57x57" href="{{root}}assets/icons/apple-icon-57x57.png" />

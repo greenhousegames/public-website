@@ -3,6 +3,9 @@ a:
   letter: a
   header: A is for Acceleration
   subheader: Acceleration is the rate of change of velocity over time
+  dependencies:
+    - s
+    - v
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  Both
     sprites start out with the same <a href="v.html">velocity</a>.  The bottom sprite
     has zero acceleration and the top sprite has positive acceleration.
@@ -21,6 +24,9 @@ b:
   letter: b
   header: B is for Bounce
   subheader: Bounce is the elasticity of an object
+  dependencies:
+    - s
+    - v
   content: Take a look at the three <a href="s.html">sprites</a> in the game.  All
     sprites start out with the same <a href="v.html">velocity</a>.  The bottom sprite
     has zero bounce, the middle sprite has 75% bounce, and the top sprite has 100% bounce.
@@ -43,6 +49,8 @@ c:
   letter: c
   header: C is for Collision
   subheader: Collision causes objects to hit each other
+  dependencies:
+    - s
   content: Take a look at the <a href="s.html">sprites</a> in the game.  Collision is enabled
     for the top two sprites and disabled for the bottom two sprites.
     <br/>
@@ -57,6 +65,8 @@ d:
   letter: d
   header: D is for Drag
   subheader: Dragging is a way to interact with an object
+  dependencies:
+    - s
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  Dragging is disabled
     for the left sprite and enabled for the right sprite.
     <br/>
@@ -70,6 +80,8 @@ e:
   letter: e
   header: E is for Experience
   subheader: Experience is a way to track user progress
+  dependencies:
+    - s
   content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
    will grow as it gains more experience.  Tap the A button to gain experience for
    the sprite.
@@ -84,6 +96,11 @@ g:
   letter: g
   header: G is for Gravity
   subheader: Gravity is the acceleration in the world
+  dependencies:
+    - a
+    - b
+    - s
+    - v
   content: Take a look at the three <a href="s.html">sprites</a> in the game.  The left sprite
     does not have gravity applied to it.  The middle and right sprites have gravity applied to them.
     <br/>
@@ -101,6 +118,9 @@ h:
   letter: h
   header: H is for Health
   subheader: Health is a way to track damage to an object
+  dependencies:
+    - k
+    - s
   content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has full health to start the game.
     Each click of the sprite will reduce the health by 10.  Once the sprite reaches 0 health, it will be <a href="k.html">killed</a>.
 i:
@@ -108,6 +128,10 @@ i:
   letter: i
   header: I is for Immovable
   subheader: Immovable objects create the boundaries of the game
+  dependencies:
+    - b
+    - c
+    - s
   content: Take a look at the <a href="s.html">sprites</a> in the game.  The center sprite is set to immovable.  When other sprites
     <a href="c.html">collide</a> with the center sprite, they will <a href="b.html">bounce</a> off.
 j:
@@ -115,6 +139,11 @@ j:
   letter: j
   header: J is for Jump
   subheader: Jumping is a way to control an object
+  dependencies:
+    - a
+    - g
+    - s
+    - v
   content: Take a look at the <a href="s.html">sprite</a> in the game.  Notice how
    the sprite falls to the ground due to <a href="g.html">gravity</a>.  Tap the
    A button to have  the sprite jump into the air once it is on the ground.
@@ -131,6 +160,13 @@ k:
   letter: k
   header: K is for Kill
   subheader: Kill refers to destroying objects
+  dependencies:
+    - b
+    - c
+    - i
+    - s
+    - t
+    - v
   content: Take a look at the three <a href="s.html">sprites</a> in the game.  The
    middle sprite is given a random <a href="v.html">velocity</a> and has
    <a href="b.html">bounce</a> enabled. The left and right sprite are
@@ -149,50 +185,56 @@ l:
   letter: l
   header: L is for Lives
   subheader: Lives are a way to track how long a game lasts
+  dependencies:
   content: Lesson coming soon!
 m:
   order: 11
   letter: m
   header: M is for Movement
   subheader: Movement provides a way to control an object
+  dependencies:
   content: Lesson coming soon!
 n:
   order: 20
   letter: n
   header: N is for Noise
   subheader: Noise occurs when using sound effects
+  dependencies:
   content: Lesson coming soon!
 o:
   order: 24
   letter: o
   header: O is for Obstacles
   subheader: Obstacles are objects the user must avoid
+  dependencies:
   content: Lesson coming soon!
 p:
   order: 25
   letter: p
   header: P is for Platformer
   subheader: Platformer is a style of game play
+  dependencies:
   content: Lesson coming soon!
 q:
   order: 23
   letter: q
   header: Q is for Quests
   subheader: Quests provide a challenge for users to complete
-  prev: p.html
-  next: r.html
+  dependencies:
   content: Lesson coming soon!
 r:
   order: 26
   letter: r
   header: R is for Runner
   subheader: Runner is a style of game play
+  dependencies:
   content: Lesson coming soon!
 s:
   order: 1
   letter: s
   header: S is for Sprite
   subheader: Sprites are the objects in the game
+  dependencies:
   content: The Greenhouse Games icon is added as a sprite in the game.  Sprites have
     many features and can interact with other sprites.  Every ABC lesson uses at least
     one sprite in the game.
@@ -216,6 +258,8 @@ t:
   letter: t
   header: T is for Timer
   subheader: Timers help with periodic events in a game
+  dependencies:
+    - s
   content: A timer has been set up to go off every 3 seconds.  Once the timer
    expires it will move the <a href="s.html">sprite</a> to a random location.
    The time left on the timer is shown in the upper left.  The A button will pause
@@ -225,12 +269,16 @@ u:
   letter: u
   header: U is for Upgrading
   subheader: Upgrading is way to enhance the attributes of an object
+  dependencies:
   content: Lesson coming soon!
 v:
   order: 5
   letter: v
   header: V is for Velocity
   subheader: Velocity is the rate of change of distance over time
+  dependencies:
+    - s
+    - x
   content: Take a look at the three <a href="s.html">sprites</a> in the game.  All
     sprites start out at the same <a href="x.html">x</a> position.  The bottom sprite
     has zero velocity, the top sprite has positive velocity and the middle sprite has
@@ -252,6 +300,10 @@ w:
   letter: w
   header: W is for Weapon
   subheader: Weapon is an object used to shoot a projectile
+  dependencies:
+    - k
+    - s
+    - v
   content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
    has use a weapon which can be used to fire bullets.  Tap the A button to fire a
    bullet in a random direction.
@@ -266,6 +318,8 @@ x:
   letter: x
   header: X is for X-axis
   subheader: X-axis is the location of an object side to side
+  dependencies:
+    - s
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  The left sprite
     has a x position of zero.  The right sprite has has a x position equal to the game width.
 y:
@@ -273,6 +327,8 @@ y:
   letter: y
   header: Y is for Y-axis
   subheader: Y-axis is the location of an object up and down
+  dependencies:
+    - s
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  The top sprite
     has a y position of zero.  The bottom sprite has has a y position equal to the game height.
 z:
@@ -280,6 +336,8 @@ z:
   letter: z
   header: Z is for Z-index
   subheader: Z-index is the layering of objects
+  dependencies:
+    - s
   content: Take a look at the three <a href="s.html">sprites</a> in the game.  The left-most
     sprite was added to the game first, followed by the middle sprite, followed by the right-most
     sprite.  Each time a sprite is added, it appears on top of all other sprites.
