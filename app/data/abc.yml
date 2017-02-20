@@ -90,7 +90,17 @@ f:
   letter: f
   header: F is for Frames
   subheader: Frames are used to design animations
-  content: Lesson coming soon!
+  dependencies:
+    - s
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
+   will animate for one loop once the A button is pressed.  Pressing the B button will
+   run the animation in a loop.  Pressing the C button will stop the animation.
+   <br/>
+   <br/>
+   An animation is created using still images called frames.  Each frame is
+   displayed for a split second before showing the next frame.  The animation shown
+   above was created using 10 frames.  The frames are ordered in such a way that
+   it gives the effect the ninja is running.
 g:
   order: 8
   letter: g
@@ -186,13 +196,26 @@ l:
   header: L is for Lives
   subheader: Lives are a way to track how long a game lasts
   dependencies:
-  content: Lesson coming soon!
+    - h
+    - k
+    - s
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  The sprite
+   has been given 100 <a href="h.html">health</a> and 3 lives.  Tapping the A button
+   will inflict 10 damage on the sprite.  Tapping the B button will give the sprite 1
+   additional health.  The sprite will lose 1 life and be <a href="k.html">killed</a>
+   when it reaches zero health. The sprite will be revived if it has remaining lives.
+   <br/>
+   <br/>
+   Lives are a way to track how long the user can play the game.  The user can continue
+   to play the game so long as they have lives remaining.  Once the user runs out of life
+   they must restart the game or level.
 m:
   order: 11
   letter: m
   header: M is for Movement
   subheader: Movement provides a way to control an object
   dependencies:
+    - s
   content: Lesson coming soon!
 n:
   order: 20
@@ -200,6 +223,7 @@ n:
   header: N is for Noise
   subheader: Noise occurs when using sound effects
   dependencies:
+    - s
   content: Lesson coming soon!
 o:
   order: 24
@@ -207,6 +231,7 @@ o:
   header: O is for Obstacles
   subheader: Obstacles are objects the user must avoid
   dependencies:
+    - s
   content: Lesson coming soon!
 p:
   order: 25
@@ -214,6 +239,7 @@ p:
   header: P is for Platformer
   subheader: Platformer is a style of game play
   dependencies:
+    - s
   content: Lesson coming soon!
 q:
   order: 23
@@ -221,6 +247,7 @@ q:
   header: Q is for Quests
   subheader: Quests provide a challenge for users to complete
   dependencies:
+    - s
   content: Lesson coming soon!
 r:
   order: 26
@@ -228,6 +255,7 @@ r:
   header: R is for Runner
   subheader: Runner is a style of game play
   dependencies:
+    - s
   content: Lesson coming soon!
 s:
   order: 1
@@ -270,6 +298,7 @@ u:
   header: U is for Upgrading
   subheader: Upgrading is way to enhance the attributes of an object
   dependencies:
+    - s
   content: Lesson coming soon!
 v:
   order: 5

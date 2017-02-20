@@ -5,3 +5,11 @@ div#learning-game canvas {
 h4.subheader {
   font-style: italic;
 }
+
+div.learning-preview-image {
+  position: relative;
+
+  div {
+    position: absolute;
+  }
+}

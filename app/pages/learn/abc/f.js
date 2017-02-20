@@ -1,11 +1,11 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, abutton;
+  var sprite1, abutton, bbutton, cbutton;
 
   var game = utils.init('f', {
     preload: () => {
-      utils.preload(game, ['a']);
+      utils.preload(game, ['a', 'b', 'c']);
       game.load.atlas('ninja', '/assets/img/learning/ninja/run.png', '/assets/img/learning/ninja/run.json');
     },
     create: () => {
@@ -28,14 +28,28 @@ function create() {
         'Run__008',
         'Run__009',
         'Run__000'
-      ], 10, false, false);
+      ], 20, false);
+      sprite1.animations.add('runloop', [
+        'Run__001',
+        'Run__002',
+        'Run__003',
+        'Run__004',
+        'Run__005',
+        'Run__006',
+        'Run__007',
+        'Run__008',
+        'Run__009',
+        'Run__000'
+      ], 20, true);
 
       utils.ifBreakpoint(game, 'small', () => sprite1.scale.setTo(0.25));
       utils.ifBreakpoint(game, 'medium', () => sprite1.scale.setTo(0.5));
       utils.ifBreakpoint(game, 'large', () => sprite1.scale.setTo(0.75));
 
-      abutton = game.add.button(0, 0, 'a-button', run);
-      utils.alignButtons(game, [abutton]);
+      abutton = game.add.button(0, 0, 'a-button', () => sprite1.animations.play('run'));
+      bbutton = game.add.button(0, 0, 'b-button', () => sprite1.animations.play('runloop'));
+      cbutton = game.add.button(0, 0, 'c-button', () => sprite1.animations.stop());
+      utils.alignButtons(game, [abutton, bbutton, cbutton]);
     },
     update: () => {
     },
@@ -43,10 +57,6 @@ function create() {
     }
   });
   return game;
-
-  function run() {
-    sprite1.animations.play('run');
-  }
 }
 
 module.exports = create;

@@ -2,8 +2,10 @@
   <div id="card-letter-{{ letter }}" class="card">
     {{#if preview}}
     <div id="learning-game-{{ letter }}-container" class="show-for-medium">
-      <div id="learning-game-{{ letter }}"></div>
-      <img src="{{ @root.root }}assets/img/learning/preview-placeholder.png"></img>
+      <div class="learning-preview-image">
+        <div id="learning-game-{{ letter }}"></div>
+        <img src="{{ @root.root }}assets/img/learning/preview-placeholder.png"></img>
+      </div>
     </div>
     {{/if}}
     {{#if showdivider}}
@@ -49,9 +51,8 @@ $(document).ready(function() {
           }
 
           if (!game) {
-            $('#learning-game-{{ letter }}-container img').hide();
-            $('#learning-game-{{ letter }}').show();
             game = create();
+            $('#learning-game-{{ letter }}').show();
           }
         });
       }
@@ -59,7 +60,6 @@ $(document).ready(function() {
       $('#learning-game-{{ letter }}').fadeOut({
         complete: function() {
           if (game) {
-            $('#learning-game-{{ letter }}-container img').show();
             game.destroy();
             game = null;
           }
