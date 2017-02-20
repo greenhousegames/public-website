@@ -14,15 +14,34 @@
         <h4 class="text-center subheader">{{ subheader }}</h4>
         <p>{{{ content }}}</p>
         <div class="text-center">
-          <a class="button icon-button secondary {{#unless prev}}hollow{{/unless}}" {{#if prev}}href="{{ prev }}"{{/if}}><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-          <a class="button icon-button-right secondary {{#unless next}}hollow{{/unless}}" {{#if next}}href="{{ next }}"{{/if}}>NEXT<i class="fi-fast-forward medium-icon"></i></a>
+          <h4 class="subheader">Continue Learning</h4>
+          <row class="small-up-1 medium-up-2">
+            <div class="column">
+              <h6>Following Alphabetically?</h6>
+              {{#singlesorted @root.abc 'letter' letter -1 }}
+                <a class="button icon-button secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+              {{/singlesorted}}
+              {{#singlesorted @root.abc 'letter' letter 1 }}
+                <a class="button icon-button-right secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>NEXT<i class="fi-fast-forward medium-icon"></i></a>
+              {{/singlesorted}}
+            </div>
+            <div class="column">
+              <h6>Following Lesson Plan?</h6>
+              {{#singlesorted @root.abc 'order' letter -1 }}
+                <a class="button icon-button secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+              {{/singlesorted}}
+              {{#singlesorted @root.abc 'order' letter 1 }}
+                <a class="button icon-button-right secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>NEXT<i class="fi-fast-forward medium-icon"></i></a>
+              {{/singlesorted}}
+            </div>
+          </row>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script src="{{root}}assets/js/pages/learn/abc/utils.js"></script>
-<script src="{{root}}assets/js/pages/learn/abc/{{ letter }}.js"></script>
+<script src="{{ @root.root }}assets/js/pages/learn/abc/utils.js"></script>
+<script src="{{ @root.root }}assets/js/pages/learn/abc/{{ letter }}.js"></script>
 <script>
 $(document).ready(function() {
   var create = require('pages/learn/abc/{{ letter }}.js');

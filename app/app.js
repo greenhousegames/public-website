@@ -34,7 +34,6 @@ window.GreenhouseGames = {
 
 $(document).ready(() => {
   window.GreenhouseGames.client.firebase.auth().onAuthStateChanged((user) => {
-    console.log(user);
     if (user) {
       window.GreenhouseGames.authHelpers.loginSuccess({user: user});
     } else {

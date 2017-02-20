@@ -1,130 +1,293 @@
 a:
-  letter: 'a'
-  letterUpper: 'A'
-  desc: 'A is for Acceleration'
   order: 6
+  letter: a
+  header: A is for Acceleration
+  subheader: Acceleration is the rate of change of velocity over time
+  content: Take a look at the two <a href="s.html">sprites</a> in the game.  Both
+    sprites start out with the same <a href="v.html">velocity</a>.  The bottom sprite
+    has zero acceleration and the top sprite has positive acceleration.
+    <br/>
+    <br/>
+    Due to not having any acceleration, the velocity of the bottom sprite does not change.
+    This is similar to cruise control in a car.  When cruise control is activated,
+    the speed of the car stays constant.  This results in the car having zero acceleration.
+    <br/>
+    <br/>
+    Due to having positive acceleration, the velocity of the top sprite increases over time.
+    This is similar to a gas pedal in a car.  When the gas pedal is pressed, the
+    speed of the car increases.  This results in the car having positive acceleration.
 b:
-  letter: 'b'
-  letterUpper: 'B'
-  desc: 'B is for Bounce'
   order: 7
+  letter: b
+  header: B is for Bounce
+  subheader: Bounce is the elasticity of an object
+  content: Take a look at the three <a href="s.html">sprites</a> in the game.  All
+    sprites start out with the same <a href="v.html">velocity</a>.  The bottom sprite
+    has zero bounce, the middle sprite has 75% bounce, and the top sprite has 100% bounce.
+    <br/>
+    <br/>
+    Due to having 100% bounce, the top sprite rebounds off the wall at the same speed.
+    This causes the velocity of the top sprite to be the same before and after hitting
+    the wall.
+    <br/>
+    <br/>
+    Due to having zero bounce, the bottom sprite does not rebound off the wall.  This
+    causes the velocity of the bottom sprite to be zero after it hits the wall.
+    <br/>
+    <br/>
+    Due to having between zero and 100% bounce, the middle sprite rebounds off the wall,
+    but at a slower speed.  This causes the velocity of the middle sprite to be 75%
+    the speed after hitting the wall.
 c:
-  letter: 'c'
-  letterUpper: 'C'
-  desc: 'C is for Collide'
   order: 12
+  letter: c
+  header: C is for Collision
+  subheader: Collision causes objects to hit each other
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  Collision is enabled
+    for the top two sprites and disabled for the bottom two sprites.
+    <br/>
+    <br/>
+    Due to having collision disabled, the bottom two sprites pass through each other when they
+    intersect.
+    <br/>
+    <br/>
+    Due to having collision enabled, the top two sprites rebound off each other when they intersect.
 d:
-  letter: 'd'
-  letterUpper: 'D'
-  desc: 'D is for Drag'
   order: 13
+  letter: d
+  header: D is for Drag
+  subheader: Dragging is a way to interact with an object
+  content: Take a look at the two <a href="s.html">sprites</a> in the game.  Dragging is disabled
+    for the left sprite and enabled for the right sprite.
+    <br/>
+    <br/>
+    Due to having dragging disabled, the left sprite does not move when you touch it.
+    <br/>
+    <br/>
+    Due to having dragging enabled, the right sprite moves when you hold and drag it around the game.
 e:
-  letter: 'e'
-  letterUpper: 'E'
-  desc: 'E is for Experience'
   order: 22
+  letter: e
+  header: E is for Experience
+  subheader: Experience is a way to track user progress
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
+   will grow as it gains more experience.  Tap the A button to gain experience for
+   the sprite.
 f:
-  letter: 'f'
-  letterUpper: 'F'
-  desc: 'F is for Frames'
   order: 10
+  letter: f
+  header: F is for Frames
+  subheader: Frames are used to design animations
+  content: Lesson coming soon!
 g:
-  letter: 'g'
-  letterUpper: 'G'
-  desc: 'G is for Gravity'
   order: 8
+  letter: g
+  header: G is for Gravity
+  subheader: Gravity is the acceleration in the world
+  content: Take a look at the three <a href="s.html">sprites</a> in the game.  The left sprite
+    does not have gravity applied to it.  The middle and right sprites have gravity applied to them.
+    <br/>
+    <br/>
+    Due to having no gravity, the left sprite does not move once placed in the game.  This results in the
+    object having no <a href="v.html">velocity</a> or <a href="a.html">acceleration</a>.
+    <br/>
+    <br/>
+    Due to having gravity applied to the world, the middle and right sprite increase in acceleration,
+    causing them to fall to the ground.  Once the objects hit the ground, the <a href="b.html">bounce</a>
+    defines whether or not the object will rebound off the ground.  The middle sprite has no bounce and the
+    right sprite has 100% bounce.
 h:
-  letter: 'h'
-  letterUpper: 'H'
-  desc: 'H is for Health'
   order: 17
+  letter: h
+  header: H is for Health
+  subheader: Health is a way to track damage to an object
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has full health to start the game.
+    Each click of the sprite will reduce the health by 10.  Once the sprite reaches 0 health, it will be <a href="k.html">killed</a>.
 i:
-  letter: 'i'
-  letterUpper: 'I'
-  desc: 'I is for Immovable'
   order: 15
+  letter: i
+  header: I is for Immovable
+  subheader: Immovable objects create the boundaries of the game
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  The center sprite is set to immovable.  When other sprites
+    <a href="c.html">collide</a> with the center sprite, they will <a href="b.html">bounce</a> off.
 j:
-  letter: 'j'
-  letterUpper: 'J'
-  desc: 'J is for Jump'
   order: 9
+  letter: j
+  header: J is for Jump
+  subheader: Jumping is a way to control an object
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  Notice how
+   the sprite falls to the ground due to <a href="g.html">gravity</a>.  Tap the
+   A button to have  the sprite jump into the air once it is on the ground.
+   <br/>
+   <br/>
+   To make a sprite jump, the <a href="v.html">velocity</a> of the sprite must be
+   set so it moves upward.  As discussed in the velocity lesson, this will cause
+   the sprite to move at a constant speed.  The effect of gravity causes the
+   sprite to want to <a href="a.html">accelerate</a> downward.  This combination
+   of upward velocity and downward acceleration causes the sprite to slow down as
+   it reaches the middle of the screen, then speed up as it approaches the ground.
 k:
-  letter: 'k'
-  letterUpper: 'K'
-  desc: 'K is for Kill'
   order: 16
+  letter: k
+  header: K is for Kill
+  subheader: Kill refers to destroying objects
+  content: Take a look at the three <a href="s.html">sprites</a> in the game.  The
+   middle sprite is given a random <a href="v.html">velocity</a> and has
+   <a href="b.html">bounce</a> enabled. The left and right sprite are
+   <a href="i.html">immovable</a>.  The middle sprite will be killed if it
+   <a href="c.html">collides</a> with either the left or right sprite. A
+   <a href="t.html">timer</a> will be used to revive the middle sprite one second
+   after it is killed.
+   <br/>
+   <br/>
+   Killing a sprite is a way to remove the sprite from the game.  This causes the
+   sprite to be hidden and all interactions with the sprite are disabled.  The
+   sprite can be revived, in which cause it is made visible and can interact with
+   the rest of the world.
 l:
-  letter: 'l'
-  letterUpper: 'L'
-  desc: 'L is for Lives'
   order: 18
+  letter: l
+  header: L is for Lives
+  subheader: Lives are a way to track how long a game lasts
+  content: Lesson coming soon!
 m:
-  letter: 'm'
-  letterUpper: 'M'
-  desc: 'M is for Movement'
   order: 11
+  letter: m
+  header: M is for Movement
+  subheader: Movement provides a way to control an object
+  content: Lesson coming soon!
 n:
-  letter: 'n'
-  letterUpper: 'N'
-  desc: 'N is for Noise'
   order: 20
+  letter: n
+  header: N is for Noise
+  subheader: Noise occurs when using sound effects
+  content: Lesson coming soon!
 o:
-  letter: 'o'
-  letterUpper: 'O'
-  desc: 'O is for Obstacles'
   order: 24
+  letter: o
+  header: O is for Obstacles
+  subheader: Obstacles are objects the user must avoid
+  content: Lesson coming soon!
 p:
-  letter: 'p'
-  letterUpper: 'P'
-  desc: 'P is for Platformer'
   order: 25
+  letter: p
+  header: P is for Platformer
+  subheader: Platformer is a style of game play
+  content: Lesson coming soon!
 q:
-  letter: 'q'
-  letterUpper: 'Q'
-  desc: 'Q is for Quests'
   order: 23
+  letter: q
+  header: Q is for Quests
+  subheader: Quests provide a challenge for users to complete
+  prev: p.html
+  next: r.html
+  content: Lesson coming soon!
 r:
-  letter: 'r'
-  letterUpper: 'R'
-  desc: 'R is for Runner'
   order: 26
+  letter: r
+  header: R is for Runner
+  subheader: Runner is a style of game play
+  content: Lesson coming soon!
 s:
-  letter: 's'
-  letterUpper: 'S'
-  desc: 'S is for Sprite'
   order: 1
+  letter: s
+  header: S is for Sprite
+  subheader: Sprites are the objects in the game
+  content: The Greenhouse Games icon is added as a sprite in the game.  Sprites have
+    many features and can interact with other sprites.  Every ABC lesson uses at least
+    one sprite in the game.
+    <br/>
+    <br/>
+    <strong>Sprite Features</strong>
+    <br/>
+    <a href="c.html">collision</a> | <a href="d.html">dragging</a> | <a href="j.html">jump</a> | <a href="m.html">movement</a>
+    <br/>
+    <br/>
+    <strong>Sprite Properties</strong>
+    <br/>
+    <a href="a.html">acceleration</a> | <a href="b.html">bounce</a> | <a href="h.html">health</a> | <a href="i.html">immovable</a> | <a href="v.html">velocity</a>
+    <br/>
+    <br/>
+    <strong>Sprite Position</strong>
+    <br/>
+    <a href="x.html">x position</a> | <a href="y.html">y position</a> | <a href="z.html">z position</a>
 t:
-  letter: 't'
-  letterUpper: 'T'
-  desc: 'T is for Timer'
   order: 14
+  letter: t
+  header: T is for Timer
+  subheader: Timers help with periodic events in a game
+  content: A timer has been set up to go off every 3 seconds.  Once the timer
+   expires it will move the <a href="s.html">sprite</a> to a random location.
+   The time left on the timer is shown in the upper left.  The A button will pause
+   the timer and the B button will resume the timer.
 u:
-  letter: 'u'
-  letterUpper: 'U'
-  desc: 'U is for Upgrading'
   order: 21
+  letter: u
+  header: U is for Upgrading
+  subheader: Upgrading is way to enhance the attributes of an object
+  content: Lesson coming soon!
 v:
-  letter: 'v'
-  letterUpper: 'V'
-  desc: 'V is for Velocity'
   order: 5
+  letter: v
+  header: V is for Velocity
+  subheader: Velocity is the rate of change of distance over time
+  content: Take a look at the three <a href="s.html">sprites</a> in the game.  All
+    sprites start out at the same <a href="x.html">x</a> position.  The bottom sprite
+    has zero velocity, the top sprite has positive velocity and the middle sprite has
+    half the velocity of the top sprite.
+    <br/>
+    <br/>
+    Due to not having any velocity, the x position of the bottom sprite does not change.
+    <br/>
+    <br/>
+    Due to having positive velocity, the x position of the top sprite increases over time
+    until it hits the wall.
+    <br/>
+    <br/>
+    Due to having half the velocity of the top sprite, the middle sprite travels half the distance
+    of the top sprite in the same amount of time.  This causes the middle sprite to be half
+    way across the game once the top sprite reaches the wall.
 w:
-  letter: 'w'
-  letterUpper: 'W'
-  desc: 'W is for Weapon'
   order: 19
+  letter: w
+  header: W is for Weapon
+  subheader: Weapon is an object used to shoot a projectile
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
+   has use a weapon which can be used to fire bullets.  Tap the A button to fire a
+   bullet in a random direction.
+   <br/>
+   <br/>
+   A new sprite is created in the game when the weapon fires a bullet.  The bullet
+   is given a <a href="v.html">velocity</a> in the direction where the tap
+   occurred.  In this example the bullet just flies off into space, but in a real
+   game you might use a weapon to <a href="k.html">kill</a> enemies or obstacles.
 x:
-  letter: 'x'
-  letterUpper: 'X'
-  desc: 'X is for X-axis'
   order: 2
+  letter: x
+  header: X is for X-axis
+  subheader: X-axis is the location of an object side to side
+  content: Take a look at the two <a href="s.html">sprites</a> in the game.  The left sprite
+    has a x position of zero.  The right sprite has has a x position equal to the game width.
 y:
-  letter: 'y'
-  letterUpper: 'Y'
-  desc: 'Y is for Y-axis'
   order: 3
+  letter: y
+  header: Y is for Y-axis
+  subheader: Y-axis is the location of an object up and down
+  content: Take a look at the two <a href="s.html">sprites</a> in the game.  The top sprite
+    has a y position of zero.  The bottom sprite has has a y position equal to the game height.
 z:
-  letter: 'z'
-  letterUpper: 'Z'
-  desc: 'Z is for Z-index'
   order: 4
+  letter: z
+  header: Z is for Z-index
+  subheader: Z-index is the layering of objects
+  content: Take a look at the three <a href="s.html">sprites</a> in the game.  The left-most
+    sprite was added to the game first, followed by the middle sprite, followed by the right-most
+    sprite.  Each time a sprite is added, it appears on top of all other sprites.
+    <br/>
+    <br/>
+    Due to being added first, the left-most sprite is covered by the other two sprites.
+    This causes the left-most sprite to have the lowest z-index.
+    <br/>
+    <br/>
+    Due to being added last, the right-most sprite is on top of the other two sprites.
+    This causes the right-most sprite to have the highest z-index.
