@@ -5,12 +5,12 @@ html, body {
 section.main {
   padding-top: $header-padding;
 
-  min-height: calc(100% - #{$header-titlebar-height-small} - #{$footer-height-small});
+  min-height: calc(100vh - #{$header-titlebar-height-small} - #{$footer-height-small});
   @include breakpoint(medium) {
-    min-height: calc(100% - #{$header-titlebar-height-medium} - #{$footer-height-medium});
+    min-height: calc(100vh - #{$header-titlebar-height-medium} - #{$footer-height-medium});
   }
   @include breakpoint(large) {
-    min-height: calc(100% - #{$header-titlebar-height-large} - #{$footer-height-large});
+    min-height: calc(100vh - #{$header-titlebar-height-large} - #{$footer-height-large});
   }
 
   > div:last-of-type {
@@ -20,12 +20,12 @@ section.main {
 
 // force footer to bottom
 section.header.large + section {
-  min-height: calc(100% - #{$header-titlebar-height-small} - #{$header-banner-height-small} - #{$footer-height-small});
+  min-height: calc(100vh - #{$header-titlebar-height-small} - #{$header-banner-height-small} - #{$footer-height-small});
   @include breakpoint(medium) {
-    min-height: calc(100% - #{$header-titlebar-height-medium} - #{$header-banner-height-medium} - #{$footer-height-medium});
+    min-height: calc(100vh - #{$header-titlebar-height-medium} - #{$header-banner-height-medium} - #{$footer-height-medium});
   }
   @include breakpoint(large) {
-    min-height: calc(100% - #{$header-titlebar-height-large} - #{$header-banner-height-large} - #{$footer-height-large});
+    min-height: calc(100vh - #{$header-titlebar-height-large} - #{$header-banner-height-large} - #{$footer-height-large});
   }
 }
 
@@ -165,4 +165,22 @@ div.card {
 
 div.row.padding-top {
   padding-top: 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.color-white {
+  color: $white !important;
+}
+
+div.login-buttons {
+  a i {
+    margin-right: 8px !important;
+  }
+}
+
+div.game-modes {
+  margin-left: 32px;
 }

@@ -5,23 +5,23 @@ window.GreenhouseGames = {
   client: new FirebaseClient(),
   authHelpers: {
     showAuth: () => {
-      $('.show-auth').show();
-      $('.hide-auth').hide();
+      $('.show-auth').removeClass('hidden');
+      $('.hide-auth').addClass('hidden');
     },
     hideAuth: () => {
-      $('.hide-auth').show();
-      $('.show-auth').hide();
+      $('.hide-auth').removeClass('hidden');
+      $('.show-auth').addClass('hidden');
     },
     loginSuccess: (data) => {
       if (data.user && !data.user.isAnonymous) {
         $('img.user-image').attr('src', data.user.photoURL);
-        $('img.user-image').show();
-        $('.user-image-guest').hide();
+        $('img.user-image').removeClass('hidden');
+        $('.user-image-guest').addClass('hidden');
         $('.user-name').text(data.user.displayName);
       } else {
         $('img.user-image').attr('src', '');
-        $('img.user-image').hide();
-        $('.user-image-guest').show();
+        $('img.user-image').addClass('hidden');
+        $('.user-image-guest').removeClass('hidden');
         $('.user-name').text('Guest');
       }
       window.GreenhouseGames.authHelpers.showAuth();
