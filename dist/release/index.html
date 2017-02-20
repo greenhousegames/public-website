@@ -1,149 +1,10 @@
-
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-6060845168160443",
-        enable_page_level_ads: true
-      });
-    </script> -->
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  	<meta name="mobile-web-app-capable" content="yes">
-  	<meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="keywords" content="games, free, app" />
-    <meta name="author" content="Greenhouse Games, LLC">
-    <title>Greenhouse Games</title>
-    <meta name="description" content="Free games and apps made for all devices!">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/icons/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png" />
-    <link rel="stylesheet" href="assets/foundation-icons/foundation-icons.css" />
-    <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
-    <script src="assets/js/vendor.js"></script>
-    <script onload="require('app.js')" src="assets/js/app.js"></script>
-  </head>
-  <body>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
+<!doctype html><html class="no-js" lang="en"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="keywords" content="games, free, app"><meta name="author" content="Greenhouse Games, LLC"><title>Greenhouse Games</title><meta name="description" content="Free games and apps made for all devices!"><link rel="stylesheet" href="assets/css/app.css"><link rel="shortcut icon" type="image/x-icon" href="assets/icons/favicon.ico"><link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png"><link rel="stylesheet" href="assets/foundation-icons/foundation-icons.css"><script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script><script src="assets/js/vendor.js"></script><script onload="require('app.js')" src="assets/js/app.js"></script></head><body><div id="fb-root"></div><script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1193182344132806";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    <section class="header large">
-      <div class="top-bar primary">
-        <div class="top-bar-left">
-          <ul class="menu">
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li>
-              <a href="/games">Games</a>
-              <ul class="menu vertical">
-                <li><a href="/games/smashdot.html">Smash Dot</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="/learn/abc">Learn</a>
-              <ul class="menu vertical">
-                <li><a href="/learn/abc">ABC of Games</a></li>
-                <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
-              </ul>
-            </li>
-            <li>
-              <a href="/account">Account</a>
-              <ul class="menu vertical">
-                <li class="hide-auth"><a href="/account">Login</a></li>
-                <li class="show-auth">
-                  <a href="/account">
-                    <img class="thumbnail-image user-image"></img>
-                    <i class="fi-torso user-image-guest"></i>
-                    <span class="user-name"></span>
-                  </a>
-                </li>
-                <li class="show-auth"><a id="header-logout-button">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row expanded">
-        <div class="main-header-banner">
-          <div class=logo-container>
-            <a class="logo" href="/"></a>
-          </div>
-          <span>Greenhouse Games</span>
-        </div>
-      </div>
-      <script>
-      $('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));
-      </script>
-      
-    </section>
-    <section class="main">
-      <div class="row text-center">
-        <div class="column small-12 medium-9 large-6 small-centered">
-          <div class="card">
-            <div class="float-divider">
-              <a href="games/smashdot.html">
-                <div class="row">
-                  <div class="columns">
-                    <div class="card-divider">
-                      <h2>Smash Dot</h2>
-                    </div>
-                  </div>
-                </div>
-                <img src="assets/img/games/smashdot/screenshot.png"/>
-              </a>
-            </div>
-            <div class="card-section">
-              <p>Keep on Smashing!</p>
-              <div class="row small-up-1 text-center">
-                <div class="column">
-                  <a class="playstore-button" href="https://play.google.com/store/apps/details?id&#x3D;com.greenhousegames.smashdot2&amp;pcampaignid&#x3D;MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
-                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
-                  </a>
-                </div>
-                <div class="column">
-                  <a class="appstore-button" href="https://itunes.apple.com/us/app/smash-dot-pro/id1204046667?mt&#x3D;8"></a>
-                </div>
-                <div class="column">
-                  <a class="greenhousestore-button button dark" href="games/smashdot">
-                    <div class="image"></div><div class="text">Play on<br/><strong>Greenhouse</strong></div>
-                  </a>
-                </div>
-              </div>
-              <div class="row small-up-1 medium-up-2">
-                <div class="column">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <div class="row text-center padding-top">
-        <div class="columns small-12">
-          <h1>ABC of Games</h1>
-          <p>Ever wonder how games are actually created?  Learn the ABC of Games to find out more!</p>
-          <a class="button large secondary hollow" href="learn/abc">VIEW ALL LESSONS</a>
-          <p class="show-for-medium"><i>(hover over lesson to see interactive preview)</i></p>
-        </div>
-      </div>
-      <div class="row small-up-1 medium-up-2 large-up-3">
-        <script src="assets/js/pages/learn/abc/utils.js"></script>
-          <script type="application/ld+json">
-          {
+    }(document, 'script', 'facebook-jssdk'));</script><section class="header large"><div class="top-bar primary"><div class="top-bar-left"><ul class="menu"></ul></div><div class="top-bar-right"><ul class="dropdown menu" data-dropdown-menu><li><a href="/games">Games</a><ul class="menu vertical"><li><a href="/games/smashdot.html">Smash Dot</a></li></ul></li><li><a href="/learn/abc">Learn</a><ul class="menu vertical"><li><a href="/learn/abc">ABC of Games</a></li></ul></li><li><a href="/account">Account</a><ul class="menu vertical"><li class="hide-auth"><a href="/account">Login</a></li><li class="show-auth"><a href="/account"><img class="thumbnail-image user-image"><i class="fi-torso user-image-guest"></i> <span class="user-name"></span></a></li><li class="show-auth"><a id="header-logout-button">Logout</a></li></ul></li></ul></div></div><div class="row expanded"><div class="main-header-banner"><div class="logo-container"><a class="logo" href="/"></a></div><span>Greenhouse Games</span></div></div><script>$('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));</script></section><section class="main"><div class="row text-center"><div class="column small-12 medium-9 large-6 small-centered"><div class="card"><div class="float-divider"><a href="games/smashdot.html"><div class="row"><div class="columns"><div class="card-divider"><h2>Smash Dot</h2></div></div></div><img src="assets/img/games/smashdot/screenshot.png"></a></div><div class="card-section"><p>Keep on Smashing!</p><div class="row small-up-1 text-center"><div class="column"><a class="playstore-button" href="https://play.google.com/store/apps/details?id&#x3D;com.greenhousegames.smashdot2&amp;pcampaignid&#x3D;MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"></a></div><div class="column"><a class="appstore-button" href="https://itunes.apple.com/us/app/smash-dot-pro/id1204046667?mt&#x3D;8"></a></div><div class="column"><a class="greenhousestore-button button dark" href="games/smashdot"><div class="image"></div><div class="text">Play on<br><strong>Greenhouse</strong></div></a></div></div><div class="row small-up-1 medium-up-2"><div class="column"></div></div></div></div></div></div><div class="row text-center padding-top"><div class="columns small-12"><h1>ABC of Games</h1><p>Ever wonder how games are actually created? Learn the ABC of Games to find out more!</p><a class="button large secondary hollow" href="learn/abc">VIEW ALL LESSONS</a><p class="show-for-medium"><i>(hover over lesson to see interactive preview)</i></p></div></div><div class="row small-up-1 medium-up-2 large-up-3"><script src="assets/js/pages/learn/abc/utils.js"></script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "A is for Acceleration",
@@ -154,24 +15,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-a" class="card">
-              <div id="learning-game-a-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-a"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>A is for Acceleration</p>
-                <a href="learn/abc/a.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-a" class="card"><div id="learning-game-a-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-a"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>A is for Acceleration</p><a href="learn/abc/a.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -217,11 +61,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "B is for Bounce",
@@ -232,24 +72,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-b" class="card">
-              <div id="learning-game-b-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-b"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>B is for Bounce</p>
-                <a href="learn/abc/b.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-b" class="card"><div id="learning-game-b-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-b"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>B is for Bounce</p><a href="learn/abc/b.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -295,11 +118,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "C is for Collision",
@@ -310,24 +129,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-c" class="card">
-              <div id="learning-game-c-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-c"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>C is for Collision</p>
-                <a href="learn/abc/c.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-c" class="card"><div id="learning-game-c-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-c"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>C is for Collision</p><a href="learn/abc/c.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -373,11 +175,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "D is for Drag",
@@ -388,24 +186,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-d" class="card">
-              <div id="learning-game-d-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-d"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>D is for Drag</p>
-                <a href="learn/abc/d.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-d" class="card"><div id="learning-game-d-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-d"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>D is for Drag</p><a href="learn/abc/d.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -451,11 +232,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "E is for Experience",
@@ -466,24 +243,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-e" class="card">
-              <div id="learning-game-e-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-e"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>E is for Experience</p>
-                <a href="learn/abc/e.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-e" class="card"><div id="learning-game-e-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-e"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>E is for Experience</p><a href="learn/abc/e.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -529,11 +289,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "F is for Frames",
@@ -544,24 +300,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-f" class="card">
-              <div id="learning-game-f-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-f"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>F is for Frames</p>
-                <a href="learn/abc/f.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-f" class="card"><div id="learning-game-f-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-f"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>F is for Frames</p><a href="learn/abc/f.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -607,11 +346,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "G is for Gravity",
@@ -622,24 +357,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-g" class="card">
-              <div id="learning-game-g-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-g"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>G is for Gravity</p>
-                <a href="learn/abc/g.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-g" class="card"><div id="learning-game-g-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-g"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>G is for Gravity</p><a href="learn/abc/g.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -685,11 +403,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "H is for Health",
@@ -700,24 +414,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-h" class="card">
-              <div id="learning-game-h-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-h"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>H is for Health</p>
-                <a href="learn/abc/h.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-h" class="card"><div id="learning-game-h-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-h"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>H is for Health</p><a href="learn/abc/h.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -763,11 +460,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "I is for Immovable",
@@ -778,24 +471,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-i" class="card">
-              <div id="learning-game-i-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-i"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>I is for Immovable</p>
-                <a href="learn/abc/i.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-i" class="card"><div id="learning-game-i-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-i"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>I is for Immovable</p><a href="learn/abc/i.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -841,11 +517,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "J is for Jump",
@@ -856,24 +528,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-j" class="card">
-              <div id="learning-game-j-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-j"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>J is for Jump</p>
-                <a href="learn/abc/j.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-j" class="card"><div id="learning-game-j-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-j"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>J is for Jump</p><a href="learn/abc/j.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -919,11 +574,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "K is for Kill",
@@ -934,24 +585,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-k" class="card">
-              <div id="learning-game-k-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-k"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>K is for Kill</p>
-                <a href="learn/abc/k.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-k" class="card"><div id="learning-game-k-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-k"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>K is for Kill</p><a href="learn/abc/k.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -997,11 +631,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "L is for Lives",
@@ -1012,24 +642,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-l" class="card">
-              <div id="learning-game-l-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-l"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>L is for Lives</p>
-                <a href="learn/abc/l.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-l" class="card"><div id="learning-game-l-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-l"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>L is for Lives</p><a href="learn/abc/l.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1075,11 +688,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "M is for Movement",
@@ -1090,24 +699,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-m" class="card">
-              <div id="learning-game-m-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-m"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>M is for Movement</p>
-                <a href="learn/abc/m.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-m" class="card"><div id="learning-game-m-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-m"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>M is for Movement</p><a href="learn/abc/m.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1153,11 +745,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "N is for Noise",
@@ -1168,24 +756,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-n" class="card">
-              <div id="learning-game-n-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-n"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>N is for Noise</p>
-                <a href="learn/abc/n.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-n" class="card"><div id="learning-game-n-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-n"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>N is for Noise</p><a href="learn/abc/n.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1231,11 +802,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "O is for Obstacles",
@@ -1246,24 +813,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-o" class="card">
-              <div id="learning-game-o-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-o"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>O is for Obstacles</p>
-                <a href="learn/abc/o.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-o" class="card"><div id="learning-game-o-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-o"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>O is for Obstacles</p><a href="learn/abc/o.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1309,11 +859,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "P is for Platformer",
@@ -1324,24 +870,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-p" class="card">
-              <div id="learning-game-p-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-p"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>P is for Platformer</p>
-                <a href="learn/abc/p.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-p" class="card"><div id="learning-game-p-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-p"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>P is for Platformer</p><a href="learn/abc/p.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1387,11 +916,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "Q is for Quests",
@@ -1402,24 +927,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-q" class="card">
-              <div id="learning-game-q-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-q"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>Q is for Quests</p>
-                <a href="learn/abc/q.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-q" class="card"><div id="learning-game-q-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-q"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>Q is for Quests</p><a href="learn/abc/q.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1465,11 +973,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "R is for Runner",
@@ -1480,24 +984,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-r" class="card">
-              <div id="learning-game-r-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-r"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>R is for Runner</p>
-                <a href="learn/abc/r.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-r" class="card"><div id="learning-game-r-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-r"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>R is for Runner</p><a href="learn/abc/r.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1543,11 +1030,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "S is for Sprite",
@@ -1558,24 +1041,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-s" class="card">
-              <div id="learning-game-s-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-s"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>S is for Sprite</p>
-                <a href="learn/abc/s.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-s" class="card"><div id="learning-game-s-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-s"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>S is for Sprite</p><a href="learn/abc/s.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1621,11 +1087,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "T is for Timer",
@@ -1636,24 +1098,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-t" class="card">
-              <div id="learning-game-t-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-t"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>T is for Timer</p>
-                <a href="learn/abc/t.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-t" class="card"><div id="learning-game-t-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-t"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>T is for Timer</p><a href="learn/abc/t.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1699,11 +1144,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "U is for Upgrading",
@@ -1714,24 +1155,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-u" class="card">
-              <div id="learning-game-u-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-u"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>U is for Upgrading</p>
-                <a href="learn/abc/u.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-u" class="card"><div id="learning-game-u-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-u"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>U is for Upgrading</p><a href="learn/abc/u.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1777,11 +1201,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "V is for Velocity",
@@ -1792,24 +1212,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-v" class="card">
-              <div id="learning-game-v-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-v"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>V is for Velocity</p>
-                <a href="learn/abc/v.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-v" class="card"><div id="learning-game-v-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-v"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>V is for Velocity</p><a href="learn/abc/v.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1855,11 +1258,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "W is for Weapon",
@@ -1870,24 +1269,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-w" class="card">
-              <div id="learning-game-w-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-w"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>W is for Weapon</p>
-                <a href="learn/abc/w.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-w" class="card"><div id="learning-game-w-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-w"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>W is for Weapon</p><a href="learn/abc/w.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -1933,11 +1315,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "X is for X-axis",
@@ -1948,24 +1326,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-x" class="card">
-              <div id="learning-game-x-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-x"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>X is for X-axis</p>
-                <a href="learn/abc/x.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-x" class="card"><div id="learning-game-x-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-x"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>X is for X-axis</p><a href="learn/abc/x.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -2011,11 +1372,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "Y is for Y-axis",
@@ -2026,24 +1383,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-y" class="card">
-              <div id="learning-game-y-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-y"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>Y is for Y-axis</p>
-                <a href="learn/abc/y.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-y" class="card"><div id="learning-game-y-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-y"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>Y is for Y-axis</p><a href="learn/abc/y.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -2089,11 +1429,7 @@
                 });
               });
             }
-          });
-          </script>
-          
-          <script type="application/ld+json">
-          {
+          });</script><script type="application/ld+json">{
             "@context": "http://schema.org",
             "@type": "Course",
             "name": "Z is for Z-index",
@@ -2104,24 +1440,7 @@
               "name": "Greenhouse Games, LLC",
               "sameAs": "https://www.greenhousegames.com"
             }
-          }
-          </script>
-          <div class="abc column">
-            <div id="card-letter-z" class="card">
-              <div id="learning-game-z-container" class="show-for-medium">
-                <div class="learning-preview-image">
-                  <div id="learning-game-z"></div>
-                  <img src="assets/img/learning/preview-placeholder.png"></img>
-                </div>
-              </div>
-              <div class="card-section text-center">
-                <p>Z is for Z-index</p>
-                <a href="learn/abc/z.html">START LESSON</a>
-              </div>
-            </div>
-          </div>
-          <script>
-          $(document).ready(function() {
+          }</script><div class="abc column"><div id="card-letter-z" class="card"><div id="learning-game-z-container" class="show-for-medium"><div class="learning-preview-image"><div id="learning-game-z"></div><img src="assets/img/learning/preview-placeholder.png"></div></div><div class="card-section text-center"><p>Z is for Z-index</p><a href="learn/abc/z.html">START LESSON</a></div></div></div><script>$(document).ready(function() {
             var create = null, game = null, loaded = false, loading = false;
             load();
           
@@ -2167,73 +1486,9 @@
                 });
               });
             }
-          });
-          </script>
-          
-      </div>
-      <div class="row text-center padding-top">
-        <div class="columns small-12">
-          <h3>Stay Social</h3>
-        </div>
-        <div class="columns small-12 medium-7 large-5 large-offset-1">
-          <div class="card">
-            <div class="card-section">
-              <h6 class="subheader">Facebook</h6>
-              <div class="fb-page" data-href="https://www.facebook.com/greenhousegamez/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/greenhousegamez/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/greenhousegamez/">Greenhouse Games</a></blockquote></div>
-            </div>
-          </div>
-        </div>
-        <div class="columns small-12 medium-5 large-4 end">
-          <div class="card">
-            <div class="card-section">
-              <h6 class="subheader">Twitter</h6>
-              <a href="https://twitter.com/greenhousegamez" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @greenhousegamez</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-              <br/>
-              <a href="https://twitter.com/intent/tweet?screen_name=greenhousegamez" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @greenhousegamez</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-          </div>
-        </div>
-        <div class="columns small-12 medium-5 large-4 end">
-          <div class="card">
-            <div class="card-section">
-              <h6 class="subheader">Instagram</h6>
-              <style>.ig-b- { display: inline-block; }
+          });</script></div><div class="row text-center padding-top"><div class="columns small-12"><h3>Stay Social</h3></div><div class="columns small-12 medium-7 large-5 large-offset-1"><div class="card"><div class="card-section"><h6 class="subheader">Facebook</h6><div class="fb-page" data-href="https://www.facebook.com/greenhousegamez/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/greenhousegamez/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/greenhousegamez/">Greenhouse Games</a></blockquote></div></div></div></div><div class="columns small-12 medium-5 large-4 end"><div class="card"><div class="card-section"><h6 class="subheader">Twitter</h6><a href="https://twitter.com/greenhousegamez" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @greenhousegamez</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br><a href="https://twitter.com/intent/tweet?screen_name=greenhousegamez" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to @greenhousegamez</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div></div></div><div class="columns small-12 medium-5 large-4 end"><div class="card"><div class="card-section"><h6 class="subheader">Instagram</h6><style>.ig-b- { display: inline-block; }
               .ig-b- img { visibility: hidden; }
               .ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
               .ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
               @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-              .ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }</style>
-              <a href="https://www.instagram.com/greenhousegamez/?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </section>
-    <section class="footer">
-      <div class="row">
-        <div class="medium-4 columns">
-          <ul class="social-menu">
-            <li><a href="http://www.twitter.com/greenhousegamez" class="twitter"></a></li>
-            <li><a href="http://www.facebook.com/greenhousegamez" class="facebook"></a></li>
-          </ul>
-        </div>
-        <div class="medium-8 columns">
-          <div class="menu-centered">
-            <ul class="menu">
-              <li><a href="/" class="logo-button"></a></li>
-              <li><a href="/about.html">ABOUT</a></li>
-              <li><a href="/contact.html">CONTACT</a></li>
-              <li><a href="/privacy.html">PRIVACY</a></li>
-            </ul>
-          </div>
-          <p class="copyright">© 2016-2017 Greenhouse Games, LLC. All rights reserved.</p>
-        </div>
-      </div>
-      
-    </section>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
-</html>
+              .ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }</style><a href="https://www.instagram.com/greenhousegamez/?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram"></a></div></div></div></div></section><section class="footer"><div class="row"><div class="medium-4 columns"><ul class="social-menu"><li><a href="http://www.twitter.com/greenhousegamez" class="twitter"></a></li><li><a href="http://www.facebook.com/greenhousegamez" class="facebook"></a></li></ul></div><div class="medium-8 columns"><div class="menu-centered"><ul class="menu"><li><a href="/" class="logo-button"></a></li><li><a href="/about.html">ABOUT</a></li><li><a href="/contact.html">CONTACT</a></li><li><a href="/privacy.html">PRIVACY</a></li></ul></div><p class="copyright">© 2016-2017 Greenhouse Games, LLC. All rights reserved.</p></div></div></section><script>$(document).foundation();</script></body></html>
