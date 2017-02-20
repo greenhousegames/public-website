@@ -7,9 +7,7 @@ var yaml = require('js-yaml');
 var fs = require('fs');
 var argv = require('yargs').argv;
 var runSequence = require('run-sequence');
-var unzip = require('gulp-unzip');
-var rename = require('gulp-rename');
-var sitemap = require('gulp-sitemap');
+var $ = require('gulp-load-plugins')();
 
 var config = loadConfig();
 
@@ -49,7 +47,7 @@ function createGameTask(game) {
   if (imgsrc) {
     gulp.task(assetTask, function() {
       return gulp.src(imgsrc)
-      .pipe(rename('screenshot.png'))
+      .pipe($.rename('screenshot.png'))
         .pipe(gulp.dest(assetDest));
     });
   }
@@ -58,7 +56,7 @@ function createGameTask(game) {
     // source is zip file
     gulp.task(game, imgsrc ? [assetTask] : [], function() {
       return gulp.src(src)
-        .pipe(unzip())
+        .pipe($.unzip())
         .pipe(gulp.dest(dest));
     });
   } else {
@@ -92,6 +90,10 @@ gulp.task('pages', function() {
       data: 'app/data/',
       helpers: 'app/helpers/'
     }))
+    .pipe($.if(production, $.htmlmin({
+      collapseWhitespace: true,
+      removeComments: true
+    })))
     .pipe(gulp.dest(DIST));
 });
 
@@ -99,7 +101,7 @@ gulp.task('sitemap', function() {
   gulp.src(DIST + '/**/*.html', {
           read: false
       })
-      .pipe(sitemap({
+      .pipe($.sitemap({
           siteUrl: 'https://www.greenhousegames.com'
       }))
       .pipe(gulp.dest(DIST));
