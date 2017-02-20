@@ -14,13 +14,11 @@ window.GreenhouseGames = {
     },
     loginSuccess: (data) => {
       if (data.user && !data.user.isAnonymous) {
-        $('img.user-image').attr('src', data.user.photoURL);
-        $('img.user-image').removeClass('hidden');
+        $('div.user-image').html('<img src="' + data.user.photoURL + '">');
         $('.user-image-guest').addClass('hidden');
         $('.user-name').text(data.user.displayName);
       } else {
-        $('img.user-image').attr('src', '');
-        $('img.user-image').addClass('hidden');
+        $('div.user-image').html('');
         $('.user-image-guest').removeClass('hidden');
         $('.user-name').text('Guest');
       }

@@ -84,13 +84,13 @@
       <script>
       $('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));
       </script>
-      
+
     </section>
     <section class="main">
       <div class="row show-auth hidden">
         <div class="column small-12 text-center">
           <img class="profile-image user-image"></img>
-          <div class="profile-image user-image-guest">
+          <div class="profile-image-guest user-image-guest">
             <i class="fi-torso"></i>
           </div>
           <h2 class="user-name"></h2>
@@ -117,7 +117,7 @@
         </div>
       </div>
       <script onload="require('pages/account/account.js')" src="../assets/js/pages/account/account.js"></script>
-      
+
     </section>
     <section class="footer">
       <div class="row">
@@ -139,7 +139,7 @@
           <p class="copyright">© 2016-2017 Greenhouse Games, LLC. All rights reserved.</p>
         </div>
       </div>
-      
+
     </section>
     <script>
       $(document).foundation();

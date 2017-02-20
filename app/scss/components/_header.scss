@@ -42,11 +42,14 @@ section.header {
     }
   }
 
-  img.thumbnail-image {
-    border-radius: 50%;
-    height: 32px;
-    width: 32px;
-    margin-right: 8px;
+  div.thumbnail-image {
+    display: inline-block;
+    img {
+      border-radius: 50%;
+      height: 32px;
+      width: 32px;
+      margin-right: 8px;
+    }
   }
 
   div.main-header-banner {

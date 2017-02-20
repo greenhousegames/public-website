@@ -1,4 +1,4 @@
-img.profile-image {
+div.user-image img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -9,7 +9,7 @@ img.profile-image {
   }
 }
 
-div.profile-image {
+div.user-image-guest {
   display: inline-block;
   border-radius: 50%;
   width: 100px;

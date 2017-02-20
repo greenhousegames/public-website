@@ -94,6 +94,12 @@ gulp.task('pages', function() {
       collapseWhitespace: true,
       removeComments: true
     })))
+    .pipe($.if(production, $.assetpaths({
+      newDomain: 'https://www.greenhousegames.com',
+      oldDomain : 'www.greenhousegames.com',
+      docRoot : 'public',
+      filetypes : ['jpg','jpeg','png','ico','gif','js','css']
+    })))
     .pipe(gulp.dest(DIST));
 });
 
