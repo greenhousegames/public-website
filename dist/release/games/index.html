@@ -2,25 +2,25 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-6060845168160443",
         enable_page_level_ads: true
       });
-    </script>
+    </script> -->
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   	<meta name="mobile-web-app-capable" content="yes">
   	<meta name="apple-mobile-web-app-capable" content="yes">
-    <title></title>
+    <title>Games</title>
     <link rel="stylesheet" href="../assets/css/app.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="../apple-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/icons/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/icons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/icons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/icons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/icons/apple-icon-144x144.png" />
     <link rel="stylesheet" href="../assets/foundation-icons/foundation-icons.css" />
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
     <script src="../assets/js/vendor.js"></script>
@@ -45,27 +45,29 @@
         <div class="top-bar-right">
           <ul class="dropdown menu" data-dropdown-menu>
             <li>
-              <a href="">Games</a>
+              <a href="/games">Games</a>
               <ul class="menu vertical">
                 <li><a href="/games/smashdot.html">Smash Dot</a></li>
               </ul>
             </li>
             <li>
-              <a href="">Learn</a>
+              <a href="/learn/abc">Learn</a>
               <ul class="menu vertical">
                 <li><a href="/learn/abc">ABC of Games</a></li>
                 <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
               </ul>
             </li>
             <li>
-              <a href="">Account</a>
+              <a href="/account">Account</a>
               <ul class="menu vertical">
                 <li class="hide-auth"><a href="/account">Login</a></li>
-                <li class="show-auth"><a href="/account">
-                  <img class="thumbnail-image user-image"></img>
-                  <i class="fi-torso user-image-guest"></i>
-                  <span class="user-name"></span>
-                </a></li>
+                <li class="show-auth">
+                  <a href="/account">
+                    <img class="thumbnail-image user-image"></img>
+                    <i class="fi-torso user-image-guest"></i>
+                    <span class="user-name"></span>
+                  </a>
+                </li>
                 <li class="show-auth"><a id="header-logout-button">Logout</a></li>
               </ul>
             </li>
@@ -77,7 +79,7 @@
           <div class=logo-container>
             <a class="logo" href="/"></a>
           </div>
-          <span></span>
+          <span>Games</span>
         </div>
       </div>
       <script>
@@ -86,13 +88,46 @@
       
     </section>
     <section class="main">
-      <div class="row games-container">
-        <h1>Games</h1>
-        <div class="game columns end small-12 medium-6 large-4">
-          <a href="[object Object].html">
-            <img src="../assets/img/games/[object Object].png">
-          </a>
+      <div class="row text-center">
+        <div class="column small-12 medium-9 large-6 small-centered">
+          <div class="card">
+            <div class="float-divider">
+              <a href="../games/smashdot.html">
+                <div class="row">
+                  <div class="columns">
+                    <div class="card-divider">
+                      <h2>Smash Dot</h2>
+                    </div>
+                  </div>
+                </div>
+                <img src="../assets/img/games/smashdot/screenshot.png"/>
+              </a>
+            </div>
+            <div class="card-section">
+              <p>Keep on Smashing!</p>
+              <div class="row small-up-1 text-center">
+                <div class="column">
+                  <a class="playstore-button" href="https://play.google.com/store/apps/details?id&#x3D;com.greenhousegames.smashdot2&amp;pcampaignid&#x3D;MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
+                  </a>
+                </div>
+                <div class="column">
+                  <a class="appstore-button" href="https://itunes.apple.com/us/app/smash-dot-pro/id1204046667?mt&#x3D;8"></a>
+                </div>
+                <div class="column">
+                  <a class="greenhousestore-button button dark" href="games/smashdot">
+                    <div class="image"></div><div class="text">Play on<br/><strong>Greenhouse</strong></div>
+                  </a>
+                </div>
+              </div>
+              <div class="row small-up-1 medium-up-2">
+                <div class="column">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        
       </div>
       
     </section>

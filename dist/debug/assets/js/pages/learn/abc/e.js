@@ -157,7 +157,7 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, xp, abutton;
+  var sprite1, xp, abutton, multiplier;
 
   var game = _utils2.default.init('e', {
     preload: function preload() {
@@ -166,6 +166,17 @@ function create() {
     create: function create() {
       _utils2.default.create(game);
       xp = 0;
+      multiplier = 0;
+
+      _utils2.default.ifBreakpoint(game, 'small', function () {
+        return multiplier = 1;
+      });
+      _utils2.default.ifBreakpoint(game, 'medium', function () {
+        return multiplier = 2;
+      });
+      _utils2.default.ifBreakpoint(game, 'large', function () {
+        return multiplier = 3;
+      });
 
       sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
       sprite1.anchor.setTo(0.5, 0.5);
@@ -174,8 +185,8 @@ function create() {
 
       abutton = game.add.button(0, 0, 'a-button', function () {
         xp++;
-        sprite1.width = 32 + xp;
-        sprite1.height = 32 + xp;
+        sprite1.width = 32 + xp * multiplier;
+        sprite1.height = 32 + xp * multiplier;
       });
       _utils2.default.alignButtons(game, [abutton]);
     },

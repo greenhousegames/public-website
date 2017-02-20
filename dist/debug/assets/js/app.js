@@ -195,7 +195,6 @@ window.GreenhouseGames = {
 
 (0, _jquery2.default)(document).ready(function () {
   window.GreenhouseGames.client.firebase.auth().onAuthStateChanged(function (user) {
-    console.log(user);
     if (user) {
       window.GreenhouseGames.authHelpers.loginSuccess({ user: user });
     } else {

@@ -157,22 +157,45 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1;
+  var sprite1, abutton;
 
   var game = _utils2.default.init('f', {
     preload: function preload() {
-      _utils2.default.preload(game);
+      _utils2.default.preload(game, ['a']);
+      game.load.atlas('ninja', '/assets/img/learning/ninja/run.png', '/assets/img/learning/ninja/run.json');
     },
     create: function create() {
       _utils2.default.create(game);
+      game.physics.arcade.gravity.y = 200;
 
-      sprite1 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
-      sprite1.anchor.setTo(0.5, 0.5);
+      sprite1 = game.add.sprite(game.width / 2, game.height, 'ninja', 'Run__000');
+      game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+      sprite1.anchor.setTo(0.5, 1);
+      sprite1.body.collideWorldBounds = true;
+      sprite1.body.bounce.set(0);
+      sprite1.animations.add('run', ['Run__001', 'Run__002', 'Run__003', 'Run__004', 'Run__005', 'Run__006', 'Run__007', 'Run__008', 'Run__009', 'Run__000'], 10, false, false);
+
+      _utils2.default.ifBreakpoint(game, 'small', function () {
+        return sprite1.scale.setTo(0.25);
+      });
+      _utils2.default.ifBreakpoint(game, 'medium', function () {
+        return sprite1.scale.setTo(0.5);
+      });
+      _utils2.default.ifBreakpoint(game, 'large', function () {
+        return sprite1.scale.setTo(0.75);
+      });
+
+      abutton = game.add.button(0, 0, 'a-button', run);
+      _utils2.default.alignButtons(game, [abutton]);
     },
     update: function update() {},
     render: function render() {}
   });
   return game;
+
+  function run() {
+    sprite1.animations.play('run');
+  }
 }
 
 module.exports = create;

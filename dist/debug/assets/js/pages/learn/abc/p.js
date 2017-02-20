@@ -168,6 +168,7 @@ function create() {
     create: function create() {
       _utils2.default.create(game);
       game.physics.arcade.gravity.y = 200;
+      game.physics.arcade.checkCollision.up = false;
       game.physics.arcade.checkCollision.down = false;
 
       _utils2.default.ifBreakpoint(game, 'small', function () {
