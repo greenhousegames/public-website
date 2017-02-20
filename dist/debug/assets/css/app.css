@@ -5729,5 +5729,33 @@ div.learning-preview-image {
   div.learning-preview-image div {
     position: absolute; }
 
+/* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+.ig-b- {
+  display: inline-block; }
+
+/* line 2, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+.ig-b- img {
+  visibility: hidden; }
+
+/* line 3, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+.ig-b-:hover {
+  background-position: 0 -60px; }
+
+/* line 4, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+.ig-b-:active {
+  background-position: 0 -120px; }
+
+/* line 5, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+.ig-b-v-24 {
+  width: 137px;
+  height: 24px;
+  background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  /* line 7, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+  .ig-b-v-24 {
+    background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png);
+    background-size: 160px 178px; } }
+
 
 /*# sourceMappingURL=app.css.map*/
