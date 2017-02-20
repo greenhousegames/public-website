@@ -20,35 +20,40 @@
 {{#if preview}}
 <script>
 $(document).ready(function() {
-  var loaded = false, loading = false;
-  $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
-    changed(newSize);
-  });
-  changed(Foundation.MediaQuery.current);
+  var create = null, game = null, loaded = false, loading = false;
+  load();
 
-  function changed(bp) {
-    if (bp != 'small' && !loaded && !loading) {
+  function loadscript(cb) {
+    if (!loaded && !loading) {
       loading = true;
       $.getScript("{{ @root.root }}assets/js/pages/learn/abc/{{ letter }}.js")
         .done(function( script, textStatus ) {
           loaded = true;
           loading = false;
-          load();
+          cb();
         })
         .fail(function( jqxhr, settings, exception ) {
           loading = false;
         });
+    } else {
+      cb();
     }
   }
 
   function load() {
-    var create = require('pages/learn/abc/{{ letter }}.js');
-    var game;
     $('#card-letter-{{ letter }}').hover(function() {
-      if (!game) {
-        $('#learning-game-{{ letter }}-container img').hide();
-        $('#learning-game-{{ letter }}').show();
-        game = create();
+      if (Foundation.MediaQuery.current != "small") {
+        loadscript(function() {
+          if (!create) {
+            create = require('pages/learn/abc/{{ letter }}.js');
+          }
+
+          if (!game) {
+            $('#learning-game-{{ letter }}-container img').hide();
+            $('#learning-game-{{ letter }}').show();
+            game = create();
+          }
+        });
       }
     }, function() {
       $('#learning-game-{{ letter }}').fadeOut({
