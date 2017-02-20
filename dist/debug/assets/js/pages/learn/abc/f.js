@@ -157,11 +157,11 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, abutton;
+  var sprite1, abutton, bbutton, cbutton;
 
   var game = _utils2.default.init('f', {
     preload: function preload() {
-      _utils2.default.preload(game, ['a']);
+      _utils2.default.preload(game, ['a', 'b', 'c']);
       game.load.atlas('ninja', '/assets/img/learning/ninja/run.png', '/assets/img/learning/ninja/run.json');
     },
     create: function create() {
@@ -173,7 +173,8 @@ function create() {
       sprite1.anchor.setTo(0.5, 1);
       sprite1.body.collideWorldBounds = true;
       sprite1.body.bounce.set(0);
-      sprite1.animations.add('run', ['Run__001', 'Run__002', 'Run__003', 'Run__004', 'Run__005', 'Run__006', 'Run__007', 'Run__008', 'Run__009', 'Run__000'], 10, false, false);
+      sprite1.animations.add('run', ['Run__001', 'Run__002', 'Run__003', 'Run__004', 'Run__005', 'Run__006', 'Run__007', 'Run__008', 'Run__009', 'Run__000'], 20, false);
+      sprite1.animations.add('runloop', ['Run__001', 'Run__002', 'Run__003', 'Run__004', 'Run__005', 'Run__006', 'Run__007', 'Run__008', 'Run__009', 'Run__000'], 20, true);
 
       _utils2.default.ifBreakpoint(game, 'small', function () {
         return sprite1.scale.setTo(0.25);
@@ -185,17 +186,21 @@ function create() {
         return sprite1.scale.setTo(0.75);
       });
 
-      abutton = game.add.button(0, 0, 'a-button', run);
-      _utils2.default.alignButtons(game, [abutton]);
+      abutton = game.add.button(0, 0, 'a-button', function () {
+        return sprite1.animations.play('run');
+      });
+      bbutton = game.add.button(0, 0, 'b-button', function () {
+        return sprite1.animations.play('runloop');
+      });
+      cbutton = game.add.button(0, 0, 'c-button', function () {
+        return sprite1.animations.stop();
+      });
+      _utils2.default.alignButtons(game, [abutton, bbutton, cbutton]);
     },
     update: function update() {},
     render: function render() {}
   });
   return game;
-
-  function run() {
-    sprite1.animations.play('run');
-  }
 }
 
 module.exports = create;

@@ -14,7 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   	<meta name="mobile-web-app-capable" content="yes">
   	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="keywords" content="games, free, app" />
+    <meta name="author" content="Greenhouse Games, LLC">
     <title>Greenhouse Games</title>
+    <meta name="description" content="Free games and apps made for all devices!">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/icons/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png" />
@@ -142,8 +145,10 @@
           <div class="abc column">
             <div id="card-letter-a" class="card">
               <div id="learning-game-a-container" class="show-for-medium">
-                <div id="learning-game-a"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-a"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>A is for Acceleration</p>
@@ -182,9 +187,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-a-container img').hide();
-                      $('#learning-game-a').show();
                       game = create();
+                      $('#learning-game-a').show();
                     }
                   });
                 }
@@ -192,7 +196,6 @@
                 $('#learning-game-a').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-a-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -206,8 +209,10 @@
           <div class="abc column">
             <div id="card-letter-b" class="card">
               <div id="learning-game-b-container" class="show-for-medium">
-                <div id="learning-game-b"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-b"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>B is for Bounce</p>
@@ -246,9 +251,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-b-container img').hide();
-                      $('#learning-game-b').show();
                       game = create();
+                      $('#learning-game-b').show();
                     }
                   });
                 }
@@ -256,7 +260,6 @@
                 $('#learning-game-b').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-b-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -270,8 +273,10 @@
           <div class="abc column">
             <div id="card-letter-c" class="card">
               <div id="learning-game-c-container" class="show-for-medium">
-                <div id="learning-game-c"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-c"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>C is for Collision</p>
@@ -310,9 +315,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-c-container img').hide();
-                      $('#learning-game-c').show();
                       game = create();
+                      $('#learning-game-c').show();
                     }
                   });
                 }
@@ -320,7 +324,6 @@
                 $('#learning-game-c').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-c-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -334,8 +337,10 @@
           <div class="abc column">
             <div id="card-letter-d" class="card">
               <div id="learning-game-d-container" class="show-for-medium">
-                <div id="learning-game-d"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-d"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>D is for Drag</p>
@@ -374,9 +379,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-d-container img').hide();
-                      $('#learning-game-d').show();
                       game = create();
+                      $('#learning-game-d').show();
                     }
                   });
                 }
@@ -384,7 +388,6 @@
                 $('#learning-game-d').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-d-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -398,8 +401,10 @@
           <div class="abc column">
             <div id="card-letter-e" class="card">
               <div id="learning-game-e-container" class="show-for-medium">
-                <div id="learning-game-e"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-e"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>E is for Experience</p>
@@ -438,9 +443,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-e-container img').hide();
-                      $('#learning-game-e').show();
                       game = create();
+                      $('#learning-game-e').show();
                     }
                   });
                 }
@@ -448,7 +452,6 @@
                 $('#learning-game-e').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-e-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -462,8 +465,10 @@
           <div class="abc column">
             <div id="card-letter-f" class="card">
               <div id="learning-game-f-container" class="show-for-medium">
-                <div id="learning-game-f"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-f"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>F is for Frames</p>
@@ -502,9 +507,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-f-container img').hide();
-                      $('#learning-game-f').show();
                       game = create();
+                      $('#learning-game-f').show();
                     }
                   });
                 }
@@ -512,7 +516,6 @@
                 $('#learning-game-f').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-f-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -526,8 +529,10 @@
           <div class="abc column">
             <div id="card-letter-g" class="card">
               <div id="learning-game-g-container" class="show-for-medium">
-                <div id="learning-game-g"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-g"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>G is for Gravity</p>
@@ -566,9 +571,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-g-container img').hide();
-                      $('#learning-game-g').show();
                       game = create();
+                      $('#learning-game-g').show();
                     }
                   });
                 }
@@ -576,7 +580,6 @@
                 $('#learning-game-g').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-g-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -590,8 +593,10 @@
           <div class="abc column">
             <div id="card-letter-h" class="card">
               <div id="learning-game-h-container" class="show-for-medium">
-                <div id="learning-game-h"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-h"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>H is for Health</p>
@@ -630,9 +635,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-h-container img').hide();
-                      $('#learning-game-h').show();
                       game = create();
+                      $('#learning-game-h').show();
                     }
                   });
                 }
@@ -640,7 +644,6 @@
                 $('#learning-game-h').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-h-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -654,8 +657,10 @@
           <div class="abc column">
             <div id="card-letter-i" class="card">
               <div id="learning-game-i-container" class="show-for-medium">
-                <div id="learning-game-i"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-i"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>I is for Immovable</p>
@@ -694,9 +699,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-i-container img').hide();
-                      $('#learning-game-i').show();
                       game = create();
+                      $('#learning-game-i').show();
                     }
                   });
                 }
@@ -704,7 +708,6 @@
                 $('#learning-game-i').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-i-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -718,8 +721,10 @@
           <div class="abc column">
             <div id="card-letter-j" class="card">
               <div id="learning-game-j-container" class="show-for-medium">
-                <div id="learning-game-j"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-j"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>J is for Jump</p>
@@ -758,9 +763,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-j-container img').hide();
-                      $('#learning-game-j').show();
                       game = create();
+                      $('#learning-game-j').show();
                     }
                   });
                 }
@@ -768,7 +772,6 @@
                 $('#learning-game-j').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-j-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -782,8 +785,10 @@
           <div class="abc column">
             <div id="card-letter-k" class="card">
               <div id="learning-game-k-container" class="show-for-medium">
-                <div id="learning-game-k"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-k"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>K is for Kill</p>
@@ -822,9 +827,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-k-container img').hide();
-                      $('#learning-game-k').show();
                       game = create();
+                      $('#learning-game-k').show();
                     }
                   });
                 }
@@ -832,7 +836,6 @@
                 $('#learning-game-k').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-k-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -846,8 +849,10 @@
           <div class="abc column">
             <div id="card-letter-l" class="card">
               <div id="learning-game-l-container" class="show-for-medium">
-                <div id="learning-game-l"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-l"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>L is for Lives</p>
@@ -886,9 +891,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-l-container img').hide();
-                      $('#learning-game-l').show();
                       game = create();
+                      $('#learning-game-l').show();
                     }
                   });
                 }
@@ -896,7 +900,6 @@
                 $('#learning-game-l').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-l-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -910,8 +913,10 @@
           <div class="abc column">
             <div id="card-letter-m" class="card">
               <div id="learning-game-m-container" class="show-for-medium">
-                <div id="learning-game-m"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-m"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>M is for Movement</p>
@@ -950,9 +955,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-m-container img').hide();
-                      $('#learning-game-m').show();
                       game = create();
+                      $('#learning-game-m').show();
                     }
                   });
                 }
@@ -960,7 +964,6 @@
                 $('#learning-game-m').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-m-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -974,8 +977,10 @@
           <div class="abc column">
             <div id="card-letter-n" class="card">
               <div id="learning-game-n-container" class="show-for-medium">
-                <div id="learning-game-n"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-n"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>N is for Noise</p>
@@ -1014,9 +1019,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-n-container img').hide();
-                      $('#learning-game-n').show();
                       game = create();
+                      $('#learning-game-n').show();
                     }
                   });
                 }
@@ -1024,7 +1028,6 @@
                 $('#learning-game-n').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-n-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1038,8 +1041,10 @@
           <div class="abc column">
             <div id="card-letter-o" class="card">
               <div id="learning-game-o-container" class="show-for-medium">
-                <div id="learning-game-o"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-o"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>O is for Obstacles</p>
@@ -1078,9 +1083,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-o-container img').hide();
-                      $('#learning-game-o').show();
                       game = create();
+                      $('#learning-game-o').show();
                     }
                   });
                 }
@@ -1088,7 +1092,6 @@
                 $('#learning-game-o').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-o-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1102,8 +1105,10 @@
           <div class="abc column">
             <div id="card-letter-p" class="card">
               <div id="learning-game-p-container" class="show-for-medium">
-                <div id="learning-game-p"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-p"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>P is for Platformer</p>
@@ -1142,9 +1147,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-p-container img').hide();
-                      $('#learning-game-p').show();
                       game = create();
+                      $('#learning-game-p').show();
                     }
                   });
                 }
@@ -1152,7 +1156,6 @@
                 $('#learning-game-p').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-p-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1166,8 +1169,10 @@
           <div class="abc column">
             <div id="card-letter-q" class="card">
               <div id="learning-game-q-container" class="show-for-medium">
-                <div id="learning-game-q"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-q"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>Q is for Quests</p>
@@ -1206,9 +1211,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-q-container img').hide();
-                      $('#learning-game-q').show();
                       game = create();
+                      $('#learning-game-q').show();
                     }
                   });
                 }
@@ -1216,7 +1220,6 @@
                 $('#learning-game-q').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-q-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1230,8 +1233,10 @@
           <div class="abc column">
             <div id="card-letter-r" class="card">
               <div id="learning-game-r-container" class="show-for-medium">
-                <div id="learning-game-r"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-r"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>R is for Runner</p>
@@ -1270,9 +1275,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-r-container img').hide();
-                      $('#learning-game-r').show();
                       game = create();
+                      $('#learning-game-r').show();
                     }
                   });
                 }
@@ -1280,7 +1284,6 @@
                 $('#learning-game-r').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-r-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1294,8 +1297,10 @@
           <div class="abc column">
             <div id="card-letter-s" class="card">
               <div id="learning-game-s-container" class="show-for-medium">
-                <div id="learning-game-s"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-s"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>S is for Sprite</p>
@@ -1334,9 +1339,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-s-container img').hide();
-                      $('#learning-game-s').show();
                       game = create();
+                      $('#learning-game-s').show();
                     }
                   });
                 }
@@ -1344,7 +1348,6 @@
                 $('#learning-game-s').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-s-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1358,8 +1361,10 @@
           <div class="abc column">
             <div id="card-letter-t" class="card">
               <div id="learning-game-t-container" class="show-for-medium">
-                <div id="learning-game-t"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-t"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>T is for Timer</p>
@@ -1398,9 +1403,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-t-container img').hide();
-                      $('#learning-game-t').show();
                       game = create();
+                      $('#learning-game-t').show();
                     }
                   });
                 }
@@ -1408,7 +1412,6 @@
                 $('#learning-game-t').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-t-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1422,8 +1425,10 @@
           <div class="abc column">
             <div id="card-letter-u" class="card">
               <div id="learning-game-u-container" class="show-for-medium">
-                <div id="learning-game-u"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-u"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>U is for Upgrading</p>
@@ -1462,9 +1467,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-u-container img').hide();
-                      $('#learning-game-u').show();
                       game = create();
+                      $('#learning-game-u').show();
                     }
                   });
                 }
@@ -1472,7 +1476,6 @@
                 $('#learning-game-u').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-u-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1486,8 +1489,10 @@
           <div class="abc column">
             <div id="card-letter-v" class="card">
               <div id="learning-game-v-container" class="show-for-medium">
-                <div id="learning-game-v"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-v"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>V is for Velocity</p>
@@ -1526,9 +1531,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-v-container img').hide();
-                      $('#learning-game-v').show();
                       game = create();
+                      $('#learning-game-v').show();
                     }
                   });
                 }
@@ -1536,7 +1540,6 @@
                 $('#learning-game-v').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-v-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1550,8 +1553,10 @@
           <div class="abc column">
             <div id="card-letter-w" class="card">
               <div id="learning-game-w-container" class="show-for-medium">
-                <div id="learning-game-w"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-w"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>W is for Weapon</p>
@@ -1590,9 +1595,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-w-container img').hide();
-                      $('#learning-game-w').show();
                       game = create();
+                      $('#learning-game-w').show();
                     }
                   });
                 }
@@ -1600,7 +1604,6 @@
                 $('#learning-game-w').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-w-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1614,8 +1617,10 @@
           <div class="abc column">
             <div id="card-letter-x" class="card">
               <div id="learning-game-x-container" class="show-for-medium">
-                <div id="learning-game-x"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-x"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>X is for X-axis</p>
@@ -1654,9 +1659,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-x-container img').hide();
-                      $('#learning-game-x').show();
                       game = create();
+                      $('#learning-game-x').show();
                     }
                   });
                 }
@@ -1664,7 +1668,6 @@
                 $('#learning-game-x').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-x-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1678,8 +1681,10 @@
           <div class="abc column">
             <div id="card-letter-y" class="card">
               <div id="learning-game-y-container" class="show-for-medium">
-                <div id="learning-game-y"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-y"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>Y is for Y-axis</p>
@@ -1718,9 +1723,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-y-container img').hide();
-                      $('#learning-game-y').show();
                       game = create();
+                      $('#learning-game-y').show();
                     }
                   });
                 }
@@ -1728,7 +1732,6 @@
                 $('#learning-game-y').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-y-container img').show();
                       game.destroy();
                       game = null;
                     }
@@ -1742,8 +1745,10 @@
           <div class="abc column">
             <div id="card-letter-z" class="card">
               <div id="learning-game-z-container" class="show-for-medium">
-                <div id="learning-game-z"></div>
-                <img src="assets/img/learning/preview-placeholder.png"></img>
+                <div class="learning-preview-image">
+                  <div id="learning-game-z"></div>
+                  <img src="assets/img/learning/preview-placeholder.png"></img>
+                </div>
               </div>
               <div class="card-section text-center">
                 <p>Z is for Z-index</p>
@@ -1782,9 +1787,8 @@
                     }
           
                     if (!game) {
-                      $('#learning-game-z-container img').hide();
-                      $('#learning-game-z').show();
                       game = create();
+                      $('#learning-game-z').show();
                     }
                   });
                 }
@@ -1792,7 +1796,6 @@
                 $('#learning-game-z').fadeOut({
                   complete: function() {
                     if (game) {
-                      $('#learning-game-z-container img').show();
                       game.destroy();
                       game = null;
                     }

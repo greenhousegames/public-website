@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "scripts": {
     "clean": "(rm -r public || true)",
     "start": "npm run clean && brunch watch --server",

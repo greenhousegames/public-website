@@ -5703,5 +5703,12 @@ div#learning-game canvas {
 h4.subheader {
   font-style: italic; }
 
+/* line 9, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+div.learning-preview-image {
+  position: relative; }
+  /* line 12, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  div.learning-preview-image div {
+    position: absolute; }
+
 
 /*# sourceMappingURL=app.css.map*/
