@@ -151,28 +151,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/a.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/a.js');
-            var game;
-            $('#card-letter-a').hover(function() {
-              if (!game) {
-                $('#learning-game-a-container img').hide();
-                $('#learning-game-a').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/a.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-a').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-a-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-a').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/a.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-a-container img').hide();
+                      $('#learning-game-a').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-a').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-a-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -188,28 +215,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/b.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/b.js');
-            var game;
-            $('#card-letter-b').hover(function() {
-              if (!game) {
-                $('#learning-game-b-container img').hide();
-                $('#learning-game-b').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/b.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-b').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-b-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-b').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/b.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-b-container img').hide();
+                      $('#learning-game-b').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-b').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-b-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -225,28 +279,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/c.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/c.js');
-            var game;
-            $('#card-letter-c').hover(function() {
-              if (!game) {
-                $('#learning-game-c-container img').hide();
-                $('#learning-game-c').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/c.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-c').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-c-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-c').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/c.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-c-container img').hide();
+                      $('#learning-game-c').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-c').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-c-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -262,28 +343,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/d.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/d.js');
-            var game;
-            $('#card-letter-d').hover(function() {
-              if (!game) {
-                $('#learning-game-d-container img').hide();
-                $('#learning-game-d').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/d.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-d').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-d-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-d').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/d.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-d-container img').hide();
+                      $('#learning-game-d').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-d').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-d-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -299,28 +407,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/e.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/e.js');
-            var game;
-            $('#card-letter-e').hover(function() {
-              if (!game) {
-                $('#learning-game-e-container img').hide();
-                $('#learning-game-e').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/e.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-e').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-e-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-e').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/e.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-e-container img').hide();
+                      $('#learning-game-e').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-e').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-e-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -336,28 +471,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/f.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/f.js');
-            var game;
-            $('#card-letter-f').hover(function() {
-              if (!game) {
-                $('#learning-game-f-container img').hide();
-                $('#learning-game-f').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/f.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-f').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-f-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-f').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/f.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-f-container img').hide();
+                      $('#learning-game-f').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-f').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-f-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -373,28 +535,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/g.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/g.js');
-            var game;
-            $('#card-letter-g').hover(function() {
-              if (!game) {
-                $('#learning-game-g-container img').hide();
-                $('#learning-game-g').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/g.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-g').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-g-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-g').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/g.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-g-container img').hide();
+                      $('#learning-game-g').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-g').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-g-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -410,28 +599,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/h.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/h.js');
-            var game;
-            $('#card-letter-h').hover(function() {
-              if (!game) {
-                $('#learning-game-h-container img').hide();
-                $('#learning-game-h').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/h.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-h').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-h-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-h').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/h.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-h-container img').hide();
+                      $('#learning-game-h').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-h').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-h-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -447,28 +663,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/i.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/i.js');
-            var game;
-            $('#card-letter-i').hover(function() {
-              if (!game) {
-                $('#learning-game-i-container img').hide();
-                $('#learning-game-i').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/i.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-i').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-i-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-i').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/i.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-i-container img').hide();
+                      $('#learning-game-i').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-i').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-i-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -484,28 +727,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/j.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/j.js');
-            var game;
-            $('#card-letter-j').hover(function() {
-              if (!game) {
-                $('#learning-game-j-container img').hide();
-                $('#learning-game-j').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/j.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-j').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-j-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-j').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/j.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-j-container img').hide();
+                      $('#learning-game-j').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-j').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-j-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -521,28 +791,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/k.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/k.js');
-            var game;
-            $('#card-letter-k').hover(function() {
-              if (!game) {
-                $('#learning-game-k-container img').hide();
-                $('#learning-game-k').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/k.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-k').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-k-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-k').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/k.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-k-container img').hide();
+                      $('#learning-game-k').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-k').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-k-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -558,28 +855,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/l.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/l.js');
-            var game;
-            $('#card-letter-l').hover(function() {
-              if (!game) {
-                $('#learning-game-l-container img').hide();
-                $('#learning-game-l').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/l.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-l').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-l-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-l').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/l.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-l-container img').hide();
+                      $('#learning-game-l').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-l').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-l-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -595,28 +919,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/m.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/m.js');
-            var game;
-            $('#card-letter-m').hover(function() {
-              if (!game) {
-                $('#learning-game-m-container img').hide();
-                $('#learning-game-m').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/m.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-m').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-m-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-m').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/m.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-m-container img').hide();
+                      $('#learning-game-m').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-m').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-m-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -632,28 +983,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/n.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/n.js');
-            var game;
-            $('#card-letter-n').hover(function() {
-              if (!game) {
-                $('#learning-game-n-container img').hide();
-                $('#learning-game-n').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/n.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-n').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-n-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-n').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/n.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-n-container img').hide();
+                      $('#learning-game-n').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-n').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-n-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -669,28 +1047,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/o.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/o.js');
-            var game;
-            $('#card-letter-o').hover(function() {
-              if (!game) {
-                $('#learning-game-o-container img').hide();
-                $('#learning-game-o').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/o.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-o').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-o-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-o').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/o.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-o-container img').hide();
+                      $('#learning-game-o').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-o').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-o-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -706,28 +1111,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/p.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/p.js');
-            var game;
-            $('#card-letter-p').hover(function() {
-              if (!game) {
-                $('#learning-game-p-container img').hide();
-                $('#learning-game-p').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/p.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-p').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-p-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-p').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/p.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-p-container img').hide();
+                      $('#learning-game-p').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-p').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-p-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -743,28 +1175,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/q.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/q.js');
-            var game;
-            $('#card-letter-q').hover(function() {
-              if (!game) {
-                $('#learning-game-q-container img').hide();
-                $('#learning-game-q').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/q.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-q').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-q-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-q').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/q.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-q-container img').hide();
+                      $('#learning-game-q').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-q').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-q-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -780,28 +1239,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/r.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/r.js');
-            var game;
-            $('#card-letter-r').hover(function() {
-              if (!game) {
-                $('#learning-game-r-container img').hide();
-                $('#learning-game-r').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/r.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-r').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-r-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-r').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/r.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-r-container img').hide();
+                      $('#learning-game-r').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-r').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-r-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -817,28 +1303,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/s.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/s.js');
-            var game;
-            $('#card-letter-s').hover(function() {
-              if (!game) {
-                $('#learning-game-s-container img').hide();
-                $('#learning-game-s').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/s.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-s').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-s-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-s').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/s.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-s-container img').hide();
+                      $('#learning-game-s').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-s').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-s-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -854,28 +1367,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/t.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/t.js');
-            var game;
-            $('#card-letter-t').hover(function() {
-              if (!game) {
-                $('#learning-game-t-container img').hide();
-                $('#learning-game-t').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/t.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-t').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-t-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-t').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/t.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-t-container img').hide();
+                      $('#learning-game-t').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-t').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-t-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -891,28 +1431,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/u.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/u.js');
-            var game;
-            $('#card-letter-u').hover(function() {
-              if (!game) {
-                $('#learning-game-u-container img').hide();
-                $('#learning-game-u').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/u.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-u').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-u-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-u').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/u.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-u-container img').hide();
+                      $('#learning-game-u').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-u').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-u-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -928,28 +1495,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/v.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/v.js');
-            var game;
-            $('#card-letter-v').hover(function() {
-              if (!game) {
-                $('#learning-game-v-container img').hide();
-                $('#learning-game-v').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/v.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-v').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-v-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-v').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/v.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-v-container img').hide();
+                      $('#learning-game-v').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-v').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-v-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -965,28 +1559,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/w.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/w.js');
-            var game;
-            $('#card-letter-w').hover(function() {
-              if (!game) {
-                $('#learning-game-w-container img').hide();
-                $('#learning-game-w').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/w.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-w').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-w-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-w').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/w.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-w-container img').hide();
+                      $('#learning-game-w').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-w').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-w-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -1002,28 +1623,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/x.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/x.js');
-            var game;
-            $('#card-letter-x').hover(function() {
-              if (!game) {
-                $('#learning-game-x-container img').hide();
-                $('#learning-game-x').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/x.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-x').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-x-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-x').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/x.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-x-container img').hide();
+                      $('#learning-game-x').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-x').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-x-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -1039,28 +1687,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/y.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/y.js');
-            var game;
-            $('#card-letter-y').hover(function() {
-              if (!game) {
-                $('#learning-game-y-container img').hide();
-                $('#learning-game-y').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/y.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-y').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-y-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-y').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/y.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-y-container img').hide();
+                      $('#learning-game-y').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-y').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-y-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
@@ -1076,28 +1751,55 @@
               </div>
             </div>
           </div>
-          <script src="assets/js/pages/learn/abc/z.js"></script>
           <script>
           $(document).ready(function() {
-            var create = require('pages/learn/abc/z.js');
-            var game;
-            $('#card-letter-z').hover(function() {
-              if (!game) {
-                $('#learning-game-z-container img').hide();
-                $('#learning-game-z').show();
-                game = create();
+            var create = null, game = null, loaded = false, loading = false;
+            load();
+          
+            function loadscript(cb) {
+              if (!loaded && !loading) {
+                loading = true;
+                $.getScript("assets/js/pages/learn/abc/z.js")
+                  .done(function( script, textStatus ) {
+                    loaded = true;
+                    loading = false;
+                    cb();
+                  })
+                  .fail(function( jqxhr, settings, exception ) {
+                    loading = false;
+                  });
+              } else {
+                cb();
               }
-            }, function() {
-              $('#learning-game-z').fadeOut({
-                complete: function() {
-                  if (game) {
-                    $('#learning-game-z-container img').show();
-                    game.destroy();
-                    game = null;
-                  }
+            }
+          
+            function load() {
+              $('#card-letter-z').hover(function() {
+                if (Foundation.MediaQuery.current != "small") {
+                  loadscript(function() {
+                    if (!create) {
+                      create = require('pages/learn/abc/z.js');
+                    }
+          
+                    if (!game) {
+                      $('#learning-game-z-container img').hide();
+                      $('#learning-game-z').show();
+                      game = create();
+                    }
+                  });
                 }
+              }, function() {
+                $('#learning-game-z').fadeOut({
+                  complete: function() {
+                    if (game) {
+                      $('#learning-game-z-container img').show();
+                      game.destroy();
+                      game = null;
+                    }
+                  }
+                });
               });
-            });
+            }
           });
           </script>
           
