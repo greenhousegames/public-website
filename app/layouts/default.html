@@ -3,62 +3,7 @@
 <!doctype html>
 <html class="no-js" lang="en" amp>
   <head>
-    <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <link rel="canonical" href="{{page}}" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  	<meta name="mobile-web-app-capable" content="yes">
-  	<meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="keywords" content="games, free, app" />
-    <meta name="author" content="Greenhouse Games, LLC">
-    <title>{{title}}</title>
-    {{#unless description}}
-    <meta name="description" content="Free games and apps made for all devices!">
-    {{/unless}}
-    {{#if description}}
-    <meta name="description" content="{{description}}">
-    {{/if}}
-    <link rel="stylesheet" href="{{root}}assets/css/app.css">
-    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/icons/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="{{root}}assets/icons/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="{{root}}assets/icons/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="{{root}}assets/icons/apple-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{{root}}assets/icons/apple-icon-144x144.png" />
-    <link rel="stylesheet" href="{{root}}assets/foundation-icons/foundation-icons.css" />
-    <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
-    <script src="{{root}}assets/js/vendor.js"></script>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script onload="require('app.js')" src="{{root}}assets/js/app.js"></script>
-    {{#each structured_data}}
-    <script type="application/ld+json">
-      {{{json this}}}
-    </script>
-    {{/each}}
-    <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": "Greenhouse Games, LLC",
-      "url": "https://www.greenhousegames.com",
-      "logo": "https://www.greenhousegames.com/assets/img/logo-circle-large.png",
-      "sameAs": [
-        "https://www.facebook.com/greenhousegamez",
-        "https://twitter.com/greenhousegamez",
-        "https://www.instagram.com/greenhousegamez"
-      ],
-      "founder": {
-        "@type": "Person",
-        "name": "Brian Soumakian",
-        "sameAs": [
-          "https://www.linkedin.com/in/brian-soumakian-91141811",
-          "https://www.facebook.com/briansoumakian",
-          "https://twitter.com/briansoumakian"
-        ]
-      }
-    }
-    </script>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    {{> shared_html_head}}
   </head>
   <body>
     <section class="header large">
