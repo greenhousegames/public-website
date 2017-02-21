@@ -939,11 +939,14 @@ var GameReporting = function (_FirebaseReporting) {
     _this.addMetric('endedAt', ['first', 'last']);
     _this.addMetric('played', ['sum']);
     _this.addMetric('classic-circles', ['sum']);
+    _this.addMetric('classic-duration', ['sum']);
     _this.addMetric('classic-score', ['max', 'sum']);
     _this.addMetric('survival-circles', ['sum']);
+    _this.addMetric('survival-duration', ['sum']);
     _this.addMetric('survival-score', ['max', 'sum']);
     _this.addMetric('survival-duration', ['max']);
     _this.addMetric('battle-circles', ['sum']);
+    _this.addMetric('battle-duration', ['sum']);
     _this.addMetric('battle-score', ['max', 'sum']);
     _this.addMetric('win', ['sum']);
     _this.addMetric('loss', ['sum']);

@@ -177,10 +177,10 @@ function create() {
         return sprite1.body.velocity.x = -100;
       });
       cbutton = game.add.button(0, 0, 'c-button', function () {
-        return sprite1.body.velocity.y = 100;
+        return sprite1.body.velocity.y = -100;
       });
       dbutton = game.add.button(0, 0, 'd-button', function () {
-        return sprite1.body.velocity.y = -100;
+        return sprite1.body.velocity.y = 100;
       });
       _utils2.default.alignButtons(game, [abutton, bbutton, cbutton, dbutton]);
     },
