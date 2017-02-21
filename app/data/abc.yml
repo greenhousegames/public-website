@@ -20,6 +20,17 @@ a:
     Due to having positive acceleration, the velocity of the top sprite increases over time.
     This is similar to a gas pedal in a car.  When the gas pedal is pressed, the
     speed of the car increases.  This results in the car having positive acceleration.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "A is for Acceleration"
+      "description": "Lesson about Acceleration in games"
+      "url": "https://www.greenhousegames.com/learn/abc/a.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 b:
   order: 7
   letter: b
@@ -46,6 +57,17 @@ b:
     Due to having between zero and 100% bounce, the middle sprite rebounds off the wall,
     but at a slower speed.  This causes the velocity of the middle sprite to be 75%
     the speed after hitting the wall.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "B is for Bounce"
+      "description": "Lesson about Bounce in games"
+      "url": "https://www.greenhousegames.com/learn/abc/b.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 c:
   order: 12
   letter: c
@@ -63,6 +85,17 @@ c:
     <br/>
     <br/>
     Due to having collision enabled, the top two sprites rebound off each other when they intersect.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "C is for Collision"
+      "description": "Lesson about Collision in games"
+      "url": "https://www.greenhousegames.com/learn/abc/c.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 d:
   order: 13
   letter: d
@@ -79,6 +112,17 @@ d:
     <br/>
     <br/>
     Due to having dragging enabled, the right sprite moves when you hold and drag it around the game.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "D is for Drag"
+      "description": "Lesson about Drag in games"
+      "url": "https://www.greenhousegames.com/learn/abc/d.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 e:
   order: 22
   letter: e
@@ -90,6 +134,17 @@ e:
   content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
    will grow as it gains more experience.  Tap the A button to gain experience for
    the sprite.
+  structured_data:
+   0:
+     "@context": "http://schema.org"
+     "@type": "Course"
+     "name": "E is for Experience"
+     "description": "Lesson about Experience in games"
+     "url": "https://www.greenhousegames.com/learn/abc/e.html"
+     "provider":
+       "@type": "Organization"
+       "name": "Greenhouse Games, LLC"
+       "sameAs": "https://www.greenhousegames.com"
 f:
   order: 10
   letter: f
@@ -107,6 +162,17 @@ f:
    displayed for a split second before showing the next frame.  The animation shown
    above was created using 10 frames.  The frames are ordered in such a way that
    it gives the effect the ninja is running.
+  structured_data:
+   0:
+     "@context": "http://schema.org"
+     "@type": "Course"
+     "name": "F is for Frames"
+     "description": "Lesson about Frames in games"
+     "url": "https://www.greenhousegames.com/learn/abc/f.html"
+     "provider":
+       "@type": "Organization"
+       "name": "Greenhouse Games, LLC"
+       "sameAs": "https://www.greenhousegames.com"
 g:
   order: 8
   letter: g
@@ -130,6 +196,17 @@ g:
     causing them to fall to the ground.  Once the objects hit the ground, the <a href="b.html">bounce</a>
     defines whether or not the object will rebound off the ground.  The middle sprite has no bounce and the
     right sprite has 100% bounce.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "G is for Gravity"
+      "description": "Lesson about Gravity in games"
+      "url": "https://www.greenhousegames.com/learn/abc/g.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 h:
   order: 17
   letter: h
@@ -141,6 +218,17 @@ h:
     - s
   content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has full health to start the game.
     Each click of the sprite will reduce the health by 10.  Once the sprite reaches 0 health, it will be <a href="k.html">killed</a>.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "H is for Health"
+      "description": "Lesson about Health in games"
+      "url": "https://www.greenhousegames.com/learn/abc/h.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 i:
   order: 15
   letter: i
@@ -153,6 +241,17 @@ i:
     - s
   content: Take a look at the <a href="s.html">sprites</a> in the game.  The center sprite is set to immovable.  When other sprites
     <a href="c.html">collide</a> with the center sprite, they will <a href="b.html">bounce</a> off.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "I is for Immovable"
+      "description": "Lesson about Immovable in games"
+      "url": "https://www.greenhousegames.com/learn/abc/i.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 j:
   order: 9
   letter: j
@@ -175,6 +274,17 @@ j:
    sprite to want to <a href="a.html">accelerate</a> downward.  This combination
    of upward velocity and downward acceleration causes the sprite to slow down as
    it reaches the middle of the screen, then speed up as it approaches the ground.
+  structured_data:
+   0:
+     "@context": "http://schema.org"
+     "@type": "Course"
+     "name": "J is for Jump"
+     "description": "Lesson about Jump in games"
+     "url": "https://www.greenhousegames.com/learn/abc/j.html"
+     "provider":
+       "@type": "Organization"
+       "name": "Greenhouse Games, LLC"
+       "sameAs": "https://www.greenhousegames.com"
 k:
   order: 16
   letter: k
@@ -201,6 +311,17 @@ k:
    sprite to be hidden and all interactions with the sprite are disabled.  The
    sprite can be revived, in which cause it is made visible and can interact with
    the rest of the world.
+  structured_data:
+   0:
+     "@context": "http://schema.org"
+     "@type": "Course"
+     "name": "K is for Kill"
+     "description": "Lesson about Kill in games"
+     "url": "https://www.greenhousegames.com/learn/abc/k.html"
+     "provider":
+       "@type": "Organization"
+       "name": "Greenhouse Games, LLC"
+       "sameAs": "https://www.greenhousegames.com"
 l:
   order: 18
   letter: l
@@ -221,6 +342,17 @@ l:
    Lives are a way to track how long the user can play the game.  The user can continue
    to play the game so long as they have lives remaining.  Once the user runs out of life
    they must restart the game or level.
+  structured_data:
+   0:
+     "@context": "http://schema.org"
+     "@type": "Course"
+     "name": "L is for Lives"
+     "description": "Lesson about Lives in games"
+     "url": "https://www.greenhousegames.com/learn/abc/l.html"
+     "provider":
+       "@type": "Organization"
+       "name": "Greenhouse Games, LLC"
+       "sameAs": "https://www.greenhousegames.com"
 m:
   order: 11
   letter: m
@@ -229,7 +361,19 @@ m:
   subheader: Movement provides a way to control an object
   dependencies:
     - s
-  content: Lesson coming soon!
+    - v
+  content: Take a look at the <a href="s.html">sprites</a> in the game.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "M is for Movement"
+      "description": "Lesson about Movement in games"
+      "url": "https://www.greenhousegames.com/learn/abc/m.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 n:
   order: 20
   letter: n
@@ -239,6 +383,17 @@ n:
   dependencies:
     - s
   content: Lesson coming soon!
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "N is for Noise"
+      "description": "Lesson about Noise in games"
+      "url": "https://www.greenhousegames.com/learn/abc/n.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 o:
   order: 24
   letter: o
@@ -248,6 +403,17 @@ o:
   dependencies:
     - s
   content: Lesson coming soon!
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "O is for Obstacles"
+      "description": "Lesson about Obstacles in games"
+      "url": "https://www.greenhousegames.com/learn/abc/o.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 p:
   order: 25
   letter: p
@@ -257,6 +423,17 @@ p:
   dependencies:
     - s
   content: Lesson coming soon!
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "P is for Platformer"
+      "description": "Lesson about Platformer in games"
+      "url": "https://www.greenhousegames.com/learn/abc/p.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 q:
   order: 23
   letter: q
@@ -266,6 +443,17 @@ q:
   dependencies:
     - s
   content: Lesson coming soon!
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "Q is for Quests"
+      "description": "Lesson about Quests in games"
+      "url": "https://www.greenhousegames.com/learn/abc/q.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 r:
   order: 26
   letter: r
@@ -275,6 +463,17 @@ r:
   dependencies:
     - s
   content: Lesson coming soon!
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "R is for Runner"
+      "description": "Lesson about Runner in games"
+      "url": "https://www.greenhousegames.com/learn/abc/r.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 s:
   order: 1
   letter: s
@@ -300,6 +499,17 @@ s:
     <strong>Sprite Position</strong>
     <br/>
     <a href="x.html">x position</a> | <a href="y.html">y position</a> | <a href="z.html">z position</a>
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "S is for Sprite"
+      "description": "Lesson about Sprite in games"
+      "url": "https://www.greenhousegames.com/learn/abc/s.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 t:
   order: 14
   letter: t
@@ -312,6 +522,17 @@ t:
    expires it will move the <a href="s.html">sprite</a> to a random location.
    The time left on the timer is shown in the upper left.  The A button will pause
    the timer and the B button will resume the timer.
+  structured_data:
+   0:
+     "@context": "http://schema.org"
+     "@type": "Course"
+     "name": "T is for Timer"
+     "description": "Lesson about Timer in games"
+     "url": "https://www.greenhousegames.com/learn/abc/t.html"
+     "provider":
+       "@type": "Organization"
+       "name": "Greenhouse Games, LLC"
+       "sameAs": "https://www.greenhousegames.com"
 u:
   order: 21
   letter: u
@@ -321,6 +542,17 @@ u:
   dependencies:
     - s
   content: Lesson coming soon!
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "U is for Upgrading"
+      "description": "Lesson about Upgrading in games"
+      "url": "https://www.greenhousegames.com/learn/abc/u.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 v:
   order: 5
   letter: v
@@ -346,6 +578,17 @@ v:
     Due to having half the velocity of the top sprite, the middle sprite travels half the distance
     of the top sprite in the same amount of time.  This causes the middle sprite to be half
     way across the game once the top sprite reaches the wall.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "V is for Velocity"
+      "description": "Lesson about Velocity in games"
+      "url": "https://www.greenhousegames.com/learn/abc/v.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 w:
   order: 19
   letter: w
@@ -365,6 +608,17 @@ w:
    is given a <a href="v.html">velocity</a> in the direction where the tap
    occurred.  In this example the bullet just flies off into space, but in a real
    game you might use a weapon to <a href="k.html">kill</a> enemies or obstacles.
+  structured_data:
+   0:
+     "@context": "http://schema.org"
+     "@type": "Course"
+     "name": "W is for Weapon"
+     "description": "Lesson about Weapon in games"
+     "url": "https://www.greenhousegames.com/learn/abc/w.html"
+     "provider":
+       "@type": "Organization"
+       "name": "Greenhouse Games, LLC"
+       "sameAs": "https://www.greenhousegames.com"
 x:
   order: 2
   letter: x
@@ -375,6 +629,17 @@ x:
     - s
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  The left sprite
     has a x position of zero.  The right sprite has has a x position equal to the game width.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "X is for X-axis"
+      "description": "Lesson about X-axis in games"
+      "url": "https://www.greenhousegames.com/learn/abc/x.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 y:
   order: 3
   letter: y
@@ -385,6 +650,17 @@ y:
     - s
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  The top sprite
     has a y position of zero.  The bottom sprite has has a y position equal to the game height.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "Y is for Y-axis"
+      "description": "Lesson about Y-axis in games"
+      "url": "https://www.greenhousegames.com/learn/abc/y.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"
 z:
   order: 4
   letter: z
@@ -404,3 +680,14 @@ z:
     <br/>
     Due to being added last, the right-most sprite is on top of the other two sprites.
     This causes the right-most sprite to have the highest z-index.
+  structured_data:
+    0:
+      "@context": "http://schema.org"
+      "@type": "Course"
+      "name": "Z is for Z-index"
+      "description": "Lesson about Z-index in games"
+      "url": "https://www.greenhousegames.com/learn/abc/z.html"
+      "provider":
+        "@type": "Organization"
+        "name": "Greenhouse Games, LLC"
+        "sameAs": "https://www.greenhousegames.com"

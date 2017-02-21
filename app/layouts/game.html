@@ -3,7 +3,9 @@
 <!doctype html>
 <html class="no-js" lang="en" amp>
   <head>
-    {{> shared_html_head}}
+    {{#single games key}}
+      {{> shared_html_head structured_data=structured_data}}
+    {{/single}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>

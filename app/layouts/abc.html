@@ -3,7 +3,9 @@
 <!doctype html>
 <html class="no-js" lang="en" amp>
   <head>
-    {{> shared_html_head}}
+    {{#single abc letter}}
+      {{> shared_html_head structured_data=structured_data}}
+    {{/single}}
   </head>
   <body>
     <section class="header">
