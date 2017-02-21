@@ -16,7 +16,7 @@ function create() {
       timer = game.time.create(false);
       timer.loop(Phaser.Timer.SECOND * 3, moveSprite);
       timer.start();
-      
+
       abutton = game.add.button(0, 0, 'a-button', () => timer.pause());
       bbutton = game.add.button(0, 0, 'b-button', () => timer.resume());
       utils.alignButtons(game, [abutton,bbutton]);

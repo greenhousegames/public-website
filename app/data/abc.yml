@@ -129,11 +129,12 @@ e:
   name: Experience
   header: E is for Experience
   subheader: Experience is a way to track user progress
+  controls:
+    - Tap the A button to gain 1 experience point
   dependencies:
     - s
   content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
-   will grow as it gains more experience.  Tap the A button to gain experience for
-   the sprite.
+    will grow as it gains more experience.
   structured_data:
    0:
      "@context": "http://schema.org"
@@ -151,14 +152,13 @@ f:
   name: Frames
   header: F is for Frames
   subheader: Frames are used to design animations
+  controls:
+    - Tap the A button to animate the sprite for one loop
+    - Tap the B button to animate the sprite indefinately
+    - Tap the C button to stop the sprite animation
   dependencies:
     - s
-  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
-   will animate for one loop once the A button is pressed.  Pressing the B button will
-   run the animation in a loop.  Pressing the C button will stop the animation.
-   <br/>
-   <br/>
-   An animation is created using still images called frames.  Each frame is
+  content: An animation is created using still images called frames.  Each frame is
    displayed for a split second before showing the next frame.  The animation shown
    above was created using 10 frames.  The frames are ordered in such a way that
    it gives the effect the ninja is running.
@@ -213,6 +213,8 @@ h:
   name: Health
   header: H is for Health
   subheader: Health is a way to track damage to an object
+  controls:
+    - Tap the A button to inflict 10 damage on the sprite
   dependencies:
     - k
     - s
@@ -258,6 +260,8 @@ j:
   name: Jump
   header: J is for Jump
   subheader: Jumping is a way to control an object
+  controls:
+    - Tap the A button to make the sprite jump
   dependencies:
     - a
     - g
@@ -328,6 +332,9 @@ l:
   name: Lives
   header: L is for Lives
   subheader: Lives are a way to track how long a game lasts
+  controls:
+    - Tap the A button to inflict 10 damage on the sprite
+    - Tap the B button to give the sprite 1 additional health
   dependencies:
     - h
     - k
@@ -359,10 +366,16 @@ m:
   name: Movement
   header: M is for Movement
   subheader: Movement provides a way to control an object
+  controls:
+    - Tap the A button to move the sprite right
+    - Tap the B button to move the sprite left
+    - Tap the C button to move the sprite up
+    - Tap the D button to move the sprite down
   dependencies:
     - s
     - v
-  content: Take a look at the <a href="s.html">sprites</a> in the game.
+  content: Take a look at the <a href="s.html">sprites</a> in the game. The sprite will
+   move right
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -380,6 +393,8 @@ n:
   name: Noise
   header: N is for Noise
   subheader: Noise occurs when using sound effects
+  controls:
+    - Tap the A button to fire the weapon
   dependencies:
     - s
   content: Lesson coming soon!
@@ -400,6 +415,8 @@ o:
   name: Obstacles
   header: O is for Obstacles
   subheader: Obstacles are objects the user must avoid
+  controls:
+    - Tap the A button to make the sprite jump
   dependencies:
     - s
   content: Lesson coming soon!
@@ -420,6 +437,8 @@ p:
   name: Platformer
   header: P is for Platformer
   subheader: Platformer is a style of game play
+  controls:
+    - Tap the A button to make the sprite jump
   dependencies:
     - s
   content: Lesson coming soon!
@@ -440,6 +459,9 @@ q:
   name: Quests
   header: Q is for Quests
   subheader: Quests provide a challenge for users to complete
+  controls:
+    - Tap the A button to make the sprite jump
+    - Tap the B button to start the quest
   dependencies:
     - s
   content: Lesson coming soon!
@@ -460,6 +482,8 @@ r:
   name: Runner
   header: R is for Runner
   subheader: Runner is a style of game play
+  controls:
+    - Tap the A button to make the sprite jump
   dependencies:
     - s
   content: Lesson coming soon!
@@ -516,6 +540,9 @@ t:
   name: Timer
   header: T is for Timer
   subheader: Timers help with periodic events in a game
+  controls:
+    - Tap the A button to pause the timer
+    - Tap the B button to resume the timer
   dependencies:
     - s
   content: A timer has been set up to go off every 3 seconds.  Once the timer
@@ -539,6 +566,10 @@ u:
   name: Upgrading
   header: U is for Upgrading
   subheader: Upgrading is way to enhance the attributes of an object
+  controls:
+    - Tap the A button to fire the weapon for left sprite
+    - Tap the B button to upgrade the weapon for left sprite
+    - Tap the C button to upgrade the shield for right sprite
   dependencies:
     - s
   content: Lesson coming soon!
@@ -595,6 +626,8 @@ w:
   name: Weapon
   header: W is for Weapon
   subheader: Weapon is an object used to shoot a projectile
+  controls:
+    - Tap the A button to fire the weapon
   dependencies:
     - k
     - s

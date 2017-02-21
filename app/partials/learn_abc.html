@@ -13,12 +13,20 @@
       <div class="card-section">
         <h4 class="text-center subheader">{{ subheader }}</h4>
         <p>{{{ content }}}</p>
+        {{#if controls}}
+        <h6>Controls</h6>
+        <ul>
+          {{#each controls}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
         <h4 class="subheader text-center">References</h4>
         {{#unless dependencies}}
-        <p>This lesson does not reference any other lessons.</p>
+        <p>No other lessons have been referenced.</p>
         {{/unless}}
         {{#if dependencies}}
-        <p>This lesson references the following other lessons:</p>
+        <p>The following other lessons have been referenced:</p>
         <ul>
           {{#each dependencies}}
             {{#single @root.abc this}}

@@ -16,8 +16,8 @@ function create() {
 
       abutton = game.add.button(0, 0, 'a-button', () => sprite1.body.velocity.x = 100);
       bbutton = game.add.button(0, 0, 'b-button', () => sprite1.body.velocity.x = -100);
-      cbutton = game.add.button(0, 0, 'c-button', () => sprite1.body.velocity.y = 100);
-      dbutton = game.add.button(0, 0, 'd-button', () => sprite1.body.velocity.y = -100);
+      cbutton = game.add.button(0, 0, 'c-button', () => sprite1.body.velocity.y = -100);
+      dbutton = game.add.button(0, 0, 'd-button', () => sprite1.body.velocity.y = 100);
       utils.alignButtons(game, [abutton, bbutton, cbutton, dbutton]);
     },
     update: () => {
