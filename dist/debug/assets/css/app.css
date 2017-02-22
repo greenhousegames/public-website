@@ -5729,6 +5729,28 @@ div.learning-preview-image {
   div.learning-preview-image div {
     position: absolute; }
 
+/* line 17, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+ul.controls-list {
+  list-style-type: none; }
+  /* line 20, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  ul.controls-list li {
+    height: 32px;
+    padding-left: 38px;
+    padding-top: 4px;
+    padding-bottom: 4px; }
+  /* line 27, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  ul.controls-list li:nth-child(1) {
+    background: url(../img/learning/a-button-small.png) no-repeat left top; }
+  /* line 31, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  ul.controls-list li:nth-child(2) {
+    background: url(../img/learning/b-button-small.png) no-repeat left top; }
+  /* line 35, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  ul.controls-list li:nth-child(3) {
+    background: url(../img/learning/c-button-small.png) no-repeat left top; }
+  /* line 39, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  ul.controls-list li:nth-child(4) {
+    background: url(../img/learning/d-button-small.png) no-repeat left top; }
+
 /* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
 .ig-b- {
   display: inline-block; }
