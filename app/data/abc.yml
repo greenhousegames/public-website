@@ -127,7 +127,7 @@ e:
   subheader: Experience is a way to track user progress
   controls:
     - Gain 1 experience point
-    - Fires weapon
+    - Fire the weapon
   dependencies:
     - k
     - q
@@ -300,19 +300,10 @@ k:
     - s
     - t
     - v
-  content: Take a look at the three <a href="s.html">sprites</a> in the game.  The
-   middle sprite is given a random <a href="v.html">velocity</a> and has
-   <a href="b.html">bounce</a> enabled. The left and right sprite are
-   <a href="i.html">immovable</a>.  The middle sprite will be killed if it
-   <a href="c.html">collides</a> with either the left or right sprite. A
-   <a href="t.html">timer</a> will be used to revive the middle sprite one second
-   after it is killed.
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  The middle sprite has been given a random <a href="v.html">velocity</a> and has 100% <a href="b.html">bounce</a>. The left and right sprite are <a href="i.html">immovable</a>.  The middle sprite will be killed if it <a href="c.html">collides</a> with either the left or right sprite. A <a href="t.html">timer</a> will be used to revive the middle sprite one second after it is killed.
    <br/>
    <br/>
-   Killing a sprite is a way to remove the sprite from the game.  This causes the
-   sprite to be hidden and all interactions with the sprite are disabled.  The
-   sprite can be revived, in which cause it is made visible and can interact with
-   the rest of the world.
+   Killing a sprite is a way to remove the sprite from the game.  This causes the sprite to be hidden and all interactions with the sprite are disabled.  The sprite can be revived, in which cause it is made visible and can interact with the rest of the world.
   structured_data:
    0:
      "@context": "http://schema.org"
@@ -337,17 +328,10 @@ l:
     - h
     - k
     - s
-  content: Take a look at the <a href="s.html">sprites</a> in the game.  The sprite
-   has been given 100 <a href="h.html">health</a> and 3 lives.  Tapping the A button
-   will inflict 10 damage on the sprite.  Tapping the B button will give the sprite 1
-   additional health.  The sprite will lose 1 life and be <a href="k.html">killed</a>
-   when it reaches zero health. The sprite will be revived if it has remaining lives.
-   See the <a href="#controls">controls</a> below.
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has been given 100 <a href="h.html">health</a> and 3 lives.  The sprite will lose 1 life and be <a href="k.html">killed</a> when it reaches zero health. The sprite will be revived if it has remaining lives. See the <a href="#controls">controls</a> below.
    <br/>
    <br/>
-   Lives are a way to track how long the user can play the game.  The user can continue
-   to play the game so long as they have lives remaining.  Once the user runs out of life
-   they must restart the game or level.
+   Lives are a way to track how long the user can play the game.  The user can continue to play the game so long as they have lives remaining.  Once the user runs out of life they must restart the game or level.
   structured_data:
    0:
      "@context": "http://schema.org"
@@ -371,9 +355,16 @@ m:
     - Move the sprite up
     - Move the sprite down
   dependencies:
+    - a
     - s
     - v
-  content: Take a look at the <a href="s.html">sprites</a> in the game.  See the <a href="#controls">controls</a> below.
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite starts out with zero <a href="v.html">velocity</a> and can be moved using the <a href="#controls">controls</a>.
+   <br/>
+   <br/>
+   Movement is accomplished by giving the sprite some <a href="a.html">acceleration</a>.  The sprite stops accelerating once it reaches its max velocity.  The moment the user stops moving the sprite, the sprite is given negative acceleration until the sprite reaches zero velocity.
+   <br/>
+   <br/>
+   Movement is a way for a user to get around in the world.  In console gaming, a joystick or directional pad (d-pad) is used to move the player.  In browser or PC gaming, the arrow keys or w-a-s-d keys are used.  In mobile gaming, a virtual joystick or d-pad is used.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -503,9 +494,7 @@ s:
   header: S is for Sprite
   subheader: Sprites are the objects in the game
   dependencies:
-  content: The Greenhouse Games icon is added as a sprite in the game.  Sprites have
-    many features and can interact with other sprites.  Every ABC lesson uses at least
-    one sprite in the game.
+  content: The Greenhouse Games icon is added as a sprite in the game.  Sprites have many features and can interact with other sprites.  Every ABC lesson uses at least one sprite in the game.
     <br/>
     <br/>
     <strong>Sprite Features</strong>
@@ -543,10 +532,7 @@ t:
     - Resume the timer
   dependencies:
     - s
-  content: A timer has been set up to go off every 3 seconds.  Once the timer
-   expires it will move the <a href="s.html">sprite</a> to a random location.
-   The time left on the timer is shown in the upper left.  The A button will pause
-   the timer and the B button will resume the timer. See the <a href="#controls">controls</a> below.
+  content: A timer has been set up to go off every 3 seconds.  Once the timer expires it will move the <a href="s.html">sprite</a> to a random location. The time left on the timer is shown in the upper left.  The A button will pause the timer and the B button will resume the timer. See the <a href="#controls">controls</a> below.
   structured_data:
    0:
      "@context": "http://schema.org"
@@ -591,22 +577,16 @@ v:
   dependencies:
     - s
     - x
-  content: Take a look at the three <a href="s.html">sprites</a> in the game.  All
-    sprites start out at the same <a href="x.html">x</a> position.  The bottom sprite
-    has zero velocity, the top sprite has positive velocity and the middle sprite has
-    half the velocity of the top sprite.
+  content: Take a look at the three <a href="s.html">sprites</a> in the game.  All sprites start out at the same <a href="x.html">x</a> position.  The bottom sprite has zero velocity, the top sprite has positive velocity and the middle sprite has half the velocity of the top sprite.
     <br/>
     <br/>
     Due to not having any velocity, the x position of the bottom sprite does not change.
     <br/>
     <br/>
-    Due to having positive velocity, the x position of the top sprite increases over time
-    until it hits the wall.
+    Due to having positive velocity, the x position of the top sprite increases over time until it hits the wall.
     <br/>
     <br/>
-    Due to having half the velocity of the top sprite, the middle sprite travels half the distance
-    of the top sprite in the same amount of time.  This causes the middle sprite to be half
-    way across the game once the top sprite reaches the wall.
+    Due to having half the velocity of the top sprite, the middle sprite travels half the distance of the top sprite in the same amount of time.  This causes the middle sprite to be half way across the game once the top sprite reaches the wall.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -630,15 +610,10 @@ w:
     - k
     - s
     - v
-  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite
-   has use a weapon which can be used to fire bullets.  Tap the A button to fire a
-   bullet in a random direction. See the <a href="#controls">controls</a> below.
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has use a weapon which can be used to fire bullets.  Tap the A button to fire a bullet in a random direction. See the <a href="#controls">controls</a> below.
    <br/>
    <br/>
-   A new sprite is created in the game when the weapon fires a bullet.  The bullet
-   is given a <a href="v.html">velocity</a> in the direction where the tap
-   occurred.  In this example the bullet just flies off into space, but in a real
-   game you might use a weapon to <a href="k.html">kill</a> enemies or obstacles.
+   A new sprite is created in the game when the weapon fires a bullet.  The bullet is given a <a href="v.html">velocity</a> in the direction where the tap occurred.  In this example the bullet just flies off into space, but in a real game you might use a weapon to <a href="k.html">kill</a> enemies or obstacles.
   structured_data:
    0:
      "@context": "http://schema.org"
@@ -658,8 +633,7 @@ x:
   subheader: X-axis is the location of an object side to side
   dependencies:
     - s
-  content: Take a look at the two <a href="s.html">sprites</a> in the game.  The left sprite
-    has a x position of zero.  The right sprite has has a x position equal to the game width.
+  content: Take a look at the two <a href="s.html">sprites</a> in the game.  The left sprite has a x position of zero.  The right sprite has has a x position equal to the game width.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -679,8 +653,7 @@ y:
   subheader: Y-axis is the location of an object up and down
   dependencies:
     - s
-  content: Take a look at the two <a href="s.html">sprites</a> in the game.  The top sprite
-    has a y position of zero.  The bottom sprite has has a y position equal to the game height.
+  content: Take a look at the two <a href="s.html">sprites</a> in the game.  The top sprite has a y position of zero.  The bottom sprite has has a y position equal to the game height.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -700,17 +673,13 @@ z:
   subheader: Z-index is the layering of objects
   dependencies:
     - s
-  content: Take a look at the three <a href="s.html">sprites</a> in the game.  The left-most
-    sprite was added to the game first, followed by the middle sprite, followed by the right-most
-    sprite.  Each time a sprite is added, it appears on top of all other sprites.
+  content: Take a look at the three <a href="s.html">sprites</a> in the game.  The left-most sprite was added to the game first, followed by the middle sprite, followed by the right-most sprite.  Each time a sprite is added, it appears on top of all other sprites.
     <br/>
     <br/>
-    Due to being added first, the left-most sprite is covered by the other two sprites.
-    This causes the left-most sprite to have the lowest z-index.
+    Due to being added first, the left-most sprite is covered by the other two sprites. This causes the left-most sprite to have the lowest z-index.
     <br/>
     <br/>
-    Due to being added last, the right-most sprite is on top of the other two sprites.
-    This causes the right-most sprite to have the highest z-index.
+    Due to being added last, the right-most sprite is on top of the other two sprites. This causes the right-most sprite to have the highest z-index.
   structured_data:
     0:
       "@context": "http://schema.org"
