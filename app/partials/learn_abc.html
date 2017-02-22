@@ -14,8 +14,8 @@
         <h4 class="text-center subheader">{{ subheader }}</h4>
         <p>{{{ content }}}</p>
         {{#if controls}}
-        <h6>Controls</h6>
-        <ul>
+        <h6 id="controls">Controls</h6>
+        <ul class="controls-list">
           {{#each controls}}
           <li>{{this}}</li>
           {{/each}}
