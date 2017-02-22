@@ -21,8 +21,7 @@ var config = {
       joinTo: {
         'assets/js/vendor.js': /^(?!app)/,
         'assets/js/app.js': "app/*.js",
-        'assets/js/pages/account/account.js': "app/pages/account/account.js",
-        'assets/js/pages/games/smashdot.js': "app/pages/games/smashdot.js"
+        'assets/js/pages/account/account.js': "app/pages/account/account.js"
       },
       order: {
         after: [
@@ -77,6 +76,11 @@ var config = {
     }
   }
 };
+
+// GAMES
+['smashdot'].forEach(function(game) {
+  config.files.javascripts.joinTo['assets/js/pages/games/' + game + '/reporting.js'] = 'app/pages/games/' + game + '/reporting.js';
+});
 
 // LEARNING ABCs
 var path = 'pages/learn/abc/utils.js';
