@@ -5498,6 +5498,10 @@ div.login-buttons a i {
 div.game-modes {
   margin-left: 32px; }
 
+/* line 188, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+div.card.ad .card-section {
+  width: 100%; }
+
 /* line 3, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
 div.game-home div.app-store-buttons a img {
   height: auto;
