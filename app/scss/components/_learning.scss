@@ -9,8 +9,14 @@ h4.subheader {
 div.learning-preview-image {
   position: relative;
 
-  div {
+  div:first-of-type {
     position: absolute;
+  }
+
+  div.fill-black {
+    background: black;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
   }
 }
 

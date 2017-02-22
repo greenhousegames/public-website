@@ -28,7 +28,7 @@ function create() {
         'Run__008',
         'Run__009',
         'Run__000'
-      ], 20, false);
+      ], 1, false);
       sprite1.animations.add('runloop', [
         'Run__001',
         'Run__002',
