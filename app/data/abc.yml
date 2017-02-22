@@ -272,18 +272,10 @@ j:
     - g
     - s
     - v
-  content: Take a look at the <a href="s.html">sprite</a> in the game.  Notice how
-   the sprite falls to the ground due to <a href="g.html">gravity</a>.  Tap the
-   A button to have  the sprite jump into the air once it is on the ground.
-   See the <a href="#controls">controls</a> below.
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  Notice how the sprite falls to the ground due to <a href="g.html">gravity</a>.  Use the <a href="#controls">controls</a> to make the sprite jump.
    <br/>
    <br/>
-   To make a sprite jump, the <a href="v.html">velocity</a> of the sprite must be
-   set so it moves upward.  As discussed in the velocity lesson, this will cause
-   the sprite to move at a constant speed.  The effect of gravity causes the
-   sprite to want to <a href="a.html">accelerate</a> downward.  This combination
-   of upward velocity and downward acceleration causes the sprite to slow down as
-   it reaches the middle of the screen, then speed up as it approaches the ground.
+   The jumping effect is simply caused by <a href="v.html">velocity</a> and <a href="v.html">acceleration</a>.  The jump is started by giving the sprite upward velocity.  The effect of gravity causes the sprite to want to accelerate downward.  This combination of upward velocity and downward acceleration causes the sprite to eventually slow down to zero velocity.  This is the highest point the sprite will jump, also known as the apex of the jump.  Once the sprite reaches the apex, it will begin to accelerate back to the ground.
   structured_data:
    0:
      "@context": "http://schema.org"
