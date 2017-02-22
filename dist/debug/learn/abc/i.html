@@ -18,6 +18,13 @@
       <link rel="apple-touch-icon" sizes="114x114" href="../../assets/icons/apple-icon-114x114.png" />
       <link rel="apple-touch-icon" sizes="144x144" href="../../assets/icons/apple-icon-144x144.png" />
       <link rel="stylesheet" href="../../assets/foundation-icons/foundation-icons.css" />
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6060845168160443",
+          enable_page_level_ads: true
+        });
+      </script>
       <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
       <script src="../../assets/js/vendor.js"></script>
       <script onload="require('app.js')" src="../../assets/js/app.js"></script>
@@ -97,7 +104,9 @@
     <section class="main">
       <div class="row">
         <div class="column small-12" id="learning-game-i-container">
-          <div id="learning-game-i">
+          <div class="learning-preview-image">
+            <div id="learning-game-i"></div>
+            <div class="fill-black"></div>
           </div>
         </div>
       </div>
@@ -109,13 +118,14 @@
             </div>
             <div class="card-section">
               <h4 class="text-center subheader">Immovable objects create the boundaries of the game</h4>
-              <p>Take a look at the <a href="s.html">sprites</a> in the game.  The center sprite is set to immovable.  When other sprites <a href="c.html">collide</a> with the center sprite, they will <a href="b.html">bounce</a> off.</p>
+              <p>Take a look at the <a href="s.html">sprites</a> in the game.  All sprites have <a href="c.html">collision</a> enabled.  The left sprites have been given <a href="v.html">velocity</a> and the right sprites have been set to immovable.  The top left sprite has zero <a href="b.html">bounce</a> and the bottom left sprite has 100% bounce. <br/> <br/> Due to the top left sprite having zero bounce, the sprite has zero velocity after colliding with the immovable sprite. Due to the bottom left sprite having 100% bounce, the sprite maintains its speed after colliding with the immovable sprite.  In both cases the immovable sprite is left with zero velocity after the collision.</p>
               <h4 class="subheader text-center">References</h4>
               <p>The following other lessons have been referenced:</p>
               <ul>
                   <li><a href="b.html">B is for Bounce</a></li>
                   <li><a href="c.html">C is for Collision</a></li>
                   <li><a href="s.html">S is for Sprite</a></li>
+                  <li><a href="v.html">V is for Velocity</a></li>
               </ul>
               <h4 class="subheader text-center">Continue Learning</h4>
               <div class="row small-up-1 medium-up-2 text-center">

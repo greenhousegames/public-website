@@ -157,16 +157,22 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, xp, abutton, multiplier;
+  var weapon, sprite1, xp, abutton, bbutton, multiplier;
 
   var game = _utils2.default.init('e', {
     preload: function preload() {
-      _utils2.default.preload(game, ['a']);
+      _utils2.default.preload(game, ['a', 'b']);
+      game.load.image('bullet', '/assets/img/learning/weapon-bullet.png');
     },
     create: function create() {
       _utils2.default.create(game);
       xp = 0;
       multiplier = 0;
+
+      weapon = game.add.weapon(30, 'bullet');
+      weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+      weapon.bulletSpeed = 600;
+      weapon.fireRate = 100;
 
       _utils2.default.ifBreakpoint(game, 'small', function () {
         return multiplier = 1;
@@ -183,12 +189,20 @@ function create() {
       sprite1.width = 32;
       sprite1.height = 32;
 
+      weapon.trackSprite(sprite1, 0, 0, false);
+
       abutton = game.add.button(0, 0, 'a-button', function () {
         xp++;
         sprite1.width = 32 + xp * multiplier;
         sprite1.height = 32 + xp * multiplier;
+
+        if (xp == 10) {
+          bbutton.revive();
+        }
       });
-      _utils2.default.alignButtons(game, [abutton]);
+      bbutton = game.add.button(0, 0, 'b-button', fire);
+      bbutton.kill();
+      _utils2.default.alignButtons(game, [abutton, bbutton]);
     },
     update: function update() {},
     render: function render() {
@@ -196,6 +210,11 @@ function create() {
     }
   });
   return game;
+
+  function fire() {
+    weapon.fireAngle = game.rnd.integerInRange(-180, 180);
+    weapon.fire();
+  }
 }
 
 module.exports = create;

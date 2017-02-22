@@ -18,6 +18,13 @@
       <link rel="apple-touch-icon" sizes="114x114" href="../../assets/icons/apple-icon-114x114.png" />
       <link rel="apple-touch-icon" sizes="144x144" href="../../assets/icons/apple-icon-144x144.png" />
       <link rel="stylesheet" href="../../assets/foundation-icons/foundation-icons.css" />
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6060845168160443",
+          enable_page_level_ads: true
+        });
+      </script>
       <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
       <script src="../../assets/js/vendor.js"></script>
       <script onload="require('app.js')" src="../../assets/js/app.js"></script>
@@ -97,7 +104,9 @@
     <section class="main">
       <div class="row">
         <div class="column small-12" id="learning-game-c-container">
-          <div id="learning-game-c">
+          <div class="learning-preview-image">
+            <div id="learning-game-c"></div>
+            <div class="fill-black"></div>
           </div>
         </div>
       </div>
@@ -109,11 +118,13 @@
             </div>
             <div class="card-section">
               <h4 class="text-center subheader">Collision causes objects to hit each other</h4>
-              <p>Take a look at the <a href="s.html">sprites</a> in the game.  Collision is enabled for the top two sprites and disabled for the bottom two sprites. <br/> <br/> Due to having collision disabled, the bottom two sprites pass through each other when they intersect. <br/> <br/> Due to having collision enabled, the top two sprites rebound off each other when they intersect.</p>
+              <p>Take a look at the <a href="s.html">sprites</a> in the game.  Collision is disabled for the top two sprites and enabled for the middle and bottom sprites.  The top and middle sprites have zero <a href="b.html">bounce</a> and the bottom sprites have 100% bounce. <br/> <br/> Due to having collision disabled, the top two sprites pass through each other when they intersect.  Not having any bounce causes the sprites to stop once they reach the other side. <br/> <br/> Due to having collision enabled, the middle and bottom sprites hit each other when they intersect.  Not having any bounce causes the middle sprites to stop once they hit each other.  Having 100% bounce causes the bottom sprites to rebound off themselves and the walls. <br/></p>
               <h4 class="subheader text-center">References</h4>
               <p>The following other lessons have been referenced:</p>
               <ul>
+                  <li><a href="b.html">B is for Bounce</a></li>
                   <li><a href="s.html">S is for Sprite</a></li>
+                  <li><a href="v.html">V is for Velocity</a></li>
               </ul>
               <h4 class="subheader text-center">Continue Learning</h4>
               <div class="row small-up-1 medium-up-2 text-center">

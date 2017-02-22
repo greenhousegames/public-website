@@ -18,6 +18,13 @@
       <link rel="apple-touch-icon" sizes="114x114" href="../../assets/icons/apple-icon-114x114.png" />
       <link rel="apple-touch-icon" sizes="144x144" href="../../assets/icons/apple-icon-144x144.png" />
       <link rel="stylesheet" href="../../assets/foundation-icons/foundation-icons.css" />
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6060845168160443",
+          enable_page_level_ads: true
+        });
+      </script>
       <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
       <script src="../../assets/js/vendor.js"></script>
       <script onload="require('app.js')" src="../../assets/js/app.js"></script>
@@ -97,7 +104,9 @@
     <section class="main">
       <div class="row">
         <div class="column small-12" id="learning-game-g-container">
-          <div id="learning-game-g">
+          <div class="learning-preview-image">
+            <div id="learning-game-g"></div>
+            <div class="fill-black"></div>
           </div>
         </div>
       </div>
@@ -109,7 +118,7 @@
             </div>
             <div class="card-section">
               <h4 class="text-center subheader">Gravity is the acceleration in the world</h4>
-              <p>Take a look at the three <a href="s.html">sprites</a> in the game.  The left sprite does not have gravity applied to it.  The middle and right sprites have gravity applied to them. <br/> <br/> Due to having no gravity, the left sprite does not move once placed in the game.  This results in the object having no <a href="v.html">velocity</a> or <a href="a.html">acceleration</a>. <br/> <br/> Due to having gravity applied to the world, the middle and right sprite increase in acceleration, causing them to fall to the ground.  Once the objects hit the ground, the <a href="b.html">bounce</a> defines whether or not the object will rebound off the ground.  The middle sprite has no bounce and the right sprite has 100% bounce.</p>
+              <p>Take a look at the <a href="s.html">sprites</a> in the game.  All sprites start with zero <a href="v.html">velocity</a> and zero <a href="a.html">acceleration</a>.  The left sprite does not have gravity applied to it.  The middle and right sprites have gravity applied to them.  The middle sprite has zero <a href="b.html">bounce</a> and the right sprite has 100% bounce. <br/> <br/> Due to having no gravity, the left sprite does not move once placed in the game.  This results in the sprite still having no velocity or acceleration. <br/> <br/> Due to having gravity applied to the world, the middle and right sprite increase in acceleration, causing them to fall to the ground.  Having no bounce causes the middle sprite to stop once it hits the ground.  Having 100% bounce causes the right sprite to rebound to the same position where it started.</p>
               <h4 class="subheader text-center">References</h4>
               <p>The following other lessons have been referenced:</p>
               <ul>

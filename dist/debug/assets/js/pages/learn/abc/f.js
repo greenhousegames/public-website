@@ -173,7 +173,7 @@ function create() {
       sprite1.anchor.setTo(0.5, 1);
       sprite1.body.collideWorldBounds = true;
       sprite1.body.bounce.set(0);
-      sprite1.animations.add('run', ['Run__001', 'Run__002', 'Run__003', 'Run__004', 'Run__005', 'Run__006', 'Run__007', 'Run__008', 'Run__009', 'Run__000'], 20, false);
+      sprite1.animations.add('run', ['Run__001', 'Run__002', 'Run__003', 'Run__004', 'Run__005', 'Run__006', 'Run__007', 'Run__008', 'Run__009', 'Run__000'], 1, false);
       sprite1.animations.add('runloop', ['Run__001', 'Run__002', 'Run__003', 'Run__004', 'Run__005', 'Run__006', 'Run__007', 'Run__008', 'Run__009', 'Run__000'], 20, true);
 
       _utils2.default.ifBreakpoint(game, 'small', function () {
