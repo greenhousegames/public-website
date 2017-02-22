@@ -10,6 +10,8 @@
       	"key": "Cache-Control",
       	"value": "max-age=0, private, no-store, no-cache, must-revalidate"
       }]
-    }]
+    }],
+    "cleanUrls": true,
+    "trailingSlash": false
   }
 }
