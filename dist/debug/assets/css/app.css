@@ -5468,37 +5468,36 @@ div.card {
       height: 100%; }
       /* line 150, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
       div.card div.float-divider div.row div.columns {
-        height: 100%;
         position: relative;
         padding: 0;
         top: 50%; }
-        /* line 156, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
-        div.card div.float-divider div.row div.columns div.card-divider {
+        /* line 155, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+        div.card div.float-divider div.row div.columns h2 {
           transform: translateY(-50%);
           background: rgba(0, 0, 0, 0.2);
           color: black; }
 
-/* line 166, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 165, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.row.padding-top {
   padding-top: 16px; }
 
-/* line 170, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 169, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 .hidden {
   display: none !important; }
 
-/* line 174, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 173, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 .color-white {
   color: #fefefe !important; }
 
-/* line 179, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 178, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.login-buttons a i {
   margin-right: 8px !important; }
 
-/* line 184, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 183, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.game-modes {
   margin-left: 32px; }
 
-/* line 188, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 187, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.card.ad .card-section {
   width: 100%; }
 
