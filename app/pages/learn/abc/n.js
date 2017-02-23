@@ -1,13 +1,14 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, weapon, abutton, sound;
+  var sprite1, weapon, abutton, sound1, sound2;
 
   var game = utils.init('n', {
     preload: () => {
       utils.preload(game, ['a']);
       game.load.image('bullet', '/assets/img/learning/weapon-bullet.png');
-      game.load.audio('fire-sound', ['/assets/sounds/zap1.ogg', '/assets/sounds/zap1.mp4', '/assets/sounds/zap1.mp3']);
+      game.load.audio('fire-sound', ['/assets/sounds/zap.ogg', '/assets/sounds/zap.mp4', '/assets/sounds/zap.mp3']);
+      game.load.audio('bullet-killed', ['/assets/sounds/explosion.ogg', '/assets/sounds/explosion.mp4', '/assets/sounds/explosion.mp3']);
     },
     create: () => {
       utils.create(game);
@@ -26,7 +27,10 @@ function create() {
       abutton = game.add.button(0, 0, 'a-button', fire);
       utils.alignButtons(game, [abutton]);
 
-      sound = game.add.audio('fire-sound');
+      sound1 = game.add.audio('fire-sound');
+      weapon.onFire.add(() => sound1.play());
+      sound2 = game.add.audio('bullet-killed');
+      weapon.onKill.add(() => sound2.play());
     },
     update: () => {
     },
@@ -38,7 +42,6 @@ function create() {
   function fire() {
     weapon.fireAngle = game.rnd.integerInRange(-180,180);
     weapon.fire();
-    sound.play();
   }
 }
 

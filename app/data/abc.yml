@@ -156,7 +156,7 @@ f:
   subheader: Frames are used to design animations
   controls:
     - Animate the sprite for one loop in slow motion
-    - Animate the sprite indefinately
+    - Animate the sprite indefinitely
     - Stop the sprite animation
   dependencies:
     - s
@@ -386,7 +386,11 @@ n:
     - Fire the weapon
   dependencies:
     - s
-  content: Lesson coming soon!  See the <a href="#controls">controls</a> below.
+    - w
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has been equipped with a <a href="w.html">weapon</a> that has sound effects.  See how to <a href="#controls">control</a> the weapon below.
+   <br/>
+   <br/>
+   Sound effects are a great way to engage users in a game.  The noise provides an audible indication of what is happening.  In this lesson, sound effects are used to indicate when the weapon is fired and when the bullet its the edge of world.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -407,8 +411,16 @@ o:
   controls:
     - Make the sprite jump
   dependencies:
+    - h
+    - i
+    - j
+    - k
     - s
-  content: Lesson coming soon!  See the <a href="#controls">controls</a> below.
+    - v
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  The left sprite has been given <a href="v.html">velocity</a> and the middle sprite has been set to <a href="i.html">immovable</a>.  The controls can be used to make the left sprite <a href="j.html">jump</a> over the middle sprite.
+   <br/>
+   <br/>
+   In this lesson, the middle sprite is considered an obstacle.  Obstacles force the user to make some type of <a href="m.html">movement</a> to avoid them.  A penalty is usually given if an obstacle is hit.  For example the sprite may lose <a href="h.html">health</a> or be <a href="k.html">killed</a>.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -429,8 +441,13 @@ p:
   controls:
     - Make the sprite jump
   dependencies:
+    - b
     - s
-  content: Lesson coming soon!  See the <a href="#controls">controls</a> below.
+    - v
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  The icon sprite has been given side-to-side <a href="v.html">velocity</a> and 100% <a href="b.html">bounce</a>.  The rectangular sprites have been given downward velocity.  Use the <a href="#controls">controls</a> to keep the sprite alive.
+    <br/>
+    <br/>
+    Each rectangular sprite in the game is called a platform.  A platformer style game is one in which the user moves through the world vertically by jumping from platform to platform.  The goal is to keep the sprite on the platforms and not fall off the bottom of the world.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -452,8 +469,18 @@ q:
     - Make the sprite jump
     - Start the quest
   dependencies:
+    - e
+    - g
     - s
-  content: Lesson coming soon!  See the <a href="#controls">controls</a> below.
+    - t
+    - w
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has <a href="g.html">gravity</a> applied to it and can jump using the <a href="#controls">controls</a>.
+   <br/>
+   <br/>
+   A quest has been added to the game and will reward 10 points if completed.  This quest requires the sprite to jump 3 times in 10 seconds.  The time remaining in the quest will be tracked using a <a href="t.html">timer</a>.
+   <br/>
+   <br/>
+   Quests are a good way to engage players.  By rewarding points, <a href="e.html">experience</a>, or <a href="w.html">weapons</a>, it gives the user incentive to complete the quest.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -474,8 +501,14 @@ r:
   controls:
     - Make the sprite jump
   dependencies:
+    - j
+    - o
     - s
-  content: Lesson coming soon!  See the <a href="#controls">controls</a> below.
+    - v
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  The icon sprite has been given zero <a href="v.html">velocity</a> and can <a href="j.html">jump</a> using the <a href="#controls">controls</a>.  <a href="o.html">Obstacles</a> will approach from the right and the sprite must avoid them.
+    <br/>
+    <br/>
+    A runner style game is one in which the player travels side-to-side in the world.  The player must avoid obstacles and/or collect rewards along the way.
   structured_data:
     0:
       "@context": "http://schema.org"
@@ -556,7 +589,11 @@ u:
     - Upgrade the shield for right sprite
   dependencies:
     - s
-  content: Lesson coming soon! See the <a href="#controls">controls</a> below.
+    - w
+  content: Take a look at the <a href="s.html">sprites</a> in the game.  The left sprite has been equipped with a <a href="w.html">weapon</a> and the right sprite has been equipped with a shield. Use the <a href="#controls">controls</a> to play the game.
+    <br/>
+    <br/>
+    To start the game, the weapon will inflict 10 damage and the shield will absorb 0 damage.  The weapon can inflict 10 additional damage each time it is upgraded.  The shield can absorb 10 additional damage each time it is upgraded.
   structured_data:
     0:
       "@context": "http://schema.org"
