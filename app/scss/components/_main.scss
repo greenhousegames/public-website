@@ -148,12 +148,11 @@ div.card {
       height: 100%;
 
       div.columns {
-        height: 100%;
         position: relative;
         padding: 0;
         top: 50%;
 
-        div.card-divider {
+        h2 {
           transform: translateY(-50%);
           background: rgba(0,0,0,0.2);
           color: black;
