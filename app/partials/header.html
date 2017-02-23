@@ -7,7 +7,7 @@
           <li><a href="/" class="logo-back-button"></a></li>
           {{/ifpage}}
           {{#unlesspage 'index'}}
-          <li><a href="/learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li>
+          <li><a href="{{@root.root}}learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li>
           {{/unlesspage}}
         {{else}}
         <li><a href="/" class="logo-back-button"></a></li>
@@ -18,24 +18,23 @@
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
       <li>
-        <a href="/games">Games</a>
+        <a href="{{@root.root}}games">Games</a>
         <ul class="menu vertical">
-          <li><a href="/games/smashdot">Smash Dot</a></li>
+          <li><a href="{{@root.root}}games/smashdot">Smash Dot</a></li>
         </ul>
       </li>
       <li>
-        <a href="/learn/abc">Learn</a>
+        <a href="{{@root.root}}learn/abc">Learn</a>
         <ul class="menu vertical">
-          <li><a href="/learn/abc">ABC of Games</a></li>
-          <!--<li><a href="/learn/frameworks">Game Frameworks</a></li>-->
+          <li><a href="{{@root.root}}learn/abc">ABC of Games</a></li>
         </ul>
       </li>
       <li>
-        <a href="/account">Account</a>
+        <a href="{{@root.root}}account">Account</a>
         <ul class="menu vertical">
-          <li class="hide-auth"><a href="/account">Login</a></li>
+          <li class="hide-auth"><a href="{{@root.root}}account">Login</a></li>
           <li class="show-auth">
-            <a href="/account">
+            <a href="{{@root.root}}account">
               <div class="thumbnail-image user-image"></div>
               <i class="fi-torso user-image-guest"></i>
               <span class="user-name"></span>
