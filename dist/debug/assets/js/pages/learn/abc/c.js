@@ -213,7 +213,7 @@ function create() {
 }
 
 function setSprite(sprite, game) {
-  game.physics.enable(sprite, Phaser.Physics.ARCADE);
+  game.physics.arcade.enable(sprite);
   sprite.body.collideWorldBounds = true;
 }
 

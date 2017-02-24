@@ -173,7 +173,7 @@ function create() {
       sprite2 = game.add.sprite(game.width / 2, game.height / 2, 'greenhouse');
       sprite3 = game.add.sprite(game.width * 5 / 6, game.height / 2, 'greenhouse');
 
-      game.physics.enable([sprite1, sprite2, sprite3], Phaser.Physics.ARCADE);
+      game.physics.arcade.enable([sprite1, sprite2, sprite3]);
 
       sprite1.anchor.setTo(0.5, 0.5);
       sprite1.body.allowGravity = false;

@@ -1,81 +1,98 @@
 /*
 
-Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
-based on dark.css by Ivan Sagalaev
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
 
 */
-/* line 8, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+/* line 21, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #3f3f3f;
-  color: #dcdcdc; }
+  color: #383a42;
+  background: #fafafa; }
 
-/* line 16, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+/* line 29, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic; }
+
+/* line 35, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-doctag,
 .hljs-keyword,
+.hljs-formula {
+  color: #a626a4; }
+
+/* line 41, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-section,
+.hljs-name,
 .hljs-selector-tag,
-.hljs-tag {
-  color: #e3ceab; }
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649; }
 
-/* line 22, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
-.hljs-template-tag {
-  color: #dcdcdc; }
+/* line 49, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-literal {
+  color: #0184bb; }
 
-/* line 26, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
-.hljs-number {
-  color: #8cd0d3; }
+/* line 53, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #50a14f; }
 
-/* line 30, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+/* line 61, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #c18401; }
+
+/* line 66, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-attr,
 .hljs-variable,
 .hljs-template-variable,
-.hljs-attribute {
-  color: #efdcbc; }
-
-/* line 36, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
-.hljs-literal {
-  color: #efefaf; }
-
-/* line 40, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
-.hljs-subst {
-  color: #8f8f8f; }
-
-/* line 44, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
-.hljs-title,
-.hljs-name,
-.hljs-selector-id,
+.hljs-type,
 .hljs-selector-class,
-.hljs-section,
-.hljs-type {
-  color: #efef8f; }
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801; }
 
-/* line 53, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+/* line 77, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
 .hljs-symbol,
 .hljs-bullet,
-.hljs-link {
-  color: #dca3a3; }
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2; }
 
-/* line 59, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
-.hljs-deletion,
-.hljs-string,
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #cc9393; }
-
-/* line 66, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
-.hljs-addition,
-.hljs-comment,
-.hljs-quote,
-.hljs-meta {
-  color: #7f9f7f; }
-
-/* line 74, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+/* line 86, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
 .hljs-emphasis {
   font-style: italic; }
 
-/* line 78, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+/* line 90, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
 .hljs-strong {
   font-weight: bold; }
+
+/* line 94, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/atom-one-light.css */
+.hljs-link {
+  text-decoration: underline; }
 
 
 /*# sourceMappingURL=highlight.css.map*/

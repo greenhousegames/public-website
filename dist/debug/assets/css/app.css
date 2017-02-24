@@ -5769,8 +5769,9 @@ div.lesson-code pre {
   margin-bottom: -48px; }
   /* line 63, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
   div.lesson-code pre code {
+    max-height: 600px;
     margin-top: -24px;
-    padding: 0 16px; }
+    padding: 16px; }
 
 /* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
 .ig-b- {

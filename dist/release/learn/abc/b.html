@@ -32,9 +32,8 @@
             "name": "Greenhouse Games, LLC",
             "sameAs": "https://www.greenhousegames.com"
           }
-        }</script><script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script><link rel="stylesheet" href="https://www.greenhousegames.com/assets/css/highlight.css"></head><body><section class="header large"><div class="top-bar primary"><div class="top-bar-left"><ul class="menu"><li><a href="../../learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li></ul></div><div class="top-bar-right"><ul class="dropdown menu" data-dropdown-menu><li><a href="../../games">Games</a><ul class="menu vertical"><li><a href="../../games/smashdot">Smash Dot</a></li></ul></li><li><a href="../../learn/abc">Learn</a><ul class="menu vertical"><li><a href="../../learn/abc">ABC of Games</a></li></ul></li><li><a href="../../account">Account</a><ul class="menu vertical"><li class="hide-auth"><a href="../../account">Login</a></li><li class="show-auth"><a href="../../account"><div class="thumbnail-image user-image"></div><i class="fi-torso user-image-guest"></i> <span class="user-name"></span></a></li><li class="show-auth"><a id="header-logout-button">Logout</a></li></ul></li></ul></div></div><script>$('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));</script></section><section class="main"><div class="row"><div class="column small-12"><div class="card" id="learning-game-b-container"><div class="learning-preview-image"><div id="learning-game-b"></div><div class="fill-black"></div></div></div></div><div class="column small-12"><div class="card"><div class="card-divider primary text-center"><h1>B is for Bounce</h1></div></div></div><div class="column small-12"><div class="card"><div class="card-section"><h4 class="text-center subheader">Bounce is the elasticity of an object</h4><p>Take a look at the <a href="s.html">sprites</a> in the game. All sprites start out with the same <a href="v.html">velocity</a>. The bottom sprite has zero bounce, the middle sprite has 75% bounce, and the top sprite has 100% bounce.<br><br>Due to having 100% bounce, the top sprite rebounds off the wall at the same speed. This causes the velocity of the top sprite to be the same before and after hitting the wall.<br><br>Due to having zero bounce, the bottom sprite does not rebound off the wall. This causes the velocity of the bottom sprite to be zero after it hits the wall.<br><br>Due to having between zero and 100% bounce, the middle sprite rebounds off the wall, but at a slower speed. This causes the velocity of the middle sprite to be 75% the speed after hitting the wall.<br><br>To understand the math, say we have a sprite that starts out with a velocity of 20 pixels per second (px/s). If we give the sprite 100% bounce, the velocity before hitting the wall will be 20 px/s and after hitting the wall will be -20 px/s (the change from positive to negative is due to the change in direction). If we give the sprite zero bounce, the velocity after hitting the wall will be 0 px/s. If we give the sprite 75% bounce, the velocity will be -15 px/s (20 * 75%) after hitting the first wall, 11.25 px/s (15 * 75%) after hitting the second wall, -8.4375 px/s (11.25 * 75%) after hitting the third wall, and so on.</p></div></div></div><div class="column small-12"><div class="card lesson-code"><div class="card-section"><h4 class="subheader text-center">Code</h4><p>The code used to created this lesson is shown below.</p><ul class="tabs" data-tabs id="example-tabs"><li class="tabs-title is-active"><a href="https://www.greenhousegames.com/#letterjs" aria-selected="true"><h6>b.js</h6></a></li><li class="tabs-title"><a href="#letterhtml"><h6>b.html</h6></a></li><li class="tabs-title"><a href="https://www.greenhousegames.com/#utilsjs"><h6>utils.js</h6></a></li></ul><div class="tabs-content" data-tabs-content="example-tabs"><div class="tabs-panel is-active" id="letterjs"><pre>
-              <code class="javascript">
-import utils from &#x27;./utils.js&#x27;;
+        }</script><script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script><link rel="stylesheet" href="https://www.greenhousegames.com/assets/css/highlight.css"></head><body><section class="header large"><div class="top-bar primary"><div class="top-bar-left"><ul class="menu"><li><a href="../../learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li></ul></div><div class="top-bar-right"><ul class="dropdown menu" data-dropdown-menu><li><a href="../../games">Games</a><ul class="menu vertical"><li><a href="../../games/smashdot">Smash Dot</a></li></ul></li><li><a href="../../learn/abc">Learn</a><ul class="menu vertical"><li><a href="../../learn/abc">ABC of Games</a></li></ul></li><li><a href="../../account">Account</a><ul class="menu vertical"><li class="hide-auth"><a href="../../account">Login</a></li><li class="show-auth"><a href="../../account"><div class="thumbnail-image user-image"></div><i class="fi-torso user-image-guest"></i> <span class="user-name"></span></a></li><li class="show-auth"><a id="header-logout-button">Logout</a></li></ul></li></ul></div></div><script>$('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));</script></section><section class="main"><div class="row"><div class="column small-12"><div class="card" id="learning-game-b-container"><div class="learning-preview-image"><div id="learning-game-b"></div><div class="fill-black"></div></div></div></div><div class="column small-12"><div class="card"><div class="card-divider primary text-center"><h1>B is for Bounce</h1></div></div></div><div class="column small-12"><div class="card"><div class="card-section"><h4 class="text-center subheader">Bounce is the elasticity of an object</h4><p>Take a look at the <a href="s.html">sprites</a> in the game. All sprites start out with the same <a href="v.html">velocity</a>. The bottom sprite has zero bounce, the middle sprite has 75% bounce, and the top sprite has 100% bounce.<br><br>Due to having 100% bounce, the top sprite rebounds off the wall at the same speed. This causes the velocity of the top sprite to be the same before and after hitting the wall.<br><br>Due to having zero bounce, the bottom sprite does not rebound off the wall. This causes the velocity of the bottom sprite to be zero after it hits the wall.<br><br>Due to having between zero and 100% bounce, the middle sprite rebounds off the wall, but at a slower speed. This causes the velocity of the middle sprite to be 75% the speed after hitting the wall.<br><br>To understand the math, say we have a sprite that starts out with a velocity of 20 pixels per second (px/s). If we give the sprite 100% bounce, the velocity before hitting the wall will be 20 px/s and after hitting the wall will be -20 px/s (the change from positive to negative is due to the change in direction). If we give the sprite zero bounce, the velocity after hitting the wall will be 0 px/s. If we give the sprite 75% bounce, the velocity will be -15 px/s (20 * 75%) after hitting the first wall, 11.25 px/s (15 * 75%) after hitting the second wall, -8.4375 px/s (11.25 * 75%) after hitting the third wall, and so on.</p></div></div></div><div class="column small-12"><div class="card lesson-code"><div class="card-section"><h4 class="subheader text-center">Code</h4><p>This lesson was built using <a href="http://phaser.io">Phaser</a>. The code is provided below for further learning.</p><ul class="tabs" data-tabs id="example-tabs"><li class="tabs-title is-active"><a href="https://www.greenhousegames.com/#letterjs" aria-selected="true"><h6>b.js</h6></a></li><li class="tabs-title"><a href="#letterhtml"><h6>b.html</h6></a></li><li class="tabs-title"><a href="https://www.greenhousegames.com/#utilsjs"><h6>utils.js</h6></a></li></ul><div class="tabs-content" data-tabs-content="example-tabs"><div class="tabs-panel is-active" id="letterjs"><pre>
+              <code class="javascript">import utils from &#x27;./utils.js&#x27;;
 
 function create() {
   let sprite1, sprite2, sprite3;
@@ -49,7 +48,7 @@ function create() {
       sprite1 &#x3D; game.add.sprite(0, game.height/6, &#x27;greenhouse&#x27;);
       sprite1.anchor.setTo(0, 0.5);
 
-      game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+      game.physics.arcade.enable(sprite1);
       sprite1.body.collideWorldBounds &#x3D; true;
       sprite1.body.velocity.x &#x3D; 100;
       sprite1.body.bounce.set(1);
@@ -57,7 +56,7 @@ function create() {
       sprite2 &#x3D; game.add.sprite(0, game.height/2, &#x27;greenhouse&#x27;);
       sprite2.anchor.setTo(0, 0.5);
 
-      game.physics.enable(sprite2, Phaser.Physics.ARCADE);
+      game.physics.arcade.enable(sprite2);
       sprite2.body.collideWorldBounds &#x3D; true;
       sprite2.body.velocity.x &#x3D; 100;
       sprite2.body.bounce.set(0.75);
@@ -65,7 +64,7 @@ function create() {
       sprite3 &#x3D; game.add.sprite(0, game.height*5/6, &#x27;greenhouse&#x27;);
       sprite3.anchor.setTo(0, 0.5);
 
-      game.physics.enable(sprite3, Phaser.Physics.ARCADE);
+      game.physics.arcade.enable(sprite3);
       sprite3.body.collideWorldBounds &#x3D; true;
       sprite3.body.velocity.x &#x3D; 100;
     },
@@ -78,22 +77,18 @@ function create() {
 }
 
 module.exports &#x3D; create;
-
-              </code>
+</code>
             </pre></div><div class="tabs-panel" id="letterhtml"><pre>
-              <code class="html" id="html-file-contents">
-&lt;div id&#x3D;&quot;learning-game-b&quot;&gt;
-&lt;&#x2F;div&gt;
+              <code class="html" id="html-file-contents">&lt;div id&#x3D;&quot;learning-game-b&quot;&gt;&lt;&#x2F;div&gt;
 &lt;script&gt;
 $(document).ready(function() {
   var create &#x3D; require(&quot;b.js&quot;);
   create();
 });
 &lt;&#x2F;script&gt;
-              </code>
+</code>
             </pre></div><div class="tabs-panel" id="utilsjs"><pre>
-              <code class="javascript">
-function resize(game) {
+              <code class="javascript">function resize(game) {
   const width &#x3D; getGameWidth(game.containerId);
   const height &#x3D; getGameHeight(game.containerId);
   if (game.width !&#x3D; width) {
@@ -187,8 +182,7 @@ module.exports &#x3D; {
   alignButtons: alignButtons,
   ifBreakpoint: ifBreakpoint
 };
-
-              </code>
+</code>
             </pre></div></div></div></div></div><div class="column small-12 medium-6"><div class="card"><div class="card-section"><h4 class="subheader text-center">References</h4><p>The following other lessons have been referenced:</p><ul><li><a href="s.html">S is for Sprite</a></li><li><a href="v.html">V is for Velocity</a></li></ul></div></div></div><div class="column small-12 medium-6"><div class="card"><div class="card-section"><h4 class="subheader text-center">Continue Learning</h4><div class="row medium-up-1 large-up-2 text-center"><div class="column"><h6>Following Alphabetically?</h6><a class="button icon-button secondary" href="a.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a> <a class="button icon-button-right secondary" href="c.html">NEXT<i class="fi-fast-forward medium-icon"></i></a></div><div class="column"><h6>Following Lesson Plan?</h6><a class="button icon-button secondary" href="a.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a> <a class="button icon-button-right secondary" href="g.html">NEXT<i class="fi-fast-forward medium-icon"></i></a></div></div></div></div></div></div><script src="https://www.greenhousegames.com/assets/js/pages/learn/abc/utils.js"></script><script src="https://www.greenhousegames.com/assets/js/pages/learn/abc/b.js"></script><script>$(document).ready(function() {
   var create = require('pages/learn/abc/b.js');
   create();
