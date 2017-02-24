@@ -157,7 +157,10 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, abutton, bbutton, timer;
+  var sprite1 = void 0,
+      abutton = void 0,
+      bbutton = void 0,
+      timer = void 0;
 
   var game = _utils2.default.init('t', {
     preload: function preload() {
@@ -189,7 +192,7 @@ function create() {
   return game;
 
   function moveSprite() {
-    var width = _utils2.default.getIconWidth(game);
+    var width = _utils2.default.getIconSize(game);
     sprite1.x = game.rnd.integerInRange(width / 2, game.width - width / 2);
     sprite1.y = game.rnd.integerInRange(width / 2, game.height - width / 2);
   }

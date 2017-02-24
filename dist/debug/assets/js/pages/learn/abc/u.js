@@ -157,7 +157,16 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var weapon, sprite1, sprite2, abutton, bbutton, cbutton, dbutton, weaponLvl, shieldLvl, health;
+  var weapon = void 0,
+      sprite1 = void 0,
+      sprite2 = void 0,
+      abutton = void 0,
+      bbutton = void 0,
+      cbutton = void 0,
+      dbutton = void 0,
+      weaponLvl = void 0,
+      shieldLvl = void 0,
+      health = void 0;
 
   var game = _utils2.default.init('u', {
     preload: function preload() {

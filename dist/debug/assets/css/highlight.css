@@ -1,0 +1,81 @@
+/*
+
+Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+based on dark.css by Ivan Sagalaev
+
+*/
+/* line 8, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #3f3f3f;
+  color: #dcdcdc; }
+
+/* line 16, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: #e3ceab; }
+
+/* line 22, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-template-tag {
+  color: #dcdcdc; }
+
+/* line 26, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-number {
+  color: #8cd0d3; }
+
+/* line 30, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: #efdcbc; }
+
+/* line 36, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-literal {
+  color: #efefaf; }
+
+/* line 40, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-subst {
+  color: #8f8f8f; }
+
+/* line 44, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #efef8f; }
+
+/* line 53, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #dca3a3; }
+
+/* line 59, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-deletion,
+.hljs-string,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #cc9393; }
+
+/* line 66, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: #7f9f7f; }
+
+/* line 74, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-emphasis {
+  font-style: italic; }
+
+/* line 78, /Users/brian/GitHub/greenhouse-website/node_modules/highlightjs/styles/zenburn.css */
+.hljs-strong {
+  font-weight: bold; }
+
+
+/*# sourceMappingURL=highlight.css.map*/

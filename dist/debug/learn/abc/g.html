@@ -67,6 +67,7 @@
         </script>
         
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
+    <link rel="stylesheet" href="../../assets/css/highlight.css">
   </head>
   <body>
     <section class="header large">
@@ -113,74 +114,251 @@
       
     </section>
     <section class="main">
-      <div class="row">
-        <div class="column small-12">
-          <div class="card" id="learning-game-g-container">
-            <div class="learning-preview-image">
-              <div id="learning-game-g"></div>
-              <div class="fill-black"></div>
-            </div>
+<div class="row">
+  <div class="column small-12">
+    <div class="card" id="learning-game-g-container">
+      <div class="learning-preview-image">
+        <div id="learning-game-g"></div>
+        <div class="fill-black"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column small-12">
+    <div class="card">
+      <div class="card-divider primary text-center">
+        <h1>G is for Gravity</h1>
+      </div>
+    </div>
+  </div>
+  <div class="column small-12">
+    <div class="card">
+      <div class="card-section">
+        <h4 class="text-center subheader">Gravity is the acceleration in the world</h4>
+        <p>Take a look at the <a href="s.html">sprites</a> in the game.  All sprites start with zero <a href="v.html">velocity</a> and zero <a href="a.html">acceleration</a>.  The left sprite does not have gravity applied to it.  The middle and right sprites have gravity applied to them.  The middle sprite has zero <a href="b.html">bounce</a> and the right sprite has 100% bounce. <br/> <br/> Due to having no gravity, the left sprite does not move once placed in the game.  This results in the sprite still having no velocity or acceleration. <br/> <br/> Due to having gravity applied to the world, the middle and right sprite increase in acceleration, causing them to fall to the ground.  Having no bounce causes the middle sprite to stop once it hits the ground.  Having 100% bounce causes the right sprite to rebound to the same position where it started.</p>
+      </div>
+    </div>
+  </div>
+  <div class="column small-12">
+    <div class="card lesson-code">
+      <div class="card-section">
+        <h4 class="subheader text-center">Code</h4>
+        <p>The code used to created this lesson is shown below.</p>
+        <ul class="tabs" data-tabs id="example-tabs">
+          <li class="tabs-title is-active"><a href="#letterjs" aria-selected="true"><h6>g.js</h6></a></li>
+          <li class="tabs-title"><a href="#letterhtml"><h6>g.html</h6></a></li>
+          <li class="tabs-title"><a href="#utilsjs"><h6>utils.js</h6></a></li>
+        </ul>
+        <div class="tabs-content" data-tabs-content="example-tabs">
+          <div class="tabs-panel is-active" id="letterjs">
+            <pre>
+              <code class="javascript">
+import utils from &#x27;./utils.js&#x27;;
+
+function create() {
+  let sprite1, sprite2, sprite3;
+
+  const game &#x3D; utils.init(&#x27;g&#x27;, {
+    preload: () &#x3D;&gt; {
+      utils.preload(game);
+    },
+    create: () &#x3D;&gt; {
+      utils.create(game);
+      game.physics.arcade.gravity.y &#x3D; 100;
+
+      sprite1 &#x3D; game.add.sprite(game.width/6, game.height/2, &#x27;greenhouse&#x27;);
+      sprite2 &#x3D; game.add.sprite(game.width/2, game.height/2, &#x27;greenhouse&#x27;);
+      sprite3 &#x3D; game.add.sprite(game.width*5/6, game.height/2, &#x27;greenhouse&#x27;);
+
+      game.physics.enable( [ sprite1, sprite2, sprite3 ], Phaser.Physics.ARCADE);
+
+      sprite1.anchor.setTo(0.5, 0.5);
+      sprite1.body.allowGravity &#x3D; false;
+      sprite1.body.collideWorldBounds &#x3D; true;
+
+      sprite2.anchor.setTo(0.5, 0.5);
+      sprite2.body.collideWorldBounds &#x3D; true;
+      sprite2.body.bounce.set(0);
+
+      sprite3.anchor.setTo(0.5, 0.5);
+      sprite3.body.collideWorldBounds &#x3D; true;
+      sprite3.body.bounce.set(1);
+    },
+    update: () &#x3D;&gt; {
+    },
+    render: () &#x3D;&gt; {
+    }
+  });
+  return game;
+}
+
+module.exports &#x3D; create;
+
+              </code>
+            </pre>
           </div>
-        </div>
-        <div class="column small-12">
-          <div class="card">
-            <div class="card-divider primary text-center">
-              <h1>G is for Gravity</h1>
-            </div>
+          <div class="tabs-panel" id="letterhtml">
+            <pre>
+              <code class="html" id="html-file-contents">
+&lt;div id&#x3D;&quot;learning-game-g&quot;&gt;
+&lt;&#x2F;div&gt;
+&lt;script&gt;
+$(document).ready(function() {
+  var create &#x3D; require(&quot;g.js&quot;);
+  create();
+});
+&lt;&#x2F;script&gt;
+              </code>
+            </pre>
           </div>
-        </div>
-        <div class="column small-12">
-          <div class="card">
-            <div class="card-section">
-              <h4 class="text-center subheader">Gravity is the acceleration in the world</h4>
-              <p>Take a look at the <a href="s.html">sprites</a> in the game.  All sprites start with zero <a href="v.html">velocity</a> and zero <a href="a.html">acceleration</a>.  The left sprite does not have gravity applied to it.  The middle and right sprites have gravity applied to them.  The middle sprite has zero <a href="b.html">bounce</a> and the right sprite has 100% bounce. <br/> <br/> Due to having no gravity, the left sprite does not move once placed in the game.  This results in the sprite still having no velocity or acceleration. <br/> <br/> Due to having gravity applied to the world, the middle and right sprite increase in acceleration, causing them to fall to the ground.  Having no bounce causes the middle sprite to stop once it hits the ground.  Having 100% bounce causes the right sprite to rebound to the same position where it started.</p>
-            </div>
-          </div>
-        </div>
-        <div class="column small-12 medium-6">
-          <div class="card">
-            <div class="card-section">
-              <h4 class="subheader text-center">References</h4>
-              <p>The following other lessons have been referenced:</p>
-              <ul>
-                  <li><a href="a.html">A is for Acceleration</a></li>
-                  <li><a href="b.html">B is for Bounce</a></li>
-                  <li><a href="s.html">S is for Sprite</a></li>
-                  <li><a href="v.html">V is for Velocity</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="column small-12 medium-6">
-          <div class="card">
-            <div class="card-section">
-              <h4 class="subheader text-center">Continue Learning</h4>
-              <div class="row medium-up-1 large-up-2 text-center">
-                <div class="column">
-                  <h6>Following Alphabetically?</h6>
-                    <a class="button icon-button secondary " href="f.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-                    <a class="button icon-button-right secondary " href="h.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
-                </div>
-                <div class="column">
-                  <h6>Following Lesson Plan?</h6>
-                    <a class="button icon-button secondary " href="b.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-                    <a class="button icon-button-right secondary " href="j.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
-                </div>
-              </div>
-            </div>
+          <div class="tabs-panel" id="utilsjs">
+            <pre>
+              <code class="javascript">
+function resize(game) {
+  const width &#x3D; getGameWidth(game.containerId);
+  const height &#x3D; getGameHeight(game.containerId);
+  if (game.width !&#x3D; width) {
+    game.scale.setGameSize(width, height);
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function preload(game, buttons) {
+  buttons &#x3D; buttons || [];
+  const breakpoint &#x3D; getBreakpoint(game);
+  game.load.image(&#x27;greenhouse&#x27;, &#x27;/assets/img/learning/logo-circle-&#x27; + breakpoint + &#x27;.png&#x27;);
+  game.load.image(&#x27;greenhouse-square&#x27;, &#x27;/assets/img/learning/logo-square-&#x27; + breakpoint + &#x27;.png&#x27;);
+  buttons.forEach(name &#x3D;&gt; {
+    game.load.image(name + &#x27;-button&#x27;, &#x27;/assets/img/learning/&#x27; + name + &#x27;-button-&#x27; + breakpoint + &#x27;.png&#x27;);
+  });
+  game.load.image(&#x27;reload&#x27;, &#x27;/assets/img/learning/restart-game.png&#x27;);
+}
+
+function create(game) {
+  resize(game);
+  game.physics.startSystem(Phaser.Physics.ARCADE);
+  game.stage.backgroundColor &#x3D; &#x27;#000000&#x27;;
+  game.add.button(game.width - 16 - 8, game.height - 16 - 8, &#x27;reload&#x27;, () &#x3D;&gt; game.state.restart());
+  game.scale.setResizeCallback(() &#x3D;&gt; {
+    if (resize(game)) {
+      game.state.restart();
+    }
+  });
+}
+
+function getIconSize(game) {
+  let size;
+  ifBreakpoint(game, &#x27;small&#x27;, () &#x3D;&gt; size &#x3D; 32);
+  ifBreakpoint(game, &#x27;medium&#x27;, () &#x3D;&gt; size &#x3D; 64);
+  ifBreakpoint(game, &#x27;large&#x27;, () &#x3D;&gt; size &#x3D; 128);
+  return size;
+}
+
+function getBreakpoint(game) {
+  if (game.width &gt; 1000) return &#x27;large&#x27;;
+  else if (game.width &gt; 600) return &#x27;medium&#x27;;
+  else return &#x27;small&#x27;;
+}
+
+function getGameWidth(id) {
+  return $(&#x27;#&#x27; + id).width();
+}
+
+function getGameHeight(id) {
+  return getGameWidth(id)/(16/9);
+}
+
+function init(letter, config) {
+  const containerId &#x3D; &#x27;learning-game-&#x27; + letter + &#x27;-container&#x27;;
+  const width &#x3D; getGameWidth(containerId);
+  const height &#x3D; getGameHeight(containerId);
+  const game &#x3D; new Phaser.Game(width, height, Phaser.AUTO, &#x27;learning-game-&#x27; + letter, config);
+  game.containerId &#x3D; containerId;
+  return game;
+}
+
+function alignButtons(game, buttons) {
+  let padding;
+  ifBreakpoint(game, &#x27;small&#x27;, () &#x3D;&gt; padding &#x3D; 8);
+  ifBreakpoint(game, &#x27;medium&#x27;, () &#x3D;&gt; padding &#x3D; 12);
+  ifBreakpoint(game, &#x27;large&#x27;, () &#x3D;&gt; padding &#x3D; 16);
+
+  for (let i &#x3D; 0; i &lt; buttons.length; i++) {
+    buttons[i].anchor.setTo(0, 1);
+    buttons[i].x &#x3D; padding + (buttons[i].width + padding)*i;
+    buttons[i].y &#x3D; game.height - padding;
+  }
+}
+
+function ifBreakpoint(game, breakpoint, callback) {
+  if (getBreakpoint(game) &#x3D;&#x3D; breakpoint) {
+    callback();
+  }
+}
+
+module.exports &#x3D; {
+  resize: resize,
+  preload: preload,
+  create: create,
+  getIconSize: getIconSize,
+  init: init,
+  getBreakpoint: getBreakpoint,
+  alignButtons: alignButtons,
+  ifBreakpoint: ifBreakpoint
+};
+
+              </code>
+            </pre>
           </div>
         </div>
       </div>
-      <script src="../../assets/js/pages/learn/abc/utils.js"></script>
-      <script src="../../assets/js/pages/learn/abc/g.js"></script>
-      <script>
-      $(document).ready(function() {
-        var create = require('pages/learn/abc/g.js');
-        create();
-      });
-      </script>
-      
-      
+    </div>
+  </div>
+  <div class="column small-12 medium-6">
+    <div class="card">
+      <div class="card-section">
+        <h4 class="subheader text-center">References</h4>
+        <p>The following other lessons have been referenced:</p>
+        <ul>
+            <li><a href="a.html">A is for Acceleration</a></li>
+            <li><a href="b.html">B is for Bounce</a></li>
+            <li><a href="s.html">S is for Sprite</a></li>
+            <li><a href="v.html">V is for Velocity</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="column small-12 medium-6">
+    <div class="card">
+      <div class="card-section">
+        <h4 class="subheader text-center">Continue Learning</h4>
+        <div class="row medium-up-1 large-up-2 text-center">
+          <div class="column">
+            <h6>Following Alphabetically?</h6>
+              <a class="button icon-button secondary " href="f.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+              <a class="button icon-button-right secondary " href="h.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
+          </div>
+          <div class="column">
+            <h6>Following Lesson Plan?</h6>
+              <a class="button icon-button secondary " href="b.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+              <a class="button icon-button-right secondary " href="j.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/js/pages/learn/abc/utils.js"></script>
+<script src="../../assets/js/pages/learn/abc/g.js"></script>
+<script>
+$(document).ready(function() {
+  var create = require('pages/learn/abc/g.js');
+  create();
+});
+</script>
+
+
     </section>
     <section class="footer">
       <div class="row">
@@ -204,5 +382,12 @@
       </div>
       
     </section>
+    <script>
+      $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
   </body>
 </html>

@@ -5756,6 +5756,22 @@ ul.controls-list {
   ul.controls-list li:nth-child(4) {
     background: url(../img/learning/d-button-small.png) no-repeat left top; }
 
+/* line 51, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+div.lesson-code .tabs-panel {
+  padding: 0; }
+
+/* line 56, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+div.lesson-code .tabs h6 {
+  margin: 0; }
+
+/* line 61, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+div.lesson-code pre {
+  margin-bottom: -48px; }
+  /* line 63, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  div.lesson-code pre code {
+    margin-top: -24px;
+    padding: 0 16px; }
+
 /* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
 .ig-b- {
   display: inline-block; }

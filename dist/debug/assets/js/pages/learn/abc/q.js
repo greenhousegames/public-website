@@ -157,7 +157,12 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, abutton, bbutton, points, jumps, timer;
+  var sprite1 = void 0,
+      abutton = void 0,
+      bbutton = void 0,
+      points = void 0,
+      jumps = void 0,
+      timer = void 0;
 
   var game = _utils2.default.init('q', {
     preload: function preload() {
@@ -204,7 +209,7 @@ function create() {
   }
 
   function jump() {
-    if (sprite1.y == game.height - _utils2.default.getIconWidth(game) / 2) {
+    if (sprite1.y == game.height - _utils2.default.getIconSize(game) / 2) {
       if (timer) {
         jumps++;
       }

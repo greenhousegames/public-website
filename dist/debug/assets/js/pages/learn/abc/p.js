@@ -157,7 +157,11 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, abutton, obstacles, nextPosition, padding;
+  var sprite1 = void 0,
+      abutton = void 0,
+      obstacles = void 0,
+      nextPosition = void 0,
+      padding = void 0;
 
   var game = _utils2.default.init('p', {
     preload: function preload() {
@@ -232,7 +236,8 @@ function create() {
   }
 
   function addObstacle() {
-    var ob1, ob2;
+    var ob1 = void 0,
+        ob2 = void 0;
 
     if (obstacles.getTop().y - padding > 0) {
       if (nextPosition == 1) {

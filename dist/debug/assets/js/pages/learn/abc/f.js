@@ -157,7 +157,10 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function create() {
-  var sprite1, abutton, bbutton, cbutton;
+  var sprite1 = void 0,
+      abutton = void 0,
+      bbutton = void 0,
+      cbutton = void 0;
 
   var game = _utils2.default.init('f', {
     preload: function preload() {
