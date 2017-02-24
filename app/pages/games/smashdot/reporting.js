@@ -20,6 +20,8 @@ class Reporting extends FirebaseClient {
     // charts
     this._drawMaxScores();
     this._drawModesPlayed();
+    this._drawDotsSmashed();
+    this._drawUserBreakdown();
   }
 
   _drawClassicRankings() {
@@ -91,24 +93,23 @@ class Reporting extends FirebaseClient {
 
   _drawModesPlayed() {
     Promise.all([
-      this.reporting.filter('modes', { mode: 'survival' }).sum('played').value(),
       this.reporting.filter('modes', { mode: 'classic' }).sum('played').value(),
+      this.reporting.filter('modes', { mode: 'survival' }).sum('played').value(),
       this.reporting.filter('modes', { mode: 'battle' }).sum('played').value()
     ]).then(function(values) {
       var element = jQuery('#sum_played_chart');
       var data = new google.visualization.arrayToDataTable([
         ['Mode', 'Times Played'],
-        ['Survival', values[0] || 0],
-        ['Classic', values[1] || 0],
+        ['Classic', values[0] || 0],
+        ['Survival', values[1] || 0],
         ['Battle', values[2] || 0]
       ]);
 
       // Set chart options
       var options = {
-         title:'Modes Played',
+         title:'Games Played',
          width: element.width(),
-         height: 400,
-         pieHole: 0.4,
+         height: element.width()*9/16,
          legend: { position: 'bottom' }
       };
 
@@ -118,17 +119,74 @@ class Reporting extends FirebaseClient {
     }).catch(function(err) { console.log(err); });
   }
 
+  _drawUserBreakdown() {
+    Promise.all([
+      this.reporting.filter('users-modes').max('classic-score').greater(0).count(),
+      this.reporting.filter('users-modes').max('survival-score').greater(0).count(),
+      this.reporting.filter('users-modes').max('battle-score').greater(0).count()
+    ]).then(function(values) {
+      var element = jQuery('#user_breakdown_chart');
+      var data = new google.visualization.arrayToDataTable([
+        ['Mode', 'Users'],
+        ['Classic', values[0] || 0],
+        ['Survival', values[1] || 0],
+        ['Battle', values[2] || 0]
+      ]);
+
+      // Set chart options
+      var options = {
+         title:'Unique Users',
+         width: element.width(),
+         height: element.width()*9/16,
+         legend: { position: 'bottom' }
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(element[0]);
+      chart.draw(data, options);
+    }).catch(function(err) { console.log(err); });
+  }
+
+  _drawDotsSmashed() {
+    Promise.all([
+      this.reporting.filter('modes', { mode: 'classic' }).sum('classic-circles').value(),
+      this.reporting.filter('modes', { mode: 'survival' }).sum('survival-circles').value(),
+      this.reporting.filter('modes', { mode: 'battle' }).sum('battle-circles').value()
+    ]).then(function(values) {
+      var element = jQuery('#dots_smashed_chart');
+      var data = new google.visualization.arrayToDataTable([
+        ['Mode', 'Dots Smashed'],
+        ['Classic', values[0] || 0],
+        ['Survival', values[1] || 0],
+        ['Battle', values[2] || 0]
+      ]);
+
+      // Set chart options
+      var options = {
+         title:'Dots Smashed',
+         width: element.width(),
+         height: element.width()*9/16,
+         pieHole: 0.4,
+         legend: { position: 'bottom' }
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(element[0]);
+      chart.draw(data, options);
+    }).catch(function(err) { console.log(err); });
+  }
+
   _drawMaxScores() {
     Promise.all([
-      this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value(),
       this.reporting.filter('modes', { mode: 'classic' }).max('classic-score').value(),
+      this.reporting.filter('modes', { mode: 'survival' }).max('survival-score').value(),
       this.reporting.filter('modes', { mode: 'battle' }).max('battle-score').value()
     ]).then(function(values) {
       var element = jQuery('#max_score_chart');
       var data = new google.visualization.arrayToDataTable([
         ['Mode', 'Max Score'],
-        ['Survival', values[0] || 0],
-        ['Classic', values[1] || 0],
+        ['Classic', values[0] || 0],
+        ['Survival', values[1] || 0],
         ['Battle', values[2] || 0]
       ]);
 
@@ -136,7 +194,7 @@ class Reporting extends FirebaseClient {
       var options = {
         title:'Max Scores',
         width: element.width(),
-        height: 400,
+        height: element.width()*9/16,
         legend: { position: 'bottom' }
       };
 

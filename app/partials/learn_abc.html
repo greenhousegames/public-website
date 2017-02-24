@@ -1,28 +1,44 @@
 <div class="row">
-  <div class="column small-12" id="learning-game-{{ letter }}-container">
-    <div class="learning-preview-image">
-      <div id="learning-game-{{ letter }}"></div>
-      <div class="fill-black"></div>
+  <div class="column small-12">
+    <div class="card" id="learning-game-{{ letter }}-container">
+      <div class="learning-preview-image">
+        <div id="learning-game-{{ letter }}"></div>
+        <div class="fill-black"></div>
+      </div>
     </div>
   </div>
-</div>
-<div class="row">
   <div class="column small-12">
     <div class="card">
       <div class="card-divider primary text-center">
         <h1>{{ header }}</h1>
       </div>
+    </div>
+  </div>
+  <div class="column small-12">
+    <div class="card">
       <div class="card-section">
         <h4 class="text-center subheader">{{ subheader }}</h4>
         <p>{{{ content }}}</p>
-        {{#if controls}}
-        <h6 id="controls">Controls</h6>
+      </div>
+    </div>
+  </div>
+  {{#if controls}}
+  <div class="column small-12">
+    <div class="card" id="controls">
+      <div class="card-section">
+        <h4 class="subheader text-center">Controls</h4>
         <ul class="controls-list">
           {{#each controls}}
           <li>{{this}}</li>
           {{/each}}
         </ul>
-        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  <div class="column small-12 medium-6">
+    <div class="card">
+      <div class="card-section">
         <h4 class="subheader text-center">References</h4>
         {{#unless dependencies}}
         <p>No other lessons have been referenced.</p>
@@ -37,8 +53,14 @@
           {{/each}}
         </ul>
         {{/if}}
+      </div>
+    </div>
+  </div>
+  <div class="column small-12 medium-6">
+    <div class="card">
+      <div class="card-section">
         <h4 class="subheader text-center">Continue Learning</h4>
-        <div class="row small-up-1 medium-up-2 text-center">
+        <div class="row medium-up-1 large-up-2 text-center">
           <div class="column">
             <h6>Following Alphabetically?</h6>
             {{#singlesorted @root.abc 'letter' letter -1 }}
@@ -61,20 +83,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="column small-12">
-    <div class="card ad">
-      <div class="card-section">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6060845168160443"
-             data-ad-slot="6849620214"
-             data-ad-format="auto"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-    </div>
-  </div>-->
 </div>
 <script src="{{ @root.root }}assets/js/pages/learn/abc/utils.js"></script>
 <script src="{{ @root.root }}assets/js/pages/learn/abc/{{ letter }}.js"></script>
