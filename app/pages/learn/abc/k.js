@@ -11,7 +11,7 @@ function create() {
       utils.create(game);
 
       sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse-square');
-      game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+      game.physics.arcade.enable(sprite1);
       sprite1.anchor.setTo(0.5, 0.5);
       sprite1.body.velocity.set(game.rnd.integerInRange(-100, 100), game.rnd.integerInRange(-100, 100));
       sprite1.body.collideWorldBounds = true;
@@ -19,13 +19,13 @@ function create() {
 
       sprite2 = game.add.sprite(game.width/4, game.height/2, 'greenhouse-square');
       sprite2.anchor.setTo(0.5, 0.5);
-      game.physics.enable(sprite2, Phaser.Physics.ARCADE);
+      game.physics.arcade.enable(sprite2);
       sprite2.body.immovable = true;
       sprite2.body.bounce.set(1);
 
       sprite3 = game.add.sprite(game.width*3/4, game.height/2, 'greenhouse-square');
       sprite3.anchor.setTo(0.5, 0.5);
-      game.physics.enable(sprite3, Phaser.Physics.ARCADE);
+      game.physics.arcade.enable(sprite3);
       sprite3.body.immovable = true;
       sprite3.body.bounce.set(1);
     },

@@ -12,7 +12,7 @@ function create() {
       game.physics.arcade.gravity.y = 200;
 
       sprite1 = game.add.sprite(game.width/2, game.height/2, 'greenhouse');
-      game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+      game.physics.arcade.enable(sprite1);
       sprite1.anchor.setTo(0.5, 0.5);
       sprite1.body.collideWorldBounds = true;
       sprite1.body.bounce.set(0);

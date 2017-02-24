@@ -61,8 +61,9 @@ div.lesson-code {
   pre {
     margin-bottom: -48px;
     code {
+      max-height: 600px;
       margin-top: -24px;
-      padding: 0 16px;
+      padding: 16px;
     }
   }
 }

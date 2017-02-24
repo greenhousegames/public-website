@@ -40,7 +40,7 @@
     <div class="card lesson-code">
       <div class="card-section">
         <h4 class="subheader text-center">Code</h4>
-        <p>The code used to created this lesson is shown below.</p>
+        <p>This lesson was built using <a href="http://phaser.io">Phaser</a>.  The code is provided below for further learning.</p>
         <ul class="tabs" data-tabs id="example-tabs">
           <li class="tabs-title is-active"><a href="#letterjs" aria-selected="true"><h6>{{letter}}.js</h6></a></li>
           <li class="tabs-title"><a href="#letterhtml"><h6>{{letter}}.html</h6></a></li>
@@ -49,32 +49,24 @@
         <div class="tabs-content" data-tabs-content="example-tabs">
           <div class="tabs-panel is-active" id="letterjs">
             <pre>
-              <code class="javascript">
-{{getfile 'app/pages/learn/abc/' letter '.js'}}
-              </code>
+              <code class="javascript">{{getfile 'app/pages/learn/abc/' letter '.js'}}</code>
             </pre>
           </div>
           <div class="tabs-panel" id="letterhtml">
             <pre>
-              <code class="html" id="html-file-contents">
-{{#escape}}
-<div id="learning-game-{{ @root.letter }}">
-</div>
+              <code class="html" id="html-file-contents">{{#escape}}<div id="learning-game-{{ @root.letter }}"></div>
 <script>
 $(document).ready(function() {
   var create = require("{{ @root.letter }}.js");
   create();
 });
 </script>
-{{/escape}}
-              </code>
+{{/escape}}</code>
             </pre>
           </div>
           <div class="tabs-panel" id="utilsjs">
             <pre>
-              <code class="javascript">
-{{getfile 'app/pages/learn/abc/' 'utils' '.js' }}
-              </code>
+              <code class="javascript">{{getfile 'app/pages/learn/abc/' 'utils' '.js' }}</code>
             </pre>
           </div>
         </div>
