@@ -1,0 +1,91 @@
+{{#if lesson}}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Course",
+  "name": "{{ header }}",
+  "description": "Lesson about {{ name }} in games",
+  "url": "https://www.greenhousegames.com/learn/abc/{{ letter }}.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Greenhouse Games, LLC",
+    "sameAs": "https://www.greenhousegames.com"
+  }
+}
+</script>
+{{else if game}}
+{{#if appstore}}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "VideoGame",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "url": "https://www.greenhousegames.com/games/{{key}}.html",
+  "sameAs": "https://www.greenhousegames.com/games/{{key}}.html",
+  "image": "https://www.greenhousegames.com/assets/img/games/{{key}}/screenshot.png",
+  "applicationCategory": "Game",
+  "operatingSystem": "iOS",
+  "installUrl": "{{appstore}}",
+  "genre": "Arcade",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "0",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greenhouse Games, LLC",
+    "sameAs": "https://www.greenhousegames.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    }
+  }
+}
+</script>
+{{/if}}
+{{#if playstore}}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "VideoGame",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "url": "https://www.greenhousegames.com/games/{{key}}.html",
+  "sameAs": "https://www.greenhousegames.com/games/{{key}}.html",
+  "image": "https://www.greenhousegames.com/assets/img/games/{{key}}/screenshot.png",
+  "applicationCategory": "Game",
+  "operatingSystem": "android",
+  "installUrl": "{{playstore}}",
+  "genre": "Arcade",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "0",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greenhouse Games, LLC",
+    "sameAs": "https://www.greenhousegames.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    }
+  }
+}
+</script>
+{{/if}}
+{{else}}
+<script type="application/ld+json">
+  {{{json this}}}
+</script>
+{{/if}}

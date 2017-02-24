@@ -3,7 +3,20 @@
 <!doctype html>
 <html class="no-js" lang="en" amp>
   <head>
-    {{> shared_html_head structured_data=structured_data}}
+    {{> shared_html_head }}
+    {{#if structured_data}}
+      {{> structured_data structured_data}}
+    {{/if}}
+    {{#if games_structured_data}}
+      {{#each games}}
+        {{> structured_data this game='true'}}
+      {{/each}}
+    {{/if}}
+    {{#if abc_structured_data}}
+      {{#each abc}}
+        {{> structured_data this lesson='true'}}
+      {{/each}}
+    {{/if}}
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
   </head>
   <body>

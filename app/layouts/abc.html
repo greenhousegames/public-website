@@ -3,15 +3,28 @@
 <!doctype html>
 <html class="no-js" lang="en" amp>
   <head>
-    {{#single abc letter}}
-      {{> shared_html_head structured_data=structured_data}}
-    {{/single}}
+    {{> shared_html_head }}
+    {{#ifequal letter "all"}}
+      {{#eachsorted abc letter}}
+        {{> structured_data this lesson='true'}}
+      {{/eachsorted}}
+    {{else}}
+      {{#single abc letter}}
+        {{> structured_data this lesson='true'}}
+      {{/single}}
+    {{/ifequal}}
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
   </head>
   <body>
+    {{#ifequal letter "all"}}
     <section class="header">
+      {{> header largeheader='true' }}
+    </section>
+    {{else}}
+    <section class="header large">
       {{> header}}
     </section>
+    {{/ifequal}}
     <section class="main">
       {{> body}}
     </section>

@@ -3,9 +3,16 @@
 <!doctype html>
 <html class="no-js" lang="en" amp>
   <head>
-    {{#single games key}}
-      {{> shared_html_head structured_data=structured_data}}
-    {{/single}}
+    {{> shared_html_head }}
+    {{#ifequal key "all"}}
+      {{#each games}}
+        {{> structured_data this game='true'}}
+      {{/each}}
+    {{else}}
+      {{#single games key}}
+        {{> structured_data this game='true'}}
+      {{/single}}
+    {{/ifequal}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>

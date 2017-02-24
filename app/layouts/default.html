@@ -3,7 +3,10 @@
 <!doctype html>
 <html class="no-js" lang="en" amp>
   <head>
-    {{> shared_html_head structured_data=structured_data}}
+    {{> shared_html_head }}
+    {{#if structured_data}}
+      {{> structured_data structured_data}}
+    {{/if}}
   </head>
   <body>
     <section class="header large">

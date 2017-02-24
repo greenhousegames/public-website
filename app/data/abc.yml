@@ -20,17 +20,6 @@ a:
     <br/>
     <br/>
     To understand the math, say we have a sprite that starts out with a velocity of 20 pixels per second (px/s). If we give the sprite an acceleration of 0 px/s, the velocity of the sprite will stay constant at 20 px/s. If we give the object an acceleration of 1 px/s, the object will increases its velocity by 1 every second.  After 5 seconds the velocity will be 25 px/s, after 10 seconds the velocity will be 30 px/s, and so on.  If we give the object an acceleration of -1 px/s, the object will decrease its velocity by 1 every second. After 5 seconds the velocity will be 15 px/s, after 10 seconds the velocity will be 10 px/s, and so on.  Once the sprite reaches 0 px/s velocity, the velocity will begin to become negative.  The change from positive velocity to negative velocity means the sprite is moving in the opposite direction.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "A is for Acceleration"
-      "description": "Lesson about Acceleration in games"
-      "url": "https://www.greenhousegames.com/learn/abc/a.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 b:
   order: 7
   letter: b
@@ -53,17 +42,6 @@ b:
     <br/>
     <br/>
     To understand the math, say we have a sprite that starts out with a velocity of 20 pixels per second (px/s). If we give the sprite 100% bounce, the velocity before hitting the wall will be 20 px/s and after hitting the wall will be -20 px/s (the change from positive to negative is due to the change in direction).  If we give the sprite zero bounce, the velocity after hitting the wall will be 0 px/s.  If we give the sprite 75% bounce, the velocity will be -15 px/s (20 * 75%) after hitting the first wall, 11.25 px/s (15 * 75%) after hitting the second wall, -8.4375 px/s (11.25 * 75%) after hitting the third wall, and so on.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "B is for Bounce"
-      "description": "Lesson about Bounce in games"
-      "url": "https://www.greenhousegames.com/learn/abc/b.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 c:
   order: 12
   letter: c
@@ -82,17 +60,6 @@ c:
     <br/>
     Due to having collision enabled, the middle and bottom sprites hit each other when they intersect.  Not having any bounce causes the middle sprites to stop once they hit each other.  Having 100% bounce causes the bottom sprites to rebound off themselves and the walls.
     <br/>
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "C is for Collision"
-      "description": "Lesson about Collision in games"
-      "url": "https://www.greenhousegames.com/learn/abc/c.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 d:
   order: 13
   letter: d
@@ -108,17 +75,6 @@ d:
     <br/>
     <br/>
     Due to having dragging enabled, the right sprite moves when you hold and drag it around the game.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "D is for Drag"
-      "description": "Lesson about Drag in games"
-      "url": "https://www.greenhousegames.com/learn/abc/d.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 e:
   order: 23
   letter: e
@@ -137,17 +93,6 @@ e:
    <br/>
    <br/>
    Experience is used in games to track the user's level.  The user starts the game with zero experience and gains experience over time.  Completing <a href="q.html">quests</a> or <a href="k.html">killing</a> enemies are common ways for users to gain experience.  Once the user reaches a specific amount of experience, they level up.  Games often encourage users to level up by requiring the user to reach a specific level before they can complete a quest or use a weapon.
-  structured_data:
-   0:
-     "@context": "http://schema.org"
-     "@type": "Course"
-     "name": "E is for Experience"
-     "description": "Lesson about Experience in games"
-     "url": "https://www.greenhousegames.com/learn/abc/e.html"
-     "provider":
-       "@type": "Organization"
-       "name": "Greenhouse Games, LLC"
-       "sameAs": "https://www.greenhousegames.com"
 f:
   order: 10
   letter: f
@@ -167,17 +112,6 @@ f:
     <br/>
     <br/>
     Press the A button to see a slow motion animation showing 1 frame per second.  Press the B button to loop the animation at a faster rate and make the sprite run.
-  structured_data:
-   0:
-     "@context": "http://schema.org"
-     "@type": "Course"
-     "name": "F is for Frames"
-     "description": "Lesson about Frames in games"
-     "url": "https://www.greenhousegames.com/learn/abc/f.html"
-     "provider":
-       "@type": "Organization"
-       "name": "Greenhouse Games, LLC"
-       "sameAs": "https://www.greenhousegames.com"
 g:
   order: 8
   letter: g
@@ -196,17 +130,6 @@ g:
     <br/>
     <br/>
     Due to having gravity applied to the world, the middle and right sprite increase in acceleration, causing them to fall to the ground.  Having no bounce causes the middle sprite to stop once it hits the ground.  Having 100% bounce causes the right sprite to rebound to the same position where it started.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "G is for Gravity"
-      "description": "Lesson about Gravity in games"
-      "url": "https://www.greenhousegames.com/learn/abc/g.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 h:
   order: 17
   letter: h
@@ -222,17 +145,6 @@ h:
    <br/>
    <br/>
    Health is a way to tell how long a sprite lasts in a game.  Sprites with more health can withstand more damage. Bosses often have much more health than normal enemies to make them harder to kill.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "H is for Health"
-      "description": "Lesson about Health in games"
-      "url": "https://www.greenhousegames.com/learn/abc/h.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 i:
   order: 15
   letter: i
@@ -248,17 +160,6 @@ i:
    <br/>
    <br/>
    Due to the top left sprite having zero bounce, the sprite has zero velocity after colliding with the immovable sprite. Due to the bottom left sprite having 100% bounce, the sprite maintains its speed after colliding with the immovable sprite.  In both cases the immovable sprite is left with zero velocity after the collision.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "I is for Immovable"
-      "description": "Lesson about Immovable in games"
-      "url": "https://www.greenhousegames.com/learn/abc/i.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 j:
   order: 9
   letter: j
@@ -276,17 +177,6 @@ j:
    <br/>
    <br/>
    The jumping effect is simply caused by <a href="v.html">velocity</a> and <a href="v.html">acceleration</a>.  The jump is started by giving the sprite upward velocity.  The effect of gravity causes the sprite to want to accelerate downward.  This combination of upward velocity and downward acceleration causes the sprite to eventually slow down to zero velocity.  This is the highest point the sprite will jump, also known as the apex of the jump.  Once the sprite reaches the apex, it will begin to accelerate back to the ground.
-  structured_data:
-   0:
-     "@context": "http://schema.org"
-     "@type": "Course"
-     "name": "J is for Jump"
-     "description": "Lesson about Jump in games"
-     "url": "https://www.greenhousegames.com/learn/abc/j.html"
-     "provider":
-       "@type": "Organization"
-       "name": "Greenhouse Games, LLC"
-       "sameAs": "https://www.greenhousegames.com"
 k:
   order: 16
   letter: k
@@ -304,17 +194,6 @@ k:
    <br/>
    <br/>
    Killing a sprite is a way to remove the sprite from the game.  This causes the sprite to be hidden and all interactions with the sprite are disabled.  The sprite can be revived, in which cause it is made visible and can interact with the rest of the world.
-  structured_data:
-   0:
-     "@context": "http://schema.org"
-     "@type": "Course"
-     "name": "K is for Kill"
-     "description": "Lesson about Kill in games"
-     "url": "https://www.greenhousegames.com/learn/abc/k.html"
-     "provider":
-       "@type": "Organization"
-       "name": "Greenhouse Games, LLC"
-       "sameAs": "https://www.greenhousegames.com"
 l:
   order: 18
   letter: l
@@ -332,17 +211,6 @@ l:
    <br/>
    <br/>
    Lives are a way to track how long the user can play the game.  The user can continue to play the game so long as they have lives remaining.  Once the user runs out of life they must restart the game or level.
-  structured_data:
-   0:
-     "@context": "http://schema.org"
-     "@type": "Course"
-     "name": "L is for Lives"
-     "description": "Lesson about Lives in games"
-     "url": "https://www.greenhousegames.com/learn/abc/l.html"
-     "provider":
-       "@type": "Organization"
-       "name": "Greenhouse Games, LLC"
-       "sameAs": "https://www.greenhousegames.com"
 m:
   order: 11
   letter: m
@@ -365,17 +233,6 @@ m:
    <br/>
    <br/>
    Movement is a way for a user to get around in the world.  In console gaming, a joystick or directional pad (d-pad) is used to move the player.  In browser or PC gaming, the arrow keys or w-a-s-d keys are used.  In mobile gaming, a virtual joystick or d-pad is used.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "M is for Movement"
-      "description": "Lesson about Movement in games"
-      "url": "https://www.greenhousegames.com/learn/abc/m.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 n:
   order: 20
   letter: n
@@ -391,17 +248,6 @@ n:
    <br/>
    <br/>
    Sound effects are a great way to engage users in a game.  The noise provides an audible indication of what is happening.  In this lesson, sound effects are used to indicate when the weapon is fired and when the bullet its the edge of world.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "N is for Noise"
-      "description": "Lesson about Noise in games"
-      "url": "https://www.greenhousegames.com/learn/abc/n.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 o:
   order: 24
   letter: o
@@ -421,17 +267,6 @@ o:
    <br/>
    <br/>
    In this lesson, the middle sprite is considered an obstacle.  Obstacles force the user to make some type of <a href="m.html">movement</a> to avoid them.  A penalty is usually given if an obstacle is hit.  For example the sprite may lose <a href="h.html">health</a> or be <a href="k.html">killed</a>.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "O is for Obstacles"
-      "description": "Lesson about Obstacles in games"
-      "url": "https://www.greenhousegames.com/learn/abc/o.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 p:
   order: 25
   letter: p
@@ -448,17 +283,6 @@ p:
     <br/>
     <br/>
     Each rectangular sprite in the game is called a platform.  A platformer style game is one in which the user moves through the world vertically by jumping from platform to platform.  The goal is to keep the sprite on the platforms and not fall off the bottom of the world.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "P is for Platformer"
-      "description": "Lesson about Platformer in games"
-      "url": "https://www.greenhousegames.com/learn/abc/p.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 q:
   order: 22
   letter: q
@@ -481,17 +305,6 @@ q:
    <br/>
    <br/>
    Quests are a good way to engage players.  By rewarding points, <a href="e.html">experience</a>, or <a href="w.html">weapons</a>, it gives the user incentive to complete the quest.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "Q is for Quests"
-      "description": "Lesson about Quests in games"
-      "url": "https://www.greenhousegames.com/learn/abc/q.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 r:
   order: 26
   letter: r
@@ -509,17 +322,6 @@ r:
     <br/>
     <br/>
     A runner style game is one in which the player travels side-to-side in the world.  The player must avoid obstacles and/or collect rewards along the way.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "R is for Runner"
-      "description": "Lesson about Runner in games"
-      "url": "https://www.greenhousegames.com/learn/abc/r.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 s:
   order: 1
   letter: s
@@ -543,17 +345,6 @@ s:
     <strong>Sprite Position</strong>
     <br/>
     <a href="x.html">x position</a> | <a href="y.html">y position</a> | <a href="z.html">z position</a>
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "S is for Sprite"
-      "description": "Lesson about Sprite in games"
-      "url": "https://www.greenhousegames.com/learn/abc/s.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 t:
   order: 14
   letter: t
@@ -566,17 +357,6 @@ t:
   dependencies:
     - s
   content: A timer has been set up to go off every 3 seconds.  Once the timer expires it will move the <a href="s.html">sprite</a> to a random location. The time left on the timer is shown in the upper left.  The A button will pause the timer and the B button will resume the timer. See the <a href="#controls">controls</a> below.
-  structured_data:
-   0:
-     "@context": "http://schema.org"
-     "@type": "Course"
-     "name": "T is for Timer"
-     "description": "Lesson about Timer in games"
-     "url": "https://www.greenhousegames.com/learn/abc/t.html"
-     "provider":
-       "@type": "Organization"
-       "name": "Greenhouse Games, LLC"
-       "sameAs": "https://www.greenhousegames.com"
 u:
   order: 21
   letter: u
@@ -594,17 +374,6 @@ u:
     <br/>
     <br/>
     To start the game, the weapon will inflict 10 damage and the shield will absorb 0 damage.  The weapon can inflict 10 additional damage each time it is upgraded.  The shield can absorb 10 additional damage each time it is upgraded.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "U is for Upgrading"
-      "description": "Lesson about Upgrading in games"
-      "url": "https://www.greenhousegames.com/learn/abc/u.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 v:
   order: 5
   letter: v
@@ -624,17 +393,6 @@ v:
     <br/>
     <br/>
     Due to having half the velocity of the top sprite, the middle sprite travels half the distance of the top sprite in the same amount of time.  This causes the middle sprite to be half way across the game once the top sprite reaches the wall.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "V is for Velocity"
-      "description": "Lesson about Velocity in games"
-      "url": "https://www.greenhousegames.com/learn/abc/v.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 w:
   order: 19
   letter: w
@@ -651,17 +409,6 @@ w:
    <br/>
    <br/>
    A new sprite is created in the game when the weapon fires a bullet.  The bullet is given a <a href="v.html">velocity</a> in the direction where the tap occurred.  In this example the bullet just flies off into space, but in a real game you might use a weapon to <a href="k.html">kill</a> enemies or obstacles.
-  structured_data:
-   0:
-     "@context": "http://schema.org"
-     "@type": "Course"
-     "name": "W is for Weapon"
-     "description": "Lesson about Weapon in games"
-     "url": "https://www.greenhousegames.com/learn/abc/w.html"
-     "provider":
-       "@type": "Organization"
-       "name": "Greenhouse Games, LLC"
-       "sameAs": "https://www.greenhousegames.com"
 x:
   order: 2
   letter: x
@@ -671,17 +418,6 @@ x:
   dependencies:
     - s
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  The left sprite has a x position of zero.  The right sprite has has a x position equal to the game width.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "X is for X-axis"
-      "description": "Lesson about X-axis in games"
-      "url": "https://www.greenhousegames.com/learn/abc/x.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 y:
   order: 3
   letter: y
@@ -691,17 +427,6 @@ y:
   dependencies:
     - s
   content: Take a look at the two <a href="s.html">sprites</a> in the game.  The top sprite has a y position of zero.  The bottom sprite has has a y position equal to the game height.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "Y is for Y-axis"
-      "description": "Lesson about Y-axis in games"
-      "url": "https://www.greenhousegames.com/learn/abc/y.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
 z:
   order: 4
   letter: z
@@ -717,14 +442,3 @@ z:
     <br/>
     <br/>
     Due to being added last, the right-most sprite is on top of the other two sprites. This causes the right-most sprite to have the highest z-index.
-  structured_data:
-    0:
-      "@context": "http://schema.org"
-      "@type": "Course"
-      "name": "Z is for Z-index"
-      "description": "Lesson about Z-index in games"
-      "url": "https://www.greenhousegames.com/learn/abc/z.html"
-      "provider":
-        "@type": "Organization"
-        "name": "Greenhouse Games, LLC"
-        "sameAs": "https://www.greenhousegames.com"
