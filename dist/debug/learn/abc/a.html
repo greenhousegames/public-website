@@ -114,30 +114,46 @@
     </section>
     <section class="main">
       <div class="row">
-        <div class="column small-12" id="learning-game-a-container">
-          <div class="learning-preview-image">
-            <div id="learning-game-a"></div>
-            <div class="fill-black"></div>
+        <div class="column small-12">
+          <div class="card" id="learning-game-a-container">
+            <div class="learning-preview-image">
+              <div id="learning-game-a"></div>
+              <div class="fill-black"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
         <div class="column small-12">
           <div class="card">
             <div class="card-divider primary text-center">
               <h1>A is for Acceleration</h1>
             </div>
+          </div>
+        </div>
+        <div class="column small-12">
+          <div class="card">
             <div class="card-section">
               <h4 class="text-center subheader">Acceleration is the rate of change of velocity over time</h4>
               <p>Take a look at the <a href="s.html">sprites</a> in the game.  All sprites start out with the same positive <a href="v.html">velocity</a>.  The bottom sprite has zero acceleration, the middle sprite has negative acceleration, and the top sprite has positive acceleration. <br/> <br/> Due to having zero acceleration, the velocity of the bottom sprite does not change. This is similar to cruise control in a car.  When cruise control is activated, the speed of the car stays constant.  This results in the car having zero acceleration. <br/> <br/> Due to having negative acceleration, the velocity of the middle sprite decreases over time.  Once the sprite reaches zero velocity, it begins to move in the opposite direction.  This is similar to going in reverse in a car while it is already moving forward (don't try this at home).  Switching to reverse will not immediately cause the car to go backwards.  Instead the car will begin to slow down and then move in the opposite direction once the car has reaches zero velocity. <br/> <br/> Due to having positive acceleration, the velocity of the top sprite increases over time. This is similar to a gas pedal in a car.  When the gas pedal is pressed, the speed of the car increases.  This results in the car having positive acceleration. <br/> <br/> To understand the math, say we have a sprite that starts out with a velocity of 20 pixels per second (px/s). If we give the sprite an acceleration of 0 px/s, the velocity of the sprite will stay constant at 20 px/s. If we give the object an acceleration of 1 px/s, the object will increases its velocity by 1 every second.  After 5 seconds the velocity will be 25 px/s, after 10 seconds the velocity will be 30 px/s, and so on.  If we give the object an acceleration of -1 px/s, the object will decrease its velocity by 1 every second. After 5 seconds the velocity will be 15 px/s, after 10 seconds the velocity will be 10 px/s, and so on.  Once the sprite reaches 0 px/s velocity, the velocity will begin to become negative.  The change from positive velocity to negative velocity means the sprite is moving in the opposite direction.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
               <h4 class="subheader text-center">References</h4>
               <p>The following other lessons have been referenced:</p>
               <ul>
                   <li><a href="s.html">S is for Sprite</a></li>
                   <li><a href="v.html">V is for Velocity</a></li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
               <h4 class="subheader text-center">Continue Learning</h4>
-              <div class="row small-up-1 medium-up-2 text-center">
+              <div class="row medium-up-1 large-up-2 text-center">
                 <div class="column">
                   <h6>Following Alphabetically?</h6>
                     <a class="button icon-button secondary hollow" ><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
@@ -152,20 +168,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="column small-12">
-          <div class="card ad">
-            <div class="card-section">
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-client="ca-pub-6060845168160443"
-                   data-ad-slot="6849620214"
-                   data-ad-format="auto"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-            </div>
-          </div>
-        </div>-->
       </div>
       <script src="../../assets/js/pages/learn/abc/utils.js"></script>
       <script src="../../assets/js/pages/learn/abc/a.js"></script>

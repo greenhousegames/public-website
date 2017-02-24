@@ -114,30 +114,46 @@
     </section>
     <section class="main">
       <div class="row">
-        <div class="column small-12" id="learning-game-b-container">
-          <div class="learning-preview-image">
-            <div id="learning-game-b"></div>
-            <div class="fill-black"></div>
+        <div class="column small-12">
+          <div class="card" id="learning-game-b-container">
+            <div class="learning-preview-image">
+              <div id="learning-game-b"></div>
+              <div class="fill-black"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
         <div class="column small-12">
           <div class="card">
             <div class="card-divider primary text-center">
               <h1>B is for Bounce</h1>
             </div>
+          </div>
+        </div>
+        <div class="column small-12">
+          <div class="card">
             <div class="card-section">
               <h4 class="text-center subheader">Bounce is the elasticity of an object</h4>
               <p>Take a look at the <a href="s.html">sprites</a> in the game.  All sprites start out with the same <a href="v.html">velocity</a>.  The bottom sprite has zero bounce, the middle sprite has 75% bounce, and the top sprite has 100% bounce. <br/> <br/> Due to having 100% bounce, the top sprite rebounds off the wall at the same speed. This causes the velocity of the top sprite to be the same before and after hitting the wall. <br/> <br/> Due to having zero bounce, the bottom sprite does not rebound off the wall.  This causes the velocity of the bottom sprite to be zero after it hits the wall. <br/> <br/> Due to having between zero and 100% bounce, the middle sprite rebounds off the wall, but at a slower speed.  This causes the velocity of the middle sprite to be 75% the speed after hitting the wall. <br/> <br/> To understand the math, say we have a sprite that starts out with a velocity of 20 pixels per second (px/s). If we give the sprite 100% bounce, the velocity before hitting the wall will be 20 px/s and after hitting the wall will be -20 px/s (the change from positive to negative is due to the change in direction).  If we give the sprite zero bounce, the velocity after hitting the wall will be 0 px/s.  If we give the sprite 75% bounce, the velocity will be -15 px/s (20 * 75%) after hitting the first wall, 11.25 px/s (15 * 75%) after hitting the second wall, -8.4375 px/s (11.25 * 75%) after hitting the third wall, and so on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
               <h4 class="subheader text-center">References</h4>
               <p>The following other lessons have been referenced:</p>
               <ul>
                   <li><a href="s.html">S is for Sprite</a></li>
                   <li><a href="v.html">V is for Velocity</a></li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
               <h4 class="subheader text-center">Continue Learning</h4>
-              <div class="row small-up-1 medium-up-2 text-center">
+              <div class="row medium-up-1 large-up-2 text-center">
                 <div class="column">
                   <h6>Following Alphabetically?</h6>
                     <a class="button icon-button secondary " href="a.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
@@ -152,20 +168,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="column small-12">
-          <div class="card ad">
-            <div class="card-section">
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-client="ca-pub-6060845168160443"
-                   data-ad-slot="6849620214"
-                   data-ad-format="auto"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-            </div>
-          </div>
-        </div>-->
       </div>
       <script src="../../assets/js/pages/learn/abc/utils.js"></script>
       <script src="../../assets/js/pages/learn/abc/b.js"></script>
