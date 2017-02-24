@@ -5497,17 +5497,17 @@ div.login-buttons a i {
 div.card.ad .card-section {
   width: 100%; }
 
-/* line 3, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
-div.app-store-buttons div.app-store-buttons a img {
+/* line 2, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
+div.app-store-buttons a img {
   height: auto;
   width: 240px; }
 
-/* line 8, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
+/* line 7, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
 div.app-store-buttons a.play-game-button {
   margin: 0;
   font-size: 1rem; }
   @media print, screen and (min-width: 40em) {
-    /* line 8, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
+    /* line 7, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
     div.app-store-buttons a.play-game-button {
       font-size: 1.5rem; } }
 
