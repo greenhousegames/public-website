@@ -1,9 +1,9 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, abutton, obstacles, nextPosition, padding;
+  let sprite1, abutton, obstacles, nextPosition, padding;
 
-  var game = utils.init('p', {
+  const game = utils.init('p', {
     preload: () => {
       utils.preload(game, ['a', 'b', 'c']);
       game.load.image('obstacle', '/assets/img/learning/obstacle.png');
@@ -29,7 +29,7 @@ function create() {
       utils.ifBreakpoint(game, 'large', () => sprite1.body.velocity.x = 100);
 
       obstacles = game.add.group();
-      var ob = game.add.tileSprite(game.width/2, game.height/2, game.width*3/8, 16, 'obstacle');
+      let ob = game.add.tileSprite(game.width/2, game.height/2, game.width*3/8, 16, 'obstacle');
       ob.anchor.setTo(0.5, 0);
       initPlatform(ob);
       nextPosition = 1;
@@ -60,7 +60,7 @@ function create() {
   }
 
   function addObstacle() {
-    var ob1, ob2;
+    let ob1, ob2;
 
     if (obstacles.getTop().y - padding > 0) {
       if (nextPosition == 1) {

@@ -1,7 +1,8 @@
 function resize(game) {
-  var dim = getGameDim(game.containerId);
-  if (game.width != dim.width) {
-    game.scale.setGameSize(dim.width, dim.height);
+  const width = getGameWidth(game.containerId);
+  const height = getGameHeight(game.containerId);
+  if (game.width != width) {
+    game.scale.setGameSize(width, height);
     return true;
   } else {
     return false;
@@ -10,25 +11,12 @@ function resize(game) {
 
 function preload(game, buttons) {
   buttons = buttons || [];
-  if (game.width > 1000) {
-    game.load.image('greenhouse', '/assets/img/learning/logo-circle-large.png');
-    game.load.image('greenhouse-square', '/assets/img/learning/logo-square-large.png');
-    buttons.forEach(name => {
-      game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-large.png');
-    });
-  } else if (game.width > 600) {
-    game.load.image('greenhouse', '/assets/img/learning/logo-circle-medium.png');
-    game.load.image('greenhouse-square', '/assets/img/learning/logo-square-medium.png');
-    buttons.forEach(name => {
-      game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-medium.png');
-    });
-  } else {
-    game.load.image('greenhouse', '/assets/img/learning/logo-circle-small.png');
-    game.load.image('greenhouse-square', '/assets/img/learning/logo-square-small.png');
-    buttons.forEach(name => {
-      game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-small.png');
-    });
-  }
+  const breakpoint = getBreakpoint(game);
+  game.load.image('greenhouse', '/assets/img/learning/logo-circle-' + breakpoint + '.png');
+  game.load.image('greenhouse-square', '/assets/img/learning/logo-square-' + breakpoint + '.png');
+  buttons.forEach(name => {
+    game.load.image(name + '-button', '/assets/img/learning/' + name + '-button-' + breakpoint + '.png');
+  });
   game.load.image('reload', '/assets/img/learning/restart-game.png');
 }
 
@@ -44,56 +32,44 @@ function create(game) {
   });
 }
 
-function getIconWidth(game) {
-  if (game.width > 1000) {
-    return 128;
-  } else if (game.width > 600) {
-    return 64;
-  } else {
-    return 32;
-  }
+function getIconSize(game) {
+  let size;
+  ifBreakpoint(game, 'small', () => size = 32);
+  ifBreakpoint(game, 'medium', () => size = 64);
+  ifBreakpoint(game, 'large', () => size = 128);
+  return size;
 }
 
 function getBreakpoint(game) {
-  if (game.width > 1000) {
-    return 'large';
-  } else if (game.width > 600) {
-    return 'medium';
-  } else {
-    return 'small';
-  }
+  if (game.width > 1000) return 'large';
+  else if (game.width > 600) return 'medium';
+  else return 'small';
 }
 
-function getGameDim(id) {
-  var width = $('#' + id).width();
-  return {
-    width: width,
-    height: width/(16/9)
-  }
+function getGameWidth(id) {
+  return $('#' + id).width();
+}
+
+function getGameHeight(id) {
+  return getGameWidth(id)/(16/9);
 }
 
 function init(letter, config) {
-  var containerId = 'learning-game-' + letter + '-container';
-  var game = new Phaser.Game(getGameDim(containerId).width, getGameDim(containerId).height, Phaser.AUTO, 'learning-game-' + letter, config);
+  const containerId = 'learning-game-' + letter + '-container';
+  const width = getGameWidth(containerId);
+  const height = getGameHeight(containerId);
+  const game = new Phaser.Game(width, height, Phaser.AUTO, 'learning-game-' + letter, config);
   game.containerId = containerId;
   return game;
 }
 
 function alignButtons(game, buttons) {
-  var padding;
-  switch (getBreakpoint(game)) {
-    case 'small':
-      padding = 8;
-      break;
-    case 'medium':
-      padding = 12;
-      break;
-    case 'large':
-      padding = 16;
-      break;
-  }
+  let padding;
+  ifBreakpoint(game, 'small', () => padding = 8);
+  ifBreakpoint(game, 'medium', () => padding = 12);
+  ifBreakpoint(game, 'large', () => padding = 16);
 
-  for (var i = 0; i < buttons.length; i++) {
+  for (let i = 0; i < buttons.length; i++) {
     buttons[i].anchor.setTo(0, 1);
     buttons[i].x = padding + (buttons[i].width + padding)*i;
     buttons[i].y = game.height - padding;
@@ -110,7 +86,7 @@ module.exports = {
   resize: resize,
   preload: preload,
   create: create,
-  getIconWidth: getIconWidth,
+  getIconSize: getIconSize,
   init: init,
   getBreakpoint: getBreakpoint,
   alignButtons: alignButtons,

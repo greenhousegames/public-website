@@ -46,3 +46,23 @@ ul.controls-list {
     background: url(../img/learning/d-button-small.png) no-repeat left top;
   }
 }
+
+div.lesson-code {
+  .tabs-panel {
+    padding: 0;
+  }
+
+  .tabs {
+    h6 {
+      margin: 0;
+    }
+  }
+
+  pre {
+    margin-bottom: -48px;
+    code {
+      margin-top: -24px;
+      padding: 0 16px;
+    }
+  }
+}

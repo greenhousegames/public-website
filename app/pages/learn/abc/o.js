@@ -1,9 +1,9 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, abutton, obstacle;
+  let sprite1, abutton, obstacle;
 
-  var game = utils.init('o', {
+  const game = utils.init('o', {
     preload: () => {
       utils.preload(game, ['a']);
       game.load.image('obstacle', '/assets/img/learning/obstacle.png');

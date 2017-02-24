@@ -12,7 +12,8 @@ var config = {
     static: [
       'node_modules/what-input/what-input.js',
       'node_modules/timeago/jquery.timeago.js',
-      'node_modules/foundation-sites/dist/js/foundation.js'
+      'node_modules/foundation-sites/dist/js/foundation.js',
+      'node_modules/highlightjs/highlight.pack.js'
     ]
   },
 
@@ -27,12 +28,16 @@ var config = {
         after: [
           'node_modules/what-input/what-input.js',
           'node_modules/timeago/jquery.timeago.js',
-          'node_modules/foundation-sites/dist/js/foundation.js'
+          'node_modules/foundation-sites/dist/js/foundation.js',
+          'node_modules/highlightjs/highlight.pack.js'
         ]
       }
     },
     stylesheets: {
-      joinTo: '/assets/css/app.css'
+      joinTo: {
+        'assets/css/app.css': [/^(app)/, "!app/scss/highlight.scss"],
+        'assets/css/highlight.css': "app/scss/highlight.scss",
+      }
     }
   },
 

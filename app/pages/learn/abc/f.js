@@ -1,9 +1,9 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, abutton, bbutton, cbutton;
+  let sprite1, abutton, bbutton, cbutton;
 
-  var game = utils.init('f', {
+  const game = utils.init('f', {
     preload: () => {
       utils.preload(game, ['a', 'b', 'c']);
       game.load.atlas('ninja', '/assets/img/learning/ninja/run.png', '/assets/img/learning/ninja/run.json');

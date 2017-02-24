@@ -1,9 +1,9 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, sprite2, sprite3;
+  let sprite1, sprite2, sprite3;
 
-  var game = utils.init('b', {
+  const game = utils.init('b', {
     preload: () => {
       utils.preload(game);
     },

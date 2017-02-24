@@ -1,9 +1,9 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, abutton, bbutton, points, jumps, timer;
+  let sprite1, abutton, bbutton, points, jumps, timer;
 
-  var game = utils.init('q', {
+  const game = utils.init('q', {
     preload: () => {
       utils.preload(game, ['a', 'b']);
     },
@@ -49,7 +49,7 @@ function create() {
   }
 
   function jump() {
-    if (sprite1.y == (game.height - utils.getIconWidth(game)/2)) {
+    if (sprite1.y == (game.height - utils.getIconSize(game)/2)) {
       if (timer) {
         jumps++;
       }

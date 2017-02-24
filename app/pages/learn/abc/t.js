@@ -1,9 +1,9 @@
 import utils from './utils.js';
 
 function create() {
-  var sprite1, abutton, bbutton, timer;
+  let sprite1, abutton, bbutton, timer;
 
-  var game = utils.init('t', {
+  const game = utils.init('t', {
     preload: () => {
       utils.preload(game, ['a','b']);
     },
@@ -30,7 +30,7 @@ function create() {
   return game;
 
   function moveSprite() {
-    var width = utils.getIconWidth(game);
+    let width = utils.getIconSize(game);
     sprite1.x = game.rnd.integerInRange(width/2, game.width - width/2);
     sprite1.y = game.rnd.integerInRange(width/2, game.height - width/2);
   }

@@ -14,6 +14,7 @@
       {{/single}}
     {{/ifequal}}
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
+    <link rel="stylesheet" href="{{root}}assets/css/highlight.css">
   </head>
   <body>
     {{#ifequal letter "all"}}
@@ -26,10 +27,17 @@
     </section>
     {{/ifequal}}
     <section class="main">
-      {{> body}}
+{{> body}}
     </section>
     <section class="footer">
       {{> footer}}
     </section>
+    <script>
+      $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
   </body>
 </html>
