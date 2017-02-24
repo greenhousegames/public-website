@@ -13,7 +13,7 @@ a:
     Due to having zero acceleration, the velocity of the bottom sprite does not change. This is similar to cruise control in a car.  When cruise control is activated, the speed of the car stays constant.  This results in the car having zero acceleration.
     <br/>
     <br/>
-    Due to having negative acceleration, the velocity of the middle sprite decreases over time.  Once the sprite reaches zero velocity, it begins to move in the opposite direction.  This is similar to going in reverse in a car while it is already moving forward (don't try this at home).  Switching to reverse will not immediately cause the car to go backwards.  Instead the car will begin to slow down and then move in the opposite direction once the car has reaches zero velocity.
+    Due to having negative acceleration, the velocity of the middle sprite decreases over time.  Once the sprite reaches zero velocity, it begins to move in the opposite direction.  This is similar to going in reverse in a car while it is already moving forward (don't try this at home).  Switching to reverse will not immediately cause the car to go backwards.  Instead the car will begin to slow down and then move in the opposite direction once the car has reached zero velocity.
     <br/>
     <br/>
     Due to having positive acceleration, the velocity of the top sprite increases over time. This is similar to a gas pedal in a car.  When the gas pedal is pressed, the speed of the car increases.  This results in the car having positive acceleration.
@@ -210,7 +210,7 @@ l:
   content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has been given 100 <a href="h.html">health</a> and 3 lives.  The sprite will lose 1 life and be <a href="k.html">killed</a> when it reaches zero health. The sprite will be revived if it has remaining lives. See the <a href="#controls">controls</a> below.
    <br/>
    <br/>
-   Lives are a way to track how long the user can play the game.  The user can continue to play the game so long as they have lives remaining.  Once the user runs out of life they must restart the game or level.
+   Lives are a way to track how long the user can play the game.  The user can continue to play the game so long as they have lives remaining.  Once the user runs out of lives they must restart the game or level.
 m:
   order: 11
   letter: m
@@ -405,7 +405,7 @@ w:
     - k
     - s
     - v
-  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has use a weapon which can be used to fire bullets.  Tap the A button to fire a bullet in a random direction. See the <a href="#controls">controls</a> below.
+  content: Take a look at the <a href="s.html">sprite</a> in the game.  The sprite has been given a weapon which can be used to fire bullets.  Tap the A button to fire a bullet in a random direction. See the <a href="#controls">controls</a> below.
    <br/>
    <br/>
    A new sprite is created in the game when the weapon fires a bullet.  The bullet is given a <a href="v.html">velocity</a> in the direction where the tap occurred.  In this example the bullet just flies off into space, but in a real game you might use a weapon to <a href="k.html">kill</a> enemies or obstacles.
