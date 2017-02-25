@@ -5378,7 +5378,7 @@ a.button.icon-button-right i {
 a.playstore-button img {
   max-width: 155px;
   margin-top: -16px;
-  margin-bottom: -8px; }
+  margin-bottom: -4px; }
   @media print, screen and (min-width: 40em) {
     /* line 55, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     a.playstore-button img {
@@ -5496,6 +5496,28 @@ div.login-buttons a i {
 /* line 183, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.card.ad .card-section {
   width: 100%; }
+
+/* line 187, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+div.abc-header {
+  position: relative; }
+  /* line 190, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+  div.abc-header div.text-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #fefefe; }
+    /* line 196, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+    div.abc-header div.text-container a.button.hollow {
+      background-color: #fefefe;
+      color: #fefefe;
+      border: 1px solid #fefefe; }
+      /* line 131, /Users/brian/GitHub/greenhouse-website/node_modules/foundation-sites/scss/components/_button.scss */
+      div.abc-header div.text-container a.button.hollow:hover, div.abc-header div.text-container a.button.hollow:focus {
+        background-color: #fefefe;
+        color: #fefefe; }
+      /* line 139, /Users/brian/GitHub/greenhouse-website/node_modules/foundation-sites/scss/components/_button.scss */
+      div.abc-header div.text-container a.button.hollow, div.abc-header div.text-container a.button.hollow:hover, div.abc-header div.text-container a.button.hollow:focus {
+        background-color: transparent; }
 
 /* line 2, /Users/brian/GitHub/greenhouse-website/app/scss/components/_gamehome.scss */
 div.app-store-buttons a img {
