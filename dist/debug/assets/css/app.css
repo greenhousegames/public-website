@@ -5327,7 +5327,7 @@ section.main {
   @media print, screen and (min-width: 40em) {
     /* line 5, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     section.main {
-      min-height: calc(100vh - 54px - 100px); } }
+      min-height: calc(100vh - 54px - 152px); } }
   @media print, screen and (min-width: 64em) {
     /* line 5, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     section.main {
@@ -5342,7 +5342,7 @@ section.header.large + section {
   @media print, screen and (min-width: 40em) {
     /* line 22, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     section.header.large + section {
-      min-height: calc(100vh - 54px - 250px - 100px); } }
+      min-height: calc(100vh - 54px - 250px - 152px); } }
   @media print, screen and (min-width: 64em) {
     /* line 22, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     section.header.large + section {
@@ -5612,7 +5612,7 @@ section.footer {
   @media print, screen and (min-width: 40em) {
     /* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
     section.footer {
-      height: 100px; }
+      height: 152px; }
       /* line 6, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
       section.footer .menu-centered {
         text-align: inherit; } }
@@ -5627,15 +5627,15 @@ section.footer {
     section.footer div.row div.columns {
       position: relative;
       text-align: center; }
-      @media print, screen and (min-width: 40em) {
+      @media print, screen and (min-width: 64em) {
         /* line 22, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
         section.footer div.row div.columns:first-child {
-          left: 66.6666%;
+          left: 66.66667%;
           right: auto;
           text-align: right; }
         /* line 27, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
         section.footer div.row div.columns:last-child {
-          right: 33.3333%;
+          right: 33.33333%;
           left: auto;
           text-align: left; } }
     /* line 35, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
@@ -5644,42 +5644,31 @@ section.footer {
       text-align: center;
       display: inline-block;
       margin: 0; }
-      @media print, screen and (min-width: 40em) {
+      @media print, screen and (min-width: 64em) {
         /* line 35, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
         section.footer div.row ul.social-menu {
           display: block;
-          margin-bottom: 8px; } }
+          margin-top: 12px; } }
       /* line 46, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
       section.footer div.row ul.social-menu li {
         list-style: none;
         display: block;
-        float: right; }
-        /* line 51, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
+        float: right;
+        padding-right: 4px; }
+        /* line 52, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
         section.footer div.row ul.social-menu li a {
-          display: block;
-          height: 50px;
-          width: 50px;
-          background: url(/assets/img/icons/social-icons.png) no-repeat center 0; }
-          /* line 57, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
-          section.footer div.row ul.social-menu li a.twitter {
-            background-position: center 0; }
-          /* line 60, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
-          section.footer div.row ul.social-menu li a.facebook {
-            background-position: center -200px; }
-          /* line 63, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
-          section.footer div.row ul.social-menu li a.mail {
-            background-position: center -400px; }
-    /* line 70, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
+          display: block; }
+    /* line 58, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
     section.footer div.row a.logo-button {
       background: url(../img/logo-circle.png);
       height: 32px;
       width: 32px; }
-    /* line 76, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
+    /* line 64, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
     section.footer div.row p.copyright {
       margin: 6px 0 0;
       font-size: 0.75em;
       color: #fefefe; }
-    /* line 83, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
+    /* line 71, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
     section.footer div.row ul.menu li a {
       color: #e6e6e6; }
 
@@ -5785,21 +5774,21 @@ div.lesson-code pre {
 .ig-b-:hover {
   background-position: 0 -60px; }
 
-/* line 4, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+/* line 3, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
 .ig-b-:active {
   background-position: 0 -120px; }
 
-/* line 5, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
-.ig-b-v-24 {
-  width: 137px;
-  height: 24px;
-  background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+/* line 4, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+.ig-b-32 {
+  width: 32px;
+  height: 32px;
+  background: url(//badges.instagram.com/static/images/ig-badge-sprite-32.png) no-repeat 0 0; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 7, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
-  .ig-b-v-24 {
-    background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png);
-    background-size: 160px 178px; } }
+  /* line 6, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
+  .ig-b-32 {
+    background-image: url(//badges.instagram.com/static/images/ig-badge-sprite-32@2x.png);
+    background-size: 60px 178px; } }
 
 
 /*# sourceMappingURL=app.css.map*/
