@@ -55,7 +55,7 @@ a.playstore-button {
   img {
     max-width: 135px + 20px;
     margin-top: -16px;
-    margin-bottom: -8px;
+    margin-bottom: -4px;
 
     @include breakpoint(medium) {
       max-width: 200px + 32px;
