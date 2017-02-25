@@ -183,3 +183,20 @@ div.login-buttons {
 div.card.ad .card-section {
   width: 100%;
 }
+
+div.abc-header {
+  position: relative;
+
+  div.text-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: $white;
+
+    a.button.hollow {
+      @include button-style($white, $white, $white);
+      @include button-hollow;
+      border: 1px solid $white;
+    }
+  }
+}
