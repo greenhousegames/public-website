@@ -18,14 +18,14 @@ section.footer {
       position: relative;
       text-align: center;
 
-      @include breakpoint(medium) {
+      @include breakpoint(large) {
         &:first-child {
-          left: 66.6666%;
+          left: 100% * 8/12;
           right: auto;
           text-align: right;
         }
         &:last-child {
-          right: 33.3333%;
+          right: 100% * 4/12;
           left: auto;
           text-align: left;
         }
@@ -38,31 +38,19 @@ section.footer {
       display: inline-block;
       margin: 0;
 
-      @include breakpoint(medium) {
+      @include breakpoint(large) {
         display: block;
-        margin-bottom: 8px;
+        margin-top: 12px;
       }
 
       li {
         list-style: none;
         display: block;
         float: right;
+        padding-right: 4px;
 
         a {
           display: block;
-          height: 50px;
-          width: 50px;
-          background: url(/assets/img/icons/social-icons.png) no-repeat center 0;
-
-          &.twitter {
-            background-position: center 0;
-          }
-          &.facebook {
-            background-position: center -200px;
-          }
-          &.mail {
-            background-position: center -400px;
-          }
         }
       }
     }
