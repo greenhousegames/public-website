@@ -112,3 +112,31 @@ gulp.task('sitemap', function() {
       }))
       .pipe(gulp.dest(DIST));
 });
+
+gulp.task("revision", function(){
+  var dest = 'dist/' + (production ? 'release' : 'debug');
+  return gulp.src([
+    DIST + "/**/*.js",
+    DIST + "/**/*.css",
+    "!" + DIST + "/assets/icons/**/*",
+    "!" + DIST + "/assets/foundation-icons/**/*",
+    "!" + DIST + "/games/*/play/**/*"
+  ])
+    .pipe($.rev())
+    .pipe(gulp.dest(dest))
+    .pipe($.rev.manifest())
+    .pipe(gulp.dest(DIST));
+});
+
+gulp.task('finalcopy', ['revision'], function() {
+  var dest = 'dist/' + (production ? 'release' : 'debug');
+  var manifest = gulp.src(DIST + "/rev-manifest.json");
+
+  return gulp.src([
+    DIST + '/**/*',
+    "!" + DIST + "/**/*.js",
+    "!" + DIST + "/**/*.css"
+  ])
+    .pipe($.revReplace({manifest: manifest}))
+    .pipe(gulp.dest(dest));
+});
