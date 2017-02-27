@@ -28,9 +28,24 @@ abc_structured_data: true
     <p class="show-for-medium"><i>(hover over lesson to see interactive preview)</i></p>
   </div>
 </div>
+<script src="{{root}}assets/js/pages/learn/abc/utils.js"></script>
 <div class="row small-up-1 medium-up-2 large-up-3">
-  <script src="{{root}}assets/js/pages/learn/abc/utils.js"></script>
-  {{#eachsorted abc "letter"}}
+  {{#eachsorted_limit abc "letter" 0 12}}
     {{> learn_abc_preview preview='true'}}
-  {{/eachsorted}}
+  {{/eachsorted_limit}}
+</div>
+<div class="row">
+  <div class="column">
+    {{> adsense_ad id="8346252642"}}
+  </div>
+</div>
+<div class="row small-up-1 medium-up-2 large-up-3">
+  {{#eachsorted_limit abc "letter" 12 14}}
+    {{> learn_abc_preview preview='true'}}
+  {{/eachsorted_limit}}
+</div>
+<div class="row">
+  <div class="column">
+    {{> adsense_ad id="8346252642"}}
+  </div>
 </div>
