@@ -29,6 +29,16 @@ section.header.large + section {
   }
 }
 
+.games-row {
+  min-height: calc(100vh - #{$header-titlebar-height-small} - #{$header-banner-height-small});
+  @include breakpoint(medium) {
+    min-height: calc(100vh - #{$header-titlebar-height-medium} - #{$header-banner-height-medium});
+  }
+  @include breakpoint(large) {
+    min-height: calc(100vh - #{$header-titlebar-height-large} - #{$header-banner-height-large});
+  }
+}
+
 div.card-divider.primary {
   @include card-divider($background: $primary-color);
   color: $white;
@@ -48,80 +58,6 @@ a.button.icon-button, a.button.icon-button-left {
 a.button.icon-button-right {
   i {
     margin-left: 8px;
-  }
-}
-
-a.playstore-button {
-  img {
-    max-width: 135px + 20px;
-    margin-top: -16px;
-    margin-bottom: -4px;
-
-    @include breakpoint(medium) {
-      max-width: 200px + 32px;
-    }
-  }
-}
-
-a.appstore-button {
-  display:inline-block;
-  overflow:hidden;
-  background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;
-  width: 135px;
-  height: 40px;
-  background-size:contain;
-
-
-  @include breakpoint(medium) {
-    width: 200px;
-    height: 60px;
-  }
-}
-
-a.greenhousestore-button {
-  @include button-style(#000000, auto, auto);
-  width: 135px;
-  height: 40px;
-  padding: 0.25em;
-  border-radius: 4px;
-  margin: 0;
-
-  @include breakpoint(medium) {
-    width: 200px;
-    height: 60px;
-    padding: 0.5em;
-    border-radius: 8px;
-  }
-
-  div.image {
-    background: url(../img/logo-circle.png);
-    background-size: contain;
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-
-    @include breakpoint(medium) {
-      margin-top: 4px;
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  div.text {
-    display: inline-block;
-    width: 100px;
-
-    strong {
-      font-size: 14px;
-    }
-
-    @include breakpoint(medium) {
-      width: 150px;
-
-      strong {
-        font-size: 22px;
-      }
-    }
   }
 }
 

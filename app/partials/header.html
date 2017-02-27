@@ -1,18 +1,12 @@
 <div class="top-bar primary">
   <div class="top-bar-left">
     <ul class="menu">
-      {{#unless largeheader}}
-        {{#ifequal layout 'abc'}}
-          {{#ifpage 'index'}}
-          <li><a href="/" class="logo-back-button"></a></li>
-          {{/ifpage}}
-          {{#unlesspage 'index'}}
-          <li><a href="{{@root.root}}learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li>
-          {{/unlesspage}}
-        {{else}}
-        <li><a href="/" class="logo-back-button"></a></li>
-        {{/ifequal}}
-      {{/unless}}
+      {{#if abcletter}}
+      <li><a href="{{@root.root}}learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li>
+      {{/if}}
+      {{#if backlogo}}
+      <li><a href="/" class="logo-back-button"></a></li>
+      {{/if}}
     </ul>
   </div>
   <div class="top-bar-right">
@@ -54,7 +48,13 @@
     <div class=logo-container>
       <a class="logo" href="/"></a>
     </div>
+    {{#if abcletter}}
+    {{#single @root.abc abcletter}}
+    <span>{{ this.header }}</span>
+    {{/single}}
+    {{else}}
     <span>{{ title }}</span>
+    {{/if}}
   </div>
 </div>
 {{/if}}
