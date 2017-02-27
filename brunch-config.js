@@ -83,17 +83,22 @@ var config = {
 };
 
 // GAMES
-['smashdot'].forEach(function(game) {
-  config.files.javascripts.joinTo['assets/js/pages/games/' + game + '/reporting.js'] = 'app/pages/games/' + game + '/reporting.js';
+var temppath;
+var fs = require('fs');
+var yaml = require('js-yaml');
+var games = yaml.load(fs.readFileSync('./app/data/games.yml', 'utf8'));
+Object.keys(games).forEach(function(key) {
+  temppath = 'pages/games/' + key + '/reporting.js';
+  config.files.javascripts.joinTo['assets/js/' + temppath] = 'app/' + temppath;
 });
 
 // LEARNING ABCs
-var path = 'pages/learn/abc/utils.js';
-config.files.javascripts.joinTo['assets/js/' + path] = 'app/' + path;
-for (var i = 65; i <= 90; i++) {
-  var letter = String.fromCharCode(i).toLowerCase();
-  path = 'pages/learn/abc/' + letter + '.js';
-  config.files.javascripts.joinTo['assets/js/' + path] = 'app/' + path;
-}
+temppath = 'pages/learn/abc/utils.js';
+config.files.javascripts.joinTo['assets/js/' + temppath] = 'app/' + temppath;
+var abc = yaml.load(fs.readFileSync('./app/data/abc.yml', 'utf8'));
+Object.keys(abc).forEach(function(letter) {
+  temppath = 'pages/learn/abc/' + letter + '.js';
+  config.files.javascripts.joinTo['assets/js/' + temppath] = 'app/' + temppath;
+});
 
 module.exports = config;
