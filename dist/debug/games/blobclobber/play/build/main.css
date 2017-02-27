@@ -26680,6 +26680,10 @@ ion-navbar.toolbar {
   }
 }
 
+ion-item[text-center] {
+  text-align: center !important;
+}
+
 page-achievements ion-list[hidden] {
   display: none;
 }
