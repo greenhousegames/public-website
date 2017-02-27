@@ -20,7 +20,9 @@
       <li>
         <a href="{{@root.root}}games">Games</a>
         <ul class="menu vertical">
-          <li><a href="{{@root.root}}games/smashdot">Smash Dot</a></li>
+          {{#each @root.games}}
+            <li><a href="{{@root.root}}games/{{key}}">{{name}}</a></li>
+          {{/each}}
         </ul>
       </li>
       <li>
