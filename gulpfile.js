@@ -104,7 +104,7 @@ gulp.task('pages', function() {
 });
 
 gulp.task('sitemap', function() {
-  gulp.src(DIST + '/**/*.html', {
+  return gulp.src(DIST + '/**/*.html', {
           read: false
       })
       .pipe($.sitemap({
@@ -113,30 +113,19 @@ gulp.task('sitemap', function() {
       .pipe(gulp.dest(DIST));
 });
 
-gulp.task("revision", function(){
+gulp.task('finalcopy', function() {
   var dest = 'dist/' + (production ? 'release' : 'debug');
+  var revFilter = $.filter([
+    DIST + "/assets/js/**/*",
+    DIST + "/assets/css/**/*"
+  ], {restore: true});
+
   return gulp.src([
-    DIST + "/**/*.js",
-    DIST + "/**/*.css",
-    "!" + DIST + "/assets/icons/**/*",
-    "!" + DIST + "/assets/foundation-icons/**/*",
-    "!" + DIST + "/games/*/play/**/*"
+    DIST + '/**/*'
   ])
+    .pipe(revFilter)
     .pipe($.rev())
-    .pipe(gulp.dest(dest))
-    .pipe($.rev.manifest())
-    .pipe(gulp.dest(DIST));
-});
-
-gulp.task('finalcopy', ['revision'], function() {
-  var dest = 'dist/' + (production ? 'release' : 'debug');
-  var manifest = gulp.src(DIST + "/rev-manifest.json");
-
-  return gulp.src([
-    DIST + '/**/*',
-    "!" + DIST + "/**/*.js",
-    "!" + DIST + "/**/*.css"
-  ])
-    .pipe($.revReplace({manifest: manifest}))
+    .pipe(revFilter.restore)
+    .pipe($.revReplace())
     .pipe(gulp.dest(dest));
 });
