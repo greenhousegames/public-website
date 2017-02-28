@@ -117,7 +117,6 @@ gulp.task('sitemap', function() {
 });
 
 gulp.task('finalcopy', function() {
-  var dest = 'dist/' + (production ? 'release' : 'debug');
   var revFilter = $.filter([
     DIST + "/assets/js/**/*",
     DIST + "/assets/css/**/*"
@@ -126,15 +125,22 @@ gulp.task('finalcopy', function() {
     DIST + "/assets/img/**/*"
   ], {restore: true});
 
-  return gulp.src([
-    DIST + '/**/*'
-  ])
-    .pipe(imgFilter)
-    .pipe($.imagemin())
-    .pipe(imgFilter.restore)
-    .pipe(revFilter)
-    .pipe($.rev())
-    .pipe(revFilter.restore)
-    .pipe($.revReplace())
-    .pipe(gulp.dest(dest));
+  if (production) {
+    return gulp.src([
+      DIST + '/**/*'
+    ])
+      .pipe(imgFilter)
+      .pipe($.imagemin())
+      .pipe(imgFilter.restore)
+      .pipe(revFilter)
+      .pipe($.rev())
+      .pipe(revFilter.restore)
+      .pipe($.revReplace())
+      .pipe(gulp.dest('dist/release'));
+  } else {
+    return gulp.src([
+      DIST + '/**/*'
+    ])
+      .pipe(gulp.dest('dist/debug'));
+  }
 });
