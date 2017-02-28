@@ -6,6 +6,10 @@ section.header {
 
     ul.dropdown.menu .submenu {
       background-color: $secondary-color;
+
+      a.account-link {
+        white-space: nowrap;
+      }
     }
 
     div.top-bar-left {
