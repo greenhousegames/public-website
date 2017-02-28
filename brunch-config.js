@@ -35,8 +35,9 @@ var config = {
     },
     stylesheets: {
       joinTo: {
-        'assets/css/app.css': [/^(app)/, "!app/scss/highlight.scss"],
+        'assets/css/app.css': [/^(app)/, "!app/scss/highlight.scss", "!app/scss/amp.scss"],
         'assets/css/highlight.css': "app/scss/highlight.scss",
+        'assets/css/amp.css': "app/scss/amp.scss"
       }
     }
   },

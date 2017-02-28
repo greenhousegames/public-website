@@ -4,7 +4,9 @@
 <html class="no-js" lang="en" amp>
   <head>
     {{> amp_html_head }}
-    {{> amp_styles }}
+    <style amp-custom>
+    {{getfile 'public/assets/css/' 'amp' '.css'}}
+    </style>
   </head>
   <body>
     <section class="header">
