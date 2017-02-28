@@ -5552,58 +5552,61 @@ section.header div.top-bar a, section.header div.top-bar a:hover {
 /* line 7, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
 section.header div.top-bar ul.dropdown.menu .submenu {
   background-color: #777; }
+  /* line 10, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+  section.header div.top-bar ul.dropdown.menu .submenu a.account-link {
+    white-space: nowrap; }
 
-/* line 13, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+/* line 17, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
 section.header div.top-bar div.top-bar-left li a.logo-back-button {
   margin: 3px;
   background: url(../icons/logo-circle.png);
   height: 32px;
   width: 32px; }
 
-/* line 20, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+/* line 24, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
 section.header div.top-bar div.top-bar-left li a.arrow-back-button {
   margin: 3px;
   padding: 0; }
-  /* line 24, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+  /* line 28, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
   section.header div.top-bar div.top-bar-left li a.arrow-back-button i.fi-arrow-left {
     font-size: 32px;
     padding-left: 4px; }
 
-/* line 33, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+/* line 37, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
 section.header a.root-user-header {
   position: absolute;
   right: 0;
   top: 0;
   color: white;
   padding-right: 8px; }
-  /* line 40, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+  /* line 44, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
   section.header a.root-user-header i {
     margin-right: 4px; }
 
-/* line 45, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+/* line 49, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
 section.header div.thumbnail-image {
   display: inline-block; }
-  /* line 47, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+  /* line 51, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
   section.header div.thumbnail-image img {
     border-radius: 50%;
     height: 32px;
     width: 32px;
     margin-right: 8px; }
 
-/* line 55, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+/* line 59, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
 section.header div.main-header-banner {
   height: 175px;
   background: #77DD77;
   background: linear-gradient(#77DD77, #f5f5f5); }
   @media print, screen and (min-width: 40em) {
-    /* line 55, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+    /* line 59, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
     section.header div.main-header-banner {
       height: 250px; } }
   @media print, screen and (min-width: 64em) {
-    /* line 55, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+    /* line 59, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
     section.header div.main-header-banner {
       height: 250px; } }
-  /* line 67, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+  /* line 71, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
   section.header div.main-header-banner span {
     color: #777;
     font-size: 32px;
@@ -5611,10 +5614,10 @@ section.header div.main-header-banner {
     display: block;
     text-align: center; }
     @media print, screen and (min-width: 40em) {
-      /* line 67, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+      /* line 71, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
       section.header div.main-header-banner span {
         font-size: 48px; } }
-  /* line 79, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+  /* line 83, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
   section.header div.main-header-banner div.logo-container {
     height: 96px;
     width: 96px;
@@ -5622,11 +5625,11 @@ section.header div.main-header-banner {
     margin-right: auto;
     position: relative; }
     @media print, screen and (min-width: 40em) {
-      /* line 79, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+      /* line 83, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
       section.header div.main-header-banner div.logo-container {
         height: 128px;
         width: 128px; } }
-    /* line 91, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+    /* line 95, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
     section.header div.main-header-banner div.logo-container a.logo {
       background: url(../icons/logo-circle-large.png);
       background-size: contain;
@@ -5634,7 +5637,7 @@ section.header div.main-header-banner {
       height: 96px;
       width: 96px; }
       @media print, screen and (min-width: 40em) {
-        /* line 91, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
+        /* line 95, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
         section.header div.main-header-banner div.logo-container a.logo {
           height: 128px;
           width: 128px; } }
