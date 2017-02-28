@@ -5,10 +5,34 @@
   "hosting": {
     "public": "dist/release",
     "headers": [{
-      "source": "/games/**/*.*",
+      "source": "games/*/play/**/*.*",
       "headers": [{
       	"key": "Cache-Control",
       	"value": "max-age=0, private, no-store, no-cache, must-revalidate"
+      }]
+    },{
+      "source": "assets/@(js|css)/**/*.@(js|css)",
+      "headers": [{
+      	"key": "Cache-Control",
+      	"value": "max-age=31556926"
+      }]
+    }, {
+      "source" : "assets/img/**/*.@(jpg|jpeg|gif|png)",
+      "headers" : [{
+      "key" : "Cache-Control",
+      "value" : "max-age=7200"
+      }]
+    }, {
+      "source" : "assets/sounds/**/*.@(m4a|mp3|ogg)",
+      "headers" : [{
+      "key" : "Cache-Control",
+      "value" : "max-age=7200"
+      }]
+    }, {
+      "source" : "404.html",
+      "headers" : [{
+      "key" : "Cache-Control",
+      "value" : "max-age=300"
       }]
     }],
     "cleanUrls": true,

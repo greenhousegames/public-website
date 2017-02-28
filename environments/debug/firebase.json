@@ -5,7 +5,7 @@
   "hosting": {
     "public": "dist/debug",
     "headers": [{
-      "source": "/games/**/*.*",
+      "source": "**/*.*",
       "headers": [{
       	"key": "Cache-Control",
       	"value": "max-age=0, private, no-store, no-cache, must-revalidate"
