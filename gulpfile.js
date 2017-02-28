@@ -92,7 +92,10 @@ gulp.task('pages', function() {
     }))
     .pipe($.if(production, $.htmlmin({
       collapseWhitespace: true,
-      removeComments: true
+      removeComments: true,
+      minifyJS: true,
+      minifyCSS: true,
+      processScripts: ["application/ld+json","application/json"]
     })))
     .pipe($.if(production, $.assetpaths({
       newDomain: 'https://www.greenhousegames.com',
@@ -119,10 +122,16 @@ gulp.task('finalcopy', function() {
     DIST + "/assets/js/**/*",
     DIST + "/assets/css/**/*"
   ], {restore: true});
+  var imgFilter = $.filter([
+    DIST + "/assets/img/**/*"
+  ], {restore: true});
 
   return gulp.src([
     DIST + '/**/*'
   ])
+    .pipe(imgFilter)
+    .pipe($.imagemin())
+    .pipe(imgFilter.restore)
     .pipe(revFilter)
     .pipe($.rev())
     .pipe(revFilter.restore)
