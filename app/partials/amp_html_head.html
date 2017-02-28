@@ -1,34 +1,20 @@
-<meta charset="utf-8" />
+<meta charset="utf-8">
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="keywords" content="games, free, app" />
 <meta name="author" content="Greenhouse Games, LLC">
-<title>{{@root.title}}</title>
-{{#unless @root.description}}
+<title>Greenhouse Games</title>
 <meta name="description" content="Free games and apps made for all devices!">
-{{/unless}}
-{{#if @root.description}}
-<meta name="description" content="{{@root.description}}">
-{{/if}}
-<link rel="stylesheet" href="{{@root.root}}assets/css/app.css">
+<link rel="canonical" href="{{root}}{{canonical}}" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="{{@root.root}}assets/icons/favicon.ico"/>
 <link rel="apple-touch-icon" sizes="57x57" href="{{@root.root}}assets/icons/apple-icon-57x57.png" />
 <link rel="apple-touch-icon" sizes="72x72" href="{{@root.root}}assets/icons/apple-icon-72x72.png" />
 <link rel="apple-touch-icon" sizes="114x114" href="{{@root.root}}assets/icons/apple-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="{{@root.root}}assets/icons/apple-icon-144x144.png" />
-<link rel="stylesheet" href="{{@root.root}}assets/foundation-icons/foundation-icons.css" />
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-1862027323148977",
-    enable_page_level_ads: true
-  });
-</script>
-<script src="{{@root.root}}assets/js/vendor.js"></script>
-<script onload="require('app.js')" src="{{@root.root}}assets/js/app.js"></script>
-{{#unless hideorgdata}}
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -52,15 +38,7 @@
   }
 }
 </script>
-{{/unless}}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script>
-// facebook
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1193182344132806";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
+{{#if structured_data}}
+  {{> structured_data structured_data}}
+{{/if}}
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
