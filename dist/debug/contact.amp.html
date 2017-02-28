@@ -3,6 +3,7 @@
 <html class="no-js" lang="en" amp>
   <head>
     <meta charset="utf-8">
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="mobile-web-app-capable" content="yes">
@@ -46,21 +47,23 @@
       </script>
       
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    
     <style amp-custom>
-      body {
-        background: #f5f5f5;
-      }
-
       body, html {
         height: 100%;
       }
-
+    
+      body {
+        background: #f5f5f5;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      }
+    
       section.header {
         height: 200px;
         background: #77dd77;
         background: linear-gradient(#77dd77, #f5f5f5);
       }
-
+    
       section.header span {
         color: #777;
         font-size: 32px;
@@ -68,7 +71,7 @@
         display: block;
         text-align: center;
       }
-
+    
       section.header div.logo-container {
         height: 96px;
         width: 96px;
@@ -77,7 +80,7 @@
         position: relative;
         padding-top: 16px;
       }
-
+    
       section.header div.logo-container a.logo {
         background: url(assets/icons/logo-circle-large.png);
         background-size: contain;
@@ -85,23 +88,23 @@
         height: 96px;
         width: 96px;
       }
-
+    
       section.main {
         min-height: calc(100vh - 300px);
       }
-
+    
       section.footer {
         height: 100px;
         background: #777;
       }
-
+    
       section.footer p.copyright {
         margin: 6px 0 0;
         font-size: 0.75em;
         color: #ffffff;
         text-align: center;
       }
-
+    
       section.footer ul.menu {
         list-style: none;
         text-align: center;
@@ -109,12 +112,12 @@
         vertical-align: top;
         padding: 0;
       }
-
+    
       section.footer ul.menu li {
         display: table-cell;
         vertical-align: middle;
       }
-
+    
       section.footer ul.menu li a {
         color: #e6e6e6;
         display: block;
@@ -122,80 +125,92 @@
         line-height: 1;
         text-decoration: none;
       }
-
+    
       section.footer a.logo-button {
         background: url(assets/icons/logo-circle.png);
         height: 32px;
         width: 32px;
       }
-
+    
       section.footer ul.menu li a.logo-button {
         padding: 0;
       }
-
+    
       section.footer div.row div.column {
         margin-bottom: 16px;
       }
-
+    
+      div.row {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
       div.row div.column{
         padding: 0 16px;
       }
-
+    
       div.row div.column p {
         margin: 0;
       }
-
+    
       .text-center {
         text-align: center;
       }
     </style>
+    
   </head>
   <body>
     <section class="header">
-      <div class=logo-container>
-        <a class="logo" href="/"></a>
+      <div class="row">
+        <div class="column">
+          <div class=logo-container>
+            <a class="logo" href="/"></a>
+          </div>
+          <span>Contact Us</span>
+        </div>
       </div>
-      <span>Contact Us</span>
+      
     </section>
     <section class="main">
-    <div class="row">
-      <div class="column small-12">
-        <p class="text-center">Greenhouse Games cares about our customers and visitors. Feel free to contact us about anything.</p>
-      </div>
-      <div class="column small-12 medium-6">
-        <div class="card">
-          <div class="card-section">
-            <h6>Email</h6>
-            <a href="mailto:support@greenhousegames.com">support@greenhousegames.com</a>
+      <div class="row">
+        <div class="column small-12">
+          <p class="text-center">Greenhouse Games cares about our customers and visitors. Feel free to contact us about anything.</p>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
+              <h4>Email</h4>
+              <a href="mailto:support@greenhousegames.com">support@greenhousegames.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
+              <h4>Facebook</h4>
+              <a href="https://www.facebook.com/greenhousegamez">greenhousegamez</a>
+            </div>
+          </div>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
+              <h4>Twitter</h4>
+              <a href="https://twitter.com/greenhousegamez">greenhousegamez</a>
+            </div>
+          </div>
+        </div>
+        <div class="column small-12 medium-6">
+          <div class="card">
+            <div class="card-section">
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/greenhousegamez">greenhousegamez</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="column small-12 medium-6">
-        <div class="card">
-          <div class="card-section">
-            <h6>Facebook</h6>
-            <a href="https://www.facebook.com/greenhousegamez">greenhousegamez</a>
-          </div>
-        </div>
-      </div>
-      <div class="column small-12 medium-6">
-        <div class="card">
-          <div class="card-section">
-            <h6>Twitter</h6>
-            <a href="https://twitter.com/greenhousegamez">greenhousegamez</a>
-          </div>
-        </div>
-      </div>
-      <div class="column small-12 medium-6">
-        <div class="card">
-          <div class="card-section">
-            <h6>Instagram</h6>
-            <a href="https://www.instagram.com/greenhousegamez">greenhousegamez</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+      
     </section>
     <section class="footer">
       <div class="row">
@@ -211,6 +226,22 @@
           <p class="copyright">© 2016-2017 Greenhouse Games, LLC. All rights reserved.</p>
         </div>
       </div>
+      <amp-analytics type="googleanalytics">
+      <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-85526007-1"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        }
+      }
+      </script>
+      </amp-analytics>
+      
     </section>
   </body>
 </html>
