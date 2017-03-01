@@ -281,8 +281,8 @@ var Reporting = function (_FirebaseClient) {
         } else {
           var date = new Date();
           date.setTime(values[0]);
-          jQuery('#last_played_timestamp').attr('datetime', date.toISOString());
-          jQuery('#last_played_timestamp').timeago();
+          jQuery('#last_played_timestamp').html('<time datetime="' + date.toISOString() + '"></time>');
+          jQuery('#last_played_timestamp time').timeago();
         }
       }).catch(function (err) {
         console.log(err);
