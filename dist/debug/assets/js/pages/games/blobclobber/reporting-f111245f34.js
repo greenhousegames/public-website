@@ -385,13 +385,11 @@ var Reporting = function (_FirebaseClient) {
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(function () {
   var report = new Reporting();
-  report.requireAuth().then(function () {
-    $(document).ready(function () {
-      report.draw();
+  $(document).ready(function () {
+    report.draw();
 
-      $(window).resize(function () {
-        report.draw();
-      });
+    $(window).resize(function () {
+      report.draw();
     });
   });
 });
