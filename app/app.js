@@ -31,6 +31,7 @@ window.GreenhouseGames = {
 };
 
 $(document).ready(() => {
+  // AUTH
   window.GreenhouseGames.client.firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       window.GreenhouseGames.authHelpers.loginSuccess({user: user});
@@ -39,6 +40,12 @@ $(document).ready(() => {
     }
   });
 
+  // HEADER
+  $('#header-logout-button').click(() => {
+    window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth);
+  });
+
+  // FOUNADTION
   $(document).foundation();
 });
 

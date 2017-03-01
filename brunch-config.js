@@ -94,8 +94,9 @@ Object.keys(games).forEach(function(key) {
 });
 
 // LEARNING ABCs
-temppath = 'pages/learn/abc/utils.js';
-config.files.javascripts.joinTo['assets/js/' + temppath] = 'app/' + temppath;
+['pages/learn/abc/utils.js', 'pages/learn/abc/preview.js'].forEach(function(path) {
+  config.files.javascripts.joinTo['assets/js/' + path] = 'app/' + path;
+});
 var abc = yaml.load(fs.readFileSync('./app/data/abc.yml', 'utf8'));
 Object.keys(abc).forEach(function(letter) {
   temppath = 'pages/learn/abc/' + letter + '.js';

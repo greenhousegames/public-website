@@ -18,6 +18,17 @@
       {{/each}}
     {{/if}}
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
+    {{#if abc_preview_scripts}}
+      <script async src="{{ root }}assets/js/pages/learn/abc/preview.js"></script>
+      <script>
+      $(document).ready(function() {
+        var preview = require('pages/learn/abc/preview.js');
+        {{#each abc}}
+        preview('{{@root.root}}assets/js/pages/learn/abc/{{ letter }}.js', '{{ letter }}');
+        {{/each}}
+      });
+      </script>
+    {{/if}}
   </head>
   <body>
     <section class="header large">
