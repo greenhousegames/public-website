@@ -67,3 +67,18 @@ div.lesson-code {
     }
   }
 }
+
+div.continue-learning {
+  a.button {
+    padding-bottom: 0.75em;
+    div {
+      .material-icons {
+        margin-top: -5px;
+      }
+
+      span {
+        vertical-align: top;
+      }
+    }
+  }
+}

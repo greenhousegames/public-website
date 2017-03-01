@@ -30,12 +30,10 @@ div.header {
         }
 
         a.arrow-back-button {
-          margin: 3px;
           padding: 0;
 
-          i.fi-arrow-left {
-            font-size: 32px;
-            padding-left: 4px;
+          i {
+            font-size: 36px;
           }
         }
       }

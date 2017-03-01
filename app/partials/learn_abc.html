@@ -91,26 +91,34 @@ $(document).ready(function() {
     </div>
   </div>
   <div class="column small-12 medium-6">
-    <div class="card">
+    <div class="card continue-learning">
       <div class="card-section">
         <h4 class="subheader text-center">Continue Learning</h4>
         <div class="row medium-up-1 large-up-2 text-center">
           <div class="column">
             <h6>Following Alphabetically?</h6>
             {{#singlesorted @root.abc 'letter' letter -1 }}
-              <a class="button icon-button secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+              <a class="button icon-button secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>
+                <div><i class="material-icons">chevron_left</i><span>PREVIOUS</span></div>
+              </a>
             {{/singlesorted}}
             {{#singlesorted @root.abc 'letter' letter 1 }}
-              <a class="button icon-button-right secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>NEXT<i class="fi-fast-forward medium-icon"></i></a>
+              <a class="button icon-button-right secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>
+                <div><span>NEXT</span><i class="material-icons">chevron_right</i></div>
+              </a>
             {{/singlesorted}}
           </div>
           <div class="column">
             <h6>Following Lesson Plan?</h6>
             {{#singlesorted @root.abc 'order' letter -1 }}
-              <a class="button icon-button secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
+              <a class="button icon-button secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>
+                <div><i class="material-icons">chevron_left</i><span>PREVIOUS</span></div>
+              </a>
             {{/singlesorted}}
             {{#singlesorted @root.abc 'order' letter 1 }}
-              <a class="button icon-button-right secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>NEXT<i class="fi-fast-forward medium-icon"></i></a>
+              <a class="button icon-button-right secondary {{#unless letter}}hollow{{/unless}}" {{#if letter}}href="{{ letter }}.html"{{/if}}>
+                <div><span>NEXT</span><i class="material-icons">chevron_right</i></div>
+              </a>
             {{/singlesorted}}
           </div>
         </div>

@@ -18,8 +18,8 @@ window.GreenhouseGames = {
         $('div.user-image').html('<img alt="User Profile Image" src="' + data.user.photoURL + '">');
         $('.user-name').text(data.user.displayName);
       } else {
-        $('a.account-link').html('<i class="fi-torso"></i>Guest');
-        $('div.user-image').html('<i class="fi-torso"></i>');
+        $('a.account-link').html('<i class="material-icons">person</i>Guest');
+        $('div.user-image').html('<i class="material-icons">person</i>');
         $('.user-name').text('Guest');
       }
 
