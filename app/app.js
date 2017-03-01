@@ -14,14 +14,15 @@ window.GreenhouseGames = {
     },
     loginSuccess: (data) => {
       if (data.user && !data.user.isAnonymous) {
+        $('a.account-link').html('<div class="thumbnail-image user-image"></div>' + data.user.displayName);
         $('div.user-image').html('<img alt="User Profile Image" src="' + data.user.photoURL + '">');
-        $('.user-image-guest').addClass('hidden');
         $('.user-name').text(data.user.displayName);
       } else {
-        $('div.user-image').html('');
-        $('.user-image-guest').removeClass('hidden');
+        $('a.account-link').html('<i class="fi-torso"></i>Guest');
+        $('div.user-image').html('<i class="fi-torso"></i>');
         $('.user-name').text('Guest');
       }
+
       window.GreenhouseGames.authHelpers.showAuth();
     },
     loginError: (err) => {

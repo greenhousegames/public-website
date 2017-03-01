@@ -9,17 +9,7 @@ div.user-image img {
   }
 }
 
-div.user-image-guest {
-  display: inline-block;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-
-  @include breakpoint(medium) {
-    width: 200px;
-    height: 200px;
-  }
-
+div.user-image {
   i {
     font-size: 100px;
 

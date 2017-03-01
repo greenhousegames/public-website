@@ -16,7 +16,6 @@
       {{/single}}
     {{/ifequal}}
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
-    <link rel="stylesheet" href="{{root}}assets/css/highlight.css">
     {{#ifequal letter "all"}}
       <script async src="{{ root }}assets/js/pages/learn/abc/preview.js"></script>
       <script>
@@ -28,6 +27,8 @@
       });
       </script>
     {{else}}
+    <script src="{{ root }}assets/js/highlight.js"></script>
+    <link rel="stylesheet" href="{{root}}assets/css/highlight.css">
     <script src="{{ root }}assets/js/pages/learn/abc/utils.js"></script>
     <script src="{{ root }}assets/js/pages/learn/abc/{{ letter }}.js"></script>
     <script>
@@ -44,20 +45,18 @@
     {{/ifequal}}
   </head>
   <body>
+    <div class="header">
     {{#ifequal letter "all"}}
-    <section class="header">
       {{> header }}
-    </section>
     {{else}}
-    <section class="header">
       {{> header abcletter=letter}}
-    </section>
     {{/ifequal}}
-    <section class="main">
+    </div>
+    <div class="main">
 {{> body}}
-    </section>
-    <section class="footer">
+    </div>
+    <div class="footer">
       {{> footer}}
-    </section>
+    </div>
   </body>
 </html>

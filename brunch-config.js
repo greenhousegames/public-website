@@ -13,21 +13,22 @@ var config = {
       'node_modules/what-input/what-input.js',
       'node_modules/timeago/jquery.timeago.js',
       'node_modules/foundation-sites/dist/js/plugins/foundation.core.js',
+      'node_modules/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js',
       'node_modules/foundation-sites/dist/js/plugins/foundation.dropdownMenu.js',
       'node_modules/foundation-sites/dist/js/plugins/foundation.equalizer.js',
       'node_modules/foundation-sites/dist/js/plugins/foundation.tabs.js',
       'node_modules/foundation-sites/dist/js/plugins/foundation.util.box.js',
       'node_modules/foundation-sites/dist/js/plugins/foundation.util.keyboard.js',
       'node_modules/foundation-sites/dist/js/plugins/foundation.util.nest.js',
-      'node_modules/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js',
-      'node_modules/highlightjs/highlight.pack.js'
+      'node_modules/highlightjs/highlight.pack.min.js'
     ]
   },
 
   files: {
     javascripts: {
       joinTo: {
-        'assets/js/vendor.js': /^(?!app)/,
+        'assets/js/vendor.js': [/^(?!app)/, '!node_modules/highlightjs/*.js'],
+        'assets/js/highlight.js': 'node_modules/highlightjs/*.js',
         'assets/js/app.js': "app/*.js",
         'assets/js/pages/account/account.js': "app/pages/account/account.js"
       },
@@ -35,8 +36,7 @@ var config = {
         after: [
           'node_modules/what-input/what-input.js',
           'node_modules/timeago/jquery.timeago.js',
-          'node_modules/foundation-sites/dist/js/foundation.js',
-          'node_modules/highlightjs/highlight.pack.js'
+          'node_modules/foundation-sites/dist/js/plugins/*.js'
         ]
       }
     },

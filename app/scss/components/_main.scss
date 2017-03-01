@@ -2,7 +2,7 @@ html, body {
   height: 100%;
 }
 
-section.main {
+div.main {
   padding-top: $header-padding;
 
   min-height: calc(100vh - #{$header-titlebar-height-small} - #{$header-banner-height-small} - #{$footer-height-small});

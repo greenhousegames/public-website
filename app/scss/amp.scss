@@ -28,7 +28,7 @@ div.row {
   }
 }
 
-section.header {
+div.header {
   height: 200px;
   background: $primary-color;
   background: linear-gradient($primary-color, $body-background);
@@ -58,11 +58,11 @@ section.header {
   }
 }
 
-section.main {
+div.main {
   min-height: calc(100vh - 300px);
 }
 
-section.footer {
+div.footer {
   height: 100px;
   background: $secondary-color;
 
