@@ -192,6 +192,7 @@ window.GreenhouseGames = {
 };
 
 (0, _jquery2.default)(document).ready(function () {
+  // AUTH
   window.GreenhouseGames.client.firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       window.GreenhouseGames.authHelpers.loginSuccess({ user: user });
@@ -200,6 +201,12 @@ window.GreenhouseGames = {
     }
   });
 
+  // HEADER
+  (0, _jquery2.default)('#header-logout-button').click(function () {
+    window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth);
+  });
+
+  // FOUNADTION
   (0, _jquery2.default)(document).foundation();
 });
 
