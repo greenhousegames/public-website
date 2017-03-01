@@ -89,3 +89,20 @@ div.vertical-app-store-buttons {
     }
   }
 }
+
+span.ranking-value {
+  font-size: 32px;
+  display: block;
+
+  @include breakpoint(medium) {
+    font-size: 36px;
+  }
+  @include breakpoint(large) {
+    font-size: 42px;
+  }
+}
+
+span.ranking-size {
+  font-size: 16px;
+  display: block;
+}
