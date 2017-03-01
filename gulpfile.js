@@ -90,6 +90,19 @@ gulp.task('pages', function() {
       data: 'app/data/',
       helpers: 'app/helpers/'
     }))
+    .pipe($.if(production, $.htmlmin({
+      collapseWhitespace: true,
+      removeComments: true,
+      minifyJS: true,
+      minifyCSS: true,
+      processScripts: ["application/ld+json","application/json"]
+    })))
+    .pipe($.if(production, $.assetpaths({
+      newDomain: 'https://www.greenhousegames.com',
+      oldDomain : 'www.greenhousegames.com',
+      docRoot : 'public',
+      filetypes : ['jpg','jpeg','png','ico','gif','js','css']
+    })))
     .pipe(gulp.dest(DIST));
 });
 
@@ -114,29 +127,10 @@ gulp.task('finalcopy', function() {
   var imgFilter = $.filter([
     DIST + "/assets/img/**/*"
   ], {restore: true});
-  var htmlminFilter = $.filter([
-    DIST + "/**/*.html",
-    "!" + DIST + "/games/*/play/**"
-  ], {restore: true});
 
   var sharedStream = gulp.src([
     DIST + '/**/*'
   ])
-    .pipe(htmlminFilter)
-    .pipe($.htmlmin({
-      collapseWhitespace: true,
-      removeComments: true,
-      minifyJS: true,
-      minifyCSS: true,
-      processScripts: ["application/ld+json","application/json"]
-    }))
-    .pipe($.if(production, $.assetpaths({
-      newDomain: 'https://www.greenhousegames.com',
-      oldDomain : 'www.greenhousegames.com',
-      docRoot : 'public',
-      filetypes : ['jpg','jpeg','png','ico','gif','js','css']
-    })))
-    .pipe(htmlminFilter.restore)
     .pipe(imgFilter)
     .pipe($.imagemin())
     .pipe(imgFilter.restore)
