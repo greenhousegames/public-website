@@ -557,7 +557,11 @@
         </div>
       </div>
       <script>
-      $('#header-logout-button').click(() => window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth));
+      $(document).ready(function() {
+        $('#header-logout-button').click(function() {
+          window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth);
+        });
+      });
       </script>
       
     </section>
