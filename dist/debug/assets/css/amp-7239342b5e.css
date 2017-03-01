@@ -45,48 +45,47 @@ section.header {
     padding-top: 1rem; }
     /* line 52, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
     section.header div.logo-container a.logo {
-      background: url(/assets/icons/logo-circle-large.png);
       background-size: contain;
       position: absolute;
       height: 96px;
       width: 96px; }
 
-/* line 62, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+/* line 61, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 section.main {
   min-height: calc(100vh - 300px); }
 
-/* line 66, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+/* line 65, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 section.footer {
   height: 100px;
   background: #777; }
-  /* line 70, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  /* line 69, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
   section.footer div.row div.column {
     margin-bottom: 1rem; }
-  /* line 74, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  /* line 73, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
   section.footer p.copyright {
     margin: 6px 0 0;
     font-size: 0.75em;
     color: #fefefe;
     text-align: center; }
-  /* line 81, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  /* line 80, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
   section.footer ul.menu {
     list-style: none;
     text-align: center;
     display: inline-block;
     vertical-align: top;
     padding: 0; }
-    /* line 88, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+    /* line 87, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
     section.footer ul.menu li {
       display: table-cell;
       vertical-align: middle; }
-      /* line 92, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+      /* line 91, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
       section.footer ul.menu li a {
         color: #e6e6e6;
         display: block;
         padding: .7rem 1rem;
         line-height: 1;
         text-decoration: none; }
-      /* line 100, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+      /* line 99, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
       section.footer ul.menu li a.logo-button {
         background: url(/assets/icons/logo-circle.png);
         height: 32px;
