@@ -208,13 +208,11 @@ class Reporting extends FirebaseClient {
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(() => {
   var report = new Reporting();
-  report.requireAuth().then(() => {
     $(document).ready(() => {
-      report.draw();
+    report.draw();
 
-      $(window).resize(() => {
-        report.draw();
-      });
+    $(window).resize(() => {
+      report.draw();
     });
   });
 });
