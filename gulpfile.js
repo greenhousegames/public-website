@@ -118,10 +118,6 @@ gulp.task('finalcopy', function() {
     DIST + "/**/*.html",
     "!" + DIST + "/games/*/play/**"
   ], {restore: true});
-  var assetpathsFilter = $.filter([
-    DIST + "/**/*.html",
-    "!" + DIST + "/games/*/play/**"
-  ], {restore: true});
 
   var sharedStream = gulp.src([
     DIST + '/**/*'
@@ -134,6 +130,12 @@ gulp.task('finalcopy', function() {
       minifyCSS: true,
       processScripts: ["application/ld+json","application/json"]
     }))
+    .pipe($.if(production, $.assetpaths({
+      newDomain: 'https://www.greenhousegames.com',
+      oldDomain : 'www.greenhousegames.com',
+      docRoot : 'public',
+      filetypes : ['jpg','jpeg','png','ico','gif','js','css']
+    })))
     .pipe(htmlminFilter.restore)
     .pipe(imgFilter)
     .pipe($.imagemin())
@@ -145,15 +147,7 @@ gulp.task('finalcopy', function() {
 
   if (production) {
     return sharedStream
-      .pipe(assetpathsFilter)
-      .pipe($.assetpaths({
-        newDomain: 'https://www.greenhousegames.com',
-        oldDomain : 'www.greenhousegames.com',
-        docRoot : 'public',
-        filetypes : ['jpg','jpeg','png','ico','gif','js','css']
-      }))
-      .pipe(assetpathsFilter.restore)
-      .pipe(gulp.dest('dist/release'));
+      .pipe(gulp.dest('dist/debug'));
   } else {
     return sharedStream
       .pipe(gulp.dest('dist/debug'));
