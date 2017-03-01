@@ -9,13 +9,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="Greenhouse Games, LLC">
     <title>Learning | Platformer</title>
-    <link rel="stylesheet" href="../../assets/css/app-945d337db4.css">
+    <link rel="stylesheet" href="../../assets/css/app-ea98d2e768.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/icons/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="57x57" href="../../assets/icons/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="../../assets/icons/apple-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="../../assets/icons/apple-icon-114x114.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="../../assets/icons/apple-icon-144x144.png" />
-    <link rel="stylesheet" href="../../assets/foundation-icons/foundation-icons.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -24,7 +24,7 @@
       });
     </script>
     <script src="../../assets/js/vendor-2c0bd79f95.js"></script>
-    <script onload="require('app.js')" src="../../assets/js/app-381c2f9884.js"></script>
+    <script onload="require('app.js')" src="../../assets/js/app-77abf712b3.js"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
     // facebook
@@ -78,7 +78,7 @@
       <div class="top-bar primary">
         <div class="top-bar-left">
           <ul class="menu">
-            <li><a href="../../learn/abc" class="arrow-back-button"><i class="fi-arrow-left"></i></a></li>
+            <li><a href="../../learn/abc" class="arrow-back-button"><i class="material-icons">arrow_back</i></a></li>
           </ul>
         </div>
         <div class="top-bar-right">
@@ -408,19 +408,27 @@ module.exports &#x3D; {
     </div>
   </div>
   <div class="column small-12 medium-6">
-    <div class="card">
+    <div class="card continue-learning">
       <div class="card-section">
         <h4 class="subheader text-center">Continue Learning</h4>
         <div class="row medium-up-1 large-up-2 text-center">
           <div class="column">
             <h6>Following Alphabetically?</h6>
-              <a class="button icon-button secondary " href="o.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-              <a class="button icon-button-right secondary " href="q.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
+              <a class="button icon-button secondary " href="o.html">
+                <div><i class="material-icons">chevron_left</i><span>PREVIOUS</span></div>
+              </a>
+              <a class="button icon-button-right secondary " href="q.html">
+                <div><span>NEXT</span><i class="material-icons">chevron_right</i></div>
+              </a>
           </div>
           <div class="column">
             <h6>Following Lesson Plan?</h6>
-              <a class="button icon-button secondary " href="o.html"><i class="fi-rewind medium-icon"></i>PREVIOUS</a>
-              <a class="button icon-button-right secondary " href="r.html">NEXT<i class="fi-fast-forward medium-icon"></i></a>
+              <a class="button icon-button secondary " href="o.html">
+                <div><i class="material-icons">chevron_left</i><span>PREVIOUS</span></div>
+              </a>
+              <a class="button icon-button-right secondary " href="r.html">
+                <div><span>NEXT</span><i class="material-icons">chevron_right</i></div>
+              </a>
           </div>
         </div>
       </div>
