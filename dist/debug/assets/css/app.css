@@ -5320,6 +5320,10 @@ a.thumbnail {
 div.card.ad {
   height: 300px; }
 
+/* line 5, /Users/brian/GitHub/greenhouse-website/app/scss/components/_ads.scss */
+ins.adsbygoogle {
+  display: block; }
+
 /* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 html, body {
   height: 100%; }

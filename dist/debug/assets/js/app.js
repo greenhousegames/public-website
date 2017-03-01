@@ -175,7 +175,7 @@ window.GreenhouseGames = {
     },
     loginSuccess: function loginSuccess(data) {
       if (data.user && !data.user.isAnonymous) {
-        (0, _jquery2.default)('div.user-image').html('<img src="' + data.user.photoURL + '">');
+        (0, _jquery2.default)('div.user-image').html('<img alt="User Profile Image" src="' + data.user.photoURL + '">');
         (0, _jquery2.default)('.user-image-guest').addClass('hidden');
         (0, _jquery2.default)('.user-name').text(data.user.displayName);
       } else {
