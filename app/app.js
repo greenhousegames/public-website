@@ -14,7 +14,7 @@ window.GreenhouseGames = {
     },
     loginSuccess: (data) => {
       if (data.user && !data.user.isAnonymous) {
-        $('div.user-image').html('<img src="' + data.user.photoURL + '">');
+        $('div.user-image').html('<img alt="User Profile Image" src="' + data.user.photoURL + '">');
         $('.user-image-guest').addClass('hidden');
         $('.user-name').text(data.user.displayName);
       } else {
