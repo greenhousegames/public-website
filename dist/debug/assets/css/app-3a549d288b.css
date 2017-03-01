@@ -5374,71 +5374,63 @@ div.card-divider.secondary {
   div.card-divider.secondary > :last-child {
     margin-bottom: 0; }
 
-/* line 42, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
-a.button.icon-button i, a.button.icon-button-left i {
-  margin-right: 8px; }
-
-/* line 48, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
-a.button.icon-button-right i {
-  margin-left: 8px; }
-
-/* line 53, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 41, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.card {
   position: relative; }
-  /* line 56, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+  /* line 44, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
   div.card i.card-number {
     position: absolute;
     bottom: 0;
     right: 0; }
-    /* line 61, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+    /* line 49, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     div.card i.card-number small {
       margin-right: 4px; }
-  /* line 66, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+  /* line 54, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
   div.card div.float-divider {
     position: relative; }
-    /* line 69, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+    /* line 57, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     div.card div.float-divider div.row {
       position: absolute;
       margin: 0;
       width: 100%;
       height: 100%; }
-      /* line 75, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+      /* line 63, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
       div.card div.float-divider div.row div.columns {
         position: relative;
         padding: 0;
         top: 50%; }
-        /* line 80, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+        /* line 68, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
         div.card div.float-divider div.row div.columns h2 {
           transform: translateY(-50%);
           background: rgba(0, 0, 0, 0.2);
           color: black; }
 
-/* line 90, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 78, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.row.padding-top {
   padding-top: 16px; }
 
-/* line 94, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 82, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 .hidden {
   display: none !important; }
 
-/* line 98, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 86, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 .color-white {
   color: #fefefe !important; }
 
-/* line 103, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 91, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.login-buttons a i {
   margin-right: 8px !important; }
 
-/* line 108, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+/* line 96, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
 div.abc-header {
   position: relative; }
-  /* line 111, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+  /* line 99, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
   div.abc-header div.text-container {
     position: absolute;
     top: 0;
     width: 100%;
     color: #fefefe; }
-    /* line 117, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
+    /* line 105, /Users/brian/GitHub/greenhouse-website/app/scss/components/_main.scss */
     div.abc-header div.text-container a.button.hollow {
       background-color: #fefefe;
       color: #fefefe;
@@ -5805,14 +5797,27 @@ div.lesson-code pre {
     padding: 16px; }
 
 /* line 72, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+div.continue-learning .card-section {
+  padding-bottom: 0; }
+
+/* line 76, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
 div.continue-learning a.button {
-  padding-bottom: 0.75em; }
-  /* line 75, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  padding-bottom: 0.5em; }
+  /* line 80, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
   div.continue-learning a.button div .material-icons {
     margin-top: -5px; }
-  /* line 79, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  /* line 84, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
   div.continue-learning a.button div span {
     vertical-align: top; }
+  /* line 89, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  div.continue-learning a.button:first-of-type {
+    margin-right: 8px; }
+  /* line 95, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  div.continue-learning a.button.icon-button div .material-icons, div.continue-learning a.button.icon-button-left div .material-icons {
+    margin-left: -4px; }
+  /* line 103, /Users/brian/GitHub/greenhouse-website/app/scss/components/_learning.scss */
+  div.continue-learning a.button.icon-button-right div .material-icons {
+    margin-right: -4px; }
 
 /* line 1, /Users/brian/GitHub/greenhouse-website/app/scss/components/_instagram.scss */
 .ig-b- {
@@ -5857,6 +5862,14 @@ div.continue-learning a.button {
 /* line 4, /Users/brian/GitHub/greenhouse-website/app/scss/components/_icons.scss */
 .material-icons.md-48 {
   font-size: 48px; }
+
+/* line 7, /Users/brian/GitHub/greenhouse-website/app/scss/components/_icons.scss */
+a.button.icon-button i, a.button.icon-button-left i {
+  margin-right: 4px; }
+
+/* line 13, /Users/brian/GitHub/greenhouse-website/app/scss/components/_icons.scss */
+a.button.icon-button-right i {
+  margin-left: 4px; }
 
 
 /*# sourceMappingURL=app.css.map*/
