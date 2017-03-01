@@ -5537,6 +5537,24 @@ a.greenhousestore-button {
     width: 202px;
     margin-left: -6px; } }
 
+/* line 93, /Users/brian/GitHub/greenhouse-website/app/scss/components/_games.scss */
+span.ranking-value {
+  font-size: 32px;
+  display: block; }
+  @media print, screen and (min-width: 40em) {
+    /* line 93, /Users/brian/GitHub/greenhouse-website/app/scss/components/_games.scss */
+    span.ranking-value {
+      font-size: 36px; } }
+  @media print, screen and (min-width: 64em) {
+    /* line 93, /Users/brian/GitHub/greenhouse-website/app/scss/components/_games.scss */
+    span.ranking-value {
+      font-size: 42px; } }
+
+/* line 105, /Users/brian/GitHub/greenhouse-website/app/scss/components/_games.scss */
+span.ranking-size {
+  font-size: 16px;
+  display: block; }
+
 /* line 3, /Users/brian/GitHub/greenhouse-website/app/scss/components/_header.scss */
 section.header div.top-bar a, section.header div.top-bar a:hover {
   color: white; }
@@ -5692,9 +5710,9 @@ section.footer {
           display: block; }
     /* line 58, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
     section.footer div.row a.logo-button {
-      background: url(../icons/logo-circle.png);
       height: 32px;
-      width: 32px; }
+      width: 32px;
+      padding: 0; }
     /* line 64, /Users/brian/GitHub/greenhouse-website/app/scss/components/_footer.scss */
     section.footer div.row p.copyright {
       margin: 6px 0 0;

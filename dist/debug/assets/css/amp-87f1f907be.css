@@ -87,7 +87,6 @@ section.footer {
         text-decoration: none; }
       /* line 99, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
       section.footer ul.menu li a.logo-button {
-        background: url(/assets/icons/logo-circle.png);
         height: 32px;
         width: 32px;
         padding: 0; }
