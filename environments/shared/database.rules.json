@@ -36,6 +36,15 @@
                 "win~~sum"
               ]
             }
+          },
+          "users-modes": {
+            "metrics": {
+              ".indexOn": [
+                "classic-score~~max",
+                "survival-score~~max",
+                "battle-score~~max"
+              ]
+            }
           }
         }
       }
