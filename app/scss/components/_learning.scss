@@ -69,8 +69,13 @@ div.lesson-code {
 }
 
 div.continue-learning {
+  .card-section {
+    padding-bottom: 0;
+  }
+
   a.button {
-    padding-bottom: 0.75em;
+    padding-bottom: 0.5em;
+
     div {
       .material-icons {
         margin-top: -5px;
@@ -78,6 +83,26 @@ div.continue-learning {
 
       span {
         vertical-align: top;
+      }
+    }
+
+    &:first-of-type {
+      margin-right: 8px;
+    }
+
+    &.icon-button, &.icon-button-left {
+      div {
+        .material-icons {
+          margin-left: -4px;
+        }
+      }
+    }
+
+    &.icon-button-right {
+      div {
+        .material-icons {
+          margin-right: -4px;
+        }
       }
     }
   }

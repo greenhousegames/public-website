@@ -2,3 +2,15 @@
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+
+a.button.icon-button, a.button.icon-button-left {
+  i {
+    margin-right: 4px;
+  }
+}
+
+a.button.icon-button-right {
+  i {
+    margin-left: 4px;
+  }
+}
