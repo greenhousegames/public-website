@@ -5,27 +5,16 @@ html, body {
 section.main {
   padding-top: $header-padding;
 
-  min-height: calc(100vh - #{$header-titlebar-height-small} - #{$footer-height-small});
-  @include breakpoint(medium) {
-    min-height: calc(100vh - #{$header-titlebar-height-medium} - #{$footer-height-medium});
-  }
-  @include breakpoint(large) {
-    min-height: calc(100vh - #{$header-titlebar-height-large} - #{$footer-height-large});
-  }
-
-  > div:last-of-type {
-    padding-bottom: $header-padding;
-  }
-}
-
-// force footer to bottom
-section.header.large + section {
   min-height: calc(100vh - #{$header-titlebar-height-small} - #{$header-banner-height-small} - #{$footer-height-small});
   @include breakpoint(medium) {
     min-height: calc(100vh - #{$header-titlebar-height-medium} - #{$header-banner-height-medium} - #{$footer-height-medium});
   }
   @include breakpoint(large) {
     min-height: calc(100vh - #{$header-titlebar-height-large} - #{$header-banner-height-large} - #{$footer-height-large});
+  }
+
+  > div:last-of-type {
+    padding-bottom: $header-padding;
   }
 }
 

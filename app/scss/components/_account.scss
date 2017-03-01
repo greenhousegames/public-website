@@ -28,3 +28,10 @@ div.user-image-guest {
     }
   }
 }
+
+span.user-name {
+  &.header {
+    font-size: 48px;
+    display: block;
+  }
+}

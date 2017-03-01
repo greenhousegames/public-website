@@ -47,12 +47,12 @@
   </head>
   <body>
     {{#ifequal letter "all"}}
-    <section class="header large">
-      {{> header largeheader='true' }}
+    <section class="header">
+      {{> header }}
     </section>
     {{else}}
-    <section class="header large">
-      {{> header largeheader='true' abcletter=letter}}
+    <section class="header">
+      {{> header abcletter=letter}}
     </section>
     {{/ifequal}}
     <section class="main">
