@@ -18,7 +18,8 @@
     "deploy:debug": "firebase deploy -m $(npm show ./ version)",
     "predeploy:release": "cp environments/release/firebase.json firebase.json && firebase use release",
     "deploy:release": "firebase deploy -m $(npm show ./ version)",
-    "deploy": "npm run deploy:release"
+    "deploy": "npm run deploy:release",
+    "seotest": "npm run production && gulp finalcopy --production && npm run deploy"
   },
   "dependencies": {
     "@greenhousegames/smash-dot": "^1.0.0",
