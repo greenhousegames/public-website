@@ -147,7 +147,7 @@ gulp.task('finalcopy', function() {
 
   if (production) {
     return sharedStream
-      .pipe(gulp.dest('dist/debug'));
+      .pipe(gulp.dest('dist/release'));
   } else {
     return sharedStream
       .pipe(gulp.dest('dist/debug'));
