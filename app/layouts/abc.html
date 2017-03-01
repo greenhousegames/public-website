@@ -3,17 +3,15 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    {{> html_head hideorgdata='true' skipkeywords='true' skipdescription='true'}}
+    {{> html_head hideorgdata='true' skipdescription='true'}}
     {{#ifequal letter "all"}}
       <meta name="description" content="Learn the ABC of Games which covers 26 different concepts used to build 2D games!">
-      <meta name="keywords" content="games, learn, abc, learn abc, abc game">
       {{#eachsorted abc letter}}
         {{> structured_data this lesson='true'}}
       {{/eachsorted}}
     {{else}}
       {{#single abc letter}}
         <meta name="description" content="Learn about {{name}} in this lesson of the ABC of Games!  {{subheader}}.">
-        <meta name="keywords" content="games, learn, abc, learn abc, abc game, letter {{letter}}, {{name}}">
         {{> structured_data this lesson='true'}}
       {{/single}}
     {{/ifequal}}
