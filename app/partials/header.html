@@ -1,58 +1,60 @@
-<div class="top-bar primary">
-  <div class="top-bar-left">
-    <ul class="menu">
-      {{#if abcletter}}
-      <li><a href="{{@root.root}}learn/abc" class="arrow-back-button"><i class="material-icons">arrow_back</i></a></li>
-      {{/if}}
-      {{#if backlogo}}
-      <li><a href="/" class="logo-back-button"></a></li>
-      {{/if}}
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li>
-        <a href="{{@root.root}}games">Games</a>
-        <ul class="menu vertical">
-          {{#each @root.games}}
-            <li><a href="{{@root.root}}games/{{key}}">{{name}}</a></li>
-          {{/each}}
-        </ul>
-      </li>
-      <li>
-        <a href="{{@root.root}}learn/abc">Learn</a>
-        <ul class="menu vertical">
-          <li><a href="{{@root.root}}learn/abc">ABC of Games</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="{{@root.root}}account">Account</a>
-        <ul class="menu vertical">
-          <li class="hide-auth"><a href="{{@root.root}}account">Login</a></li>
-          <li class="show-auth">
-            <a href="{{@root.root}}account" class="account-link">
-              Guest
-            </a>
-          </li>
-          <li class="show-auth"><a id="header-logout-button">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="row expanded">
-  <div class="main-header-banner">
-    <div class=logo-container>
-      <a class="logo" href="/">
-        <img src="{{@root.root}}assets/icons/logo-circle-large.png" alt="Home"></img>
-      </a>
+<div class="header">
+  <div class="top-bar primary">
+    <div class="top-bar-left">
+      <ul class="menu">
+        {{#if abcletter}}
+        <li><a href="{{@root.root}}learn/abc" class="arrow-back-button"><i class="material-icons">arrow_back</i></a></li>
+        {{/if}}
+        {{#if backlogo}}
+        <li><a href="/" class="logo-back-button"></a></li>
+        {{/if}}
+      </ul>
     </div>
-    {{#if abcletter}}
-    {{#single @root.abc abcletter}}
-    <h1>{{ this.header }}</h1>
-    {{/single}}
-    {{else}}
-    <h1>{{ title }}</h1>
-    {{/if}}
+    <div class="top-bar-right">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li>
+          <a href="{{@root.root}}games">Games</a>
+          <ul class="menu vertical">
+            {{#each @root.games}}
+              <li><a href="{{@root.root}}games/{{key}}">{{name}}</a></li>
+            {{/each}}
+          </ul>
+        </li>
+        <li>
+          <a href="{{@root.root}}learn/abc">Learn</a>
+          <ul class="menu vertical">
+            <li><a href="{{@root.root}}learn/abc">ABC of Games</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="{{@root.root}}account">Account</a>
+          <ul class="menu vertical">
+            <li class="hide-auth"><a href="{{@root.root}}account">Login</a></li>
+            <li class="show-auth">
+              <a href="{{@root.root}}account" class="account-link">
+                Guest
+              </a>
+            </li>
+            <li class="show-auth"><a id="header-logout-button">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row expanded">
+    <div class="main-header-banner">
+      <div class=logo-container>
+        <a class="logo" href="/">
+          <img src="{{@root.root}}assets/icons/logo-circle-large.png" alt="Home"></img>
+        </a>
+      </div>
+      {{#if abcletter}}
+      {{#single @root.abc abcletter}}
+      <h1>{{ this.header }}</h1>
+      {{/single}}
+      {{else}}
+      <h1>{{ title }}</h1>
+      {{/if}}
+    </div>
   </div>
 </div>

@@ -4,6 +4,9 @@
 <html class="no-js" lang="en">
   <head>
     {{> html_head }}
+    {{#if canonical}}
+    <link rel="canonical" href="{{root}}{{canonical}}" />
+    {{/if}}
     {{#if structured_data}}
       {{> structured_data structured_data}}
     {{/if}}
@@ -31,14 +34,10 @@
     {{/if}}
   </head>
   <body>
-    <div class="header">
-      {{> header }}
-    </div>
+    {{> header }}
     <div class="main">
       {{> body}}
     </div>
-    <div class="footer">
-      {{> footer}}
-    </div>
+    {{> footer}}
   </body>
 </html>

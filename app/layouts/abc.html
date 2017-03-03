@@ -5,12 +5,14 @@
   <head>
     {{> html_head hideorgdata='true' skipdescription='true'}}
     {{#ifequal letter "all"}}
+      <link rel="canonical" href="{{root}}learn/abc" />
       <meta name="description" content="Learn the ABC of Games which covers 26 different concepts used to build 2D games!">
       {{#eachsorted abc letter}}
         {{> structured_data this lesson='true'}}
       {{/eachsorted}}
     {{else}}
       {{#single abc letter}}
+        <link rel="canonical" href="{{root}}learn/abc/{{letter}}" />
         <meta name="description" content="Learn about {{name}} in this lesson of the ABC of Games!  {{subheader}}.">
         {{> structured_data this lesson='true'}}
       {{/single}}
@@ -45,18 +47,14 @@
     {{/ifequal}}
   </head>
   <body>
-    <div class="header">
     {{#ifequal letter "all"}}
       {{> header }}
     {{else}}
       {{> header abcletter=letter}}
     {{/ifequal}}
-    </div>
     <div class="main">
 {{> body}}
     </div>
-    <div class="footer">
-      {{> footer}}
-    </div>
+    {{> footer}}
   </body>
 </html>

@@ -5,10 +5,12 @@
   <head>
     {{> html_head hideorgdata='true'}}
     {{#ifequal key "all"}}
+      <link rel="canonical" href="{{root}}games" />
       {{#each games}}
         {{> structured_data this game='true'}}
       {{/each}}
     {{else}}
+      <link rel="canonical" href="{{root}}games/{{key}}" />
       {{#single games key}}
         {{> structured_data this game='true'}}
       {{/single}}
@@ -16,14 +18,10 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>
-    <div class="header">
-      {{> header }}
-    </div>
+    {{> header }}
     <div class="main">
       {{> body}}
     </div>
-    <div class="footer">
-      {{> footer}}
-    </div>
+    {{> footer}}
   </body>
 </html>
