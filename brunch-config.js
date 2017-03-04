@@ -1,4 +1,8 @@
 var config = {
+  server: {
+    hostname: '0.0.0.0',
+  },
+  
   conventions: {
     assets:   /^(app)(\\|\/)(assets)/,
     ignored:  ['test/**/*.js','app/scss/components/*.scss', 'app/helpers/**/*.js']
