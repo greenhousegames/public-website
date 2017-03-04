@@ -8,7 +8,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="Greenhouse Games, LLC">
-    <link rel="stylesheet" href="../../assets/css/app-3e4d277ea9.css">
+    <link rel="stylesheet" href="../../assets/css/app-e72a722d48.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/icons/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="57x57" href="../../assets/icons/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="../../assets/icons/apple-icon-72x72.png" />
@@ -22,8 +22,8 @@
         enable_page_level_ads: true
       });
     </script>
-    <script src="../../assets/js/vendor-2c0bd79f95.js"></script>
-    <script onload="require('app.js')" src="../../assets/js/app-e06e485fc5.js"></script>
+    <script src="../../assets/js/vendor-c6a35e3fe9.js"></script>
+    <script onload="require('app.js')" src="../../assets/js/app-8ea4faf229.js"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
     // facebook
@@ -60,8 +60,8 @@
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
     <script src="../../assets/js/highlight-e08892f60c.js"></script>
     <link rel="stylesheet" href="../../assets/css/highlight-c4940b0c87.css">
-    <script src="../../assets/js/pages/learn/abc/utils-a286d9b365.js"></script>
-    <script src="../../assets/js/pages/learn/abc/t-7f4499e5bf.js"></script>
+    <script src="../../assets/js/pages/learn/abc/utils-ed2c7d5c98.js"></script>
+    <script src="../../assets/js/pages/learn/abc/t-4bbfbb0a5b.js"></script>
     <script>
     $(document).ready(function() {
       var create = require('pages/learn/abc/t.js');
@@ -126,9 +126,9 @@
     <div class="main">
 <div class="row">
   <div class="column small-12">
-    <div class="card" id="learning-game-t-container">
+    <div class="card" id="learning-game-preview-container">
       <div class="learning-preview-image">
-        <div id="learning-game-t"></div>
+        <div id="learning-game-preview"></div>
         <div class="fill-black"></div>
       </div>
     </div>
@@ -183,7 +183,7 @@
 function create() {
   let sprite1, abutton, bbutton, timer;
 
-  const game &#x3D; utils.init(&#x27;t&#x27;, {
+  const game &#x3D; utils.init({
     preload: () &#x3D;&gt; {
       utils.preload(game, [&#x27;a&#x27;,&#x27;b&#x27;]);
     },
@@ -222,7 +222,9 @@ module.exports &#x3D; create;
           </div>
           <div class="tabs-panel" id="letterhtml">
             <pre>
-              <code class="html" id="html-file-contents">&lt;div id&#x3D;&quot;learning-game-t&quot;&gt;&lt;&#x2F;div&gt;
+              <code class="html" id="html-file-contents">&lt;div id&#x3D;&quot;learning-game-preview-container&quot;&gt;&lt;&#x2F;div&gt;
+  &lt;div id&#x3D;&quot;learning-game-preview&quot;&gt;&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
 &lt;script&gt;
 $(document).ready(function() {
   var create &#x3D; require(&quot;t.js&quot;);
@@ -235,8 +237,8 @@ $(document).ready(function() {
           <div class="tabs-panel" id="utilsjs">
             <pre>
               <code class="javascript">function resize(game) {
-  const width &#x3D; getGameWidth(game.containerId);
-  const height &#x3D; getGameHeight(game.containerId);
+  const width &#x3D; getGameWidth();
+  const height &#x3D; getGameHeight();
   if (game.width !&#x3D; width) {
     game.scale.setGameSize(width, height);
     return true;
@@ -282,20 +284,18 @@ function getBreakpoint(game) {
   else return &#x27;small&#x27;;
 }
 
-function getGameWidth(id) {
-  return $(&#x27;#&#x27; + id).width();
+function getGameWidth() {
+  return $(&#x27;#learning-game-preview-container&#x27;).width();
 }
 
-function getGameHeight(id) {
-  return getGameWidth(id)/(16/9);
+function getGameHeight() {
+  return getGameWidth()/(16/9);
 }
 
-function init(letter, config) {
-  const containerId &#x3D; &#x27;learning-game-&#x27; + letter + &#x27;-container&#x27;;
-  const width &#x3D; getGameWidth(containerId);
-  const height &#x3D; getGameHeight(containerId);
-  const game &#x3D; new Phaser.Game(width, height, Phaser.AUTO, &#x27;learning-game-&#x27; + letter, config);
-  game.containerId &#x3D; containerId;
+function init(config) {
+  const width &#x3D; getGameWidth();
+  const height &#x3D; getGameHeight();
+  const game &#x3D; new Phaser.Game(width, height, Phaser.AUTO, &#x27;learning-game-preview&#x27;, config);
   return game;
 }
 
