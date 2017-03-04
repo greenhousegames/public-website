@@ -3,16 +3,20 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    {{> html_head hideorgdata='true'}}
-    {{#ifequal key "all"}}
+    {{> html_head hideorgdata='true' skipdescription='true' skiptitle='true'}}
+    {{#ifequal game "all"}}
+      <title>Games</title>
       <link rel="canonical" href="{{root}}games" />
+      <meta name="description" content="Fun, simple, and addicting games built for android, ios, and web!">
       {{#each games}}
-        {{> structured_data this game='true'}}
+        {{> structured_data_game this}}
       {{/each}}
     {{else}}
-      <link rel="canonical" href="{{root}}games/{{key}}" />
-      {{#single games key}}
-        {{> structured_data this game='true'}}
+      {{#single games game}}
+        <title>Games | {{name}}</title>
+        <link rel="canonical" href="{{@root.root}}games/{{key}}" />
+        <meta name="description" content="{{description}}">
+        {{> structured_data_game this}}
       {{/single}}
     {{/ifequal}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

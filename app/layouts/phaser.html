@@ -8,16 +8,16 @@
     <link rel="canonical" href="{{root}}{{canonical}}" />
     {{/if}}
     {{#if structured_data}}
-      {{> structured_data structured_data}}
+      {{> structured_data_json structured_data}}
     {{/if}}
     {{#if games_structured_data}}
       {{#each games}}
-        {{> structured_data this game='true'}}
+        {{> structured_data_game this}}
       {{/each}}
     {{/if}}
     {{#if abc_structured_data}}
       {{#each abc}}
-        {{> structured_data this lesson='true'}}
+        {{> structured_data_abc_lesson this}}
       {{/each}}
     {{/if}}
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>

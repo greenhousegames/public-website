@@ -3,18 +3,20 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    {{> html_head hideorgdata='true' skipdescription='true'}}
+    {{> html_head hideorgdata='true' skipdescription='true' skiptitle='true'}}
     {{#ifequal letter "all"}}
+      <title>Learn | ABC of Games</title>
       <link rel="canonical" href="{{root}}learn/abc" />
       <meta name="description" content="Learn the ABC of Games which covers 26 different concepts used to build 2D games!">
       {{#eachsorted abc letter}}
-        {{> structured_data this lesson='true'}}
+        {{> structured_data_abc_lesson this}}
       {{/eachsorted}}
     {{else}}
       {{#single abc letter}}
-        <link rel="canonical" href="{{root}}learn/abc/{{letter}}" />
+        <title>Learn | ABC | {{name}}</title>
+        <link rel="canonical" href="{{@root.root}}learn/abc/{{letter}}" />
         <meta name="description" content="Learn about {{name}} in this lesson of the ABC of Games!  {{subheader}}.">
-        {{> structured_data this lesson='true'}}
+        {{> structured_data_abc_lesson this}}
       {{/single}}
     {{/ifequal}}
     <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
@@ -47,11 +49,7 @@
     {{/ifequal}}
   </head>
   <body>
-    {{#ifequal letter "all"}}
-      {{> header }}
-    {{else}}
-      {{> header abcletter=letter}}
-    {{/ifequal}}
+    {{> header }}
     <div class="main">
 {{> body}}
     </div>

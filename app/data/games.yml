@@ -3,7 +3,7 @@ blobclobber:
   name: 'Blob Clobber'
   playstore: 'https://play.google.com/store/apps/details?id=com.greenhousegames.smashdot2'
   appstore: 'https://itunes.apple.com/us/app/smash-dot-pro/id1204046667?mt=8'
-  description: 'Keep on Smashing!'
+  description: Fun, simple, and addicting game built for android, ios, and web!  Download for free now from the app store and play store!
   paths:
     src_debug: 'node_modules/@greenhousegames/smash-dot-app/dist/debug/browser/package.zip'
     src_release: 'node_modules/@greenhousegames/smash-dot-app/dist/release/browser/package.zip'

@@ -2,8 +2,11 @@
   <div class="top-bar primary">
     <div class="top-bar-left">
       <ul class="menu">
-        {{#if abcletter}}
-        <li><a href="{{@root.root}}learn/abc" class="arrow-back-button"><i class="material-icons">arrow_back</i></a></li>
+        {{#if letter}}
+          {{#ifequal letter "all"}}
+          {{else}}
+          <li><a href="{{@root.root}}learn/abc" class="arrow-back-button"><i class="material-icons">arrow_back</i></a></li>
+          {{/ifequal}}
         {{/if}}
         {{#if backlogo}}
         <li><a href="/" class="logo-back-button"></a></li>
@@ -48,10 +51,22 @@
           <img src="{{@root.root}}assets/icons/logo-circle-large.png" alt="Home"></img>
         </a>
       </div>
-      {{#if abcletter}}
-      {{#single @root.abc abcletter}}
-      <h1>{{ this.header }}</h1>
-      {{/single}}
+      {{#if letter}}
+        {{#ifequal letter "all"}}
+        <h1>ABC of Games</h1>
+        {{else}}
+        {{#single @root.abc letter}}
+        <h1>{{ this.header }}</h1>
+        {{/single}}
+        {{/ifequal}}
+      {{else if game}}
+        {{#ifequal game "all"}}
+        <h1>Games</h1>
+        {{else}}
+        {{#single @root.games game}}
+        <h1>{{ this.name }}</h1>
+        {{/single}}
+        {{/ifequal}}
       {{else}}
       <h1>{{ title }}</h1>
       {{/if}}

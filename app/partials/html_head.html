@@ -4,7 +4,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="author" content="Greenhouse Games, LLC">
+{{#unless skiptitle}}
 <title>{{@root.title}}</title>
+{{/unless}}
 {{#unless skipdescription}}
   {{#if @root.description}}
   <meta name="description" content="{{@root.description}}">

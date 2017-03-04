@@ -1,12 +1,9 @@
 ---
 layout: game
-title: Blob Clobber
-description: Fun, simple, and addicting game built for android, ios, and web!  Download for free now from the app store and play store!
-keywords: games, android, ios, web games, free games, free apps, blob
-key: blobclobber
+game: blobclobber
 ---
+{{#single games game}}
 <div class="row small-up-1 medium-up-3 text-center small-collapse">
-{{#single games key}}
   {{#if playstore}}
   <div class="column">
     <a class="playstore-button" href="{{playstore}}">
@@ -19,9 +16,8 @@ key: blobclobber
     <a class="appstore-button" href="{{appstore}}"></a>
   </div>
   {{/if}}
-{{/single}}
   <div class="column">
-    <a class="greenhousestore-button button dark" href="{{root}}games/{{key}}/play/#">
+    <a class="greenhousestore-button button dark" href="{{@root.root}}games/{{key}}/play/#">
       <div class="image"></div><div class="text">Play on<br/><strong>Greenhouse</strong></div>
     </a>
   </div>
@@ -30,7 +26,7 @@ key: blobclobber
 <div class="row">
   <div class="column small-12">
     <div class="card">
-      <img alt="Blob Clobber" src="{{root}}assets/img/games/{{key}}/screenshot.png">
+      <img alt="Blob Clobber" src="{{@root.root}}assets/img/games/{{key}}/screenshot.png">
     </div>
   </div>
   <div class="column small-12">
@@ -101,7 +97,7 @@ key: blobclobber
     <div class="card text-center">
       <div class="card-section">
         <p>Must login to see user rankings.</p>
-        <a class="button large text-center secondary" href="{{root}}account">Login</a>
+        <a class="button large text-center secondary" href="{{@root.root}}account">Login</a>
       </div>
     </div>
   </div>
@@ -194,4 +190,5 @@ key: blobclobber
     {{> adsense_ad id="6649193449"}}
   </div>
 </div>
-<script async onload="require('pages/games/{{key}}/reporting.js')" src="{{root}}assets/js/pages/games/{{key}}/reporting.js"></script>
+<script async onload="require('pages/games/{{key}}/reporting.js')" src="{{@root.root}}assets/js/pages/games/{{key}}/reporting.js"></script>
+{{/single}}
