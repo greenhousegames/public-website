@@ -47,45 +47,579 @@
       
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     
+      <script type="application/ld+json">
+        {"@context":"http://schema.org","@type":"Organization","name":"Greenhouse Games, LLC","url":"https://www.greenhousegames.com","logo":"https://www.greenhousegames.com/assets/icons/logo-circle-large.png","contactPoint":{"@type":"ContactPoint","email":"support@greenhousegames.com","contactType":"customer support","url":"https://www.greenhousegames.com/contact.html"},"founder":{"@type":"Person","name":"Brian Soumakian","sameAs":["https://www.linkedin.com/in/brian-soumakian-91141811","https://www.facebook.com/briansoumakian","https://twitter.com/briansoumakian"]}}
+      </script>
+      
     <style amp-custom>
-    /* line 4, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+    /* line 110, node_modules/foundation-sites/scss/components/_card.scss */
+.card {
+  margin-bottom: 1rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 0;
+  background: #fefefe;
+  box-shadow: none;
+  overflow: hidden;
+  color: #0a0a0a; }
+  /* line 72, node_modules/foundation-sites/scss/components/_card.scss */
+  .card > :last-child {
+    margin-bottom: 0; }
+
+/* line 114, node_modules/foundation-sites/scss/components/_card.scss */
+.card-divider {
+  padding: 1rem;
+  background: #e6e6e6; }
+  /* line 89, node_modules/foundation-sites/scss/components/_card.scss */
+  .card-divider > :last-child {
+    margin-bottom: 0; }
+
+/* line 118, node_modules/foundation-sites/scss/components/_card.scss */
+.card-section {
+  padding: 1rem; }
+  /* line 104, node_modules/foundation-sites/scss/components/_card.scss */
+  .card-section > :last-child {
+    margin-bottom: 0; }
+
+/* line 229, node_modules/foundation-sites/scss/components/_button.scss */
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #77DD77;
+  color: #fefefe; }
+  /* line 177, /Users/brian/GitHub/greenhouse-website/node_modules/foundation-sites/scss/util/_mixins.scss */
+  [data-whatinput='mouse'] .button {
+    outline: 0; }
+  /* line 131, node_modules/foundation-sites/scss/components/_button.scss */
+  .button:hover, .button:focus {
+    background-color: #4ed34e;
+    color: #fefefe; }
+  /* line 234, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.tiny {
+    font-size: 0.6rem; }
+  /* line 234, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.small {
+    font-size: 0.75rem; }
+  /* line 234, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.large {
+    font-size: 1.25rem; }
+  /* line 239, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.expanded {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0; }
+  /* line 244, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.primary {
+    background-color: #77DD77;
+    color: #0a0a0a; }
+    /* line 131, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.primary:hover, .button.primary:focus {
+      background-color: #41cf41;
+      color: #0a0a0a; }
+  /* line 244, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.secondary {
+    background-color: #777;
+    color: #fefefe; }
+    /* line 131, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.secondary:hover, .button.secondary:focus {
+      background-color: #5f5f5f;
+      color: #fefefe; }
+  /* line 244, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.success {
+    background-color: #3adb76;
+    color: #0a0a0a; }
+    /* line 131, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.success:hover, .button.success:focus {
+      background-color: #22bb5b;
+      color: #0a0a0a; }
+  /* line 244, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.warning {
+    background-color: #ffae00;
+    color: #0a0a0a; }
+    /* line 131, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.warning:hover, .button.warning:focus {
+      background-color: #cc8b00;
+      color: #0a0a0a; }
+  /* line 244, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.alert {
+    background-color: #ec5840;
+    color: #0a0a0a; }
+    /* line 131, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.alert:hover, .button.alert:focus {
+      background-color: #da3116;
+      color: #0a0a0a; }
+  /* line 261, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.hollow {
+    border: 1px solid #77DD77;
+    color: #77DD77; }
+    /* line 139, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.hollow, .button.hollow:hover, .button.hollow:focus {
+      background-color: transparent; }
+    /* line 154, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.hollow:hover, .button.hollow:focus {
+      border-color: #228822;
+      color: #228822; }
+    /* line 266, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.hollow.primary {
+      border: 1px solid #77DD77;
+      color: #77DD77; }
+      /* line 154, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.hollow.primary:hover, .button.hollow.primary:focus {
+        border-color: #228822;
+        color: #228822; }
+    /* line 266, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.hollow.secondary {
+      border: 1px solid #777;
+      color: #777; }
+      /* line 154, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.hollow.secondary:hover, .button.hollow.secondary:focus {
+        border-color: #3c3c3c;
+        color: #3c3c3c; }
+    /* line 266, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.hollow.success {
+      border: 1px solid #3adb76;
+      color: #3adb76; }
+      /* line 154, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.hollow.success:hover, .button.hollow.success:focus {
+        border-color: #157539;
+        color: #157539; }
+    /* line 266, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.hollow.warning {
+      border: 1px solid #ffae00;
+      color: #ffae00; }
+      /* line 154, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.hollow.warning:hover, .button.hollow.warning:focus {
+        border-color: #805700;
+        color: #805700; }
+    /* line 266, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.hollow.alert {
+      border: 1px solid #ec5840;
+      color: #ec5840; }
+      /* line 154, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.hollow.alert:hover, .button.hollow.alert:focus {
+        border-color: #881f0e;
+        color: #881f0e; }
+  /* line 274, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.disabled, .button[disabled] {
+    opacity: 0.25;
+    cursor: not-allowed; }
+    /* line 174, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus {
+      background-color: #77DD77;
+      color: #fefefe; }
+    /* line 279, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.disabled.primary, .button[disabled].primary {
+      opacity: 0.25;
+      cursor: not-allowed; }
+      /* line 174, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.disabled.primary, .button.disabled.primary:hover, .button.disabled.primary:focus, .button[disabled].primary, .button[disabled].primary:hover, .button[disabled].primary:focus {
+        background-color: #77DD77;
+        color: #0a0a0a; }
+    /* line 279, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.disabled.secondary, .button[disabled].secondary {
+      opacity: 0.25;
+      cursor: not-allowed; }
+      /* line 174, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.disabled.secondary, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+        background-color: #777;
+        color: #fefefe; }
+    /* line 279, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.disabled.success, .button[disabled].success {
+      opacity: 0.25;
+      cursor: not-allowed; }
+      /* line 174, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.disabled.success, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success, .button[disabled].success:hover, .button[disabled].success:focus {
+        background-color: #3adb76;
+        color: #0a0a0a; }
+    /* line 279, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.disabled.warning, .button[disabled].warning {
+      opacity: 0.25;
+      cursor: not-allowed; }
+      /* line 174, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.disabled.warning, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning, .button[disabled].warning:hover, .button[disabled].warning:focus {
+        background-color: #ffae00;
+        color: #0a0a0a; }
+    /* line 279, node_modules/foundation-sites/scss/components/_button.scss */
+    .button.disabled.alert, .button[disabled].alert {
+      opacity: 0.25;
+      cursor: not-allowed; }
+      /* line 174, node_modules/foundation-sites/scss/components/_button.scss */
+      .button.disabled.alert, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert, .button[disabled].alert:hover, .button[disabled].alert:focus {
+        background-color: #ec5840;
+        color: #0a0a0a; }
+  /* line 189, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.dropdown::after {
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 0.4em;
+    content: '';
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: #fefefe transparent transparent;
+    position: relative;
+    top: 0.4em;
+    display: inline-block;
+    float: right;
+    margin-left: 1em; }
+  /* line 297, node_modules/foundation-sites/scss/components/_button.scss */
+  .button.arrow-only::after {
+    top: -0.1em;
+    float: none;
+    margin-left: 0; }
+
+/* line 257, node_modules/foundation-sites/scss/components/_menu.scss */
+.menu {
+  margin: 0;
+  list-style-type: none; }
+  /* line 54, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu > li {
+    display: table-cell;
+    vertical-align: middle; }
+    /* line 177, /Users/brian/GitHub/greenhouse-website/node_modules/foundation-sites/scss/util/_mixins.scss */
+    [data-whatinput='mouse'] .menu > li {
+      outline: 0; }
+  /* line 67, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu > li > a {
+    display: block;
+    padding: 0.7rem 1rem;
+    line-height: 1; }
+  /* line 74, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu input,
+  .menu select,
+  .menu a,
+  .menu button {
+    margin-bottom: 0; }
+  /* line 190, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu > li > a img,
+  .menu > li > a i,
+  .menu > li > a svg {
+    vertical-align: middle; }
+    /* line 195, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu > li > a img + span,
+    .menu > li > a i + span,
+    .menu > li > a svg + span {
+      vertical-align: middle; }
+  /* line 209, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu > li > a img,
+  .menu > li > a i,
+  .menu > li > a svg {
+    margin-right: 0.25rem;
+    display: inline-block; }
+  /* line 112, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu > li, .menu.horizontal > li {
+    display: table-cell; }
+  /* line 267, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.expanded {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    /* line 95, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.expanded > li:first-child:last-child {
+      width: 100%; }
+  /* line 132, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.vertical > li {
+    display: block; }
+  @media print, screen and (min-width: 40em) {
+    /* line 112, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.medium-horizontal > li {
+      display: table-cell; }
+    /* line 281, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.medium-expanded {
+      display: table;
+      width: 100%;
+      table-layout: fixed; }
+      /* line 95, node_modules/foundation-sites/scss/components/_menu.scss */
+      .menu.medium-expanded > li:first-child:last-child {
+        width: 100%; }
+    /* line 132, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.medium-vertical > li {
+      display: block; } }
+  @media print, screen and (min-width: 64em) {
+    /* line 112, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.large-horizontal > li {
+      display: table-cell; }
+    /* line 281, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.large-expanded {
+      display: table;
+      width: 100%;
+      table-layout: fixed; }
+      /* line 95, node_modules/foundation-sites/scss/components/_menu.scss */
+      .menu.large-expanded > li:first-child:last-child {
+        width: 100%; }
+    /* line 132, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.large-vertical > li {
+      display: block; } }
+  /* line 145, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.simple li {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1; }
+  /* line 151, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.simple a {
+    padding: 0; }
+  /* line 166, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.simple li {
+    margin-left: 0;
+    margin-right: 1rem; }
+  /* line 166, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.simple.align-right li {
+    margin-right: 0;
+    margin-left: 1rem; }
+  /* line 146, /Users/brian/GitHub/greenhouse-website/node_modules/foundation-sites/scss/util/_mixins.scss */
+  .menu.align-right::before, .menu.align-right::after {
+    display: table;
+    content: ' '; }
+  /* line 157, /Users/brian/GitHub/greenhouse-website/node_modules/foundation-sites/scss/util/_mixins.scss */
+  .menu.align-right::after {
+    clear: both; }
+  /* line 307, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.align-right > li {
+    float: right; }
+  /* line 221, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.icon-top > li > a {
+    text-align: center; }
+    /* line 229, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.icon-top > li > a img,
+    .menu.icon-top > li > a i,
+    .menu.icon-top > li > a svg {
+      display: block;
+      margin: 0 auto 0.25rem; }
+  /* line 318, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.icon-top.vertical a > span {
+    margin: auto; }
+  /* line 325, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.nested {
+    margin-left: 1rem; }
+  /* line 330, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu .active > a {
+    background: #77DD77;
+    color: #fefefe; }
+  /* line 337, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.menu-bordered li {
+    border: 1px solid #e6e6e6; }
+    /* line 339, node_modules/foundation-sites/scss/components/_menu.scss */
+    .menu.menu-bordered li:not(:first-child) {
+      border-top: 0; }
+  /* line 347, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu.menu-hover li:hover {
+    background-color: #e6e6e6; }
+
+/* line 353, node_modules/foundation-sites/scss/components/_menu.scss */
+.menu-text {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding: 0.7rem 1rem;
+  font-weight: bold;
+  line-height: 1;
+  color: inherit; }
+
+/* line 358, node_modules/foundation-sites/scss/components/_menu.scss */
+.menu-centered {
+  text-align: center; }
+  /* line 361, node_modules/foundation-sites/scss/components/_menu.scss */
+  .menu-centered > .menu {
+    display: inline-block;
+    vertical-align: top; }
+
+/* line 368, node_modules/foundation-sites/scss/components/_menu.scss */
+.no-js [data-responsive-menu] ul {
+  display: none; }
+
+/* line 6, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0; }
+
+/* line 30, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+p {
+  margin-bottom: 1rem;
+  font-size: inherit;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility; }
+
+/* line 39, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+em,
+i {
+  font-style: italic;
+  line-height: inherit; }
+
+/* line 46, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit; }
+
+/* line 53, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+small {
+  font-size: 80%;
+  line-height: inherit; }
+
+/* line 59, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  text-rendering: optimizeLegibility; }
+  /* line 71, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small {
+    line-height: 0;
+    color: #cacaca; }
+
+/* line 78, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+a {
+  line-height: inherit;
+  color: #228822;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 85, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+  a:hover, a:focus {
+    color: #1d751d; }
+  /* line 93, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+  a img {
+    border: 0; }
+
+/* line 99, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ul,
+ol,
+dl {
+  margin-bottom: 1rem;
+  list-style-position: outside;
+  line-height: 1.6; }
+
+/* line 108, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+li {
+  font-size: inherit; }
+
+/* line 113, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ul {
+  margin-left: 1.25rem;
+  list-style-type: disc; }
+
+/* line 119, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ol {
+  margin-left: 1.25rem; }
+
+/* line 125, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ul ul, ol ul, ul ol, ol ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0; }
+
+/* line 30, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 body, html {
   height: 100%; }
 
-/* line 8, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+/* line 34, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 body {
   background: #f5f5f5;
-  font-family: &quot;Helvetica Neue&quot;, Helvetica, Roboto, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
 
-/* line 13, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-div.text-center, p.text-center {
-  text-align: center; }
+/* line 39, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+div.card-divider.primary {
+  padding: 1rem;
+  background: #77DD77;
+  color: #fefefe; }
+  /* line 89, node_modules/foundation-sites/scss/components/_card.scss */
+  div.card-divider.primary > :last-child {
+    margin-bottom: 0; }
 
-/* line 17, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+/* line 44, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+div.card-divider.secondary {
+  padding: 1rem;
+  background: #777;
+  color: #fefefe; }
+  /* line 89, node_modules/foundation-sites/scss/components/_card.scss */
+  div.card-divider.secondary > :last-child {
+    margin-bottom: 0; }
+
+/* line 49, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 div.row {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
-  /* line 22, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  /* line 54, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
   div.row div.column {
     padding: 0 1rem; }
-    /* line 25, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-    div.row div.column p {
-      margin: 0; }
 
-/* line 31, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+/* line 59, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+div.text-center, p.text-center {
+  text-align: center; }
+
+/* line 63, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+a.appstore-button {
+  background: url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;
+  width: 135px;
+  height: 40px;
+  background-size: contain; }
+
+/* line 71, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+ul.menu a.logo-button {
+  height: 32px;
+  width: 32px;
+  padding: 0; }
+
+/* line 77, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+ul.menu amp-img img {
+  margin: 0; }
+
+/* line 82, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 div.header {
-  height: 200px;
+  height: 220px;
   background: #77DD77;
   background: linear-gradient(#77DD77, #f5f5f5); }
-  /* line 36, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-  div.header span {
+  /* line 87, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  div.header h1 {
     color: #777;
     font-size: 32px;
     margin-top: 1rem;
     display: block;
     text-align: center; }
-  /* line 44, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  /* line 95, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  div.header div.menu-centered {
+    text-align: right; }
+    /* line 98, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+    div.header div.menu-centered ul.menu li a {
+      color: white; }
+  /* line 103, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
   div.header div.logo-container {
     height: 96px;
     width: 96px;
@@ -93,72 +627,59 @@ div.header {
     margin-right: auto;
     position: relative;
     padding-top: 1rem; }
-    /* line 52, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+    /* line 111, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
     div.header div.logo-container a.logo {
       background-size: contain;
       position: absolute;
       height: 96px;
       width: 96px; }
 
-/* line 61, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+/* line 120, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 div.main {
-  min-height: calc(100vh - 300px); }
+  min-height: calc(100vh - 320px - 1rem); }
 
-/* line 65, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+/* line 124, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 div.footer {
   height: 100px;
   background: #777; }
-  /* line 69, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  /* line 128, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
   div.footer div.row div.column {
     margin-bottom: 1rem; }
-  /* line 73, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  /* line 132, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
   div.footer p.copyright {
     margin: 6px 0 0;
     font-size: 0.75em;
     color: #fefefe;
     text-align: center; }
-  /* line 80, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-  div.footer div.menu-container {
-    text-align: center; }
-  /* line 84, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-  div.footer ul.menu {
-    list-style: none;
+  /* line 139, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+  div.footer div.menu-centered {
     text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0; }
-    /* line 91, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-    div.footer ul.menu li {
-      display: table-cell;
-      vertical-align: middle; }
-      /* line 95, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-      div.footer ul.menu li a {
-        color: #e6e6e6;
-        display: block;
-        padding: .7rem 1rem;
-        line-height: 1;
-        text-decoration: none; }
-      /* line 103, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
-      div.footer ul.menu li a.logo-button {
-        height: 32px;
-        width: 32px;
-        padding: 0; }
+    padding-top: 1rem; }
+    /* line 143, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
+    div.footer div.menu-centered ul.menu li a {
+      color: white; }
 
 
-/*# sourceMappingURL&#x3D;amp.css.map*/
+/*# sourceMappingURL=amp.css.map*/
     </style>
   </head>
   <body>
     <div class="header">
+      <div class="menu-centered">
+        <ul class="menu">
+          <li><a href="games/index.amp.html">GAMES</a></li>
+          <li><a href="learn/abc/index.amp.html">LEARN</a></li>
+        </ul>
+      </div>
       <div class="row">
         <div class="column">
           <div class=logo-container>
-            <a class="logo" href="/">
+            <a class="logo" href="/index.amp.html">
               <amp-img src="assets/icons/logo-circle-large.png" alt="Home" width="96" height="96"></amp-img>
             </a>
           </div>
-          <span>Contact Us</span>
-        </div>
+          <h1>Contact Us</h1>
+              </div>
       </div>
     </div>
     
@@ -167,7 +688,7 @@ div.footer {
         <div class="column small-12">
           <p class="text-center">Greenhouse Games cares about our customers and visitors. Feel free to contact us about anything.</p>
         </div>
-        <div class="column small-12 medium-6">
+        <div class="column">
           <div class="card">
             <div class="card-section">
               <h4>Email</h4>
@@ -175,7 +696,7 @@ div.footer {
             </div>
           </div>
         </div>
-        <div class="column small-12 medium-6">
+        <div class="column">
           <div class="card">
             <div class="card-section">
               <h4>Facebook</h4>
@@ -183,7 +704,7 @@ div.footer {
             </div>
           </div>
         </div>
-        <div class="column small-12 medium-6">
+        <div class="column">
           <div class="card">
             <div class="card-section">
               <h4>Twitter</h4>
@@ -191,11 +712,19 @@ div.footer {
             </div>
           </div>
         </div>
-        <div class="column small-12 medium-6">
+        <div class="column">
           <div class="card">
             <div class="card-section">
               <h4>Instagram</h4>
               <a href="https://www.instagram.com/greenhousegamez">greenhousegamez</a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-section">
+              <h4>Linked In</h4>
+              <a href="https://www.linkedin.com/company-beta/17969708">Greenhouse Games, LLC</a>
             </div>
           </div>
         </div>
@@ -205,7 +734,7 @@ div.footer {
     <div class="footer">
       <div class="row">
         <div class="column">
-          <div class="menu-container">
+          <div class="menu-centered">
             <ul class="menu">
               <li><a href="/" class="logo-button"><amp-img src="assets/icons/logo-circle.png" alt="Home" width="32" height="32"></amp-img></a></li>
               <li><a href="about.amp.html">ABOUT</a></li>

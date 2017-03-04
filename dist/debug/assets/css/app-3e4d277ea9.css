@@ -1,5 +1,113 @@
 
 
+/* line 6, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0; }
+
+/* line 30, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+p {
+  margin-bottom: 1rem;
+  font-size: inherit;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility; }
+
+/* line 39, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+em,
+i {
+  font-style: italic;
+  line-height: inherit; }
+
+/* line 46, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit; }
+
+/* line 53, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+small {
+  font-size: 80%;
+  line-height: inherit; }
+
+/* line 59, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  text-rendering: optimizeLegibility; }
+  /* line 71, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small {
+    line-height: 0;
+    color: #cacaca; }
+
+/* line 78, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+a {
+  line-height: inherit;
+  color: #228822;
+  text-decoration: none;
+  cursor: pointer; }
+  /* line 85, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+  a:hover, a:focus {
+    color: #1d751d; }
+  /* line 93, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+  a img {
+    border: 0; }
+
+/* line 99, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ul,
+ol,
+dl {
+  margin-bottom: 1rem;
+  list-style-position: outside;
+  line-height: 1.6; }
+
+/* line 108, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+li {
+  font-size: inherit; }
+
+/* line 113, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ul {
+  margin-left: 1.25rem;
+  list-style-type: disc; }
+
+/* line 119, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ol {
+  margin-left: 1.25rem; }
+
+/* line 125, /Users/brian/GitHub/greenhouse-website/app/scss/amp/_typography.scss */
+ul ul, ol ul, ul ol, ol ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0; }
+
 @charset "UTF-8";
 /**
  * Foundation for Sites by ZURB
