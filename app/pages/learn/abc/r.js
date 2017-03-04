@@ -3,7 +3,7 @@ import utils from './utils.js';
 function create() {
   let sprite1, abutton, obstacle1, obstacle2;
 
-  const game = utils.init('r', {
+  const game = utils.init({
     preload: () => {
       utils.preload(game, ['a']);
       game.load.image('obstacle', '/assets/img/learning/obstacle.png');

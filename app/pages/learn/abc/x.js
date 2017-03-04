@@ -3,7 +3,7 @@ import utils from './utils.js';
 function create() {
   let sprite1, sprite2;
 
-  const game = utils.init('x', {
+  const game = utils.init({
     preload: () => {
       utils.preload(game);
     },
@@ -21,7 +21,7 @@ function create() {
     render: () => {
     }
   });
-  
+
   return game;
 }
 

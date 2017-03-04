@@ -3,7 +3,7 @@ import utils from './utils.js';
 function create() {
   let sprite1, abutton, bbutton;
 
-  const game = utils.init('l', {
+  const game = utils.init({
     preload: () => {
       utils.preload(game, ['a', 'b']);
     },

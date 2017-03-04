@@ -1,8 +1,8 @@
 <div class="row">
   <div class="column small-12">
-    <div class="card" id="learning-game-{{ letter }}-container">
+    <div class="card" id="learning-game-preview-container">
       <div class="learning-preview-image">
-        <div id="learning-game-{{ letter }}"></div>
+        <div id="learning-game-preview"></div>
         <div class="fill-black"></div>
       </div>
     </div>
@@ -51,7 +51,9 @@
           </div>
           <div class="tabs-panel" id="letterhtml">
             <pre>
-              <code class="html" id="html-file-contents">{{#escape}}<div id="learning-game-{{ @root.letter }}"></div>
+              <code class="html" id="html-file-contents">{{#escape}}<div id="learning-game-preview-container"></div>
+  <div id="learning-game-preview"></div>
+</div>
 <script>
 $(document).ready(function() {
   var create = require("{{ @root.letter }}.js");

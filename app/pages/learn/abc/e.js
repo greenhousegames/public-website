@@ -3,7 +3,7 @@ import utils from './utils.js';
 function create() {
   let weapon, sprite1, xp, abutton, bbutton, multiplier;
 
-  const game = utils.init('e', {
+  const game = utils.init({
     preload: () => {
       utils.preload(game, ['a','b']);
       game.load.image('bullet', '/assets/img/learning/weapon-bullet.png');

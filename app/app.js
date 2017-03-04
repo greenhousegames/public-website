@@ -28,6 +28,10 @@ window.GreenhouseGames = {
     loginError: (err) => {
       console.log(err);
     }
+  },
+  learning: {
+    game: null,
+    letter: ''
   }
 };
 

@@ -1,6 +1,6 @@
 function resize(game) {
-  const width = getGameWidth(game.containerId);
-  const height = getGameHeight(game.containerId);
+  const width = getGameWidth();
+  const height = getGameHeight();
   if (game.width != width) {
     game.scale.setGameSize(width, height);
     return true;
@@ -46,20 +46,18 @@ function getBreakpoint(game) {
   else return 'small';
 }
 
-function getGameWidth(id) {
-  return $('#' + id).width();
+function getGameWidth() {
+  return $('#learning-game-preview-container').width();
 }
 
-function getGameHeight(id) {
-  return getGameWidth(id)/(16/9);
+function getGameHeight() {
+  return getGameWidth()/(16/9);
 }
 
-function init(letter, config) {
-  const containerId = 'learning-game-' + letter + '-container';
-  const width = getGameWidth(containerId);
-  const height = getGameHeight(containerId);
-  const game = new Phaser.Game(width, height, Phaser.AUTO, 'learning-game-' + letter, config);
-  game.containerId = containerId;
+function init(config) {
+  const width = getGameWidth();
+  const height = getGameHeight();
+  const game = new Phaser.Game(width, height, Phaser.AUTO, 'learning-game-preview', config);
   return game;
 }
 

@@ -2,6 +2,21 @@ div#learning-game canvas {
   box-shadow: black 0px 0px 16px;
 }
 
+div#learning-game-preview-container {
+  margin-top: $global-margin;
+  margin-bottom: $global-margin;
+}
+
+div.abc {
+  div.card {
+    a.preview-button {
+      color: $secondary-color;
+    }
+    a.start-button {
+    }
+  }
+}
+
 h4.subheader {
   font-style: italic;
 }

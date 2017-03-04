@@ -1,19 +1,18 @@
 <div class="abc column">
   <div id="card-letter-{{ letter }}" class="card">
-    {{#if preview}}
-    <div id="learning-game-{{ letter }}-container" class="show-for-medium">
-      <div class="learning-preview-image">
-        <div id="learning-game-{{ letter }}"></div>
-        <img alt="{{name}} Lesson" src="{{ @root.root }}assets/img/learning/preview-placeholder.png"></img>
-      </div>
-    </div>
-    {{/if}}
     <div class="card-divider primary text-center">
       <h4>{{header}}</h4>
     </div>
     <div class="card-section text-center">
       <p>{{ subheader }}</p>
-      <a href="{{ @root.root }}learn/abc/{{ letter }}.html">START LESSON</a>
+      <div class="clearfix">
+        <div class="float-left">
+          <a class="preview-button" href="#preview">VIEW PREVIEW</a>
+        </div>
+        <div class="float-right">
+          <a class="start-button" href="{{ @root.root }}learn/abc/{{ letter }}.html">START LESSON</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

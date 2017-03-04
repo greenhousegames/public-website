@@ -19,27 +19,20 @@ function preview(scriptpath, letter) {
   };
 
   var load = () => {
-    $('#card-letter-' + letter).hover(() => {
-      if (Foundation.MediaQuery.current != "small") {
-        loadscript(() => {
-          if (!create) {
-            create = require('pages/learn/abc/' + letter + '.js');
-          }
+    $('#card-letter-' + letter + " a.preview-button").click(() => {
+      loadscript(() => {
+        if (!create) {
+          create = require('pages/learn/abc/' + letter + '.js');
+        }
 
-          if (!game) {
-            game = create();
-            $('#learning-game-' + letter).show();
-          }
-        });
-      }
-    }, () => {
-      $('#learning-game-' + letter).fadeOut({
-        complete: () => {
-          if (game) {
-            game.destroy();
-            game = null;
+        if (window.GreenhouseGames.learning.letter != letter) {
+          if (window.GreenhouseGames.learning.game) {
+            window.GreenhouseGames.learning.game.destroy();
           }
         }
+
+        window.GreenhouseGames.learning.game = create();
+        window.GreenhouseGames.learning.letter = letter;
       });
     });
   };
