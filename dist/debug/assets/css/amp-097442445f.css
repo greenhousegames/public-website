@@ -9,7 +9,7 @@ body {
 
 /* line 13, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 .text-center {
-  text-align: center; }
+  text-align: center !important; }
 
 /* line 17, /Users/brian/GitHub/greenhouse-website/app/scss/amp.scss */
 div.row {

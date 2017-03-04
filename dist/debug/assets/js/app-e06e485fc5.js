@@ -207,6 +207,20 @@ window.GreenhouseGames = {
     window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth).catch(window.GreenhouseGames.authHelpers.hideAuth);
   });
 
+  // ACCOUNT
+  (0, _jquery2.default)('#logout_button').click(function () {
+    return window.GreenhouseGames.client.signOut().then(window.GreenhouseGames.authHelpers.hideAuth);
+  });
+  (0, _jquery2.default)('#twitterLogin_button').click(function () {
+    return window.GreenhouseGames.client.signInWithPopup('twitter').then(window.GreenhouseGames.authHelpers.loginSuccess).catch(window.GreenhouseGames.authHelpers.loginError);
+  });
+  (0, _jquery2.default)('#facebookLogin_button').click(function () {
+    return window.GreenhouseGames.client.signInWithPopup('facebook').then(window.GreenhouseGames.authHelpers.loginSuccess).catch(window.GreenhouseGames.authHelpers.loginError);
+  });
+  (0, _jquery2.default)('#guestLogin_button').click(function () {
+    return window.GreenhouseGames.client.signInAnonymously().then(window.GreenhouseGames.authHelpers.loginSuccess).catch(window.GreenhouseGames.authHelpers.loginError);
+  });
+
   // FOUNADTION
   (0, _jquery2.default)(document).foundation();
 });
