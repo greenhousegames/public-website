@@ -18,18 +18,10 @@
     "deploy:debug": "firebase deploy -m $(npm show ./ version)",
     "predeploy:release": "cp environments/release/firebase.json firebase.json && firebase use release",
     "deploy:release": "firebase deploy -m $(npm show ./ version)",
-    "publish": "npm run dist:debug && npm run dist:release && git add -A dist",
-    "postpublish": "git push && git push --tags && npm publish && npm run deploy:debug && npm run deploy:release",
-    "publish:debug": "npm run dist:debug && git add -A dist",
-    "postpublish:debug": "git push && git push --tags && npm publish && npm run deploy:debug",
-    "publish:release": "npm run dist:release && git add -A dist",
-    "postpublish:release": "git push && git push --tags && npm publish && npm run deploy:release",
+    "version": "npm run dist:debug && npm run dist:release && git add -A dist",
+    "postversion": "git push && git push --tags && npm publish && npm run deploy:debug && npm run deploy:release",
     "skipversion:debug": "npm run dist:debug && npm run deploy:debug",
-    "skipversion:release": "npm run dist:release && npm run deploy:release",
-    "version:debug": "npm version",
-    "postversion:debug": "npm run publish:debug",
-    "version:release:patch": "npm version patch && npm run publish:release",
-    "version:all:patch": "npm version patch && npm run publish"
+    "skipversion:release": "npm run dist:release && npm run deploy:release"
   },
   "dependencies": {
     "@greenhousegames/smash-dot": "^1.0.0",
