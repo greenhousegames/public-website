@@ -26,9 +26,10 @@
     "postpublish:release": "git push && git push --tags && npm publish && npm run deploy:release",
     "skipversion:debug": "npm run dist:debug && npm run deploy:debug",
     "skipversion:release": "npm run dist:release && npm run deploy:release",
-    "version:debug": "npm version patch && npm run publish:debug",
-    "version:release": "npm version patch && npm run publish:release",
-    "version:all": "npm version patch && npm run publish"
+    "version:debug": "npm version",
+    "postversion:debug": "npm run publish:debug",
+    "version:release:patch": "npm version patch && npm run publish:release",
+    "version:all:patch": "npm version patch && npm run publish"
   },
   "dependencies": {
     "@greenhousegames/smash-dot": "^1.0.0",
