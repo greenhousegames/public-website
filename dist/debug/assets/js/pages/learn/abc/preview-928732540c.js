@@ -186,6 +186,11 @@ function preview(scriptpath, letter) {
 
         window.GreenhouseGames.learning.game = create();
         window.GreenhouseGames.learning.letter = letter;
+
+        setTimeout(function () {
+          window.location.hash = "";
+          window.location.hash = 'preview';
+        }, 300);
       });
     });
   };
