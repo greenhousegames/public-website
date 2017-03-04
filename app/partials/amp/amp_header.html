@@ -1,0 +1,36 @@
+<div class="header">
+  <div class="menu-centered">
+    <ul class="menu">
+      <li><a href="{{@root.root}}games/index.amp.html">GAMES</a></li>
+      <li><a href="{{@root.root}}learn/abc/index.amp.html">LEARN</a></li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div class=logo-container>
+        <a class="logo" href="/index.amp.html">
+          <amp-img src="{{@root.root}}assets/icons/logo-circle-large.png" alt="Home" width="96" height="96"></amp-img>
+        </a>
+      </div>
+      {{#if letter}}
+        {{#ifequal letter "all"}}
+        <h1>ABC of Games</h1>
+        {{else}}
+        {{#single @root.abc letter}}
+        <h1>{{ this.header }}</h1>
+        {{/single}}
+        {{/ifequal}}
+      {{else if game}}
+        {{#ifequal game "all"}}
+        <h1>Games</h1>
+        {{else}}
+        {{#single @root.games game}}
+        <h1>{{ this.name }}</h1>
+        {{/single}}
+        {{/ifequal}}
+      {{else}}
+      <h1>{{ title }}</h1>
+      {{/if}}
+    </div>
+  </div>
+</div>

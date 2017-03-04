@@ -1,0 +1,39 @@
+---
+layout: amp
+title: Greenhouse Games
+games_structured_data: true
+abc_structured_data: true
+canonical: /
+---
+<div class="row">
+  <div class="column text-center">
+    <div class="card">
+      <div class="card-section">
+        <h2>Game Gallery</h2>
+        <p class="show-for-medium">Play all our games on any of your devices!</p>
+        <a class="button large" href="{{root}}games/index.amp.html">VIEW ALL GAMES</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+{{#each games}}
+  {{> amp_game_preview}}
+{{/each}}
+</div>
+<div class="row">
+  <div class="column text-center">
+    <div class="card">
+      <div class="card-section">
+        <h2>ABC of Games</h2>
+        <p class="show-for-medium">Ever wonder how games are actually created?  Learn the ABC of Games to find out more!</p>
+        <a class="button large" href="{{root}}learn/abc/index.amp.html">VIEW ALL LESSONS</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  {{#eachsorted abc "letter"}}
+    {{> amp_learn_abc_preview }}
+  {{/eachsorted}}
+</div>

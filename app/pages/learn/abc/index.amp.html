@@ -1,0 +1,10 @@
+---
+layout: amp
+letter: all
+abc_structured_data: true
+---
+<div class="row">
+  {{#eachsorted abc "letter"}}
+    {{> amp_learn_abc_preview }}
+  {{/eachsorted}}
+</div>

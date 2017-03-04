@@ -1,5 +1,31 @@
 @import '_settings.scss';
-@import '_variables.scss';
+
+// Dependencies
+@import 'normalize';
+@import 'helpers/missing-dependencies';
+@import 'helpers/true';
+@import 'functions/purge';
+@import 'functions/remove';
+@import 'functions/replace';
+@import 'functions/to-list';
+
+// Sass utilities
+@import 'util/util';
+
+// Global variables and styles
+@import 'global';
+
+@import 'components/card';
+@import 'components/button';
+@import 'components/menu';
+
+@include foundation-card;
+@include foundation-button;
+@include foundation-menu;
+@import 'amp/_typography.scss';
+
+$header-height: 220px;
+$footer-height: 100px;
 
 body, html {
   height: 100%;
@@ -10,8 +36,14 @@ body {
   font-family: $body-font-family;
 }
 
-div.text-center, p.text-center {
-  text-align: center;
+div.card-divider.primary {
+  @include card-divider($background: $primary-color);
+  color: $white;
+}
+
+div.card-divider.secondary {
+  @include card-divider($background: $secondary-color);
+  color: $white;
 }
 
 div.row {
@@ -21,24 +53,51 @@ div.row {
 
   div.column {
     padding: 0 $global-padding;
+  }
+}
 
-    p {
-      margin: 0;
-    }
+div.text-center, p.text-center {
+  text-align: center;
+}
+
+a.appstore-button {
+  background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;
+  width: 135px;
+  height: 40px;
+  background-size:contain;
+}
+
+ul.menu {
+  a.logo-button {
+    height: 32px;
+    width: 32px;
+    padding: 0;
+  }
+
+  amp-img img {
+    margin: 0;
   }
 }
 
 div.header {
-  height: 200px;
+  height: $header-height;
   background: $primary-color;
   background: linear-gradient($primary-color, $body-background);
 
-  span {
+  h1 {
     color: $secondary-color;
     font-size: 32px;
     margin-top: $global-margin;
     display: block;
     text-align: center;
+  }
+
+  div.menu-centered {
+    text-align: right;
+
+    ul.menu li a {
+      color: white;
+    }
   }
 
   div.logo-container {
@@ -59,11 +118,11 @@ div.header {
 }
 
 div.main {
-  min-height: calc(100vh - 300px);
+  min-height: calc(100vh - #{$header-height + $footer-height} - #{ $global-padding });
 }
 
 div.footer {
-  height: 100px;
+  height: $footer-height;
   background: $secondary-color;
 
   div.row div.column {
@@ -76,35 +135,13 @@ div.footer {
     color: $white;
     text-align: center;
   }
-  
-  div.menu-container {
+
+  div.menu-centered {
     text-align: center;
-  }
+    padding-top: $global-padding;
 
-  ul.menu {
-    list-style: none;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0;
-
-    li {
-      display: table-cell;
-      vertical-align: middle;
-
-      a {
-        color: $light-gray;
-        display: block;
-        padding: .7rem 1rem;
-        line-height: 1;
-        text-decoration: none;
-      }
-
-      a.logo-button {
-        height: 32px;
-        width: 32px;
-        padding: 0;
-      }
+    ul.menu li a {
+      color: white;
     }
   }
 }

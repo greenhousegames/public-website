@@ -4,12 +4,59 @@
 <html class="no-js" lang="en" amp>
   <head>
     {{> amp_html_head }}
+    {{#if structured_data}}
+      {{> structured_data_json structured_data}}
+    {{/if}}
+    {{#if games_structured_data}}
+      {{#each games}}
+        {{> structured_data_game this}}
+      {{/each}}
+    {{/if}}
+    {{#if abc_structured_data}}
+      {{#each abc}}
+        {{> structured_data_abc_lesson this}}
+      {{/each}}
+    {{/if}}
+    {{#if letter}}
+      {{#ifequal letter "all"}}
+        <title>Learn | ABC of Games</title>
+        <link rel="canonical" href="{{root}}learn/abc" />
+        <meta name="description" content="Learn the ABC of Games which covers 26 different concepts used to build 2D games!">
+        {{#eachsorted abc letter}}
+          {{> structured_data_abc_lesson this}}
+        {{/eachsorted}}
+      {{else}}
+        {{#single abc letter}}
+          <title>Learn | ABC | {{name}}</title>
+          <link rel="canonical" href="{{@root.root}}learn/abc/{{letter}}" />
+          <meta name="description" content="Learn about {{name}} in this lesson of the ABC of Games!  {{subheader}}.">
+          {{> structured_data_abc_lesson this}}
+        {{/single}}
+      {{/ifequal}}
+    {{/if}}
+    {{#if game}}
+      {{#ifequal game "all"}}
+        <title>Games</title>
+        <link rel="canonical" href="{{root}}games" />
+        <meta name="description" content="Fun, simple, and addicting games built for android, ios, and web!">
+        {{#each games}}
+          {{> structured_data_game this}}
+        {{/each}}
+      {{else}}
+        {{#single games game}}
+          <title>Games | {{name}}</title>
+          <link rel="canonical" href="{{@root.root}}games/{{key}}" />
+          <meta name="description" content="{{description}}">
+          {{> structured_data_game this}}
+        {{/single}}
+      {{/ifequal}}
+    {{/if}}
     <style amp-custom>
-    {{getfile 'public/assets/css/' 'amp' '.css'}}
+    {{{getampcss 'public/assets/css/amp.css'}}}
     </style>
   </head>
   <body>
-    {{> amp_header}}
+    {{> amp_header }}
     <div class="main">
       {{> body}}
     </div>

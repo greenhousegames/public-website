@@ -57,7 +57,9 @@ var config = {
       options: {
         includePaths: [
           'node_modules/foundation-sites/scss',
-          'node_modules/motion-ui/src'
+          'node_modules/motion-ui/src',
+          'node_modules/normalize-scss/sass',
+          'node_modules/sassy-lists/stylesheets'
         ]
       }
     },
