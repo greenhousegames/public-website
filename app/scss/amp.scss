@@ -10,8 +10,8 @@ body {
   font-family: $body-font-family;
 }
 
-.text-center {
-  text-align: center !important;
+div.text-center, p.text-center {
+  text-align: center;
 }
 
 div.row {
