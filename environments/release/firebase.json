@@ -17,6 +17,12 @@
         "value" : "*"
       }]
     },{
+      "source" : "/assets/img/wallpaper.png",
+      "headers" : [{
+        "key" : "Access-Control-Allow-Origin",
+        "value" : "*"
+      }]
+    },{
       "source": "/assets/@(js|css)/**/*.@(js|css)",
       "headers": [{
       	"key": "Cache-Control",
