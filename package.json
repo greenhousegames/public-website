@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/public-website",
-  "version": "1.1.31",
+  "version": "1.1.32",
   "scripts": {
     "clean": "(rm -r public || true)",
     "start": "npm run clean && brunch watch --server",
@@ -18,7 +18,8 @@
     "deploy:debug": "firebase deploy -m $(npm show ./ version)",
     "predeploy:release": "cp environments/release/firebase.json firebase.json && firebase use release",
     "deploy:release": "firebase deploy -m $(npm show ./ version)",
-    "version": "npm run dist:debug && npm run dist:release && git add -A dist",
+    "preversion": "(rm -r dist || true) && mkdir dist",
+    "version": "npm run dist:release && git add -A dist",
     "postversion": "git push && git push --tags && npm publish && npm run deploy:release",
     "skipversion:debug": "npm run dist:debug && npm run deploy:debug",
     "skipversion:release": "npm run dist:release && npm run deploy:release"
