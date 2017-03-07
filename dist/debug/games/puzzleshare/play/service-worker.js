@@ -1,0 +1,1 @@
+/* Use empty service worker */
