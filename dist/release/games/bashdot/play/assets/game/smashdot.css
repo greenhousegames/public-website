@@ -18,37 +18,61 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .back {
   background-image: url(smashdot.png);
-  background-position: -129px -129px;
+  background-position: -1002px -387px;
   width: 32px;
   height: 32px;
 }
-.exit-game {
+.bubble-default {
   background-image: url(smashdot.png);
   background-position: 0px 0px;
+  width: 500px;
+  height: 500px;
+}
+.bubble-killed {
+  background-image: url(smashdot.png);
+  background-position: -501px 0px;
+  width: 500px;
+  height: 500px;
+}
+.bubble-opponent {
+  background-image: url(smashdot.png);
+  background-position: 0px -501px;
+  width: 500px;
+  height: 500px;
+}
+.bubble-scored {
+  background-image: url(smashdot.png);
+  background-position: -501px -501px;
+  width: 500px;
+  height: 500px;
+}
+.exit-game {
+  background-image: url(smashdot.png);
+  background-position: -1002px 0px;
   width: 128px;
   height: 128px;
 }
 .home {
   background-image: url(smashdot.png);
-  background-position: -162px -129px;
+  background-position: -1035px -387px;
   width: 32px;
   height: 32px;
 }
 .pause {
   background-image: url(smashdot.png);
-  background-position: -195px -129px;
+  background-position: -1068px -387px;
   width: 32px;
   height: 32px;
 }
 .restart-game {
   background-image: url(smashdot.png);
-  background-position: -129px 0px;
+  background-position: -1002px -129px;
   width: 128px;
   height: 128px;
 }
 .resume-game {
   background-image: url(smashdot.png);
-  background-position: 0px -129px;
+  background-position: -1002px -258px;
   width: 128px;
   height: 128px;
 }
