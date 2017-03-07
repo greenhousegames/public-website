@@ -69,6 +69,13 @@ div.card {
           transform: translateY(-50%);
           background: rgba(0,0,0,0.2);
           color: black;
+
+          @include breakpoint(medium) {
+            font-size: 2rem;
+          }
+          @include breakpoint(large) {
+            font-size: 2.5rem;
+          }
         }
       }
     }

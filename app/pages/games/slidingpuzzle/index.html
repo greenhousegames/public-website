@@ -1,0 +1,52 @@
+---
+layout: game
+game: slidingpuzzle
+---
+{{#single games game}}
+<div class="row small-up-1 medium-up-1 text-center small-collapse">
+  {{#if playstore}}
+  <div class="column">
+    <a class="playstore-button" href="{{playstore}}">
+      <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
+    </a>
+  </div>
+  {{/if}}
+  {{#if appstore}}
+  <div class="column">
+    <a class="appstore-button" href="{{appstore}}"></a>
+  </div>
+  {{/if}}
+  <div class="column">
+    <a class="greenhousestore-button button dark" href="{{@root.root}}games/{{key}}/play/#">
+      <div class="image"></div><div class="text">Play on<br/><strong>Greenhouse</strong></div>
+    </a>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="column small-12">
+    <div class="card">
+      <img alt="{{name}}" src="{{@root.root}}assets/img/games/{{key}}/screenshot.png">
+    </div>
+  </div>
+  <div class="column small-12">
+    <div class="card text-center">
+      <div class="card-divider primary">
+        <h3>Description</h3>
+      </div>
+    </div>
+  </div>
+  <div class="column small-12">
+    <div class="card">
+      <div class="card-section">
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    {{> adsense_ad id="6649193449"}}
+  </div>
+</div>
+{{/single}}
