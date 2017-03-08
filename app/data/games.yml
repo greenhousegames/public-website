@@ -18,5 +18,5 @@ puzzleshare:
   paths:
     src_debug: node_modules/@greenhousegames/sliding-puzzle-app/dist/debug/browser/package.zip
     src_release: node_modules/@greenhousegames/sliding-puzzle-app/dist/release/browser/package.zip
-    screenshot: node_modules/@greenhousegames/sliding-puzzle-app/resources/screenshots/screen-shot-1920x1080-3.png
+    screenshot: node_modules/@greenhousegames/sliding-puzzle-app/resources/screenshots/screen-shot-1920x1080-1.png
     dist: games/puzzleshare/play
