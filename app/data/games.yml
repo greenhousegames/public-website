@@ -2,7 +2,7 @@ bashdot:
   key: bashdot
   name: Bash Dot
   playstore: https://play.google.com/store/apps/details?id=com.greenhousegames.smashdot2
-  appstore: https://itunes.apple.com/us/app/smash-dot-pro/id1204046667?mt=8
+  appstore: https://itunes.apple.com/us/app/smash-dot-pro/id1204046667
   description: Bash the Dots to earn achievements and climb to the top of the leaderboard!  Play by yourself or battle against your friends in real-time!
   paths:
     src_debug: node_modules/@greenhousegames/smash-dot-app/dist/debug/browser/package.zip
@@ -13,7 +13,7 @@ puzzleshare:
   key: puzzleshare
   name: Puzzle Share
   playstore: https://play.google.com/store/apps/details?id=com.greenhousegames.slidingpuzzle
-  appstore:
+  appstore: https://itunes.apple.com/us/app/puzzle-share/id1212739488
   description: Reconstruct the Greenhouse Logo!
   paths:
     src_debug: node_modules/@greenhousegames/sliding-puzzle-app/dist/debug/browser/package.zip
