@@ -3,16 +3,15 @@
     ".read": true,
     ".write": "auth != null",
 
-    "battles": {
-      "rooms": {
-        ".indexOn": [
-          "ready"
-        ]
-      }
-    },
-
     "games": {
       "smashdot": {
+        "battles": {
+          "rooms": {
+            ".indexOn": [
+              "ready"
+            ]
+          }
+        },
         "data": {
           ".indexOn": [
             "classic-score",
