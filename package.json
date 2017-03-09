@@ -27,8 +27,8 @@
   "dependencies": {
     "@greenhousegames/smash-dot": "^1.0.0",
     "@greenhousegames/smash-dot-app": "^1.0.0",
-    "@greenhousegames/sliding-puzzle": "~0.0.1",
-    "@greenhousegames/sliding-puzzle-app": "~0.0.1",
+    "@greenhousegames/sliding-puzzle": "^1.0.0",
+    "@greenhousegames/sliding-puzzle-app": "^1.0.0",
     "firebase": "^3.6.1",
     "foundation-sites": "6.3.1",
     "highlightjs": "^9.8.0",
