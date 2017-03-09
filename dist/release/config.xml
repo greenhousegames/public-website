@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget>
+  <preference name="SplashScreen" value="assets/splash.png" />
+  <preference name="SplashScreenBackgroundColor" value="#FFFFFF" />
+  <preference name="SplashScreenWidth" value="600" />
+  <preference name="SplashScreenHeight" value="300" />
+</widget>
