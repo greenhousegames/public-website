@@ -25,8 +25,8 @@
     "skipversion:release": "npm run dist:release && npm run deploy:release"
   },
   "dependencies": {
-    "@greenhousegames/smash-dot": "^1.0.0",
-    "@greenhousegames/smash-dot-app": "^1.0.0",
+    "@greenhousegames/bash-dot": "^1.0.0",
+    "@greenhousegames/bash-dot-app": "^1.0.0",
     "@greenhousegames/sliding-puzzle": "^1.0.0",
     "@greenhousegames/sliding-puzzle-app": "^1.0.0",
     "firebase": "^3.6.1",

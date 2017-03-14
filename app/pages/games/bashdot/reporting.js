@@ -1,4 +1,4 @@
-import GameReporting from '@greenhousegames/smash-dot/dist/reporting';
+import GameReporting from '@greenhousegames/bash-dot/dist/reporting';
 import FirebaseClient from 'firebase-client.js';
 
 class Reporting extends FirebaseClient {
