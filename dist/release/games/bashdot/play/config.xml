@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.greenhousegames.smashdot2" version="1.0.16" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.greenhousegames.smashdot2" version="1.0.17" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
@@ -15,7 +15,7 @@
     <access origin="https://*.fbcdn.net" />
     <access origin="https://*.akamaihd.net" />
     <name>Bash Dot</name>
-    <description>A fun and simple game built for all devices!</description>
+    <description>Bash the Dots to earn achievements and climb to the top of the leaderboard!  Play by yourself or battle against your friends in real-time!</description>
     <author email="support@greenhousegames.com" href="https://www.greenhousegames.com/contact.html">Greenhouse Games, LLC</author>
     <content src="index.html" />
     <access origin="*" />
