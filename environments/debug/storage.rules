@@ -1,0 +1,7 @@
+service firebase.storage {
+  match /b/greenhouse-games-test.appspot.com/o {
+    match /{allPaths=**} {
+      allow read, write;
+    }
+  }
+}

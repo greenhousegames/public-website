@@ -2,6 +2,9 @@
   "database": {
     "rules": "environments/shared/database.rules.json"
   },
+  "storage": {
+    "rules": "environments/debug/storage.rules"
+  },
   "hosting": {
     "public": "dist/debug",
     "headers": [{
