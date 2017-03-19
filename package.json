@@ -29,8 +29,8 @@
   "dependencies": {
     "@greenhousegames/bash-dot": "^1.0.0",
     "@greenhousegames/bash-dot-app": "^1.0.0",
-    "@greenhousegames/sliding-puzzle": "^1.0.0",
-    "@greenhousegames/sliding-puzzle-app": "^1.0.0",
+    "@greenhousegames/puzzle-share": "^1.0.0",
+    "@greenhousegames/puzzle-share-app": "^1.0.0",
     "firebase": "^3.6.1",
     "foundation-sites": "6.3.1",
     "highlightjs": "^9.8.0",

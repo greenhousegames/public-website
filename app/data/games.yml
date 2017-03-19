@@ -16,7 +16,7 @@ puzzleshare:
   appstore: https://itunes.apple.com/us/app/puzzle-share/id1212739488
   description: Reconstruct the Greenhouse Logo!
   paths:
-    src_debug: node_modules/@greenhousegames/sliding-puzzle-app/dist/debug/browser/package.zip
-    src_release: node_modules/@greenhousegames/sliding-puzzle-app/dist/release/browser/package.zip
-    screenshot: node_modules/@greenhousegames/sliding-puzzle-app/resources/screenshots/screen-shot-1920x1080-1.png
+    src_debug: node_modules/@greenhousegames/puzzle-share-app/dist/debug/browser/package.zip
+    src_release: node_modules/@greenhousegames/puzzle-share-app/dist/release/browser/package.zip
+    screenshot: node_modules/@greenhousegames/puzzle-share-app/resources/screenshots/screen-shot-1920x1080-1.png
     dist: games/puzzleshare/play
