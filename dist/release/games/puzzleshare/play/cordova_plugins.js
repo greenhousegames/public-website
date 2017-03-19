@@ -59,6 +59,14 @@ module.exports = [
         "runs": true
     },
     {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
+    },
+    {
         "file": "plugins/ionic-plugin-keyboard/www/browser/keyboard.js",
         "id": "ionic-plugin-keyboard.keyboard",
         "pluginId": "ionic-plugin-keyboard",
@@ -74,6 +82,21 @@ module.exports = [
         "clobbers": [
             "facebookConnectPlugin"
         ]
+    },
+    {
+        "file": "plugins/ionic-plugin-deeplinks/www/deeplink.js",
+        "id": "ionic-plugin-deeplinks.deeplink",
+        "pluginId": "ionic-plugin-deeplinks",
+        "clobbers": [
+            "IonicDeeplink"
+        ],
+        "runs": true
+    },
+    {
+        "file": "plugins/ionic-plugin-deeplinks/src/browser/DeeplinkProxy.js",
+        "id": "ionic-plugin-deeplinks.IonicDeeplinkProxy",
+        "pluginId": "ionic-plugin-deeplinks",
+        "runs": true
     },
     {
         "file": "plugins/twitter-connect-plugin/www/TwitterConnect.js",
@@ -95,8 +118,10 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.2",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
+    "cordova-plugin-x-socialsharing": "5.1.6",
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-facebook4": "1.7.4",
+    "ionic-plugin-deeplinks": "1.0.14",
     "twitter-connect-plugin": "0.6.0"
 }
 // BOTTOM OF METADATA
