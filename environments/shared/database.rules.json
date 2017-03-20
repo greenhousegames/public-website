@@ -46,6 +46,32 @@
             }
           }
         }
+      },
+      "puzzleshare": {
+        "events": {
+          ".indexOn": [
+            "type@@ordering",
+            "uid@@ordering",
+            "type@@puzzleid",
+            "type@@puzzleid@@ordering"
+          ]
+        },
+        "puzzles": {
+          ".indexOn": [
+            "uid@@ordering"
+          ]
+        },
+        "progress": {
+          ".indexOn": [
+            "uid@@ordering"
+          ]
+        },
+        "comments": {
+          ".indexOn": [
+            "puzzleid",
+            "puzzleid@@ordering"
+          ]
+        }
       }
     }
   }
