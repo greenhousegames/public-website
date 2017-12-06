@@ -9,3 +9,5 @@ firebase-debug.log
 app/config.js
 app/google-analytics.js
 /firebase.json
+environments/debug/config.development.js
+environments/release/config.production.js
